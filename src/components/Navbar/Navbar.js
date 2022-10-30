@@ -40,6 +40,8 @@ const Navbar = () => {
         }
     }
 
+    window.addEventListener('resize', smScreenVisibility);
+
     /**
      * To completely remove logo from flow. This was a dirty solution
      * to avoid dealing with 'diplay: none' issues with width still present

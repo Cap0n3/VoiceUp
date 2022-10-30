@@ -36,7 +36,7 @@ export const LogoLink = styled(Link)`
     align-items: center;
     justify-content: flex-start;
     padding-left: 50px;
-    width: 20%;
+    width: 15%;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
@@ -51,19 +51,22 @@ export const NavIcon = styled.img`
 export const MenuContainer = styled.div`
     display: flex;
     flex-grow: 1;
+    min-width: 1050px;
     align-items: center;
     height: 80px;
     ${(DEBUG) ? "background: lightgreen;" : ""}
     
     @media screen and (max-width: 960px) {
         justify-content: center;
+        width: 20%;
+        min-width: 10px;
     } 
 `;
 
 export const NavMenu = styled.ul`
     display: flex;
     gap: 50px;
-    width: 80%;
+    width: 85%;
     align-items: center;
     list-style: none;
     text-align: center;
@@ -119,9 +122,12 @@ export const SocialContainer = styled.div`
     background: ${VoiceUpColors.gold};
     ${(DEBUG) ? "background: orange;" : ""}
 
-    @media screen and (max-width: 960px;) {
-        display: flex;
-        order: 1;
+    @media screen and (max-width: 960px) {
+        width: 80%;
+    }
+
+    @media screen and (max-width: 280px) {
+        gap: 20px;
     }
 `;
 
@@ -131,6 +137,12 @@ export const SocialIcons = styled.img`
     stroke: red;
     filter: invert(100%);
     cursor: pointer;
+
+    &:hover {
+        width: 35px;
+        filter: invert(95%);
+        transition: all 0.3s ease;
+    }
 `;
 
 export const MobileIcon = styled.div`
