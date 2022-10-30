@@ -6,12 +6,18 @@ import { Nav,
     NavIcon, NavMenu, 
     NavItem, 
     NavLink, 
-    SocialContainer, 
+    SocialContainer,
+    SocialIcons,
     MobileIcon 
 } from './Navbar.style';
 import { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import Logo from "../../assets/logos/VoiceUp_Logo_BLK.png"
+import YT_Icon from "../../assets/icons/social/youtube_icon.svg"
+import INSTA_Icon from "../../assets/icons/social/instagram_icon.svg"
+import FB_Icon from "../../assets/icons/social/facebook_icon.svg"
+import TWIT_Icon from "../../assets/icons/social/twitter_icon.svg"
+
 
 const Navbar = () => {
     const [click, setClick] = useState(false)
@@ -75,6 +81,10 @@ const Navbar = () => {
                         </MobileIcon>
                     </MenuContainer>
                     <SocialContainer>
+                        <SocialIcons src={YT_Icon} />
+                        <SocialIcons src={INSTA_Icon} />
+                        <SocialIcons src={FB_Icon} />
+                        <SocialIcons src={TWIT_Icon} />
                     </SocialContainer>
                 </NavbarWrapper>
             </Nav>

@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { VoiceUpColors } from "./colors";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -7,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         font-family: 'Roboto', sans-serif;
         font-style: normal;
-        color: #000000;
+        color: ${VoiceUpColors.black};
     }
     body {
         min-width: fit-content;
