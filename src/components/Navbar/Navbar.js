@@ -3,9 +3,11 @@ import { Nav,
     NavbarWrapper, 
     MenuContainer,
     LogoLink, 
-    NavIcon, NavMenu, 
+    NavIcon, 
+    NavMenu,
+    LangSwitch, 
     NavItem, 
-    NavLink, 
+    NavLinks, 
     SocialContainer,
     SocialIcons,
     MobileIcon 
@@ -71,12 +73,13 @@ const Navbar = () => {
                     <MenuContainer>
                         { isMobile ? "" : SiteLogo() }
                         <NavMenu click={click}>
-                            <NavItem><NavLink to="/">Home</NavLink></NavItem>
-                            <NavItem><NavLink to="/cours">Cours</NavLink></NavItem>
-                            <NavItem><NavLink to="/prof">La Prof</NavLink></NavItem>
-                            <NavItem><NavLink to="/conditions">Conditions</NavLink></NavItem>
-                            <NavItem><NavLink to="/tarifs">Tarifs</NavLink></NavItem>
-                            <NavItem><NavLink to="/contact">Contact</NavLink></NavItem>
+                            <NavItem><NavLinks to="/" end>Home</NavLinks></NavItem>
+                            <NavItem><NavLinks to="/cours">Cours</NavLinks></NavItem>
+                            <NavItem><NavLinks to="/prof">La Prof</NavLinks></NavItem>
+                            <NavItem><NavLinks to="/conditions">Conditions</NavLinks></NavItem>
+                            <NavItem><NavLinks to="/tarifs">Tarifs</NavLinks></NavItem>
+                            <NavItem><NavLinks to="/contact">Contact</NavLinks></NavItem>
+                            <LangSwitch>FR/EN</LangSwitch>
                         </NavMenu>
                         <MobileIcon onClick={handleClick}>
                             {click ? <FaTimes /> : <FaBars />} 

@@ -1,7 +1,7 @@
 import { VoiceUpColors } from "../../colors";
 import styled from "styled-components";
 import { Container } from '../../globalStyle';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FaMagento } from 'react-icons/fa';
 
 // To see all borders (design debug)
@@ -13,7 +13,7 @@ export const Nav = styled.nav `
     height: 80px;
     justify-content: center;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 1.1em;
     position: sticky;
     top: 0;
     z-index: 999;
@@ -31,7 +31,7 @@ export const NavbarWrapper = styled.div`
     }
 `;
 
-export const LogoLink = styled(Link)`
+export const LogoLink = styled(NavLink)`
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -51,7 +51,7 @@ export const NavIcon = styled.img`
 export const MenuContainer = styled.div`
     display: flex;
     flex-grow: 1;
-    min-width: 1050px;
+    min-width: 1080px;
     align-items: center;
     height: 80px;
     ${(DEBUG) ? "background: lightgreen;" : ""}
@@ -99,15 +99,36 @@ export const NavItem = styled.li`
     &:hover {
         border-bottom: 2px solid ${VoiceUpColors.gold};
     };
-`
+`;
 
-export const NavLink = styled(Link)`
+export const LangSwitch = styled.li`
+    display: flex;
+    align-items: center;
+    height: 80px;
+    cursor: pointer;
+    font-size: 0.8em;
+    color: ${VoiceUpColors.grey};
+    ${(DEBUG) ? "background: pink;" : ""}
+    margin-left: auto;
+    margin-right: 30px;
+    padding: 0.5rem 1rem;
+
+    @media screen and (max-width: 960px) {
+        margin: auto 0 0 0;
+    }
+`;
+
+export const NavLinks = styled(NavLink)`
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.9em;
     font-weight: 400;
     padding: 0.5rem 1rem;
     ${(DEBUG) ? "background: brown;" : ""}
+
+    &.active {
+        color: ${VoiceUpColors.gold};
+    }
     
 `;
 
