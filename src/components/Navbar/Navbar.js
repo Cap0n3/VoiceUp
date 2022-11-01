@@ -62,7 +62,7 @@ const Navbar = () => {
             </LogoLink>
         );
     }
-    console.log(language)
+    
     /**
      * Evaluate screen size on first render and show or not
      * mobile menu button.
