@@ -5,20 +5,23 @@ import { Nav,
     LogoLink, 
     NavIcon, 
     NavMenu,
-    LangSwitch, 
+    LangSwitch,
+    FRSwitch,
+    ENSwitch,
     NavItem, 
     NavLinks, 
     SocialContainer,
     SocialIcons,
     MobileIcon 
 } from './Navbar.style';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import Logo from "../../assets/logos/VoiceUp_Logo_BLK.png"
 import YT_Icon from "../../assets/icons/social/youtube_icon.svg"
 import INSTA_Icon from "../../assets/icons/social/instagram_icon.svg"
 import FB_Icon from "../../assets/icons/social/facebook_icon.svg"
 import TWIT_Icon from "../../assets/icons/social/twitter_icon.svg"
+import { LangContext } from '../../App';
 
 
 const Navbar = () => {
@@ -28,6 +31,8 @@ const Navbar = () => {
 
     const handleClick = () => setClick(!click) // Toogle click
     const closeMobileMenu = () => setClick(false);
+    // Get context for language selection
+    const { language, setLanguage } = useContext(LangContext);
 
     /**
      * Define state to mobile when screen is small
@@ -57,7 +62,7 @@ const Navbar = () => {
             </LogoLink>
         );
     }
-
+    console.log(language)
     /**
      * Evaluate screen size on first render and show or not
      * mobile menu button.
@@ -79,7 +84,10 @@ const Navbar = () => {
                             <NavItem><NavLinks to="/conditions">Conditions</NavLinks></NavItem>
                             <NavItem><NavLinks to="/tarifs">Tarifs</NavLinks></NavItem>
                             <NavItem><NavLinks to="/contact">Contact</NavLinks></NavItem>
-                            <LangSwitch>FR/EN</LangSwitch>
+                            <LangSwitch>
+                                <FRSwitch onClick={() => setLanguage("FR")} lang={language}>FR</FRSwitch>/
+                                <ENSwitch onClick={() => setLanguage("EN")} lang={language}>EN</ENSwitch>
+                            </LangSwitch>
                         </NavMenu>
                         <MobileIcon onClick={handleClick}>
                             {click ? <FaTimes /> : <FaBars />} 

@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { useState, createContext } from "react";
 import GlobalStyle from "./globalStyle";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
@@ -8,19 +9,26 @@ import Conditions from "./pages/Conditions";
 import Prices from "./pages/Prices";
 import Contact from "./pages/Conctact";
 
+export const LangContext = createContext();
+
 function App() {
+	// Context for language selection
+	const [language, setLanguage] = useState("FR");
+	const value = { language, setLanguage }
 	return (
 		<>
-			<GlobalStyle />
-			<Navbar />
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/cours" element={<Lessons />} />
-				<Route path="/prof" element={<Teacher />} />
-				<Route path="/conditions" element={<Prices />} />
-				<Route path="/tarifs" element={<Conditions />} />
-				<Route path="/contact" element={<Contact />} />
-			</Routes>
+			<LangContext.Provider value={value}>
+				<GlobalStyle />
+				<Navbar />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/cours" element={<Lessons />} />
+					<Route path="/prof" element={<Teacher />} />
+					<Route path="/conditions" element={<Conditions />} />
+					<Route path="/tarifs" element={<Prices />} />
+					<Route path="/contact" element={<Contact />} />
+				</Routes>
+			</LangContext.Provider>
 		</>
 		
 	);

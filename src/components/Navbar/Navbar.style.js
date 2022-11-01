@@ -1,8 +1,6 @@
 import { VoiceUpColors } from "../../colors";
 import styled from "styled-components";
-import { Container } from '../../globalStyle';
 import { NavLink } from 'react-router-dom';
-import { FaMagento } from 'react-icons/fa';
 
 // To see all borders (design debug)
 var DEBUG = false;
@@ -118,6 +116,24 @@ export const LangSwitch = styled.li`
     }
 `;
 
+export const FRSwitch = styled.span`
+    color: ${VoiceUpColors.grey};
+    margin-right: 2px;
+    text-decoration: ${({lang}) => 
+        (lang === "FR" && "underline") ||
+        "none"
+    }; 
+`;
+
+export const ENSwitch = styled.span`
+    color: ${VoiceUpColors.grey};
+    margin-left: 2px;
+    text-decoration: ${({lang}) => 
+        (lang === "EN" && "underline") ||
+        "none"
+    }; 
+`;
+
 export const NavLinks = styled(NavLink)`
     text-decoration: none;
     text-transform: uppercase;
@@ -128,8 +144,7 @@ export const NavLinks = styled(NavLink)`
 
     &.active {
         color: ${VoiceUpColors.gold};
-    }
-    
+    }    
 `;
 
 export const SocialContainer = styled.div`
