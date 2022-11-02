@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { useState, createContext } from "react";
 import GlobalStyle from "./globalStyle";
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Lessons from "./pages/Lessons";
 import Teacher from "./pages/Teacher";
 import Conditions from "./pages/Conditions";
