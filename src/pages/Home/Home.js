@@ -2,12 +2,13 @@ import React from 'react';
 import ImageSlider from '../../components/ImageSlider/ImageSlider';
 import { SliderContainer } from './Home.style';
 import Tania1 from "../../assets/headers/Header_Tania1.jpg"
-import showerDude from "../../assets/headers/Header_ShowerDude.jpg"
+import ShowerDude from "../../assets/headers/Header_ShowerDude.jpg"
+import GoldMic from "../../assets/headers/Header_GoldMic.jpg"
 
 const slides = [
-    {url: Tania1, imgTitle:"Tania", title:"Cours de chant", description: "BlaBlaBlaBlaBlaBlaBlaBlaBla"},
-    {url: showerDude, imgTitle:"Shower Dude", title:"Take a shower", description: "Take a long shower, you smelly cat !"},
-    {url: "", imgTitle:"", title:"", description: ""}
+    {url: Tania1, imgTitle:"Tania", title:"Cours de chant", description: "Tu chantes mal ? Pas de soucis, viens dépenser ton argent chez moi ! Regarde, en plus j'ai la classe !"},
+    {url: ShowerDude, imgTitle:"Shower Dude", title:"Une senteur", description: "Hé bah prend une douche, you smelly cat !"},
+    {url: GoldMic, imgTitle:"Gold Mic", title:"Casserole", description: "Viens t'inscrire à l'école du micro d'or !"}
 ]
 
 const Home = () => {
