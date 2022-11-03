@@ -16,6 +16,7 @@ export const SliderWrapper = styled.div`
     background-position: 50% 20%;
     background-repeat: no-repeat;
     background-size: 100%;
+    transition: background-image 0.9s ease;
 
     @media screen and (max-width: 960px) {
         background-position: 65% 20%;
