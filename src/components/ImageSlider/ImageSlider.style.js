@@ -11,11 +11,13 @@ export const SliderWrapper = styled.div`
         console.log(props.imageURL)
         return `url(${props.imageURL})`
     }};
-    background-position: 100% 30%;
+    background-position: 50% 20%;
     background-repeat: no-repeat;
     background-size: 100%;
 
     @media screen and (max-width: 960px) {
-        background-position: center;
+        background-position: 65% 20%;
+        background-size: cover;
+        padding-left: 20px;    
     }
 `;

@@ -1,8 +1,8 @@
 import React from 'react';
 import ImageSlider from '../../components/ImageSlider/ImageSlider';
 import { SliderContainer } from './Home.style';
-import Tania1 from "../../assets/images/Tania/Tania1_medium.jpg"
-import showerDude from "../../assets/images/stock/showerDude_medium.jpg"
+import Tania1 from "../../assets/headers/Header_Tania1.jpg"
+import showerDude from "../../assets/headers/Header_ShowerDude.jpg"
 
 const slides = [
     {url: Tania1, imgTitle:"Tania", title:"Cours de chant", description: "BlaBlaBlaBlaBlaBlaBlaBlaBla"},
