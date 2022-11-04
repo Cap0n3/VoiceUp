@@ -58,7 +58,7 @@ export const BoxWrapper = styled.div`
         transition: ${({transitionTime}) => {
             const duration = transitionTime;
             const boxWait = transitionTime + 250;
-            return `opacity ${duration}ms ${boxWait}ms ease, height ${duration + 300}ms ${boxWait}ms ease`
+            return `opacity ${duration}ms ${boxWait}ms ease, height ${duration + 400}ms ${boxWait}ms ease`
         }};
     }
 
