@@ -42,11 +42,12 @@ export const Slide = styled.div`
 `;
 
 export const BoxWrapper = styled.div`
+    width: 45%;
     position: absolute;
     top: 0;
     display: flex;
     align-items: center;  
-    left: 20%;
+    left: 15%;
     ${debug ? "border: 1px solid pink;" : ""}
     z-index: 900;
     overflow-y: hidden;
