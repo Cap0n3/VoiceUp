@@ -40,6 +40,7 @@ const ImageSlider = ({slides, transitionTime}) => {
         const newIndex = isLastSlide ? 0 : currentIndex + 1;
         changeAndFadeOpacity(newIndex);
     };
+    
     /**
      * Here to make slide reappear by changing back class to active.
      */
@@ -51,6 +52,17 @@ const ImageSlider = ({slides, transitionTime}) => {
             }, transitionTime);
         }
     }, [isActive]);
+
+    /**
+     * Timer for slides (auto change)
+     */
+    useEffect(() => {
+        const timer = setInterval(() => {
+            goToNext();
+        }, 8000);
+        // clearing interval
+        return () => clearInterval(timer);
+    });
 
     return(
         <SliderWrapper>

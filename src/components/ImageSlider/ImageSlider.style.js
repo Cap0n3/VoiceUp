@@ -16,7 +16,7 @@ export const Slide = styled.div`
     width: 100%;
     height: 100%;
     background-image: ${(props) => {
-        console.log(props.imageURL)
+        // console.log(props.imageURL)
         return `url(${props.imageURL})`
     }};
     background-position: 50% 20%;
