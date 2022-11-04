@@ -15,7 +15,7 @@ const Home = () => {
     return(
         <>
             <SliderContainer>
-                <ImageSlider slides={slides} transitionTime={500}></ImageSlider>
+                <ImageSlider slides={slides} transitionTime={300}></ImageSlider>
             </SliderContainer>
             <h1>Home Page</h1>
             <p>I'm a home page</p>

@@ -1,10 +1,15 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 
+// Show borders for debugging
+const debug = false;
+
 export const SliderWrapper = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
+    background-color: #000;
+    ${debug ? "border: 1px solid red;" : ""}
 `;
 
 export const Slide = styled.div`
@@ -21,12 +26,12 @@ export const Slide = styled.div`
 
     &.active {
         opacity: 1;
-        transition: opacity 500ms ease;
+        transition: ${({transitionTime}) => `opacity ${transitionTime}ms ease-in`};
     }
 
     &.inactive {
         opacity: 0;
-        transition: opacity 500ms ease;
+        transition: ${({transitionTime}) => `opacity ${transitionTime}ms ease-in`};
     }
 
     @media screen and (max-width: 960px) {
@@ -36,62 +41,77 @@ export const Slide = styled.div`
     }
 `;
 
-export const TextBox = styled.div`
+export const BoxWrapper = styled.div`
     position: absolute;
-    top: 20%;
-    bottom: 20%;
-    left: 140px;
-    border: 1px solid pink;
+    top: 0;
+    display: flex;
+    align-items: center;  
+    left: 20%;
+    ${debug ? "border: 1px solid pink;" : ""}
     z-index: 900;
-    overflow: hidden;
+    overflow-y: hidden;
 
+    &.active {
+        opacity: 1;
+        height: 100%;
+        transition: ${({transitionTime}) => {
+            const duration = transitionTime;
+            const boxWait = transitionTime + 250;
+            return `opacity ${duration}ms ${boxWait}ms ease, height ${duration + 300}ms ${boxWait}ms ease`
+        }};
+    }
+
+    &.inactive {
+        opacity: 0;
+        height: 0;
+        transition: ${({transitionTime}) => {
+            const duration = transitionTime;
+            return `opacity ${duration}ms ease, height ${duration}ms ease`
+        }};
+    }
+
+    @media screen and (max-width: 960px) {
+        width: 60%;
+    }
+`;
+
+export const TextBox = styled.div`
+    overflow-wrap: break-word;
+    
     & > h1 {
         color: ${VoiceUpColors.white};
         font-size: 4em;
         text-transform: uppercase;
         font-weight: normal;
         margin-bottom: 30px;
+
+        @media screen and (max-width: 960px) {
+            font-size: 2.2em;
+        }
     }
 
     & > p {
         color: ${VoiceUpColors.white};
     }
-
-    &.active {
-        opacity: 1;
-        height: 300px;
-        transition: opacity 500ms 800ms ease, height 500ms 800ms;
-    }
-
-    &.inactive {
-        opacity: 0;
-        height: 0;
-        transition: opacity 500ms ease;
-    }
-
-    @media screen and (max-width: 960px) {
-        width: 40%;
-    }
 `;
+
 
 export const LeftArrow = styled.div`
     position: absolute;
     top: 50%;
-    transform: translate(0, -50%);
     left: 32px;
     font-size: 40px;
-    color: red;
     z-index: 999;
     cursor: pointer;
+    ${debug ? "border: 1px solid purple;" : ""}
 `;
 
 export const RightArrow = styled.div`
     position: absolute;
     top: 50%;
-    transform: translate(0, -50%);
     right: 32px;
     font-size: 40px;
-    color: red;
     z-index: 999;
     cursor: pointer;
+    ${debug ? "border: 1px solid purple;" : ""}
 `;
