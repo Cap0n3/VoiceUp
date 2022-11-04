@@ -2,13 +2,14 @@ import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 
 export const SliderWrapper = styled.div`
-    display: flex;
     position: relative;
-    align-items: center;
     width: 100%;
     height: 100%;
-    padding-left: 160px;
-    background-color: yellow;
+`;
+
+export const Slide = styled.div`
+    width: 100%;
+    height: 100%;
     background-image: ${(props) => {
         console.log(props.imageURL)
         return `url(${props.imageURL})`
@@ -16,7 +17,17 @@ export const SliderWrapper = styled.div`
     background-position: 50% 20%;
     background-repeat: no-repeat;
     background-size: 100%;
-    transition: background-image 0.9s ease;
+    z-index: 1;
+
+    &.active {
+        opacity: 1;
+        transition: opacity 500ms ease;
+    }
+
+    &.inactive {
+        opacity: 0;
+        transition: opacity 500ms ease;
+    }
 
     @media screen and (max-width: 960px) {
         background-position: 65% 20%;
@@ -26,7 +37,12 @@ export const SliderWrapper = styled.div`
 `;
 
 export const TextBox = styled.div`
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+    left: 140px;
     border: 1px solid pink;
+    z-index: 900;
 
     & > h1 {
         color: ${VoiceUpColors.white};
@@ -51,8 +67,8 @@ export const LeftArrow = styled.div`
     transform: translate(0, -50%);
     left: 32px;
     font-size: 40px;
-    color: #fff;
-    z-index: 1;
+    color: red;
+    z-index: 999;
     cursor: pointer;
 `;
 
@@ -62,7 +78,7 @@ export const RightArrow = styled.div`
     transform: translate(0, -50%);
     right: 32px;
     font-size: 40px;
-    color: #fff;
-    z-index: 1;
+    color: red;
+    z-index: 999;
     cursor: pointer;
 `;
