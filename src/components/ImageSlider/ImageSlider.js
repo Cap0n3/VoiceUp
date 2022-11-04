@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { SliderWrapper, Slide, TextBox, LeftArrow, RightArrow } from './ImageSlider.style';
 
-const ImageSlider = ({slides}) => {
+const ImageSlider = ({slides, transitionTime}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isActive, setIsActive] = useState(true);
-    
+
     // === Slide change functions === //
 
     /**
@@ -21,7 +21,7 @@ const ImageSlider = ({slides}) => {
         // Then, wait transition to finish and change image to next one
         setTimeout(() => {
             setCurrentIndex(new_index);
-        }, 500);
+        }, transitionTime);
     };
 
     const goToPrevious = () => {
@@ -42,7 +42,7 @@ const ImageSlider = ({slides}) => {
         if(isActive === false) {
             setTimeout(() => {
                 setIsActive(true);
-            }, 500);
+            }, transitionTime);
         }
     }, [isActive]);
 
@@ -50,8 +50,8 @@ const ImageSlider = ({slides}) => {
         <SliderWrapper>
             <LeftArrow onClick={goToPrevious}>❰</LeftArrow>
             <RightArrow onClick={goToNext}>❱</RightArrow>
-            <Slide imageURL={slides[currentIndex].url} className={isActive ? "active" : "inactive"}></Slide>
-            <TextBox>
+            <Slide imageURL={slides[currentIndex].url} className={isActive ? "active" : "inactive"} transitionTime={transitionTime}></Slide>
+            <TextBox className={isActive ? "active" : "inactive"} transitionTime={transitionTime}>
                 <h1>{slides[currentIndex].title}</h1>
                 <p>{slides[currentIndex].description}</p>
             </TextBox>       

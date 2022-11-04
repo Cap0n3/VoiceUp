@@ -43,6 +43,7 @@ export const TextBox = styled.div`
     left: 140px;
     border: 1px solid pink;
     z-index: 900;
+    overflow: hidden;
 
     & > h1 {
         color: ${VoiceUpColors.white};
@@ -54,6 +55,18 @@ export const TextBox = styled.div`
 
     & > p {
         color: ${VoiceUpColors.white};
+    }
+
+    &.active {
+        opacity: 1;
+        height: 300px;
+        transition: opacity 500ms 800ms ease, height 500ms 800ms;
+    }
+
+    &.inactive {
+        opacity: 0;
+        height: 0;
+        transition: opacity 500ms ease;
     }
 
     @media screen and (max-width: 960px) {
