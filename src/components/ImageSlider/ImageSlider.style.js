@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 
 // Show borders for debugging
-const debug = false;
+const debug = true;
 
 export const SliderWrapper = styled.div`
     position: relative;
@@ -50,6 +50,7 @@ export const BoxWrapper = styled.div`
     left: 15%;
     ${debug ? "border: 1px solid pink;" : ""}
     z-index: 900;
+    overflow: visible;
     overflow-y: hidden;
 
     &.active {
@@ -72,11 +73,16 @@ export const BoxWrapper = styled.div`
     }
 
     @media screen and (max-width: 960px) {
-        width: 60%;
+        left: 25%;
+        width: ${({headerWidth}) => (
+            headerWidth ? `${(headerWidth / 2)}px` : "50px"
+        )};
     }
 `;
 
 export const TextBox = styled.div`
+    width: 100%;
+    overflow: visible;
     overflow-wrap: break-word;
     
     & > h1 {
@@ -96,7 +102,6 @@ export const TextBox = styled.div`
     }
 `;
 
-
 export const LeftArrow = styled.div`
     position: absolute;
     top: 50%;
@@ -105,6 +110,11 @@ export const LeftArrow = styled.div`
     z-index: 999;
     cursor: pointer;
     ${debug ? "border: 1px solid purple;" : ""}
+
+    @media screen and (max-width: 960px) {
+        left 25px;
+        font-size: 30px;
+    }
 `;
 
 export const RightArrow = styled.div`
@@ -115,4 +125,9 @@ export const RightArrow = styled.div`
     z-index: 999;
     cursor: pointer;
     ${debug ? "border: 1px solid purple;" : ""}
+
+    @media screen and (max-width: 960px) {
+        right: 25px;
+        font-size: 30px;
+    }
 `;

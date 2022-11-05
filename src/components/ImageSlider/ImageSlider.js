@@ -10,6 +10,7 @@ const iconStyle = {
 const ImageSlider = ({slides, transitionTime}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isActive, setIsActive] = useState(true);
+    const [screenWidth, setScreenWidth] = useState(null); 
 
     // === Slide change functions === //
     /**
@@ -64,6 +65,15 @@ const ImageSlider = ({slides, transitionTime}) => {
         return () => clearInterval(timer);
     });
 
+    useEffect(() => {
+        window.addEventListener("load", (event) => {setScreenWidth(window.innerWidth)})
+        window.addEventListener("resize", (event) => {setScreenWidth(window.innerWidth)})
+        return () => {
+            window.removeEventListener("load", (event) => {setScreenWidth(window.innerWidth)})
+            window.removeEventListener("resize", (event) => {setScreenWidth(window.innerWidth)})
+        }
+    }, [])
+
     return(
         <SliderWrapper>
             <LeftArrow onClick={goToPrevious}>
@@ -73,7 +83,7 @@ const ImageSlider = ({slides, transitionTime}) => {
                 <BsArrowRightCircle style={iconStyle} />
             </RightArrow>
             <Slide imageURL={slides[currentIndex].url} className={isActive ? "active" : "inactive"} transitionTime={transitionTime}></Slide>
-            <BoxWrapper className={isActive ? "active" : "inactive"} transitionTime={transitionTime}>
+            <BoxWrapper className={isActive ? "active" : "inactive"} transitionTime={transitionTime} headerWidth={screenWidth ? screenWidth : null}>
                 <TextBox>
                     <h1>{slides[currentIndex].title}</h1>
                     <p>{slides[currentIndex].description}</p>
