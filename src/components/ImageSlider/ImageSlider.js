@@ -1,17 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { SliderWrapper, Slide, BoxWrapper, TextBox, LeftArrow, RightArrow } from './ImageSlider.style';
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
+import { ScreenContext } from '../../contexts/screenContext';
 
 const iconStyle = {
     fontSize: "0.7em",
     fill: "white"
 }
 
+const dotsContainerStyles = {
+    display: "flex",
+    justifyContent: "center",
+};
+  
+const dotStyle = {
+    margin: "0 3px",
+    cursor: "pointer",
+    fontSize: "20px",
+};
+
 const ImageSlider = ({slides, transitionTime}) => {
+    const screenSize = useContext(ScreenContext);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isActive, setIsActive] = useState(true);
-    const [screenWidth, setScreenWidth] = useState(null); 
-
+    
     // === Slide change functions === //
     /**
      * This function changes slide and trigger opacity change by setting state to false
@@ -41,6 +53,10 @@ const ImageSlider = ({slides, transitionTime}) => {
         const newIndex = isLastSlide ? 0 : currentIndex + 1;
         changeAndFadeOpacity(newIndex);
     };
+
+    const goToSlide = (slideIndex) => {
+        changeAndFadeOpacity(slideIndex);
+    };
     
     /**
      * Here to make slide reappear by changing back class to active.
@@ -65,15 +81,6 @@ const ImageSlider = ({slides, transitionTime}) => {
         return () => clearInterval(timer);
     });
 
-    useEffect(() => {
-        window.addEventListener("load", (event) => {setScreenWidth(window.innerWidth)})
-        window.addEventListener("resize", (event) => {setScreenWidth(window.innerWidth)})
-        return () => {
-            window.removeEventListener("load", (event) => {setScreenWidth(window.innerWidth)})
-            window.removeEventListener("resize", (event) => {setScreenWidth(window.innerWidth)})
-        }
-    }, [])
-
     return(
         <SliderWrapper>
             <LeftArrow onClick={goToPrevious}>
@@ -83,12 +90,19 @@ const ImageSlider = ({slides, transitionTime}) => {
                 <BsArrowRightCircle style={iconStyle} />
             </RightArrow>
             <Slide imageURL={slides[currentIndex].url} className={isActive ? "active" : "inactive"} transitionTime={transitionTime}></Slide>
-            <BoxWrapper className={isActive ? "active" : "inactive"} transitionTime={transitionTime} headerWidth={screenWidth ? screenWidth : null}>
+            <BoxWrapper className={isActive ? "active" : "inactive"} transitionTime={transitionTime} headerWidth={screenSize.innerWidth ? screenSize.innerWidth : null}>
                 <TextBox>
                     <h1>{slides[currentIndex].title}</h1>
                     <p>{slides[currentIndex].description}</p>
                 </TextBox>   
-            </BoxWrapper>       
+            </BoxWrapper>
+            <div style={dotsContainerStyles}>
+                {slides.map((slide, slideIndex) => (
+                    <div style={dotStyle} key={slideIndex} onClick={() => goToSlide(slideIndex)}>
+                        ●
+                    </div>
+                ))}
+            </div>     
         </SliderWrapper>
     );
 }

@@ -8,6 +8,7 @@ import Teacher from "./pages/Teacher";
 import Conditions from "./pages/Conditions";
 import Prices from "./pages/Prices";
 import Contact from "./pages/Conctact";
+import { ScreenProvider } from "./contexts/screenContext";
 
 export const LangContext = createContext();
 
@@ -17,6 +18,7 @@ function App() {
 	const value = { language, setLanguage }
 	return (
 		<>
+			<ScreenProvider>
 			<LangContext.Provider value={value}>
 				<GlobalStyle />
 				<Navbar />
@@ -29,6 +31,7 @@ function App() {
 					<Route path="/contact" element={<Contact />} />
 				</Routes>
 			</LangContext.Provider>
+			</ScreenProvider>
 		</>
 		
 	);

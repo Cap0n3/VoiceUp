@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 
 // Show borders for debugging
-const debug = true;
+const debug = false;
 
 export const SliderWrapper = styled.div`
     position: relative;
