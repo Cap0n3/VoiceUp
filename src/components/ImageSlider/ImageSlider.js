@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { SliderWrapper, Slide, BoxWrapper, TextBox, LeftArrow, RightArrow } from './ImageSlider.style';
+import { SliderWrapper, Slide, BoxWrapper, TextBox, LeftArrow, RightArrow, DotWrapper, Dot } from './ImageSlider.style';
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
 import { ScreenContext } from '../../contexts/screenContext';
 
@@ -7,17 +7,6 @@ const iconStyle = {
     fontSize: "0.7em",
     fill: "white"
 }
-
-const dotsContainerStyles = {
-    display: "flex",
-    justifyContent: "center",
-};
-  
-const dotStyle = {
-    margin: "0 3px",
-    cursor: "pointer",
-    fontSize: "20px",
-};
 
 const ImageSlider = ({slides, transitionTime}) => {
     const screenSize = useContext(ScreenContext);
@@ -96,13 +85,13 @@ const ImageSlider = ({slides, transitionTime}) => {
                     <p>{slides[currentIndex].description}</p>
                 </TextBox>   
             </BoxWrapper>
-            <div style={dotsContainerStyles}>
+            <DotWrapper>
                 {slides.map((slide, slideIndex) => (
-                    <div style={dotStyle} key={slideIndex} onClick={() => goToSlide(slideIndex)}>
+                    <Dot key={slideIndex} className={(slideIndex === currentIndex) ? "active" : "inactive" } onClick={() => goToSlide(slideIndex)}>
                         ●
-                    </div>
+                    </Dot>
                 ))}
-            </div>     
+            </DotWrapper>     
         </SliderWrapper>
     );
 }

@@ -131,3 +131,30 @@ export const RightArrow = styled.div`
         font-size: 30px;
     }
 `;
+
+export const DotWrapper = styled.div`
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    right: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const Dot = styled.div`
+    margin: 0 3px;
+    cursor: pointer;
+
+    &.active {
+        color: ${VoiceUpColors.gold};
+        font-size: 23px;
+    }
+
+    &.inactive {
+        color: ${VoiceUpColors.gold};
+        opacity: 0.6;
+        font-size: 20px;
+    }
+    
+`;
