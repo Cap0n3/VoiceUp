@@ -36,9 +36,16 @@ export const Slide = styled.div`
 
     @media screen and (max-width: 960px) {
         background-position: 65% 20%;
-        background-size: cover;
-        padding-left: 100px;    
+        background-size: cover;      
     }
+`;
+
+export const SlideOverlay = styled.div`
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.4;
+    zIndex: 5;
 `;
 
 export const BoxWrapper = styled.div`

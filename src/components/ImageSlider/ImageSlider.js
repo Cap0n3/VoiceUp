@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { SliderWrapper, Slide, BoxWrapper, TextBox, LeftArrow, RightArrow, DotWrapper, Dot } from './ImageSlider.style';
+import { SliderWrapper, Slide, SlideOverlay, BoxWrapper, TextBox, LeftArrow, RightArrow, DotWrapper, Dot } from './ImageSlider.style';
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
 import { ScreenContext } from '../../contexts/screenContext';
 
@@ -78,7 +78,9 @@ const ImageSlider = ({slides, transitionTime}) => {
             <RightArrow onClick={goToNext}>
                 <BsArrowRightCircle style={iconStyle} />
             </RightArrow>
-            <Slide imageURL={slides[currentIndex].url} className={isActive ? "active" : "inactive"} transitionTime={transitionTime}></Slide>
+            <Slide imageURL={slides[currentIndex].url} className={isActive ? "active" : "inactive"} transitionTime={transitionTime}>
+                {(screenSize.innerWidth <= 960) ? <SlideOverlay></SlideOverlay> : ""}
+            </Slide>      
             <BoxWrapper className={isActive ? "active" : "inactive"} transitionTime={transitionTime} headerWidth={screenSize.innerWidth ? screenSize.innerWidth : null}>
                 <TextBox>
                     <h1>{slides[currentIndex].title}</h1>
