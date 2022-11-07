@@ -57,8 +57,6 @@ export const BoxWrapper = styled.div`
     left: 15%;
     ${debug ? "border: 1px solid pink;" : ""}
     z-index: 900;
-    overflow: visible;
-    overflow-y: hidden;
 
     &.active {
         opacity: 1;
@@ -89,7 +87,7 @@ export const BoxWrapper = styled.div`
 
 export const TextBox = styled.div`
     width: 100%;
-    overflow: visible;
+    overflow-x: visible;
     overflow-wrap: break-word;
     
     & > h1 {

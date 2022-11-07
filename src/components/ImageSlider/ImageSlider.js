@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { SliderWrapper, Slide, SlideOverlay, BoxWrapper, TextBox, LeftArrow, RightArrow, DotWrapper, Dot } from './ImageSlider.style';
-import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
-import { ScreenContext } from '../../contexts/screenContext';
+import React, { useEffect, useState, useContext } from "react";
+import { SliderWrapper, Slide, SlideOverlay, BoxWrapper, TextBox, LeftArrow, RightArrow, DotWrapper, Dot } from "./ImageSlider.style";
+import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
+import { ScreenContext } from "../../contexts/screenContext";
+import { Button } from "../../globalStyle";
 
 const iconStyle = {
     fontSize: "0.7em",
@@ -84,8 +85,9 @@ const ImageSlider = ({slides, transitionTime}) => {
             <BoxWrapper className={isActive ? "active" : "inactive"} transitionTime={transitionTime} headerWidth={screenSize.innerWidth ? screenSize.innerWidth : null}>
                 <TextBox>
                     <h1>{slides[currentIndex].title}</h1>
-                    <p>{slides[currentIndex].description}</p>
-                </TextBox>   
+                    <p style={{marginBottom: "40px"}}>{slides[currentIndex].description}</p>
+                    <Button>{slides[currentIndex].buttonText}</Button>
+                </TextBox>
             </BoxWrapper>
             <DotWrapper>
                 {slides.map((slide, slideIndex) => (
