@@ -14,8 +14,8 @@ const cursiveSpan = {
 
 const slides = [
     {url: Tania1, imgTitle:"Tania", title:<>Cours <span style={cursiveSpan}>de</span> chant</>, description: "Tu chantes mal ? Pas de soucis, viens dépenser ton argent chez moi ! Regarde, en plus j'ai la classe !"},
-    {url: ShowerDude, imgTitle:"Shower Dude", title:"Une senteur", description: "Hé bah prend une douche, you smelly cat !"},
-    {url: GoldMic, imgTitle:"Gold Mic", title:"Casserole", description: "Viens t'inscrire à l'école du micro d'or !"}
+    {url: ShowerDude, imgTitle:"Shower Dude", title:<>Une <span style={cursiveSpan}>forte</span> senteur ?</>, description: "Hé bah prend une douche, you smelly cat !"},
+    {url: GoldMic, imgTitle:"Gold Mic", title:<>Chante <span style={cursiveSpan}>maintenant</span></>, description: "Viens t'inscrire à l'école du micro d'or !"}
 ]
 
 const Home = () => {

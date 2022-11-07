@@ -112,8 +112,7 @@ export const LeftArrow = styled.div`
     ${debug ? "border: 1px solid purple;" : ""}
 
     @media screen and (max-width: 960px) {
-        left 25px;
-        font-size: 30px;
+        display: none;
     }
 `;
 
@@ -127,8 +126,7 @@ export const RightArrow = styled.div`
     ${debug ? "border: 1px solid purple;" : ""}
 
     @media screen and (max-width: 960px) {
-        right: 25px;
-        font-size: 30px;
+        display: none;
     }
 `;
 
@@ -140,6 +138,7 @@ export const DotWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 998;
 `;
 
 export const Dot = styled.div`
@@ -156,5 +155,8 @@ export const Dot = styled.div`
         opacity: 0.6;
         font-size: 20px;
     }
-    
+
+    @media screen and (max-width: 960px) {
+        margin: 0 5px;
+    } 
 `;

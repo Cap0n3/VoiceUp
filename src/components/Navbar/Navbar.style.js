@@ -5,10 +5,14 @@ import { NavLink } from 'react-router-dom';
 // To see all borders (design debug)
 var DEBUG = false;
 
+// Globals
+const navbarHeight = "80px";
+const mobileNavbarHeight = "60px";
+
 export const Nav = styled.nav `
     display: flex;
     flex-grow: 1;
-    height: 80px;
+    height: ${navbarHeight};
     justify-content: center;
     align-items: center;
     font-size: 1.1em;
@@ -16,13 +20,17 @@ export const Nav = styled.nav `
     top: 0;
     z-index: 999;
     background: ${VoiceUpColors.white};
+
+    @media screen and (max-width: 960px) {
+        height: ${mobileNavbarHeight};
+    }
     
 `;
 
 export const NavbarWrapper = styled.div`
     display: flex;
     flex-grow: 1;
-    height: 80px;
+    height: 100%;
 
     @media screen and (max-width: 960px) {
         flex-direction: row-reverse;
@@ -51,7 +59,7 @@ export const MenuContainer = styled.div`
     flex-grow: 1;
     min-width: 1080px;
     align-items: center;
-    height: 80px;
+    height: 100%;
     ${(DEBUG) ? "background: lightgreen;" : ""}
     
     @media screen and (max-width: 960px) {
@@ -77,7 +85,7 @@ export const NavMenu = styled.ul`
         position: absolute;
         width: 100%;
         height: 90vh;
-        top: 80px;
+        top: ${mobileNavbarHeight};
         ${'' /* Cannot go right otherwise it extend screen */}
         left: ${({click}) => (click ? 0 : "-100%")};
         opacity: 1;
@@ -89,7 +97,7 @@ export const NavMenu = styled.ul`
 export const NavItem = styled.li`
     display: flex;
     align-items: center;
-    height: 80px;
+    height: ${navbarHeight};
     border-bottom: 2px solid transparent;
     cursor: pointer;
     ${(DEBUG) ? "background: pink;" : ""}
@@ -97,12 +105,16 @@ export const NavItem = styled.li`
     &:hover {
         border-bottom: 2px solid ${VoiceUpColors.gold};
     };
+
+    @media screen and (max-width: 960px) {
+        height: 90px;
+    }
 `;
 
 export const LangSwitch = styled.li`
     display: flex;
     align-items: center;
-    height: 80px;
+    height: ${navbarHeight};
     cursor: pointer;
     font-size: 0.8em;
     color: ${VoiceUpColors.grey};
