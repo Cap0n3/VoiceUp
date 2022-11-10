@@ -47,7 +47,7 @@ const ImageSlider = ({slides, transitionTime}) => {
     const goToSlide = (slideIndex) => {
         changeAndFadeOpacity(slideIndex);
     };
-    
+
     /**
      * Here to make slide reappear by changing back class to active.
      */

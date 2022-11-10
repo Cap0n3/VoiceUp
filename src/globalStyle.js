@@ -39,7 +39,7 @@ export const Container = styled.div`
 // For more cool button FX : https://alvarotrigo.com/blog/best-css-button-hover-effects/
 export const Button = styled.button`
     white-space: nowrap;
-    padding: 12px 64px;
+    padding: 12px 60px;
     color: #fff;
     font-size: 16px;
     outline: none;
@@ -56,6 +56,7 @@ export const Button = styled.button`
     
     @media screen and (max-width: 960px) {
         width: 100%;
+        padding: 12px 30px;
     }
 `;
 
