@@ -6,13 +6,13 @@ import { NavLink } from 'react-router-dom';
 var DEBUG = false;
 
 // Globals
-const navbarHeight = "80px";
-const mobileNavbarHeight = "60px";
+const navbarHeight = 80;
+const mobileNavbarHeight = 60;
 
 export const Nav = styled.nav `
     display: flex;
     flex-grow: 1;
-    height: ${navbarHeight};
+    height: ${navbarHeight}px;
     justify-content: center;
     align-items: center;
     font-size: 1.1em;
@@ -22,7 +22,7 @@ export const Nav = styled.nav `
     background: ${VoiceUpColors.white};
 
     @media screen and (max-width: 960px) {
-        height: ${mobileNavbarHeight};
+        height: ${mobileNavbarHeight}px;
     }
     
 `;
@@ -84,8 +84,8 @@ export const NavMenu = styled.ul`
         gap: 0px;
         position: absolute;
         width: 100%;
-        height: 90vh;
-        top: ${mobileNavbarHeight};
+        height: calc(100vh - ${mobileNavbarHeight}px);
+        top: ${mobileNavbarHeight}px;
         ${'' /* Cannot go right otherwise it extend screen */}
         left: ${({click}) => (click ? 0 : "-100%")};
         opacity: 1;
@@ -97,7 +97,7 @@ export const NavMenu = styled.ul`
 export const NavItem = styled.li`
     display: flex;
     align-items: center;
-    height: ${navbarHeight};
+    height: ${navbarHeight}px;
     border-bottom: 2px solid transparent;
     cursor: pointer;
     ${(DEBUG) ? "background: pink;" : ""}
@@ -114,7 +114,7 @@ export const NavItem = styled.li`
 export const LangSwitch = styled.li`
     display: flex;
     align-items: center;
-    height: ${navbarHeight};
+    height: ${navbarHeight}px;
     cursor: pointer;
     font-size: 0.8em;
     color: ${VoiceUpColors.grey};
