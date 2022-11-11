@@ -10,7 +10,33 @@ const cursiveSpan = {
 }
 
 export const slides = [
-    {url: Tania1, imgTitle:"Tania", title:<>Cours <span style={cursiveSpan}>de</span> chant</>, description: "Tu chantes mal ? Pas de soucis, viens dépenser ton argent chez moi ! Regarde, en plus j'ai la classe !", buttonText: "S'inscrire"},
-    {url: ShowerDude, imgTitle:"Shower Dude", title:<>Une <span style={cursiveSpan}>forte</span> senteur ?</>, description: "Hé bah prend une douche, you smelly cat !", buttonText: "Plus d'infos"},
-    {url: GoldMic, imgTitle:"Gold Mic", title:<>Chante <span style={cursiveSpan}>maintenant</span></>, description: "Viens t'inscrire à l'école du micro d'or !", buttonText: "Découvrir"}
+    {
+        url: Tania1, 
+        imgTitle:"Tania", 
+        titleFR:<>Cours <span style={cursiveSpan}>de</span> chant</>,
+        titleEN:<>Private <span style={cursiveSpan}>Singing</span> Lessons</>,
+        descriptionFR: "Tu chantes mal ? Pas de soucis, viens dépenser ton argent chez moi ! Regarde, en plus j'ai la classe !",
+        descriptionEN: "private singing lessons can speed up your progress, make practice more enjoyable, and improve your chances of gaining any real success in the music industry.", 
+        buttonFR: "S'inscrire",
+        buttonEN: "Book a lesson"
+    },
+    {
+        url: ShowerDude, 
+        imgTitle:"Shower Dude", 
+        titleFR:<>Une <span style={cursiveSpan}>forte</span> senteur ?</>,
+        titleEN:<>Take <span style={cursiveSpan}>a good</span> shower</>, 
+        descriptionFR: "Hé bah prend une douche, you smelly cat !",
+        descriptionEN: "It feels so good to take a good shower !", 
+        buttonFR: "Plus d'infos",
+        buttonEN: "More info"
+    },
+    {
+        url: GoldMic, imgTitle:"Gold Mic", 
+        titleFR:<>Chante <span style={cursiveSpan}>maintenant</span></>,
+        titleEN:<>30 <span style={cursiveSpan}>Day</span> Singer</>,
+        descriptionFR: "Viens t'inscrire à l'école du micro d'or !",
+        descriptionEN: "The fundamentals of singing have never been this fun and easy completely step-by-step so you know exactly what to do everytime you practice !", 
+        buttonFR: "Découvrir",
+        buttonEN: "Discover"
+    }
 ]

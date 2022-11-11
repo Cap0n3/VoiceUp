@@ -1,5 +1,5 @@
 /**
- * JSX icons.
+ * JSX icon.
  * 
  * IMPORTANT : to use svg with React, don't forget to convert <svg> attributes like 'sketch:type' TO 'sketchType', 
  * 'xmlns:xlink' TO 'xmlnsXlink' or 'xlink:href' TO 'xlinkHref' otherwise it won't work.

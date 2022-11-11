@@ -3,6 +3,7 @@ import { SliderWrapper, Slide, SlideOverlay, BoxWrapper, TextBox, LeftArrow, Rig
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import { ScreenContext } from "../../contexts/screenContext";
 import { Button } from "../../globalStyle";
+import { LangContext } from '../../App';
 
 const iconStyle = {
     fontSize: "0.7em",
@@ -11,6 +12,7 @@ const iconStyle = {
 
 const ImageSlider = ({slides, transitionTime}) => {
     const screenSize = useContext(ScreenContext);
+    const {language} = useContext(LangContext);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isActive, setIsActive] = useState(true);
     
@@ -84,9 +86,9 @@ const ImageSlider = ({slides, transitionTime}) => {
             </Slide>      
             <BoxWrapper className={isActive ? "active" : "inactive"} transitionTime={transitionTime} headerWidth={screenSize.innerWidth ? screenSize.innerWidth : null}>
                 <TextBox>
-                    <h1>{slides[currentIndex].title}</h1>
-                    <p style={{marginBottom: "40px"}}>{slides[currentIndex].description}</p>
-                    <Button>{slides[currentIndex].buttonText}</Button>
+                    <h1>{(language === "FR") ? slides[currentIndex].titleFR : slides[currentIndex].titleEN}</h1>
+                    <p style={{marginBottom: "40px"}}>{(language === "FR") ? slides[currentIndex].descriptionFR : slides[currentIndex].descriptionEN}</p>
+                    <Button>{(language === "FR") ? slides[currentIndex].buttonFR : slides[currentIndex].buttonEN}</Button>
                 </TextBox>
             </BoxWrapper>
             <DotWrapper>

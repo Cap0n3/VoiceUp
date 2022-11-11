@@ -104,8 +104,6 @@ export const TextDiv = styled.div`
         }
 
         &>p {
-            text-align: justify;
-            text-justify: inter-character;
             margin-bottom: 30px;
             padding-left: 0;
             padding-right: 0;
