@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { VoiceUpColors } from "../../colors";
 
-const debug = true;
+const debug = false;
 
 export const SectionWrapper = styled.div`
     display: flex;
@@ -20,7 +21,7 @@ export const ImgContainer = styled.div`
     ${debug ? "background-color: lightblue;" : ""}
 `;
 
-export const TextContainer = styled.div`
+export const CardContainer = styled.div`
     width: 100%;
     overflow: hidden;
     ${debug ? "background-color: coral;" : ""}
@@ -29,11 +30,16 @@ export const TextContainer = styled.div`
 export const ImageDiv = styled.div`
     width: 100%;
     height: 100%;
-    background-image: url("https://www.myvoiceup.ch/wp-content/uploads/2019/08/12002813_749108578551288_8484097227807049213_n.jpg");
+    background-image: url(${({imgSRC}) => imgSRC});
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin-left: -100%;
+    background-color: ${VoiceUpColors.black};
+    margin-left: ${({direction}) => 
+        (direction === "normal" && "-100%") ||
+        (direction === "reverse" && "100%") ||
+        "0"
+    };
     transition: margin-left 1000ms 800ms ease;
 
     &.active {
@@ -41,18 +47,69 @@ export const ImageDiv = styled.div`
     }
 `;
 
-export const TextDiv = styled.div`
+export const Card = styled.div`
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: green;
-    margin-left: 100%;
+    margin-left: ${({direction}) => 
+        (direction === "normal" && "100%") ||
+        (direction === "reverse" && "-100%") ||
+        "0"
+    };
     transition: margin-left 1000ms 800ms ease;
+    ${debug ? "background-color: lightgreen;" : ""}
 
     &.active {
         margin-left: 0;
     }
+`;
+
+export const TextDiv = styled.div`
+    max-width: 80%;
+    overflow-wrap: break-word;
+    ${debug ? "border: 1px solid brown;" : ""}
+    
+    #sectionIcon {
+        display: block; 
+        width: 100px;
+        fill: ${VoiceUpColors.gold};
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+
+    &>h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2.5em;
+        text-transform: uppercase;
+    }
+
+    &>p {
+        text-align: center;
+        margin-bottom: 30px;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    
+    @media screen and (max-width: 960px) {
+        #sectionIcon {
+            width: 80px;
+        }
+
+        &>h1 {
+            font-size: 2em;
+        }
+
+        &>p {
+            text-align: justify;
+            text-justify: inter-character;
+            margin-bottom: 30px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
 `;

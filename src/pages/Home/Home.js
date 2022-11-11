@@ -3,6 +3,7 @@ import ImageSlider from '../../components/ImageSlider/ImageSlider';
 import InfoSection from '../../components/InfoSection/InfoSection';
 import { SliderContainer } from './Home.style';
 import { slides } from "./SlidesImg";
+import { SingSectionData, PlaySectionData } from './data.home';
 
 const Home = () => {
     return(
@@ -10,7 +11,8 @@ const Home = () => {
             <SliderContainer>
                 <ImageSlider slides={slides} transitionTime={300}></ImageSlider>
             </SliderContainer>
-            <InfoSection data="" direction="normal"></InfoSection>
+            <InfoSection data={SingSectionData}></InfoSection>
+            <InfoSection data={PlaySectionData}></InfoSection>
         </>
     )
 }

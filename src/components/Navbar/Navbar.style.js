@@ -182,7 +182,6 @@ export const SocialContainer = styled.div`
 export const SocialIcons = styled.img`
     width: 30px;
     fill: white;
-    stroke: red;
     filter: invert(100%);
     cursor: pointer;
 

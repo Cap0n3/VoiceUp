@@ -22,6 +22,7 @@ export const Slide = styled.div`
     background-position: 50% 20%;
     background-repeat: no-repeat;
     background-size: 100%;
+    background-color: ${VoiceUpColors.black};
     z-index: 1;
 
     &.active {
