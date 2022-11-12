@@ -47,6 +47,10 @@ export const LogoLink = styled(NavLink)`
     text-decoration: none;
     font-size: 2rem;
     ${(DEBUG) ? "background: purple" : ""}
+
+    @media screen and (max-width: 1180px) {
+        width: 15%;
+    }
 `;
 
 export const NavIcon = styled.img`
