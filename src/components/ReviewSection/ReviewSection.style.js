@@ -21,6 +21,15 @@ export const ReviewSlide = styled.div`
     height: ${sectionHeight}px;
     ${debug ? "background-color: lightgreen;" : ""}
 
+    &.active {
+        opacity: 1;
+        transition: ${({transitionTime}) => `opacity ${transitionTime}ms ease-in`};
+    }
+
+    &.inactive {
+        opacity: 0;
+        transition: ${({transitionTime}) => `opacity ${transitionTime}ms ease-in`};
+    }
     @media screen and (max-width: 960px) {
         flex-direction: column;
     }
