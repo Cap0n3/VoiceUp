@@ -26,7 +26,7 @@ export const ReviewSlide = styled.div`
     }
 `;
 
-export const ReviewBlock = styled.div`
+export const ReviewBox = styled.div`
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -46,7 +46,7 @@ export const ReviewBlock = styled.div`
     & > blockquote {
         display: block;
         font-style: italic;
-        max-height: ${sectionHeight - 300}px;
+        height: ${sectionHeight - 300}px;
         margin-bottom: 10px;
         overflow-y: scroll;
         text-align: center;

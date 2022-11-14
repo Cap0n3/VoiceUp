@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { ReviewWrapper } from "./ReviewComponents.style";
+import { ReviewWrapper } from "./ReviewSection.style";
 import ReviewContainer from "./ReviewContainer";
 
 const ReviewSection = () => {
