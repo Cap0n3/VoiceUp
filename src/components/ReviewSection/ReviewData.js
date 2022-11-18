@@ -18,5 +18,17 @@ export const ReviewData = [
         quote : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         studentName : "Myriam J.",
         roleFR : "Elève Voice-up",
+    },
+    {
+        studentPic : "https://lauraschoenfeldrd.com/wp-content/uploads/2018/06/square-profile-copy-404x403.png",
+        quote : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        studentName : "Tina H.",
+        roleFR : "Elève Voice-up",
+    },
+    {
+        studentPic : "https://www.stepstherapy.com.au/wp-content/uploads/2018/10/Yazmin-profile-picture-square-1024x1024.jpg",
+        quote : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        studentName : "Beatrice M.",
+        roleFR : "Elève Voice-up",
     }
 ];

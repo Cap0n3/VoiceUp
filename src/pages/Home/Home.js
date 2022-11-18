@@ -15,7 +15,7 @@ const Home = () => {
             <InfoSection data={SingSectionData}></InfoSection>
             <InfoSection data={PlaySectionData}></InfoSection>
             <InfoSection data={TalkSectionData}></InfoSection>
-            <ReviewSection></ReviewSection>
+            <ReviewSection transitionTime={1000} nbOfReviews={2}></ReviewSection>
         </>
     )
 }
