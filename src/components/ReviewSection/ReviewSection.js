@@ -4,54 +4,59 @@ import ReviewContainer from "./ReviewContainer";
 import { ReviewData } from "./ReviewData";
 
 const ReviewSection = ({transitionTime, nbOfReviews}) => {
-    const [reviewsIndexRange, setReviewsIndexRange] = useState({
-        startIndex : null, 
-        endIndex : null
-    });
+    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+    const [reviewSlides, setReviewSlides] = useState([]);
     const [isActive, setIsActive] = useState(true);
 
-    const changeReviews = (direction) => {
-        // Set initial indexes reference
-        const initStartIndex = 0
-        const initEndIndex = nbOfReviews - 1
-        // Get current index range
-        const currentStart = reviewsIndexRange.startIndex;
-        const currentEnd = reviewsIndexRange.endIndex;
-        // Get last review index
-        const lastReviewIndex = (ReviewData.length - 1);
-        // Set step increment (number of reviews to be displayed at once)
-        const step = nbOfReviews
-        let newIndexRange = { startIndex : null, endIndex : null}
+    const changeSlide = (direction) => {
+        // Get number of review slides
+        const lastSlideIndex = reviewSlides.length - 1
 
         if (direction === "forward") {
             // Check if we reached last review in array
-            const isLastReview = currentEnd >= lastReviewIndex;
+            const isLastSlide = currentSlideIndex === lastSlideIndex;
             // If not last, then add one to range
-            newIndexRange.startIndex = isLastReview ? initStartIndex : currentStart + step;
-            newIndexRange.endIndex = isLastReview ? initEndIndex : currentEnd + step;
+            setCurrentSlideIndex(isLastSlide ? 0 : currentSlideIndex + 1);
         }
         else if (direction === "backward") {
-            // Check if we reached first review in array
-            const isFirstReview = currentStart === 0;
-            // If not first, then substract one to range
-            newIndexRange.startIndex = isFirstReview ? (lastReviewIndex - (step - 1)) : currentStart - step;
-            newIndexRange.endIndex = isFirstReview ? lastReviewIndex : currentEnd - step;
+            // Check if we reached last review in array
+            const isFirstSlide = currentSlideIndex === 0;
+            // If not last, then add one to range
+            setCurrentSlideIndex(isFirstSlide ? lastSlideIndex : currentSlideIndex - 1);
         }
         // First, make disappear slide image with opacity
-        setIsActive(false);
+        // setIsActive(false);
         // Then, wait opacity transition to finish and change image to next one
-        setTimeout(() => {
-            setReviewsIndexRange(reviewsIndexRange => ({...reviewsIndexRange, ...newIndexRange}))
-        }, transitionTime);
+        // setTimeout(() => {
+        //     setReviewsIndexRange(reviewsIndexRange => ({...reviewsIndexRange, ...newIndexRange}))
+        // }, transitionTime);
     }
 
     /**
-     * On first render, set initial review index range according 
-     * to number of review that should be displayed.
+     * Define review slides depending on nbOfReviews (per slide) parameters
      */
     useEffect(() => {
-        const initialIndexRange = { startIndex : 0, endIndex : (nbOfReviews - 1)}
-        setReviewsIndexRange(reviewsIndexRange => ({...reviewsIndexRange, ...initialIndexRange}));
+        /* 
+        Create index list reference 
+        Ex : if there's 5 reviews, create list [0, 1, 2, 3, 4]
+        */
+        let reviewsIndexRef = [];
+        for(let i=0; i < ReviewData.length; i++) reviewsIndexRef.push(i);
+        /* 
+        Create reviews slides containing review indexes 
+        Ex : if there's 5 reviews and we want 3 reviews per slide, create lists : 
+            - [0, 1, 2] => first slide with 3 reviews
+            - [3, 4] => second slide with only 2 reviews
+        */
+        let allReviewSlides = []
+        while(reviewsIndexRef.length > 0) {
+            // Extract indexes representing slide
+            let reviewSlide = reviewsIndexRef .slice(0, nbOfReviews)
+            // Remove extracted indexes from index list
+            reviewsIndexRef.splice(0, nbOfReviews)
+            allReviewSlides.push(reviewSlide)
+        }
+        setReviewSlides(allReviewSlides)
     }, []);
 
     /**
@@ -68,12 +73,11 @@ const ReviewSection = ({transitionTime, nbOfReviews}) => {
 
     return(
         <>
-            {console.log(reviewsIndexRange)}
             <ReviewWrapper>
-                <ReviewContainer class_name={isActive ? "active" : "inactive"} range={[reviewsIndexRange.startIndex, reviewsIndexRange.endIndex]} transitionTime={transitionTime} />
+                <ReviewContainer class_name={isActive ? "active" : "inactive"} slide={reviewSlides[currentSlideIndex]} transitionTime={transitionTime} />
             </ReviewWrapper>
-            <button onClick={() => {changeReviews("backward")}}>Backward</button>
-            <button onClick={() => {changeReviews("forward")}}>Forward</button>
+            <button onClick={() => {changeSlide("backward")}}>Backward</button>
+            <button onClick={() => {changeSlide("forward")}}>Forward</button>
         </>
     );
 }
