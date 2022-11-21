@@ -1,9 +1,9 @@
 import styled from "styled-components";
-
-const debug = true;
+const debug = false;
 const sectionHeight = 600;
 
 export const ReviewWrapper = styled.div`
+    position: relative;
     width: 100%;
     height: ${sectionHeight}px;
     overflow: hidden;
@@ -16,7 +16,7 @@ export const ReviewSlide = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15%;
+    gap: 10%;
     width: 100%;
     height: ${sectionHeight}px;
     ${debug ? "background-color: lightgreen;" : ""}
@@ -39,7 +39,7 @@ export const ReviewBox = styled.div`
     display: flex;
     flex-direction: column;
     padding: 20px;
-    width: 240px;
+    width: 300px;
     height: ${sectionHeight - 100}px;
     overflow: scroll;
     ${debug ? "background-color: cyan;" : ""}
@@ -47,7 +47,7 @@ export const ReviewBox = styled.div`
     & > img {
         margin-left: auto;
         margin-right: auto;
-        width: 80px;
+        width: 120px;
         margin-bottom: 20px;
         border-radius: 50%;
     }

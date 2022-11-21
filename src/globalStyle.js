@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
 import { VoiceUpColors } from "./colors";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -57,6 +58,34 @@ export const Button = styled.button`
     @media screen and (max-width: 960px) {
         width: 100%;
         padding: 12px 30px;
+    }
+`;
+
+export const BackwardArrow = styled(IoIosArrowBack)`
+    position: absolute;
+    fill: ${({color}) => (color ? color : VoiceUpColors.white)};
+    top: 50%;
+    left: 32px;
+    font-size: 2em;
+    z-index: 999;
+    cursor: pointer;
+
+    @media screen and (max-width: 960px) {
+        display: none;
+    }
+`;
+
+export const ForwardArrow = styled(IoIosArrowForward)`
+    position: absolute;
+    fill: ${({color}) => (color ? color : VoiceUpColors.white)};
+    top: 50%;
+    right: 32px;
+    font-size: 2em;
+    z-index: 999;
+    cursor: pointer;
+
+    @media screen and (max-width: 960px) {
+        display: none;
     }
 `;
 

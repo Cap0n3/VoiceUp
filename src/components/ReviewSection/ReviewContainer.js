@@ -7,7 +7,6 @@ const ReviewContainer = ({slide, class_name, transitionTime}) => {
     console.log("SLIDE CONTENT : " + slide)
     const startSlice = slide[0];
     const stopSlice = slide[slide.length - 1];
-    console.log(startSlice + " : " + stopSlice)
     // Retrieve specific range of reviews
     const reviews = ReviewData.slice(startSlice, stopSlice + 1);
     
@@ -15,7 +14,7 @@ const ReviewContainer = ({slide, class_name, transitionTime}) => {
         <ReviewSlide className={class_name} transitionTime={transitionTime}>
             {reviews.map((review, index) => (
                 <ReviewBox key={index}>
-                    <img src={review.studentPic} />
+                    <img src={review.studentPic} alt={review.picAlt}/>
                     <blockquote>{review.quote}</blockquote>
                     <p>{review.studentName}</p>
                     <small>{review.roleFR}</small>

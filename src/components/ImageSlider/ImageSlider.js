@@ -1,14 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
-import { SliderWrapper, Slide, SlideOverlay, BoxWrapper, TextBox, LeftArrow, RightArrow, DotWrapper, Dot } from "./ImageSlider.style";
-import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
+import { SliderWrapper, Slide, SlideOverlay, BoxWrapper, TextBox, DotWrapper, Dot } from "./ImageSlider.style";
+import { BackwardArrow, ForwardArrow } from "../../globalStyle";
 import { ScreenContext } from "../../contexts/screenContext";
 import { Button } from "../../globalStyle";
 import { LangContext } from '../../App';
-
-const iconStyle = {
-    fontSize: "0.7em",
-    fill: "white"
-}
 
 const ImageSlider = ({slides, transitionTime}) => {
     const screenSize = useContext(ScreenContext);
@@ -75,12 +70,8 @@ const ImageSlider = ({slides, transitionTime}) => {
 
     return(
         <SliderWrapper>
-            <LeftArrow onClick={goToPrevious}>
-                <BsArrowLeftCircle style={iconStyle} />
-            </LeftArrow>
-            <RightArrow onClick={goToNext}>
-                <BsArrowRightCircle style={iconStyle} />
-            </RightArrow>
+            <BackwardArrow onClick={goToPrevious}></BackwardArrow>
+            <ForwardArrow onClick={goToNext}></ForwardArrow>
             <Slide imageURL={slides[currentIndex].url} className={isActive ? "active" : "inactive"} transitionTime={transitionTime}>
                 {(screenSize.innerWidth <= 960) ? <SlideOverlay></SlideOverlay> : ""}
             </Slide>      

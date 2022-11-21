@@ -13,6 +13,8 @@ import React, {useState, useEffect} from "react";
 import { ReviewWrapper } from "./ReviewSection.style";
 import ReviewContainer from "./ReviewContainer";
 import { ReviewData } from "./ReviewData";
+import { BackwardArrow, ForwardArrow } from "../../globalStyle";
+import { VoiceUpColors } from "../../colors";
 
 const ReviewSection = ({transitionTime, nbOfReviews}) => {
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -66,7 +68,7 @@ const ReviewSection = ({transitionTime, nbOfReviews}) => {
         let allReviewSlides = []
         while(reviewsIndexRef.length > 0) {
             // Extract indexes representing slide
-            let reviewSlide = reviewsIndexRef .slice(0, nbOfReviews)
+            let reviewSlide = reviewsIndexRef.slice(0, nbOfReviews)
             // Remove extracted indexes from index list
             reviewsIndexRef.splice(0, nbOfReviews)
             allReviewSlides.push(reviewSlide)
@@ -90,9 +92,9 @@ const ReviewSection = ({transitionTime, nbOfReviews}) => {
         <>
             <ReviewWrapper>
                 <ReviewContainer class_name={isActive ? "active" : "inactive"} slide={reviewSlides[currentSlideIndex] ? reviewSlides[currentSlideIndex] : ""} transitionTime={transitionTime} />
+                <ForwardArrow color={VoiceUpColors.grey} onClick={() => {changeSlide("forward")}}></ForwardArrow>
+                <BackwardArrow color={VoiceUpColors.grey} onClick={() => {changeSlide("backward")}}></BackwardArrow>
             </ReviewWrapper>
-            <button onClick={() => {changeSlide("backward")}}>Backward</button>
-            <button onClick={() => {changeSlide("forward")}}>Forward</button>
         </>
     );
 }
