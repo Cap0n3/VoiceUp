@@ -55,7 +55,8 @@ export const ReviewBox = styled.div`
     & > blockquote {
         display: block;
         font-style: italic;
-        height: ${sectionHeight - 300}px;
+        font-weight: 300;
+        height: ${sectionHeight - 390}px;
         margin-bottom: 10px;
         overflow-y: scroll;
         text-align: center;

@@ -2,9 +2,7 @@ import React from "react";
 import { ReviewSlide, ReviewBox } from "./ReviewSection.style";
 import { ReviewData } from "./ReviewData";
 
-// FOR MOBILE, ONLY PUT 1 Review
 const ReviewContainer = ({slide, class_name, transitionTime}) => {
-    console.log("SLIDE CONTENT : " + slide)
     const startSlice = slide[0];
     const stopSlice = slide[slide.length - 1];
     // Retrieve specific range of reviews
@@ -15,7 +13,7 @@ const ReviewContainer = ({slide, class_name, transitionTime}) => {
             {reviews.map((review, index) => (
                 <ReviewBox key={index}>
                     <img src={review.studentPic} alt={review.picAlt}/>
-                    <blockquote>{review.quote}</blockquote>
+                    <blockquote>"{review.quote}"</blockquote>
                     <p>{review.studentName}</p>
                     <small>{review.roleFR}</small>
                 </ReviewBox>

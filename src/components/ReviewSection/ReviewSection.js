@@ -20,7 +20,7 @@ const ReviewSection = ({transitionTime, nbOfReviews}) => {
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [reviewSlides, setReviewSlides] = useState([]);
     const [isActive, setIsActive] = useState(true);
-
+    
     const changeSlide = (direction) => {
         // Get number of review slides for reference
         const lastSlideIndex = reviewSlides.length - 1
@@ -74,7 +74,7 @@ const ReviewSection = ({transitionTime, nbOfReviews}) => {
             allReviewSlides.push(reviewSlide)
         }
         setReviewSlides(allReviewSlides)
-    }, []);
+    }, [nbOfReviews]);
 
     /**
      * Here to make slide reappear by changing back class to active.

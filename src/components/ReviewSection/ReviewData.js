@@ -1,39 +1,51 @@
-
+import Coline from "../../assets/images/students/Reviews/ColineReview.jpg"
+import Danae from "../../assets/images/students/Reviews/DanaeReview.jpg"
+import Franck from "../../assets/images/students/Reviews/FrankReview.jpg"
+import Andres from "../../assets/images/students/Reviews/AndresReview.jpg"
+import Alban from "../../assets/images/students/Reviews/AlbanReview.jpg"
+import Patricia from "../../assets/images/students/Reviews/PatriciaReview.jpg"
 
 export const ReviewData = [
     {
-        studentPic : "https://www.fireflyorthoses.com/wp-content/uploads/peter-mclernon-profile-pic-square-bw.png",
-        picAlt : "Student1",
-        quote : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        studentName : "René F.",
+        studentPic : Coline,
+        picAlt : "Coline",
+        quote : "Ça fait maintenant plus de 4 ans que nos routes se sont croisées et j’en suis ravie! Tania est incroyable, elle sait exactement comment s’y prendre pour transmettre sa passion, nous mettre à l’aise et nous permet de s’améliorer vocalement tout en s’amusant! Merci d’être une aussi bonne pédagogue !",
+        studentName : "Coline D.",
         roleFR : "Elève Voice-up",
     },
     {
-        studentPic : "https://www.stepstherapy.com.au/wp-content/uploads/2020/05/Natalie-square-profile-picture-1024x1024.jpg",
-        picAlt : "Student2",
-        quote : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        studentName : "Sara G.",
+        studentPic : Danae,
+        picAlt : "Danae",
+        quote : "Tania est une prof absolument géniale ! N’hésitez pas une seconde ! Dès les premiers cours on commence par des « vraies » chansons, sans passer par des mois de « technique pure », et le plus beau c’est que ça marche ! (…) Je ne peux que recommander les cours de Tania et vous encourage à essayer, vous allez l’adopter 🙂 !!!",
+        studentName : "Danaé F.",
         roleFR : "Elève Voice-up",
     },
     {
-        studentPic : "https://doodles-academy.org/wp-content/uploads/2020/10/Profile_square-scaled.jpeg",
-        picAlt : "Student3",
-        quote : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        studentName : "Myriam J.",
+        studentPic : Franck,
+        picAlt : "Franck",
+        quote : "Vraiment trop top ! Bientôt trois ans que je fais des cours de chant avec Tania et je suis passé de chanteur médiocre sous la douche à presque rock star ! On progresse vite, ses méthodes sont géniales et c’est vraiment la meilleure prof du monde  Je recommande plus que vivement !",
+        studentName : "Franck L.",
         roleFR : "Elève Voice-up",
     },
     {
-        studentPic : "https://lauraschoenfeldrd.com/wp-content/uploads/2018/06/square-profile-copy-404x403.png",
-        picAlt : "Student4",
-        quote : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        studentName : "Tina H.",
+        studentPic : Andres,
+        picAlt : "Andres",
+        quote : "Tania est une excellente pédagogue. Elle s'adapte tant aux débutants qu'aux chanteurs confirmés. La progression est assurée. Je recommande ses cours sans hésiter !",
+        studentName : "Andres M.",
         roleFR : "Elève Voice-up",
     },
     {
-        studentPic : "https://www.stepstherapy.com.au/wp-content/uploads/2018/10/Yazmin-profile-picture-square-1024x1024.jpg",
-        picAlt : "Student5",
-        quote : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        studentName : "Beatrice M.",
+        studentPic : Alban,
+        picAlt : "Alban",
+        quote : "Tania est une professeure exceptionelle! Elle est très expérimentée et permet, grâce à une approche personnalisée, de progresser rapidement dans la maîtrise des techniques vocales. C’est un réel plaisir de participer à ses cours de chant.",
+        studentName : "Alban G.",
+        roleFR : "Elève Voice-up",
+    },
+    {
+        studentPic : Patricia,
+        picAlt : "Patricia",
+        quote : "Tania, professeure attentive, est réceptive à vos demandes. Elle vous accompagne avec bienveillance et compétence dans la découverte et l’exploration de votre voix. C’est un grand plaisir d’avancer grâce à ses précieux conseils. Je vous recommande vivement ses cours.",
+        studentName : "Patricia F.",
         roleFR : "Elève Voice-up",
     }
 ];
