@@ -9,27 +9,31 @@ const ReviewSection = ({transitionTime, nbOfReviews}) => {
     const [isActive, setIsActive] = useState(true);
 
     const changeSlide = (direction) => {
-        // Get number of review slides
+        // Get number of review slides for reference
         const lastSlideIndex = reviewSlides.length - 1
 
         if (direction === "forward") {
             // Check if we reached last review in array
             const isLastSlide = currentSlideIndex === lastSlideIndex;
-            // If not last, then add one to range
-            setCurrentSlideIndex(isLastSlide ? 0 : currentSlideIndex + 1);
+            // Make disapear slide
+            setIsActive(false);
+            // Wait transition time and change slide
+            setTimeout(() => {
+                // If not last, then add one to range
+                setCurrentSlideIndex(isLastSlide ? 0 : currentSlideIndex + 1);
+            }, transitionTime);
         }
         else if (direction === "backward") {
             // Check if we reached last review in array
             const isFirstSlide = currentSlideIndex === 0;
-            // If not last, then add one to range
-            setCurrentSlideIndex(isFirstSlide ? lastSlideIndex : currentSlideIndex - 1);
+            // Make disapear slide
+            setIsActive(false);
+            // Wait transition time and change slide
+            setTimeout(() => {
+                // If not first, go to last index
+                setCurrentSlideIndex(isFirstSlide ? lastSlideIndex : currentSlideIndex - 1);
+            }, transitionTime);
         }
-        // First, make disappear slide image with opacity
-        // setIsActive(false);
-        // Then, wait opacity transition to finish and change image to next one
-        // setTimeout(() => {
-        //     setReviewsIndexRange(reviewsIndexRange => ({...reviewsIndexRange, ...newIndexRange}))
-        // }, transitionTime);
     }
 
     /**
@@ -74,7 +78,7 @@ const ReviewSection = ({transitionTime, nbOfReviews}) => {
     return(
         <>
             <ReviewWrapper>
-                <ReviewContainer class_name={isActive ? "active" : "inactive"} slide={reviewSlides[currentSlideIndex]} transitionTime={transitionTime} />
+                <ReviewContainer class_name={isActive ? "active" : "inactive"} slide={reviewSlides[currentSlideIndex] ? reviewSlides[currentSlideIndex] : ""} transitionTime={transitionTime} />
             </ReviewWrapper>
             <button onClick={() => {changeSlide("backward")}}>Backward</button>
             <button onClick={() => {changeSlide("forward")}}>Forward</button>
