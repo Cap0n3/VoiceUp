@@ -2,7 +2,7 @@ import React from "react";
 import { ReviewSlide, ReviewBox } from "./ReviewSection.style";
 import { ReviewData } from "./ReviewData";
 
-// FOR MOBILE, ONLY PUT 1 ReviewBlock
+// FOR MOBILE, ONLY PUT 1 Review
 const ReviewContainer = ({slide, class_name, transitionTime}) => {
     console.log("SLIDE CONTENT : " + slide)
     const startSlice = slide[0];

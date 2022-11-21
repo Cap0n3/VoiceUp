@@ -1,3 +1,14 @@
+/*
+This component is responsible for student reviews. It'll populate reviews
+in slides depending on how many reviews user choose to show. A slide is simply
+an array with review indexes range to display.
+    
+Example : [0, 1, 2] would mean display review with index 0, 1, 2.
+
+When user want to change slide only the slide index (the array) will change 
+which simplifiy the whole process of displaying reviews.
+*/
+
 import React, {useState, useEffect} from "react";
 import { ReviewWrapper } from "./ReviewSection.style";
 import ReviewContainer from "./ReviewContainer";
