@@ -13,7 +13,7 @@ import React, {useState, useEffect} from "react";
 import { ReviewWrapper } from "./ReviewSection.style";
 import ReviewContainer from "./ReviewContainer";
 import { ReviewData } from "./ReviewData";
-import { BackwardArrow, ForwardArrow } from "../../globalStyle";
+import { BackwardArrow, ForwardArrow, DotWrapper, Dot } from "../../globalStyle";
 import { VoiceUpColors } from "../../colors";
 
 const ReviewSection = ({transitionTime, nbOfReviews}) => {
@@ -21,7 +21,7 @@ const ReviewSection = ({transitionTime, nbOfReviews}) => {
     const [reviewSlides, setReviewSlides] = useState([]);
     const [isActive, setIsActive] = useState(true);
     
-    const changeSlide = (direction) => {
+    const changeSlide = (direction, slideIndex=null) => {
         // Get number of review slides for reference
         const lastSlideIndex = reviewSlides.length - 1
 
@@ -45,6 +45,15 @@ const ReviewSection = ({transitionTime, nbOfReviews}) => {
             setTimeout(() => {
                 // If not first, go to last index
                 setCurrentSlideIndex(isFirstSlide ? lastSlideIndex : currentSlideIndex - 1);
+            }, transitionTime);
+        }
+        else if (direction === "toIndex" || slideIndex !== null) {
+            // Make disapear slide
+            setIsActive(false);
+            // Wait transition time and change slide
+            setTimeout(() => {
+                // If not first, go to last index
+                setCurrentSlideIndex(slideIndex);
             }, transitionTime);
         }
     }
@@ -88,12 +97,30 @@ const ReviewSection = ({transitionTime, nbOfReviews}) => {
         }
     }, [isActive]);
 
+    /**
+     * Timer for slides (auto change)
+     */
+     useEffect(() => {
+        const timer = setInterval(() => {
+            changeSlide("forward");
+        }, 12000);
+        // clearing interval
+        return () => clearInterval(timer);
+    });
+
     return(
         <>
             <ReviewWrapper>
                 <ReviewContainer class_name={isActive ? "active" : "inactive"} slide={reviewSlides[currentSlideIndex] ? reviewSlides[currentSlideIndex] : ""} transitionTime={transitionTime} />
                 <ForwardArrow color={VoiceUpColors.grey} onClick={() => {changeSlide("forward")}}></ForwardArrow>
                 <BackwardArrow color={VoiceUpColors.grey} onClick={() => {changeSlide("backward")}}></BackwardArrow>
+                <DotWrapper>
+                    {reviewSlides.map((slide, slideIndex) => (
+                        <Dot key={slideIndex} className={(slideIndex === currentSlideIndex) ? "active" : "inactive" } onClick={() => changeSlide("toIndex", slideIndex)}>
+                            ●
+                        </Dot>
+                    ))}
+                </DotWrapper>
             </ReviewWrapper>
         </>
     );

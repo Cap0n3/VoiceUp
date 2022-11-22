@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
-import { SliderWrapper, Slide, SlideOverlay, BoxWrapper, TextBox, DotWrapper, Dot } from "./ImageSlider.style";
-import { BackwardArrow, ForwardArrow } from "../../globalStyle";
+import { SliderWrapper, Slide, SlideOverlay, BoxWrapper, TextBox } from "./ImageSlider.style";
+import { BackwardArrow, ForwardArrow, DotWrapper, Dot } from "../../globalStyle";
 import { ScreenContext } from "../../contexts/screenContext";
 import { Button } from "../../globalStyle";
 import { LangContext } from '../../App';

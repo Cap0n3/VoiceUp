@@ -61,6 +61,7 @@ export const Button = styled.button`
     }
 `;
 
+// Arrows & Dots on Header & review slider
 export const BackwardArrow = styled(IoIosArrowBack)`
     position: absolute;
     fill: ${({color}) => (color ? color : VoiceUpColors.white)};
@@ -87,6 +88,37 @@ export const ForwardArrow = styled(IoIosArrowForward)`
     @media screen and (max-width: 960px) {
         display: none;
     }
+`;
+
+export const DotWrapper = styled.div`
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    right: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 998;
+`;
+
+export const Dot = styled.div`
+    margin: 0 3px;
+    cursor: pointer;
+
+    &.active {
+        color: ${VoiceUpColors.gold};
+        font-size: 26px;
+    }
+
+    &.inactive {
+        color: ${VoiceUpColors.gold};
+        opacity: 0.6;
+        font-size: 23px;
+    }
+
+    @media screen and (max-width: 960px) {
+        margin: 0 8px;
+    } 
 `;
 
 export default GlobalStyle;

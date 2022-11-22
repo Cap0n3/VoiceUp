@@ -1,6 +1,6 @@
 import styled from "styled-components";
 const debug = false;
-const sectionHeight = 600;
+const sectionHeight = 550;
 
 export const ReviewWrapper = styled.div`
     position: relative;
@@ -56,7 +56,7 @@ export const ReviewBox = styled.div`
         display: block;
         font-style: italic;
         font-weight: 300;
-        height: ${sectionHeight - 390}px;
+        height: ${sectionHeight - 350}px;
         margin-bottom: 10px;
         overflow-y: scroll;
         text-align: center;
