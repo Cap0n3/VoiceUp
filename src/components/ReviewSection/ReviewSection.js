@@ -10,8 +10,8 @@ which simplifiy the whole process of displaying reviews.
 */
 
 import React, {useState, useEffect} from "react";
-import { ReviewWrapper } from "./ReviewSection.style";
-import ReviewContainer from "./ReviewContainer";
+import { ReviewContainer } from "./ReviewSection.style";
+import ReviewDisplayer from "./ReviewDisplayer";
 import { ReviewData } from "./ReviewData";
 import { BackwardArrow, ForwardArrow, DotWrapper, Dot } from "../../globalStyle";
 import { VoiceUpColors } from "../../colors";
@@ -109,20 +109,18 @@ const ReviewSection = ({transitionTime, nbOfReviews}) => {
     });
 
     return(
-        <>
-            <ReviewWrapper>
-                <ReviewContainer class_name={isActive ? "active" : "inactive"} slide={reviewSlides[currentSlideIndex] ? reviewSlides[currentSlideIndex] : ""} transitionTime={transitionTime} />
-                <ForwardArrow color={VoiceUpColors.grey} onClick={() => {changeSlide("forward")}}></ForwardArrow>
-                <BackwardArrow color={VoiceUpColors.grey} onClick={() => {changeSlide("backward")}}></BackwardArrow>
-                <DotWrapper>
-                    {reviewSlides.map((slide, slideIndex) => (
-                        <Dot key={slideIndex} className={(slideIndex === currentSlideIndex) ? "active" : "inactive" } onClick={() => changeSlide("toIndex", slideIndex)}>
-                            ●
-                        </Dot>
-                    ))}
-                </DotWrapper>
-            </ReviewWrapper>
-        </>
+        <ReviewContainer>
+            <ReviewDisplayer class_name={isActive ? "active" : "inactive"} slide={reviewSlides[currentSlideIndex] ? reviewSlides[currentSlideIndex] : ""} transitionTime={transitionTime} />
+            <ForwardArrow color={VoiceUpColors.grey} onClick={() => {changeSlide("forward")}}></ForwardArrow>
+            <BackwardArrow color={VoiceUpColors.grey} onClick={() => {changeSlide("backward")}}></BackwardArrow>
+            <DotWrapper>
+                {reviewSlides.map((slide, slideIndex) => (
+                    <Dot key={slideIndex} className={(slideIndex === currentSlideIndex) ? "active" : "inactive" } onClick={() => changeSlide("toIndex", slideIndex)}>
+                        ●
+                    </Dot>
+                ))}
+            </DotWrapper>
+        </ReviewContainer>  
     );
 }
 

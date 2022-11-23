@@ -59,8 +59,8 @@ export const Card = styled.div`
         "0"
     };
     transition: margin-left 1000ms 800ms ease;
-    ${debug ? "background-color: lightgreen;" : ""}
-
+    background-color:  ${debug ? "lightgreen" : VoiceUpColors.white};
+    
     &.active {
         margin-left: 0;
     }

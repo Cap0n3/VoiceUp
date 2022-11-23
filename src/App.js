@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { useState, createContext } from "react";
+import "./App.style.css";
 import GlobalStyle from "./globalStyle";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
@@ -17,7 +18,7 @@ function App() {
 	const [language, setLanguage] = useState("FR");
 	const value = { language, setLanguage }
 	return (
-		<>
+		<div className="main">
 			<ScreenProvider>
 			<LangContext.Provider value={value}>
 				<GlobalStyle />
@@ -32,7 +33,7 @@ function App() {
 				</Routes>
 			</LangContext.Provider>
 			</ScreenProvider>
-		</>
+		</div>
 		
 	);
 }

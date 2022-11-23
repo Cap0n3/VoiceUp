@@ -1,13 +1,16 @@
 import styled from "styled-components";
-const debug = false;
-const sectionHeight = 550;
+import { VoiceUpColors } from "../../colors";
 
-export const ReviewWrapper = styled.div`
+const debug = false;
+const sectionHeight = 600;
+
+export const ReviewContainer = styled.section`
     position: relative;
     width: 100%;
     height: ${sectionHeight}px;
     overflow: hidden;
-    ${debug ? "background-color: lightblue;" : ""}
+    z-index: 1;
+    background-color: ${debug ? "lightblue" : VoiceUpColors.white};
 `;
 
 // Review container style //
@@ -19,7 +22,7 @@ export const ReviewSlide = styled.div`
     gap: 10%;
     width: 100%;
     height: ${sectionHeight}px;
-    ${debug ? "background-color: lightgreen;" : ""}
+    background-color: ${debug ? "lightgreen" : VoiceUpColors.white};
 
     &.active {
         opacity: 1;

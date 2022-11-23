@@ -2,7 +2,7 @@ import React from "react";
 import { ReviewSlide, ReviewBox } from "./ReviewSection.style";
 import { ReviewData } from "./ReviewData";
 
-const ReviewContainer = ({slide, class_name, transitionTime}) => {
+const ReviewDisplayer = ({slide, class_name, transitionTime}) => {
     const startSlice = slide[0];
     const stopSlice = slide[slide.length - 1];
     // Retrieve specific range of reviews
@@ -22,4 +22,4 @@ const ReviewContainer = ({slide, class_name, transitionTime}) => {
     );
 }
 
-export default ReviewContainer;
+export default ReviewDisplayer;
