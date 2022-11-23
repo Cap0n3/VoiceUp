@@ -44,7 +44,7 @@ export const ReviewBox = styled.div`
     padding: 20px;
     width: 300px;
     height: ${sectionHeight - 100}px;
-    overflow: scroll;
+    overflow: hidden;
     ${debug ? "background-color: cyan;" : ""}
 
     & > img {
@@ -61,7 +61,7 @@ export const ReviewBox = styled.div`
         font-weight: 300;
         height: ${sectionHeight - 350}px;
         margin-bottom: 10px;
-        overflow-y: scroll;
+        overflow-y: auto;
         text-align: center;
         ${debug ? "border: 1px solid red;" : ""}
     }

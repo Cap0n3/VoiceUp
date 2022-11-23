@@ -21,7 +21,7 @@ const Home = () => {
             <InfoSection data={TalkSectionData}></InfoSection>
             <ReviewSection transitionTime={800} nbOfReviews={screenSize.innerWidth > 960 ? 3 : 1}></ReviewSection>
             <C2ASection></C2ASection>
-            <div style={{width: "100%", height: "100vh"}}></div>
+            <div style={{width: "100%", height: "800px", backgroundColor: "#666"}}></div>
         </>
     )
 }
