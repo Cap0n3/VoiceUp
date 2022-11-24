@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import { ScreenContext } from "../../contexts/screenContext";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import InfoSection from "../../components/InfoSection/InfoSection";
@@ -10,6 +10,7 @@ import { SingSectionData, PlaySectionData, TalkSectionData } from "./data.home";
 
 const Home = () => {
     const screenSize = useContext(ScreenContext);
+    const [bar, setBar] = useState(0);
 
     return(
         <>

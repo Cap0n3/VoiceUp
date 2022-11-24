@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Tania2 from "../../assets/images/Tania/Tania2_medium_header.jpg";
+import Paral from "../../assets/images/Tania/parallax-cta.jpeg";
 import { VoiceUpColors } from "../../colors";
 
 const debug = false;
@@ -21,10 +22,13 @@ export const ImgDiv = styled.div`
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: ${`url(${Tania2})`};
+    background-image: ${`url(${Paral})`};
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     transform: translateZ(-10px) scale(2);
+    ${'' /* transform: translate3d(0%, 60px, 0px); */}
+    background-color: black;
     z-index: -1;
 `;
 

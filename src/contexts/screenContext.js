@@ -8,6 +8,8 @@ export const ScreenProvider = ({children}) => {
         innerHeight : null
     });
 
+    const [scrollPosition, setScrollPos] = useState(null);
+
     const getScreenSize = () => {
         let updatedData = {
             innerWidth : window.innerWidth,
@@ -20,11 +22,11 @@ export const ScreenProvider = ({children}) => {
     }
     
     useEffect(() => {
-        window.addEventListener("load", (event) => {getScreenSize()})
-        window.addEventListener("resize", (event) => {getScreenSize()})
+        window.addEventListener("load", (event) => {getScreenSize()});
+        window.addEventListener("resize", (event) => {getScreenSize()});
         return () => {
-            window.removeEventListener("load", (event) => {getScreenSize()})
-            window.removeEventListener("resize", (event) => {getScreenSize()})
+            window.removeEventListener("load", (event) => {getScreenSize()});
+            window.removeEventListener("resize", (event) => {getScreenSize()});
         }
     }, []);
 
