@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import { ScreenContext } from "../../contexts/screenContext";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import InfoSection from "../../components/InfoSection/InfoSection";
@@ -10,7 +10,6 @@ import { SingSectionData, PlaySectionData, TalkSectionData } from "./data.home";
 
 const Home = () => {
     const screenSize = useContext(ScreenContext);
-    const [bar, setBar] = useState(0);
 
     return(
         <>
@@ -22,7 +21,7 @@ const Home = () => {
             <InfoSection data={TalkSectionData}></InfoSection>
             <ReviewSection transitionTime={800} nbOfReviews={screenSize.innerWidth > 960 ? 3 : 1}></ReviewSection>
             <C2ASection></C2ASection>
-            <div style={{width: "100%", height: "800px", backgroundColor: "#666"}}></div>
+            <div style={{width: "100%", height: "1200px", backgroundColor: "#666"}}></div>
         </>
     )
 }

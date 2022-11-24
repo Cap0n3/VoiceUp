@@ -12,15 +12,23 @@ import Contact from "./pages/Conctact";
 import { ScreenProvider } from "./contexts/screenContext";
 
 export const LangContext = createContext();
+export const ScrollContext = createContext();
 
 function App() {
-	// Context for language selection
+	// All useful contexts
 	const [language, setLanguage] = useState("FR");
-	const value = { language, setLanguage }
+	const [scrollTopPos, setScrollPos] = useState(null);
+	const langValue = { language, setLanguage };
+	
+	const handleScroll = (e) => {
+		setScrollPos(e.currentTarget.scrollTop);
+	}
+	
 	return (
-		<div className="main">
+		<div className="main" onScroll={handleScroll}>
 			<ScreenProvider>
-			<LangContext.Provider value={value}>
+			<LangContext.Provider value={langValue}>
+			<ScrollContext.Provider value={scrollTopPos}>
 				<GlobalStyle />
 				<Navbar />
 				<Routes>
@@ -31,6 +39,7 @@ function App() {
 					<Route path="/tarifs" element={<Prices />} />
 					<Route path="/contact" element={<Contact />} />
 				</Routes>
+			</ScrollContext.Provider>
 			</LangContext.Provider>
 			</ScreenProvider>
 		</div>
