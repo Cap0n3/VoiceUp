@@ -12,7 +12,7 @@ export const C2AContainer = styled.section`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: ${sectionHeight}px;
+    height: ${sectionHeight- 200}px;
     transform-style: preserve-3d;
     z-index: -1;
     ${debug ? "border: 1px solid blue;" : ""}
@@ -27,7 +27,7 @@ export const ImgDiv = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     ${'' /* transform: translateZ(-10px) scale(2); */}
-    transform: translate3d(0%, 0px, 0px);
+    transform: translate3d(0%, ${({paralOffset}) => paralOffset}px, 0px);
     background-color: black;
     z-index: -1;
 `;

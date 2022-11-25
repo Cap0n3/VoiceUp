@@ -9,17 +9,35 @@ const C2ASection = () => {
     const screenSize = useContext(ScreenContext); // Get height of screen
     const scrollPos = useContext(ScrollContext); // Get scroll position
     const [elementPosition, setElementPos] = useState(null);
+    const [parallaxOffset, setParallaxOffset] = useState(0);
+    const [divider, setDivider] = useState(null);
 
+    const getDividerVal = () => {
+        const screenHeight = screenSize.innerHeight;
+        if(screenHeight < 869) {
+            setDivider(7);
+        }
+        else if(screenHeight < 1024 && screenHeight > 869) {
+            setDivider(9);
+        }
+        else if(screenHeight < 1280 && screenHeight > 1024) {
+            setDivider(6);
+        }
+    }
     // Determine when component is visible and when it's not anymore
     useEffect(() => {
+        
+        getDividerVal();
         if(elementPosition !== null) {
             const elementStartPos = elementPosition // When element is visible
             const elementEndPos = elementPosition + screenSize.innerHeight + 600 // When element is not visible
-            // console.log(scrollPos + " : " + elementPosition)
+            
             if (scrollPos > elementStartPos && scrollPos < elementEndPos) {
-                console.log("Element is visible !")
+                let parallaxIncrement = Math.round((scrollPos - elementStartPos) / divider)              
+                setParallaxOffset(parallaxIncrement);        
             }
             else if (scrollPos > elementEndPos) {
+                // COMPONENT ISN'T VISIBLE ANYMORE
                 console.log("Element is not visible !")
             }
         }
@@ -32,16 +50,21 @@ const C2ASection = () => {
         setElementPos(rawElPosition - screenSize.innerHeight)
     }, [screenSize])
 
+    // useEffect(() => {
+    //     console.log("Divider value : " + divider)
+    //     console.log(parallaxOffset)
+    // }, [parallaxOffset])
+
     return(
         <C2AContainer ref={reference}>
-            <ImgDiv></ImgDiv>
-            <BoxWrapper>
+            <ImgDiv paralOffset={parallaxOffset}></ImgDiv>
+            {/* <BoxWrapper>
                 <TextBox>
                     <h1>Progressez à votre rythme</h1>
                     <p style={{marginBottom: "40px"}}>Des cours adaptés aux besoins de chacuns, donnés par Tania, une professeures de chat certifiée avec plus de 30 ans d’expérience vocale.</p>
                     <Button style={{marginLeft: "auto", marginRight: "auto"}}>Réservez un cours</Button>
                 </TextBox>
-            </BoxWrapper>
+            </BoxWrapper> */}
         </C2AContainer>
     );
 }
