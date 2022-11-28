@@ -8,8 +8,6 @@ export const ScreenProvider = ({children}) => {
         innerHeight : null
     });
 
-    const [scrollPosition, setScrollPos] = useState(null);
-
     const getScreenSize = () => {
         let updatedData = {
             innerWidth : window.innerWidth,

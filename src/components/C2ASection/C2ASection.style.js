@@ -26,7 +26,6 @@ export const ImgDiv = styled.div`
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    ${'' /* transform: translateZ(-10px) scale(2); */}
     transform: translate3d(0%, ${({paralOffset}) => paralOffset}px, 0px);
     background-color: black;
     z-index: -1;
