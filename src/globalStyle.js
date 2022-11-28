@@ -18,7 +18,6 @@ const GlobalStyle = createGlobalStyle`
     &.main {
         height: 100vh;
         overflow-y: auto;
-        overflow-x: hidden;
         perspective: 10px; /* For parallax FX */
         z-index: 1;
     }
