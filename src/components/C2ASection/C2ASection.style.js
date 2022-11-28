@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import Tania2 from "../../assets/images/Tania/Tania2_medium_header.jpg";
-import Paral from "../../assets/images/Tania/parallax-cta.jpeg";
+import Tania2 from "../../assets/images/Tania/Tania2_medium_header_over.jpg";
 import { VoiceUpColors } from "../../colors";
 
 const debug = false;

@@ -101,7 +101,9 @@ export const NavMenu = styled.ul`
 export const NavItem = styled.li`
     display: flex;
     align-items: center;
+    justify-content: center;
     height: ${navbarHeight}px;
+    width: 120px;
     border-bottom: 2px solid transparent;
     cursor: pointer;
     ${(DEBUG) ? "background: pink;" : ""}
@@ -155,7 +157,7 @@ export const NavLinks = styled(NavLink)`
     text-transform: uppercase;
     font-size: 0.9em;
     font-weight: 400;
-    padding: 0.5rem 1rem;
+    ${'' /* padding: 0.5rem 1rem; */}
     ${(DEBUG) ? "background: brown;" : ""}
 
     &.active {

@@ -126,7 +126,7 @@ const useParallax = (componentRef, scrollPosition, screenHeight) => {
             }
             else if (scrollPosition > elementEndPos) {
                 // COMPONENT ISN'T VISIBLE ANYMORE
-                console.log("Element is not visible !")
+                // console.log("Element is not visible !")
             }
         }
     }, [scrollPosition])

@@ -5,8 +5,8 @@ import InfoSection from "../../components/InfoSection/InfoSection";
 import ReviewSection from "../../components/ReviewSection/ReviewSection";
 import C2ASection from "../../components/C2ASection/C2ASection";
 import { SliderContainer } from "./Home.style";
-import { slides } from "./slideImg.data";
-import { SingSectionData, PlaySectionData, TalkSectionData } from "./infosSec.data";
+import { slides } from "./data/slideImg.data";
+import { SingSectionData, PlaySectionData, TalkSectionData } from "./data/infosSec.data";
 
 const Home = () => {
     const screenSize = useContext(ScreenContext);

@@ -1,6 +1,6 @@
-import Tania1 from "../../assets/headers/Header_Tania1.jpg"
-import ShowerDude from "../../assets/headers/Header_ShowerDude.jpg"
-import GoldMic from "../../assets/headers/Header_GoldMic.jpg"
+import Tania1 from "../../../assets/headers/Header_Tania1.jpg"
+import ShowerDude from "../../../assets/headers/Header_ShowerDude.jpg"
+import GoldMic from "../../../assets/headers/Header_GoldMic.jpg"
 
 // === Slider images & Text === //
 

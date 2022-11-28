@@ -1,11 +1,11 @@
-import GuitarIcon from "../../assets/icons/misc/guitar_icon.js";
-import MasksIcon from "../../assets/icons/misc/masks_icon.js";
-import MicIcon from "../../assets/icons/misc/mic_icon.js";
-import Vinz from "../../assets/images/students/student_Vincent1.jpg";
-import Lea from "../../assets/images/students/student_Lea1.jpg";
-import Val from "../../assets/images/students/student_Val1.jpg";
+import GuitarIcon from "../../../assets/icons/misc/guitar_icon.js";
+import MasksIcon from "../../../assets/icons/misc/masks_icon.js";
+import MicIcon from "../../../assets/icons/misc/mic_icon.js";
+import Vinz from "../../../assets/images/students/student_Vincent1.jpg";
+import Lea from "../../../assets/images/students/student_Lea1.jpg";
+import Val from "../../../assets/images/students/student_Val1.jpg";
 
-// === Info sections data === //
+// === Infos section data === //
 
 export const SingSectionData = {
     direction : "normal",
