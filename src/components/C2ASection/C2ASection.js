@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useContext, useRef} from "react";
+import React, { useContext, useRef} from "react";
 import { ScreenContext } from "../../contexts/screenContext";
 import { ScrollContext } from "../../App";
 import { C2AContainer, ImgDiv, BoxWrapper, TextBox } from "./C2ASection.style";
@@ -14,13 +14,14 @@ const C2ASection = () => {
     return(
         <C2AContainer ref={reference}>
             <ImgDiv paralOffset={parallaxOffset}></ImgDiv>
-            {/* <BoxWrapper>
+            <BoxWrapper>
                 <TextBox>
-                    <h1>Progressez à votre rythme</h1>
+                    <h1>Progressez</h1>
+                    <h2><span className="cursiveSpan" style={{textTransform: "uppercase"}}>à votre</span> rythme</h2>
                     <p style={{marginBottom: "40px"}}>Des cours adaptés aux besoins de chacuns, donnés par Tania, une professeures de chat certifiée avec plus de 30 ans d’expérience vocale.</p>
                     <Button style={{marginLeft: "auto", marginRight: "auto"}}>Réservez un cours</Button>
                 </TextBox>
-            </BoxWrapper> */}
+            </BoxWrapper>
         </C2AContainer>
     );
 }

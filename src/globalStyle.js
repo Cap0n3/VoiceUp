@@ -14,6 +14,20 @@ const GlobalStyle = createGlobalStyle`
     body {
         min-width: fit-content;
     }
+
+    &.main {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        perspective: 10px; /* For parallax FX */
+        z-index: 1;
+    }
+
+    &.cursiveSpan {
+        color: ${VoiceUpColors.altGrey};
+        font-family: 'Yellowtail', cursive;
+        text-transform: lowercase;
+    }
 `;
 
 const pulse = keyframes`

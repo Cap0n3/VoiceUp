@@ -3,8 +3,8 @@ import Tania2 from "../../assets/images/Tania/Tania2_medium_header.jpg";
 import Paral from "../../assets/images/Tania/parallax-cta.jpeg";
 import { VoiceUpColors } from "../../colors";
 
-const debug = true;
-const sectionHeight = 600;
+const debug = false;
+const sectionHeight = 700;
 
 export const C2AContainer = styled.section`
     position: relative;
@@ -22,7 +22,7 @@ export const ImgDiv = styled.div`
     position: absolute;
     height: ${sectionHeight}px;
     width: 100%;
-    background-image: ${`url(${Paral})`};
+    background-image: ${`url(${Tania2})`};
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -35,6 +35,10 @@ export const BoxWrapper = styled.div`
     width: 45%;
     ${debug ? "border: 1px solid pink;" : ""}
     z-index: 900;
+
+    @media screen and (max-width: 960px) {
+        width: 55%;
+    }
 `;
 
 export const TextBox = styled.div`
@@ -44,17 +48,29 @@ export const TextBox = styled.div`
     overflow-x: visible;
     overflow-wrap: break-word;
     
-    & > h1 {
+    & > h1, h2 {
         text-align: center;
         color: ${VoiceUpColors.white};
-        font-size: 4em;
         text-transform: uppercase;
         font-weight: normal;
-        margin-bottom: 30px;
         ${debug ? "border: 1px solid red;" : ""}
+    }
+
+    & > h1 {
+            font-size: 4em;
+            margin-bottom: 5px;
+
+            @media screen and (max-width: 960px) {
+                font-size: 2.2em;
+            }
+        }
+
+    & > h2 {
+        font-size: 3em;
+        margin-bottom: 30px;
 
         @media screen and (max-width: 960px) {
-            font-size: 2.2em;
+            font-size: 1.5em;
         }
     }
 

@@ -28,6 +28,10 @@ import { ScreenContext } from "../contexts/screenContext";
  * in `App.js` and pass scroll value to the component. For screen height, you can do as you please to get 
  * the right value but a context is also a good way (a context is used in exemple below)
  * 
+ * ### App parent perspective :
+ * 
+ * For the parallax FX to work, `App.js` main element should have a perspective property set.
+ * 
  * ### JSX component setup :
  * 
  * ```js

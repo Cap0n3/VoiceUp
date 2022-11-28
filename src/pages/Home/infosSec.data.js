@@ -5,7 +5,7 @@ import Vinz from "../../assets/images/students/student_Vincent1.jpg";
 import Lea from "../../assets/images/students/student_Lea1.jpg";
 import Val from "../../assets/images/students/student_Val1.jpg";
 
-// === Header Slider data === //
+// === Info sections data === //
 
 export const SingSectionData = {
     direction : "normal",

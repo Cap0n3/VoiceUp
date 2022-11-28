@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import { useState, createContext } from "react";
-import "./App.style.css";
 import GlobalStyle from "./globalStyle";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
