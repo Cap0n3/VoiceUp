@@ -1,5 +1,4 @@
-import { useEffect, useState, useContext } from "react";
-import { ScreenContext } from "../contexts/screenContext";
+import { useEffect, useState } from "react";
 
 /**
  * This custom hook provide allow the creation of a parallax effect on an image.
@@ -21,12 +20,12 @@ import { ScreenContext } from "../contexts/screenContext";
  * style component to increment/decrement the `ty` value of transform's `translate3d(tx, ty, tz)` css property
  * to create a moving fx for image.
  * 
- * ### Screen & scroll contexts :
+ * ### Screen & scroll :
  * 
  * To correcly function, the hook will need the scroll position & screen height given as argument. 
  * For scroll position, a good way is to create a scroll context attached to the main scrollable component 
  * in `App.js` and pass scroll value to the component. For screen height, you can do as you please to get 
- * the right value but a context is also a good way (a context is used in exemple below)
+ * the right value but a custom defined hook `useWindowSize` is a good way (a hook is used in exemple below)
  * 
  * ### App parent perspective :
  * 
@@ -37,7 +36,6 @@ import { ScreenContext } from "../contexts/screenContext";
  * ```js
  * import React, {useRef} from "react";
  * import { ScrollContext } from "../../App"; // Scroll context
- * import { ScreenContext } from "../../contexts/screenContext"; // Scree context
  * import useParallax from "../../hooks/useParallax";
  * 
  * const MyComponent = () => {
@@ -45,9 +43,9 @@ import { ScreenContext } from "../contexts/screenContext";
  *  const reference = useRef();
  *  // Get scroll position from context
  *  const scrollPos = useContext(ScrollContext);
- *  // Get screen height from context
- *  const screenSize = useContext(ScreenContext);
- *  // Setup hook
+ *  // Get screen height from hook
+ *  const screenSize = useWindowSize();
+ *  // Setup parallax hook
  *  const parallaxOffset = useParallax(reference, scrollPos, screenSize.innerHeight);
  *  
  *  return(

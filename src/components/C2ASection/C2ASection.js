@@ -1,5 +1,5 @@
 import React, { useContext, useRef} from "react";
-import { ScreenContext } from "../../contexts/screenContext";
+import useWindowSize from "../../hooks/useWindowSize";
 import { ScrollContext } from "../../App";
 import { LangContext } from '../../App';
 import { C2AContainer, ImgDiv, BoxWrapper, TextBox } from "./C2ASection.style";
@@ -10,9 +10,9 @@ import { C2AData } from "../../pages/Home/data/C2ASec.data";
 const C2ASection = () => {
     const reference = useRef(); // Get position of component in page
     const scrollPos = useContext(ScrollContext);
-    const screenSize = useContext(ScreenContext);
+    const windowSize = useWindowSize();
     const {language} = useContext(LangContext);
-    const parallaxOffset = useParallax(reference, scrollPos, screenSize.innerHeight);
+    const parallaxOffset = useParallax(reference, scrollPos, windowSize.innerHeight);
 
     return(
         <C2AContainer ref={reference}>

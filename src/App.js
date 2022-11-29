@@ -8,13 +8,13 @@ import Teacher from "./pages/Teacher";
 import Conditions from "./pages/Conditions";
 import Prices from "./pages/Prices";
 import Contact from "./pages/Conctact";
-import { ScreenProvider } from "./contexts/screenContext";
 
+// Define contexts
 export const LangContext = createContext();
 export const ScrollContext = createContext();
 
 function App() {
-	// All useful contexts
+	// Set contexts
 	const [language, setLanguage] = useState("FR");
 	const [scrollTopPos, setScrollPos] = useState(null);
 	const langValue = { language, setLanguage };
@@ -25,7 +25,6 @@ function App() {
 	
 	return (
 		<div className="main" onScroll={handleScroll}>
-			<ScreenProvider>
 			<LangContext.Provider value={langValue}>
 			<ScrollContext.Provider value={scrollTopPos}>
 				<GlobalStyle />
@@ -40,7 +39,6 @@ function App() {
 				</Routes>
 			</ScrollContext.Provider>
 			</LangContext.Provider>
-			</ScreenProvider>
 		</div>
 		
 	);

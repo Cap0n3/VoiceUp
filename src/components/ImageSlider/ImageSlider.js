@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
+import useWindowSize from "../../hooks/useWindowSize";
 import { SliderWrapper, Slide, SlideOverlay, BoxWrapper, TextBox } from "./ImageSlider.style";
 import { BackwardArrow, ForwardArrow, DotWrapper, Dot } from "../../globalStyle";
-import { ScreenContext } from "../../contexts/screenContext";
 import { Button } from "../../globalStyle";
 import { LangContext } from '../../App';
 
 const ImageSlider = ({slides, transitionTime}) => {
-    const screenSize = useContext(ScreenContext);
+    const windowSize = useWindowSize();
     const {language} = useContext(LangContext);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isActive, setIsActive] = useState(true);
@@ -73,9 +73,9 @@ const ImageSlider = ({slides, transitionTime}) => {
             <BackwardArrow onClick={goToPrevious}></BackwardArrow>
             <ForwardArrow onClick={goToNext}></ForwardArrow>
             <Slide imageURL={slides[currentIndex].url} className={isActive ? "active" : "inactive"} transitionTime={transitionTime}>
-                {(screenSize.innerWidth <= 960) ? <SlideOverlay></SlideOverlay> : ""}
+                {(windowSize.innerWidth <= 960) ? <SlideOverlay></SlideOverlay> : ""}
             </Slide>      
-            <BoxWrapper className={isActive ? "active" : "inactive"} transitionTime={transitionTime} headerWidth={screenSize.innerWidth ? screenSize.innerWidth : null}>
+            <BoxWrapper className={isActive ? "active" : "inactive"} transitionTime={transitionTime} headerWidth={windowSize.innerWidth ? windowSize.innerWidth : null}>
                 <TextBox>
                     <h1>{(language === "FR") ? slides[currentIndex].titleFR : slides[currentIndex].titleEN}</h1>
                     <p style={{marginBottom: "40px"}}>{(language === "FR") ? slides[currentIndex].descriptionFR : slides[currentIndex].descriptionEN}</p>
