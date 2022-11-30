@@ -1,18 +1,15 @@
 import { VoiceUpColors } from "../../colors";
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
+import * as globVars from "../../globalVars";
 
 // To see all borders (design debug)
 var DEBUG = false;
 
-// Globals
-const navbarHeight = 80;
-const mobileNavbarHeight = 60;
-
 export const Nav = styled.nav `
     display: flex;
     flex-grow: 1;
-    height: ${navbarHeight}px;
+    height: ${globVars.navbarHeight}px;
     justify-content: center;
     align-items: center;
     font-size: 1.1em;
@@ -22,7 +19,7 @@ export const Nav = styled.nav `
     background: ${VoiceUpColors.white};
 
     @media screen and (max-width: 960px) {
-        height: ${mobileNavbarHeight}px;
+        height: ${globVars.mobileNavbarHeight}px;
     }
     
 `;
@@ -88,8 +85,8 @@ export const NavMenu = styled.ul`
         gap: 0px;
         position: absolute;
         width: 100%;
-        height: calc(100vh - ${mobileNavbarHeight}px);
-        top: ${mobileNavbarHeight}px;
+        height: calc(100vh - ${globVars.mobileNavbarHeight}px);
+        top: ${globVars.mobileNavbarHeight}px;
         ${'' /* Cannot go right otherwise it extend screen */}
         left: ${({click}) => (click ? 0 : "-100%")};
         opacity: 1;
@@ -102,7 +99,7 @@ export const NavItem = styled.li`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: ${navbarHeight}px;
+    height: ${globVars.navbarHeight}px;
     width: 120px;
     border-bottom: 2px solid transparent;
     cursor: pointer;
@@ -120,7 +117,7 @@ export const NavItem = styled.li`
 export const LangSwitch = styled.li`
     display: flex;
     align-items: center;
-    height: ${navbarHeight}px;
+    height: ${globVars.navbarHeight}px;
     cursor: pointer;
     font-size: 0.8em;
     color: ${VoiceUpColors.grey};

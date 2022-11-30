@@ -4,10 +4,13 @@ import {
     Title, 
     Form, 
     InputContainer, 
-    InputsWrapper, 
+    InputsWrapper,
+    Label,
+    Input, 
     Textarea 
 } from "./ContactSection.style";
 import useWindowSize from "../../hooks/useWindowSize";
+import { FilledBtn } from "../../globalStyle";
 
 const ContactSection = () => {
     const windowSize = useWindowSize();
@@ -19,29 +22,32 @@ const ContactSection = () => {
                 <Form action="" method="get">
                     <InputContainer>
                         <InputsWrapper>
-                            <label htmlFor="fname">Prénom</label>
-                            <input type="text" name="fname" />
+                            <Label htmlFor="fname">Prénom</Label>
+                            <Input type="text" name="fname" />
                         </InputsWrapper>
                         <InputsWrapper>
-                            <label htmlFor="lname">Nom</label>
-                            <input type="text" name="lname" />
+                            <Label htmlFor="lname">Nom</Label>
+                            <Input type="text" name="lname" />
                         </InputsWrapper>             
                     </InputContainer>
                     <InputContainer>
                         <InputsWrapper>
-                            <label htmlFor="email">E-mail</label>
-                            <input type="email" name="email" />
+                            <Label htmlFor="email">E-mail</Label>
+                            <Input type="email" name="email" />
                         </InputsWrapper>
                         <InputsWrapper>
-                            <label htmlFor="phone">Tél</label>
-                            <input type="tel" name="phone" />
+                            <Label htmlFor="phone">Tél</Label>
+                            <Input type="tel" name="phone" />
                         </InputsWrapper> 
                     </InputContainer>
                     <InputContainer>
-                        <Textarea></Textarea>
+                        <InputsWrapper>
+                            <Label htmlFor="Message">Votre message</Label>
+                            <Textarea name="message"></Textarea>
+                        </InputsWrapper>
                     </InputContainer>
-                    <InputContainer>
-                        <button>Envoyer</button>
+                    <InputContainer style={{marginTop: "30px"}}>
+                        <FilledBtn>Envoyer</FilledBtn>
                     </InputContainer>
                 </Form>
             </FormContainer>

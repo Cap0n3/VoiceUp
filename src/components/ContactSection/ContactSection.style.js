@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
+import * as globVars from "../../globalVars";
 
-const debug = true;
-const sectionHeight = 600;
+const debug = false;
 
 export const FormSection = styled.section`
     display: flex;
     align-items: center;
-    height: ${({winHeight}) => (winHeight ? (winHeight - 80) : "600")}px;
+    height: ${({winHeight}) => (winHeight ? (winHeight - globVars.navbarHeight) : 800)}px;
     max-height: 1280px;
     min-height: 800px;
     width: 100%;
@@ -15,24 +15,30 @@ export const FormSection = styled.section`
     background-color: ${VoiceUpColors.lightGrey};
     ${debug ? "border: 1px solid blue;" : ""}
     overflow: hidden;
-
-    @media screen and (max-width: 960px) {
-        
-    }
 `;
 
 export const FormContainer = styled.div`
     width: 100%;
+    padding: 10px;
     ${debug ? "border: 1px solid orange;" : ""}
 `;
 
 export const Title = styled.h1`
+    font-size: 1.4em;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    color: ${VoiceUpColors.black};
+    
 
+    @media screen and (max-width: 960px) {
+        margin-bottom: 15px;
+    }
 `;
 
 export const Form = styled.form`
     width: 60%;
-    padding: 10px;
+    
     
     ${debug ? "border: 1px solid green;" : ""}
 
@@ -61,19 +67,40 @@ export const InputsWrapper = styled.div`
     ${debug ? "border: 1px solid yellow;" : ""}
 
     & > label {
+        color: ${VoiceUpColors.grey};
         margin-bottom: 10px;
-    }
-
-    & > input {
-        border-radius: 6px;
-        height: 30px;
     }
 `;
 
 export const Textarea = styled.textarea`
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     width: 100%;
     height: 250px;
     border-radius: 6px;
     resize: none;
     overflow-y: auto;
+    border: 1px solid ${VoiceUpColors.grey};
+    border-radius: 10px;
+    font-size: 1em;
+    outline: 0;
+    padding: 10px;
+`;
+
+export const Label = styled.label`
+    color: ${VoiceUpColors.grey};
+    margin-bottom: 10px;
+`;
+
+export const Input = styled.input`
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    border: 1px solid ${VoiceUpColors.grey};
+    border-radius: 10px;
+    font-size: 1em;
+    outline: 0;
+    padding: 10px;
 `;

@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
         font-style: normal;
         color: ${VoiceUpColors.black};
     }
+
     body {
         min-width: fit-content;
     }
@@ -51,10 +52,10 @@ export const Container = styled.div`
 `;
 
 // For more cool button FX : https://alvarotrigo.com/blog/best-css-button-hover-effects/
-export const Button = styled.button`
+export const OutlineBtn = styled.button`
     white-space: nowrap;
     padding: 12px 60px;
-    color: #fff;
+    color: ${VoiceUpColors.white};
     font-size: 16px;
     outline: none;
     background: none;
@@ -71,6 +72,20 @@ export const Button = styled.button`
     @media screen and (max-width: 960px) {
         width: 100%;
         padding: 12px 30px;
+    }
+`;
+
+export const FilledBtn =  styled.button`
+    white-space: nowrap;
+    padding: 12px 60px;
+    color: ${VoiceUpColors.white};
+    background: ${VoiceUpColors.gold};
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: inset 0 0 0 2em red;
     }
 `;
 
