@@ -28,6 +28,12 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Yellowtail', cursive;
         text-transform: lowercase;
     }
+
+    &.socialIcons {
+        fill: ${VoiceUpColors.white};
+        width: 50px;
+        cursor: pointer;
+    }
 `;
 
 const pulse = keyframes`

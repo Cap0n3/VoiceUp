@@ -10,8 +10,11 @@ import {
     SiteLogo,
     CopyrightWrapper
 } from "./Footer.style";
-
 import LogoWH from "../../assets/logos/VoiceUp_Logo_WH.png"
+import FBIcon from "../../assets/icons/social/facebook_icon";
+import InstaIcon from "../../assets/icons/social/instagram_icon";
+import TwitIcon from "../../assets/icons/social/twitter_icon";
+import YTIcon from "../../assets/icons/social/youtube_icon";
 
 const Footer = () => {
     return(
@@ -25,7 +28,12 @@ const Footer = () => {
                         <FtNavItem>Localisation</FtNavItem>
                     </FtNavList>
                 </FtNavWrapper>
-                <SocialWrapper></SocialWrapper>
+                <SocialWrapper>
+                    <FBIcon />
+                    <InstaIcon />
+                    <TwitIcon />
+                    <YTIcon />
+                </SocialWrapper>
                 <hr />
                 <LogoWrapper>
                     <SiteLogo src={LogoWH} />
@@ -35,8 +43,7 @@ const Footer = () => {
                 </CopyrightWrapper>
             </FooterWrapper>
         </FooterContainer>
-    );
-    
+    );    
 }
 
 export default Footer;
