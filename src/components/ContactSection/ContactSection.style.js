@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import * as globVars from "../../globalVars";
 
-const debug = true;
+const debug = false;
 
 export const FormSection = styled.section`
     display: flex;
