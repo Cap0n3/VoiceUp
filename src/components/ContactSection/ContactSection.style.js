@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import * as globVars from "../../globalVars";
 
-const debug = false;
+const debug = true;
 
 export const FormSection = styled.section`
     display: flex;
@@ -30,7 +30,6 @@ export const Title = styled.h1`
     margin-bottom: 50px;
     color: ${VoiceUpColors.black};
     
-
     @media screen and (max-width: 960px) {
         margin-bottom: 15px;
     }

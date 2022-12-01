@@ -20,8 +20,7 @@ export const Nav = styled.nav `
 
     @media screen and (max-width: 960px) {
         height: ${globVars.mobileNavbarHeight}px;
-    }
-    
+    }  
 `;
 
 export const NavbarWrapper = styled.div`

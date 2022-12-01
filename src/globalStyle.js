@@ -83,9 +83,12 @@ export const FilledBtn =  styled.button`
     border: none;
     font-size: 16px;
     cursor: pointer;
+    transition: 0.25s;
 
     &:hover {
-        box-shadow: inset 0 0 0 2em red;
+        background: #d19162;
+        box-shadow: 0 0.5em 0.5em -0.4em ${VoiceUpColors.black};
+        transform: translateY(-0.25em);
     }
 `;
 
