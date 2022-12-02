@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import * as globVars from "../../globalVars";
+import { NavLink } from 'react-router-dom';
 import { VoiceUpColors } from "../../colors";
 
-const debug = false;
+const DEBUG = false;
 
 export const FooterContainer = styled.footer`
     width: 100%;
@@ -10,7 +11,7 @@ export const FooterContainer = styled.footer`
     height: 350px;
     background-color: ${VoiceUpColors.darkGrey};
     overflow: hidden;
-    ${debug ? "border: 1px solid blue;" : ""}
+    ${DEBUG ? "border: 1px solid blue;" : ""}
 `;
 
 export const FooterWrapper = styled.div`
@@ -22,7 +23,7 @@ export const FooterWrapper = styled.div`
     justify-content: space-between;
     width: 100%;
     height: 100%;
-    ${debug ? "border: 1px solid green;" : ""}
+    ${DEBUG ? "border: 1px solid green;" : ""}
 
     & > hr {
         border: 0.5px solid ${VoiceUpColors.grey}; 
@@ -32,7 +33,7 @@ export const FooterWrapper = styled.div`
 
 export const FtNavWrapper = styled.nav`
     
-    ${debug ? "border: 1px solid orange;" : ""}
+    ${DEBUG ? "border: 1px solid orange;" : ""}
 `;
 
 export const FtNavList = styled.ul`
@@ -48,25 +49,30 @@ export const FtNavList = styled.ul`
 `;
 
 export const FtNavItem = styled.li`
+    cursor: pointer;
+    ${(DEBUG) ? "background: brown;" : ""}
+`;
+
+export const FtNavLinks = styled(NavLink)`
+    text-decoration: none;
     color: ${VoiceUpColors.white};
 `;
 
 export const SocialWrapper = styled.div`
     display: flex;
     justify-content: center;
-    gap: 30px;
-    ${debug ? "border: 1px solid purple;" : ""}
+    gap: 40px;
+    ${DEBUG ? "border: 1px solid purple;" : ""}
 
     @media screen and (max-width: 960px) {
         gap: 20px;
     }
-    
 `;
 
 export const LogoWrapper = styled.div`
     display: flex;
     justify-content: center;
-    ${debug ? "border: 1px solid cyan;" : ""}
+    ${DEBUG ? "border: 1px solid cyan;" : ""}
 `;
 
 export const SiteLogo = styled.img`
@@ -76,7 +82,7 @@ export const SiteLogo = styled.img`
 export const CopyrightWrapper = styled.div`
     display: flex;
     justify-content: center;
-    ${debug ? "border: 1px solid pink;" : ""}
+    ${DEBUG ? "border: 1px solid pink;" : ""}
 
     & > p {
         font-size: 0.8em;

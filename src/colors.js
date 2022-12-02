@@ -9,5 +9,6 @@ export const VoiceUpColors = {
     altGrey: "#c2c2c2",
     darkGrey: "#494949",
     lightGrey: "#F1F1F1",
-    gold : "#D9A47D"
+    gold : "#D9A47D",
+    purple: "#432A3F"
 }

@@ -17,10 +17,10 @@ import { Nav,
 import { useState, useEffect, useContext } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import Logo from "../../assets/logos/VoiceUp_Logo_BLK.png"
-import YT_Icon from "../../assets/icons/social/youtube_icon.svg"
-import INSTA_Icon from "../../assets/icons/social/instagram_icon.svg"
-import FB_Icon from "../../assets/icons/social/facebook_icon.svg"
-import TWIT_Icon from "../../assets/icons/social/twitter_icon.svg"
+import YTIcon from "../../assets/icons/social/youtube_icon"
+import InstaIcon from "../../assets/icons/social/instagram_icon"
+import FBIcon from "../../assets/icons/social/facebook_icon"
+import TwitIcon from "../../assets/icons/social/twitter_icon"
 import { LangContext } from '../../App';
 
 
@@ -94,10 +94,14 @@ const Navbar = () => {
                         </MobileIcon>
                     </MenuContainer>
                     <SocialContainer>
-                        <SocialIcons src={YT_Icon} />
+                        {/* <SocialIcons src={YT_Icon} />
                         <SocialIcons src={INSTA_Icon} />
                         <SocialIcons src={FB_Icon} />
-                        <SocialIcons src={TWIT_Icon} />
+                        <SocialIcons src={TWIT_Icon} /> */}
+                        <YTIcon />
+                        <InstaIcon />
+                        <FBIcon />
+                        <TwitIcon />
                     </SocialContainer>
                 </NavbarWrapper>
             </Nav>

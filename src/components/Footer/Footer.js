@@ -5,6 +5,7 @@ import {
     FtNavWrapper,
     FtNavList,
     FtNavItem,
+    FtNavLinks,
     SocialWrapper, 
     LogoWrapper,
     SiteLogo,
@@ -22,17 +23,25 @@ const Footer = () => {
             <FooterWrapper>
                 <FtNavWrapper>
                     <FtNavList>
-                        <FtNavItem>F.A.Q</FtNavItem>
-                        <FtNavItem>Condition des cours</FtNavItem>
-                        <FtNavItem>Tarifs</FtNavItem>
-                        <FtNavItem>Localisation</FtNavItem>
+                        <FtNavItem>
+                            <FtNavLinks to="/faq">F.A.Q</FtNavLinks>
+                        </FtNavItem>
+                        <FtNavItem>
+                            <FtNavLinks to="/conditions">Condition des cours</FtNavLinks>
+                        </FtNavItem>
+                        <FtNavItem>
+                            <FtNavLinks to="/tarifs">Tarifs</FtNavLinks>
+                        </FtNavItem>
+                        <FtNavItem>
+                            <FtNavLinks to="/situation">Localisation</FtNavLinks>
+                        </FtNavItem>
                     </FtNavList>
                 </FtNavWrapper>
                 <SocialWrapper>
-                    <FBIcon />
-                    <InstaIcon />
-                    <TwitIcon />
                     <YTIcon />
+                    <InstaIcon />
+                    <FBIcon />
+                    <TwitIcon />
                 </SocialWrapper>
                 <hr />
                 <LogoWrapper>

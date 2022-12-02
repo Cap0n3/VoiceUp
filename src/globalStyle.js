@@ -31,8 +31,13 @@ const GlobalStyle = createGlobalStyle`
 
     &.socialIcons {
         fill: ${VoiceUpColors.white};
-        width: 50px;
+        width: 35px;
         cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            filter: drop-shadow(3px 5px 2px ${VoiceUpColors.purple});
+        }
     }
 `;
 
