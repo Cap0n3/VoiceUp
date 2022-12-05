@@ -19,7 +19,7 @@ const Home = () => {
                 <ImageSlider slides={slides} transitionTime={300} />
             </SliderContainer>
             <InfoSection data={SingSectionData} />
-            <InfoSection data={PlaySectionData} ref={secondCompRef} />
+            <InfoSection data={PlaySectionData} />
             <InfoSection data={TalkSectionData} />
             <ReviewSection transitionTime={800} nbOfReviews={windowSize.innerWidth > 960 ? 3 : 1} />
             <C2ASection />
