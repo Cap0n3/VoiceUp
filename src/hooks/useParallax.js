@@ -85,7 +85,7 @@ import { useEffect, useState } from "react";
  * `;
  * ```
  * @param   {object}    componentRef    - Reference of parent component.
- * @param   {int}       scrollPosition  - ScrollTop position in page.
+ * @param   {int}       scrollPosition  - Current scrollTop position in page.
  * @param   {int}       screenHeight    - Screen inner height value.
  * @returns                             - Dynamic value (int).
  */
@@ -93,7 +93,7 @@ const useParallax = (componentRef, scrollPosition, screenHeight) => {
     const [elementPosition, setElementPos] = useState(null);
     const [parallaxOffset, setParallaxOffset] = useState(0);
     const [divider, setDivider] = useState(null);
-
+    
     /**
      * Utils function that returns a divider value depending on screen height
      * to setup an optimal parallax effect for images. The divider will
@@ -115,8 +115,9 @@ const useParallax = (componentRef, scrollPosition, screenHeight) => {
     useEffect(() => {    
         getDividerVal();
         if(elementPosition !== null) {
+            const heightOfComponent = componentRef.current.clientHeight;
             const elementStartPos = elementPosition // When element is visible
-            const elementEndPos = elementPosition + screenHeight + 600 // When element is not visible
+            const elementEndPos = elementPosition + screenHeight + heightOfComponent // When element is not visible
             
             if (scrollPosition > elementStartPos && scrollPosition < elementEndPos) {
                 let parallaxIncrement = Math.round((scrollPosition - elementStartPos) / divider)              

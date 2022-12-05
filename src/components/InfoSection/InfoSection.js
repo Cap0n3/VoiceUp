@@ -1,10 +1,12 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import { LangContext } from '../../App';
 import { SectionWrapper, ImgContainer, CardContainer, ImageDiv, Card, TextDiv } from "./InfoSection.style";
+import { ScrollContext } from "../../App";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const InfoSection = (props) => {
     const [isLoaded, setIsLoaded] = useState(false);
-    const {language} = useContext(LangContext)
+    const {language} = useContext(LangContext);
 
     useEffect(() => {
         window.addEventListener("load", (event) => {setIsLoaded(true)})
