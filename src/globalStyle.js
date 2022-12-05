@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
     &.main {
         height: 100vh;
+        overflow-x: hidden;
         overflow-y: auto;
         perspective: 10px; /* For parallax FX */
         z-index: 1;
@@ -101,66 +102,6 @@ export const FilledBtn =  styled.button`
         box-shadow: 0 0.5em 0.5em -0.4em ${VoiceUpColors.black};
         transform: translateY(-0.25em);
     }
-`;
-
-// Arrows & Dots on Header & review slider
-export const BackwardArrow = styled(IoIosArrowBack)`
-    position: absolute;
-    fill: ${({color}) => (color ? color : VoiceUpColors.white)};
-    top: 50%;
-    left: 32px;
-    font-size: 2em;
-    z-index: 999;
-    cursor: pointer;
-
-    @media screen and (max-width: 960px) {
-        display: none;
-    }
-`;
-
-export const ForwardArrow = styled(IoIosArrowForward)`
-    position: absolute;
-    fill: ${({color}) => (color ? color : VoiceUpColors.white)};
-    top: 50%;
-    right: 32px;
-    font-size: 2em;
-    z-index: 999;
-    cursor: pointer;
-
-    @media screen and (max-width: 960px) {
-        display: none;
-    }
-`;
-
-export const DotWrapper = styled.div`
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    right: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 998;
-`;
-
-export const Dot = styled.div`
-    margin: 0 3px;
-    cursor: pointer;
-
-    &.active {
-        color: ${VoiceUpColors.gold};
-        font-size: 26px;
-    }
-
-    &.inactive {
-        color: ${VoiceUpColors.gold};
-        opacity: 0.6;
-        font-size: 23px;
-    }
-
-    @media screen and (max-width: 960px) {
-        margin: 0 8px;
-    } 
 `;
 
 export default GlobalStyle;

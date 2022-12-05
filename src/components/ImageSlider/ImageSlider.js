@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import useWindowSize from "../../hooks/useWindowSize";
 import { SliderWrapper, Slide, SlideOverlay, BoxWrapper, TextBox } from "./ImageSlider.style";
-import { BackwardArrow, ForwardArrow, DotWrapper, Dot } from "../../globalStyle";
+import { BackwardArrow, ForwardArrow, DotWrapper, Dot } from "./ImageSlider.style";
 import { OutlineBtn } from "../../globalStyle";
 import { LangContext } from '../../App';
 
@@ -10,6 +10,7 @@ const ImageSlider = ({slides, transitionTime}) => {
     const {language} = useContext(LangContext);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isActive, setIsActive] = useState(true);
+    const [isHovered, setIsHovered] = useState(false);
     
     // === Slide change functions === //
     /**
@@ -69,9 +70,9 @@ const ImageSlider = ({slides, transitionTime}) => {
     });
 
     return(
-        <SliderWrapper>
-            <BackwardArrow onClick={goToPrevious}></BackwardArrow>
-            <ForwardArrow onClick={goToNext}></ForwardArrow>
+        <SliderWrapper onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+            <BackwardArrow className={isHovered ? "show" : "hide"} onClick={goToPrevious}></BackwardArrow>
+            <ForwardArrow className={isHovered ? "show" : "hide"} onClick={goToNext}></ForwardArrow>
             <Slide imageURL={slides[currentIndex].url} className={isActive ? "active" : "inactive"} transitionTime={transitionTime}>
                 {(windowSize.innerWidth <= 960) ? <SlideOverlay></SlideOverlay> : ""}
             </Slide>      

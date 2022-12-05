@@ -94,10 +94,6 @@ const Navbar = () => {
                         </MobileIcon>
                     </MenuContainer>
                     <SocialContainer>
-                        {/* <SocialIcons src={YT_Icon} />
-                        <SocialIcons src={INSTA_Icon} />
-                        <SocialIcons src={FB_Icon} />
-                        <SocialIcons src={TWIT_Icon} /> */}
                         <YTIcon />
                         <InstaIcon />
                         <FBIcon />

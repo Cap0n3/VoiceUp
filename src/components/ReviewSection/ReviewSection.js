@@ -13,13 +13,14 @@ import React, {useState, useEffect} from "react";
 import { ReviewContainer } from "./ReviewSection.style";
 import ReviewDisplayer from "./ReviewDisplayer";
 import { ReviewData } from "./ReviewData";
-import { BackwardArrow, ForwardArrow, DotWrapper, Dot } from "../../globalStyle";
+import { BackwardArrow, ForwardArrow, DotWrapper, Dot } from "./ReviewSection.style";
 import { VoiceUpColors } from "../../colors";
 
 const ReviewSection = ({transitionTime, nbOfReviews}) => {
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [reviewSlides, setReviewSlides] = useState([]);
     const [isActive, setIsActive] = useState(true);
+    const [isHovered, setIsHovered] = useState(false);
     
     const changeSlide = (direction, slideIndex=null) => {
         // Get number of review slides for reference
@@ -109,10 +110,10 @@ const ReviewSection = ({transitionTime, nbOfReviews}) => {
     });
 
     return(
-        <ReviewContainer>
+        <ReviewContainer onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             <ReviewDisplayer class_name={isActive ? "active" : "inactive"} slide={reviewSlides[currentSlideIndex] ? reviewSlides[currentSlideIndex] : ""} transitionTime={transitionTime} />
-            <ForwardArrow color={VoiceUpColors.grey} onClick={() => {changeSlide("forward")}}></ForwardArrow>
-            <BackwardArrow color={VoiceUpColors.grey} onClick={() => {changeSlide("backward")}}></BackwardArrow>
+            <ForwardArrow className={isHovered ? "show" : "hide"} color={VoiceUpColors.grey} onClick={() => {changeSlide("forward")}}></ForwardArrow>
+            <BackwardArrow className={isHovered ? "show" : "hide"} color={VoiceUpColors.grey} onClick={() => {changeSlide("backward")}}></BackwardArrow>
             <DotWrapper>
                 {reviewSlides.map((slide, slideIndex) => (
                     <Dot key={slideIndex} className={(slideIndex === currentSlideIndex) ? "active" : "inactive" } onClick={() => changeSlide("toIndex", slideIndex)}>

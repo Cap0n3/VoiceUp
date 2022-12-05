@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 // Show borders for debugging
 const debug = false;
@@ -106,4 +107,79 @@ export const TextBox = styled.div`
     & > p {
         color: ${VoiceUpColors.white};
     }
+`;
+
+export const BackwardArrow = styled(IoIosArrowBack)`
+    position: absolute;
+    fill: ${({color}) => (color ? color : VoiceUpColors.white)};
+    top: 50%;
+    font-size: 2em;
+    z-index: 999;
+    cursor: pointer;
+    transition: left 0.3s ease-in-out;
+
+    &.show {
+        left: 32px;   
+    }
+
+    &.hide {
+        left: -32px;    
+    }
+
+    @media screen and (max-width: 960px) {
+        display: none;
+    }
+`;
+
+export const ForwardArrow = styled(IoIosArrowForward)`
+    position: absolute;
+    fill: ${({color}) => (color ? color : VoiceUpColors.white)};
+    top: 50%;
+    font-size: 2em;
+    z-index: 999;
+    cursor: pointer;
+    transition: right 0.3s ease-in-out;
+
+    &.show {
+        right: 32px;
+    }
+
+    &.hide {
+        right: -32px;
+    }
+
+    @media screen and (max-width: 960px) {
+        display: none;
+    }
+`;
+
+export const DotWrapper = styled.div`
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    right: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 998;
+`;
+
+export const Dot = styled.div`
+    margin: 0 3px;
+    cursor: pointer;
+
+    &.active {
+        color: ${VoiceUpColors.gold};
+        font-size: 26px;
+    }
+
+    &.inactive {
+        color: ${VoiceUpColors.gold};
+        opacity: 0.6;
+        font-size: 23px;
+    }
+
+    @media screen and (max-width: 960px) {
+        margin: 0 8px;
+    } 
 `;
