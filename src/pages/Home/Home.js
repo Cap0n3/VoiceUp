@@ -12,13 +12,12 @@ import useWindowSize from "../../hooks/useWindowSize";
 
 const Home = () => {
     const windowSize = useWindowSize();
-    const foo = [SingSectionData, PlaySectionData, TalkSectionData]
+
     return(
         <>
             <SliderContainer winHeight={windowSize.innerHeight}>
                 <ImageSlider slides={slides} transitionTime={300} />
             </SliderContainer>
-            {/* {foo.map((data, index) => <InfoSection key={index} data={data}  />)} */}
             <InfoSection data={SingSectionData} />
             <InfoSection data={PlaySectionData} />
             <InfoSection data={TalkSectionData} />
