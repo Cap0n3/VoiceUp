@@ -1,28 +1,14 @@
-import React, { useEffect, useState, useContext, useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { LangContext } from '../../App';
-import { ScrollContext } from "../../App";
-import useWindowSize from "../../hooks/useWindowSize";
 import { SectionWrapper, ImgContainer, CardContainer, ImageDiv, Card, TextDiv } from "./InfoSection.style";
 import { navbarHeight } from "../../globalVars";
+import useAppear from "../../hooks/useAppear";
 
 const InfoSection = (props) => {
-    const [isVisible, setIsVisible] = useState(false);
+    
     const {language} = useContext(LangContext);
-    const windowSize = useWindowSize();
-    const scrollPos = useContext(ScrollContext);
     const containerRef = useRef(null);
-
-    useEffect(() => {
-        if(containerRef !== null && scrollPos !== null) { 
-            const halfContainerHeight = containerRef.current.clientHeight / 3;
-            const winTrueHeight = windowSize.innerHeight - navbarHeight;
-            const containerTruePos = containerRef.current.offsetTop - navbarHeight;
-            
-            if(containerTruePos <= (scrollPos + (winTrueHeight - halfContainerHeight))) {
-                setIsVisible(true)
-            }
-        }
-    }, [containerRef, scrollPos]);
+    const isVisible = useAppear(containerRef, navbarHeight);
     
     return(
         <SectionWrapper direction={props.data.direction} ref={containerRef}>
