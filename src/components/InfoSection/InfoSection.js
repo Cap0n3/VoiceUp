@@ -14,13 +14,11 @@ const InfoSection = (props) => {
 
     useEffect(() => {
         if(containerRef !== null && scrollPos !== null) { 
-            const containerHeight = containerRef.current.clientHeight;
-            // It's the visible portion when element is at the bottom of the page
-            const winVisibleChunk = windowSize.innerHeight - navbarHeight - containerHeight;
+            const halfContainerHeight = containerRef.current.clientHeight / 3;
+            const winTrueHeight = windowSize.innerHeight - navbarHeight;
             const containerTruePos = containerRef.current.offsetTop - navbarHeight;
-            console.log(containerTruePos)
             
-            if((containerTruePos - containerHeight)<= scrollPos) {
+            if(containerTruePos <= (scrollPos + (winTrueHeight - halfContainerHeight))) {
                 setIsVisible(true)
             }
         }
