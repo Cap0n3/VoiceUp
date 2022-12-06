@@ -1,30 +1,38 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import { LangContext } from '../../App';
+import { ScrollContext } from "../../App";
+import useWindowSize from "../../hooks/useWindowSize";
 import { SectionWrapper, ImgContainer, CardContainer, ImageDiv, Card, TextDiv } from "./InfoSection.style";
+import { navbarHeight } from "../../globalVars";
 
 const InfoSection = (props) => {
-    const [isLoaded, setIsLoaded] = useState(false);
-    const {language} = useContext(LangContext)
+    const [isVisible, setIsVisible] = useState(false);
+    const {language} = useContext(LangContext);
+    const windowSize = useWindowSize();
+    const scrollPos = useContext(ScrollContext);
+    const containerRef = useRef(null);
 
     useEffect(() => {
-        window.addEventListener("load", (event) => {setIsLoaded(true)})
-    }, []);
-
-    /**
-     * When user go to another page, isLoaded becomes false again. Turn it back to true to trigger animation
-     * of InfoSections.
-     */
-    useEffect(() => {
-        setIsLoaded(true);
-    }, [isLoaded]);
-
+        if(containerRef !== null && scrollPos !== null) { 
+            const containerHeight = containerRef.current.clientHeight;
+            // It's the visible portion when element is at the bottom of the page
+            const winVisibleChunk = windowSize.innerHeight - navbarHeight - containerHeight;
+            const containerTruePos = containerRef.current.offsetTop - navbarHeight;
+            console.log("EL POS : " + containerTruePos + " SCR POS : " + scrollPos)
+            
+            if((containerTruePos - winVisibleChunk) / 2 >= scrollPos) {
+                setIsVisible(true)
+            }
+        }
+    }, [containerRef, scrollPos]);
+    
     return(
-        <SectionWrapper direction={props.data.direction}>
+        <SectionWrapper direction={props.data.direction} ref={containerRef}>
             <ImgContainer>
-                <ImageDiv imgSRC={props.data.image} className={isLoaded ? "active" : ""} direction={props.data.direction}></ImageDiv>
+                <ImageDiv imgSRC={props.data.image} className={isVisible ? "active" : ""} direction={props.data.direction}></ImageDiv>
             </ImgContainer>
             <CardContainer>
-                <Card className={isLoaded ? "active" : ""} direction={props.data.direction}>
+                <Card className={isVisible ? "active" : ""} direction={props.data.direction}>
                     <TextDiv>
                         {props.data.icon}
                         <h1>{(language === "FR") ? props.data.titleFR : props.data.titleEN}</h1>
