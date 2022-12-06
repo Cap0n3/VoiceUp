@@ -18,9 +18,9 @@ const InfoSection = (props) => {
             // It's the visible portion when element is at the bottom of the page
             const winVisibleChunk = windowSize.innerHeight - navbarHeight - containerHeight;
             const containerTruePos = containerRef.current.offsetTop - navbarHeight;
-            console.log("EL POS : " + containerTruePos + " SCR POS : " + scrollPos)
+            console.log(containerTruePos)
             
-            if((containerTruePos - winVisibleChunk) / 2 >= scrollPos) {
+            if((containerTruePos - containerHeight)<= scrollPos) {
                 setIsVisible(true)
             }
         }

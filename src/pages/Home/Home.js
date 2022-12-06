@@ -18,10 +18,10 @@ const Home = () => {
             <SliderContainer winHeight={windowSize.innerHeight}>
                 <ImageSlider slides={slides} transitionTime={300} />
             </SliderContainer>
-            {foo.map((data, index) => <InfoSection key={index} data={data}  />)}
-            {/* <InfoSection data={SingSectionData} key={1} />
-            <InfoSection data={PlaySectionData} key={2} />
-            <InfoSection data={TalkSectionData} key={3} /> */}
+            {/* {foo.map((data, index) => <InfoSection key={index} data={data}  />)} */}
+            <InfoSection data={SingSectionData} />
+            <InfoSection data={PlaySectionData} />
+            <InfoSection data={TalkSectionData} />
             <ReviewSection transitionTime={800} nbOfReviews={windowSize.innerWidth > 960 ? 3 : 1} />
             <C2ASection />
             <ContactSection />
