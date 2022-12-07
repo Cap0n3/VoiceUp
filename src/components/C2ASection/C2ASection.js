@@ -5,19 +5,22 @@ import { LangContext } from '../../App';
 import { C2AContainer, ImgDiv, BoxWrapper, TextBox } from "./C2ASection.style";
 import { OutlineBtn } from "../../globalStyle";
 import useParallax from "../../hooks/useParallax";
+import useAppear from "../../hooks/useAppear";
 import { C2AData } from "../../pages/Home/data/C2ASec.data";
+import { navbarHeight } from "../../globalVars";
 
-const C2ASection = () => {
-    const reference = useRef(); // Get position of component in page
+const C2ASection = ({transitionTime}) => {
+    const containerRef = useRef(); // Get position of component in page
     const scrollPos = useContext(ScrollContext);
     const windowSize = useWindowSize();
     const {language} = useContext(LangContext);
-    const parallaxOffset = useParallax(reference, scrollPos, windowSize.innerHeight);
+    const parallaxOffset = useParallax(containerRef, scrollPos, windowSize.innerHeight);
+    const isVisible = useAppear(containerRef, navbarHeight);
 
     return(
-        <C2AContainer ref={reference}>
+        <C2AContainer ref={containerRef}>
             <ImgDiv paralOffset={parallaxOffset}></ImgDiv>
-            <BoxWrapper>
+            <BoxWrapper className={isVisible ? "active" : ""} transitionTime={transitionTime}>
                 <TextBox>
                     <h1>{(language === "FR") ? C2AData.titleFR : C2AData.titleEN}</h1>
                     <h2>{(language === "FR") ? C2AData.subTitleFR : C2AData.subTitleEN}</h2>

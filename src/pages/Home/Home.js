@@ -18,11 +18,11 @@ const Home = () => {
             <SliderContainer winHeight={windowSize.innerHeight}>
                 <ImageSlider slides={slides} transitionTime={300} />
             </SliderContainer>
-            <InfoSection data={SingSectionData} />
-            <InfoSection data={PlaySectionData} />
-            <InfoSection data={TalkSectionData} />
+            <InfoSection data={SingSectionData} transitionTime={600} />
+            <InfoSection data={PlaySectionData} transitionTime={600} />
+            <InfoSection data={TalkSectionData} transitionTime={600} />
             <ReviewSection transitionTime={800} nbOfReviews={windowSize.innerWidth > 960 ? 3 : 1} />
-            <C2ASection />
+            <C2ASection transitionTime={600} />
             <ContactSection />
             <Footer />
         </>
