@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Tania2 from "../../assets/images/Tania/Tania2_medium_header_over.jpg";
 import { VoiceUpColors } from "../../colors";
 
-const debug = false;
+const DEBUG = false;
 const sectionHeight = 700;
 
 export const C2AContainer = styled.section`
@@ -14,7 +14,7 @@ export const C2AContainer = styled.section`
     height: ${sectionHeight- 200}px;
     transform-style: preserve-3d;
     z-index: -1;
-    ${debug ? "border: 1px solid blue;" : ""}
+    ${DEBUG ? "border: 1px solid blue;" : ""}
 `;
 
 export const ImgDiv = styled.div`
@@ -32,8 +32,14 @@ export const ImgDiv = styled.div`
 
 export const BoxWrapper = styled.div`
     width: 45%;
-    ${debug ? "border: 1px solid pink;" : ""}
+    ${DEBUG ? "border: 1px solid pink;" : ""}
     z-index: 900;
+    margin-left: -145%;
+    transition: margin-left ${({transitionTime}) => transitionTime}ms ease; 
+
+    &.active {
+        margin-left: 0;
+    }
 
     @media screen and (max-width: 960px) {
         width: 55%;
@@ -52,7 +58,7 @@ export const TextBox = styled.div`
         color: ${VoiceUpColors.white};
         text-transform: uppercase;
         font-weight: normal;
-        ${debug ? "border: 1px solid red;" : ""}
+        ${DEBUG ? "border: 1px solid red;" : ""}
     }
 
     & > h1 {
@@ -76,6 +82,6 @@ export const TextBox = styled.div`
     & > p {
         text-align: center;
         color: ${VoiceUpColors.white};
-        ${debug ? "border: 1px solid purple;" : ""}
+        ${DEBUG ? "border: 1px solid purple;" : ""}
     }
 `;

@@ -38,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
 
         &:hover {
             filter: drop-shadow(3px 5px 2px ${VoiceUpColors.purple});
+            transform: translateY(-0.25em);
         }
     }
 `;

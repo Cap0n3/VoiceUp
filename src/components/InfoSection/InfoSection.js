@@ -13,10 +13,10 @@ const InfoSection = (props) => {
     return(
         <SectionWrapper direction={props.data.direction} ref={containerRef}>
             <ImgContainer>
-                <ImageDiv imgSRC={props.data.image} className={isVisible ? "active" : ""} direction={props.data.direction}></ImageDiv>
+                <ImageDiv imgSRC={props.data.image} className={isVisible ? "active" : ""} direction={props.data.direction} transitionTime={props.transitionTime}></ImageDiv>
             </ImgContainer>
             <CardContainer>
-                <Card className={isVisible ? "active" : ""} direction={props.data.direction}>
+                <Card className={isVisible ? "active" : ""} direction={props.data.direction} transitionTime={props.transitionTime}>
                     <TextDiv>
                         {props.data.icon}
                         <h1>{(language === "FR") ? props.data.titleFR : props.data.titleEN}</h1>

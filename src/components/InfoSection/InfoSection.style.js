@@ -40,7 +40,7 @@ export const ImageDiv = styled.div`
         (direction === "reverse" && "100%") ||
         "0"
     };
-    transition: margin-left 600ms ease;
+    transition: margin-left ${({transitionTime}) => transitionTime}ms ease;
 
     &.active {
         margin-left: 0;
@@ -58,7 +58,7 @@ export const Card = styled.div`
         (direction === "reverse" && "-100%") ||
         "0"
     };
-    transition: margin-left 600ms ease;
+    transition: margin-left ${({transitionTime}) => transitionTime}ms ease;
     background-color:  ${debug ? "lightgreen" : VoiceUpColors.white};
     
     &.active {
