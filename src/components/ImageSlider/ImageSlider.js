@@ -73,7 +73,7 @@ const ImageSlider = ({slides, transitionTime}) => {
         <SliderWrapper onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             <BackwardArrow className={isHovered ? "show" : "hide"} onClick={goToPrevious}></BackwardArrow>
             <ForwardArrow className={isHovered ? "show" : "hide"} onClick={goToNext}></ForwardArrow>
-            <Slide imageURL={slides[currentIndex].url} className={isActive ? "active" : "inactive"} transitionTime={transitionTime}>
+            <Slide imageURL={slides[currentIndex].url} className={isActive ? "active" : "inactive"} title={slides[currentIndex].imgTitle} transitionTime={transitionTime}>
                 {(windowSize.innerWidth <= 960) ? <SlideOverlay></SlideOverlay> : ""}
             </Slide>      
             <BoxWrapper className={isActive ? "active" : "inactive"} transitionTime={transitionTime} headerWidth={windowSize.innerWidth ? windowSize.innerWidth : null}>

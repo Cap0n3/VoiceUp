@@ -19,7 +19,7 @@ const C2ASection = ({transitionTime}) => {
 
     return(
         <C2AContainer ref={containerRef}>
-            <ImgDiv paralOffset={parallaxOffset}></ImgDiv>
+            <ImgDiv paralOffset={parallaxOffset} title="Tania"></ImgDiv>
             <BoxWrapper className={isVisible ? "active" : ""} transitionTime={transitionTime}>
                 <TextBox>
                     <h1>{(language === "FR") ? C2AData.titleFR : C2AData.titleEN}</h1>
