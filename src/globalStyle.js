@@ -105,4 +105,14 @@ export const FilledBtn =  styled.button`
     }
 `;
 
+export const ScrollTop = styled.div`
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+    width: 80px;
+    height: 80px;
+    background-color: red;
+    z-index: 999;
+`;
+
 export default GlobalStyle;

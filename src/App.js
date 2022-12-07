@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { useState, createContext } from "react";
 import GlobalStyle from "./globalStyle";
+import { ScrollTop } from "./globalStyle";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Lessons from "./pages/Lessons";
@@ -25,6 +26,7 @@ function App() {
 	
 	return (
 		<div className="main" onScroll={handleScroll}>
+			<ScrollTop></ScrollTop>
 			<LangContext.Provider value={langValue}>
 			<ScrollContext.Provider value={scrollTopPos}>
 				<GlobalStyle />
@@ -37,6 +39,7 @@ function App() {
 					<Route path="/tarifs" element={<Prices />} />
 					<Route path="/contact" element={<Contact />} />
 				</Routes>
+				
 			</ScrollContext.Provider>
 			</LangContext.Provider>
 		</div>
