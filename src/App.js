@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { useState, createContext } from "react";
+import { useState, createContext, useRef } from "react";
 import GlobalStyle from "./globalStyle";
 import ScrollTop from "./components/ScrollTop/ScrollTop";
 import Navbar from "./components/Navbar/Navbar";
@@ -19,6 +19,7 @@ function App() {
 	const [language, setLanguage] = useState("FR");
 	const [scrollTopPos, setScrollPos] = useState(null);
 	const langValue = { language, setLanguage };
+	const mainContainerRef = useRef(null);
 	
 	const handleScroll = (e) => {
 		setScrollPos(e.currentTarget.scrollTop);
@@ -28,8 +29,8 @@ function App() {
 		<>
 			<ScrollContext.Provider value={scrollTopPos}>
 			<LangContext.Provider value={langValue}>
-				<ScrollTop />
-				<div className="main" onScroll={handleScroll}>
+				<ScrollTop containerRef={mainContainerRef} />
+				<div className="main" onScroll={handleScroll} ref={mainContainerRef}>
 					<GlobalStyle />
 					<Navbar />
 					<Routes>

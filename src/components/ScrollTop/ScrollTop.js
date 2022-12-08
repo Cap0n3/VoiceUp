@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { ScrollContext } from "../../App";
 
-const ScrollTop = () => {
+const ScrollTop = ({containerRef}) => {
     const [showScrollBtn, setScrollBtn] = useState(false);
     const scrollPos = useContext(ScrollContext);
 
@@ -14,14 +14,17 @@ const ScrollTop = () => {
         zIndex: "1"
     }
 
+    /**
+     * Scrool back to top of page.
+     * 
+     * > **Note :** must give reference of scrollable container and not window.
+     */
     const handleClick = () => {
         console.log(scrollPos)
-        window.scrollTo({
+        containerRef.current.scroll({
             top: 0,
-            left: 0,
             behavior: "smooth"
-        });
-        // document.body.scrollTo(0, 0);
+        });     
     }
 
     useEffect(() => {
