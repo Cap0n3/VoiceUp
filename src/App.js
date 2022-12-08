@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { useState, createContext } from "react";
 import GlobalStyle from "./globalStyle";
-import { ScrollTop } from "./globalStyle";
+import ScrollTop from "./components/ScrollTop/ScrollTop";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Lessons from "./pages/Lessons";
@@ -25,24 +25,25 @@ function App() {
 	}
 	
 	return (
-		<div className="main" onScroll={handleScroll}>
-			<ScrollTop></ScrollTop>
-			<LangContext.Provider value={langValue}>
+		<>
 			<ScrollContext.Provider value={scrollTopPos}>
-				<GlobalStyle />
-				<Navbar />
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/cours" element={<Lessons />} />
-					<Route path="/prof" element={<Teacher />} />
-					<Route path="/conditions" element={<Conditions />} />
-					<Route path="/tarifs" element={<Prices />} />
-					<Route path="/contact" element={<Contact />} />
-				</Routes>
-				
-			</ScrollContext.Provider>
+			<LangContext.Provider value={langValue}>
+				<ScrollTop />
+				<div className="main" onScroll={handleScroll}>
+					<GlobalStyle />
+					<Navbar />
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/cours" element={<Lessons />} />
+						<Route path="/prof" element={<Teacher />} />
+						<Route path="/conditions" element={<Conditions />} />
+						<Route path="/tarifs" element={<Prices />} />
+						<Route path="/contact" element={<Contact />} />
+					</Routes>
+				</div>
 			</LangContext.Provider>
-		</div>
+			</ScrollContext.Provider>
+		</>
 		
 	);
 }
