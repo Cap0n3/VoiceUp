@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
 
     &.socialIcons {
         fill: ${VoiceUpColors.white};
-        width: 35px;
+        ${'' /* width: 35px; */}
         cursor: pointer;
         transition: .3s;
 
@@ -58,7 +58,7 @@ export const Container = styled.div`
     padding-right: 30px;
     padding-left: 30px;
 
-    ${'' /* @media screen and (max-width: 991px) {
+    ${'' /* @media only screen and (max-width: 991px) {
         padding-right: 30px;
         padding-left: 30px;
     } */}
@@ -82,7 +82,7 @@ export const OutlineBtn = styled.button`
         box-shadow: 0 0 0 2em rgba(255,255,255, 0);
     }
     
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         width: 100%;
         padding: 12px 30px;
     }

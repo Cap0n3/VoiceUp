@@ -30,7 +30,7 @@ export const Title = styled.h1`
     margin-bottom: 50px;
     color: ${VoiceUpColors.black};
     
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         margin-bottom: 15px;
     }
 `;
@@ -41,7 +41,7 @@ export const Form = styled.form`
     
     ${debug ? "border: 1px solid green;" : ""}
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         width: 100%;
     }
 `;
@@ -53,7 +53,7 @@ export const InputContainer = styled.div`
     margin-bottom: 20px;
     ${debug ? "border: 1px solid red;" : ""}
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         flex-direction: column;
         gap: 15px;
     }

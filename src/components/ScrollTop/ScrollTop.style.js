@@ -20,7 +20,7 @@ export const ScrTopBtn = styled.button`
         opacity: 1;
     }
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         width: 50px;
         height: 50px;
         bottom: 30px;

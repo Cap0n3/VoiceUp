@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import * as globVars from "../../globalVars";
 
 // To see all borders (design debug)
-var DEBUG = true;
+var DEBUG = false;
 
 export const Nav = styled.nav `
     display: flex;
@@ -18,7 +18,8 @@ export const Nav = styled.nav `
     z-index: 999;
     background: ${VoiceUpColors.white};
 
-    @media screen and (max-width: 960px) {
+    /* Small screen */
+    @media only screen and (max-width: 1024px) {
         height: ${globVars.mobileNavbarHeight}px;
     }  
 `;
@@ -28,7 +29,8 @@ export const NavbarWrapper = styled.div`
     flex-grow: 1;
     height: 100%;
 
-    @media screen and (max-width: 960px) {
+    /* Small screen */
+    @media only screen and (max-width: 1024px) {
         flex-direction: row-reverse;
     }
 `;
@@ -36,17 +38,18 @@ export const NavbarWrapper = styled.div`
 export const LogoLink = styled(NavLink)`
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 50px;
+    justify-content: center;
     width: 15%;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
-    ${(DEBUG) ? "background: purple" : ""}
+    ${(DEBUG) ? "background: purple;" : ""}
 
-    @media screen and (max-width: 1180px) {
-        width: 15%;
-    }
+    /* 13" screen */
+    @media only screen and (min-width: 1025px) and (max-width: 1248px) {
+        width: 12%;
+        justify-content: flex-end;
+    } 
 `;
 
 export const NavIcon = styled.img`
@@ -57,12 +60,13 @@ export const NavIcon = styled.img`
 export const MenuContainer = styled.div`
     display: flex;
     flex-grow: 1;
-    min-width: 1080px;
+    width: 100%;
     align-items: center;
     height: 100%;
     ${(DEBUG) ? "background: lightgreen;" : ""}
     
-    @media screen and (max-width: 960px) {
+    /* Small screen */
+    @media only screen and (max-width: 1024px) {
         justify-content: center;
         width: 20%;
         min-width: 10px;
@@ -71,14 +75,20 @@ export const MenuContainer = styled.div`
 
 export const NavMenu = styled.ul`
     display: flex;
-    gap: 50px;
-    width: 85%;
+    gap: 5%;
+    width: 100%;
     align-items: center;
     list-style: none;
     text-align: center;
     ${(DEBUG) ? "background: lightblue;" : ""}
     
-    @media screen and (max-width: 960px) {
+    /* 13" screen */
+    @media only screen and (min-width: 1025px) and (max-width: 1248px) {
+        gap: 1%;
+    }
+
+    /* Small screen */
+    @media only screen and (max-width: 1024px) {
         display: flex;
         flex-direction: column;
         gap: 0px;
@@ -100,17 +110,47 @@ export const NavItem = styled.li`
     justify-content: center;
     height: ${globVars.navbarHeight}px;
     width: 120px;
-    border-bottom: 2px solid transparent;
+    border-bottom: 3px solid transparent;
     cursor: pointer;
     ${(DEBUG) ? "background: pink;" : ""}
     
     &:hover {
-        border-bottom: 2px solid ${VoiceUpColors.gold};
+        height: ${globVars.navbarHeight}px;
+        border-bottom: 3px solid ${VoiceUpColors.gold};
     };
 
-    @media screen and (max-width: 960px) {
+    /* 13" screen */
+    @media only screen and (min-width: 1025px) and (max-width: 1248px) {
+        width: 14%;
+    }
+
+    /* Small screen */
+    @media only screen and (max-width: 1024px) {
         height: 90px;
     }
+`;
+
+export const NavLinks = styled(NavLink)`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 400;
+    width: 100px;
+    height: ${globVars.navbarHeight - 15}px;
+    ${'' /* padding: 0.5rem 1rem; */}
+    ${(DEBUG) ? "background: brown;" : ""}
+
+    &.active {
+        color: ${VoiceUpColors.gold};
+    }
+
+    /* 13" screen */
+    @media only screen and (min-width: 1025px) and (max-width: 1248px) {
+        font-size: 0.8em;
+    } 
 `;
 
 export const LangSwitch = styled.li`
@@ -125,7 +165,16 @@ export const LangSwitch = styled.li`
     margin-right: 30px;
     padding: 0.5rem 1rem;
 
-    @media screen and (max-width: 960px) {
+    /* 13" screen */
+    @media only screen and (min-width: 1025px) and (max-width: 1248px) {
+        padding: 0.5rem .4rem;
+        margin-left: 1%;
+        margin-right: 1%;
+        font-size: 0.6em;
+    }
+
+    /* Small screen */
+    @media only screen and (max-width: 1024px) {
         margin: auto 0 0 0;
     }
 `;
@@ -148,56 +197,34 @@ export const ENSwitch = styled.span`
     }; 
 `;
 
-export const NavLinks = styled(NavLink)`
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    font-weight: 400;
-    ${'' /* padding: 0.5rem 1rem; */}
-    ${(DEBUG) ? "background: brown;" : ""}
-
-    &.active {
-        color: ${VoiceUpColors.gold};
-    }    
-`;
-
 export const SocialContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    width: 300px;
+    width: 330px;
     height: 100%;
     padding: 0 20px 0 20px;
     background: ${VoiceUpColors.gold};
     ${(DEBUG) ? "background: orange;" : ""}
 
-    @media screen and (max-width: 960px) {
+    /* 13" screen */
+    @media only screen and (min-width: 1025px) and (max-width: 1248px) {
+       gap: 20px; 
+    }
+
+    /* Small screen */
+    @media only screen and (max-width: 1024px) {
         width: 80%;
-    }
-
-    @media screen and (max-width: 280px) {
-        gap: 20px;
-    }
-`;
-
-export const SocialIcons = styled.img`
-    width: 30px;
-    fill: white;
-    filter: invert(100%);
-    cursor: pointer;
-
-    &:hover {
-        width: 35px;
-        filter: invert(95%);
-        transition: all 0.3s ease;
+        gap: 10%; 
     }
 `;
 
 export const MobileIcon = styled.div`
     display: none;
 
-    @media screen and (max-width: 960px) {
+    /* Small screen */
+    @media only screen and (max-width: 1024px) {
         display: flex;
         font-size: 1.8rem;
         cursor: pointer;

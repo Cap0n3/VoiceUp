@@ -24,7 +24,7 @@ function App() {
 	const handleScroll = (e) => {
 		setScrollPos(e.currentTarget.scrollTop);
 	}
-	
+
 	return (
 		<>
 			<ScrollContext.Provider value={scrollTopPos}>

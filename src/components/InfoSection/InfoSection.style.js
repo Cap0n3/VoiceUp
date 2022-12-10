@@ -94,7 +94,7 @@ export const TextDiv = styled.div`
         padding-right: 20%;
     }
     
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         #sectionIcon {
             width: 80px;
         }

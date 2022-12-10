@@ -11,34 +11,35 @@ import { Nav,
     NavItem, 
     NavLinks, 
     SocialContainer,
-    SocialIcons,
     MobileIcon 
 } from './Navbar.style';
 import { useState, useEffect, useContext } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import Logo from "../../assets/logos/VoiceUp_Logo_BLK.png"
-import YTIcon from "../../assets/icons/social/youtube_icon"
-import InstaIcon from "../../assets/icons/social/instagram_icon"
-import FBIcon from "../../assets/icons/social/facebook_icon"
-import TwitIcon from "../../assets/icons/social/twitter_icon"
+import Logo from "../../assets/logos/VoiceUp_Logo_BLK.png";
+import YTIcon from "../../assets/icons/social/youtube_icon";
+import InstaIcon from "../../assets/icons/social/instagram_icon";
+import FBIconAlt from '../../assets/icons/social/facebook_icon_alt';
+import TwitIcon from "../../assets/icons/social/twitter_icon";
 import { LangContext } from '../../App';
+import useWindowSize from '../../hooks/useWindowSize';
 
 
 const Navbar = () => {
-    const [click, setClick] = useState(false)
-    const [mobileMenu, setMobileBtn] = useState(true);
-    const [isMobile, setIsMobile] = useState(false)
+    const [click, setClick] = useState(false);
+    const [isMedium, setIsMedium] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     const handleClick = () => setClick(!click) // Toogle click
     const closeMobileMenu = () => setClick(false);
     // Get context for language selection
     const { language, setLanguage } = useContext(LangContext);
+    const screenSize = useWindowSize();
 
     /**
      * Define state to mobile when screen is small
      */
     const smScreenVisibility = () => {
-        if(window.innerWidth <= 960) {
+        if(screenSize.innerWidth <= 1024) {
             // setMobileBtn(false);
             setIsMobile(true);
         } else {
@@ -47,7 +48,14 @@ const Navbar = () => {
         }
     }
 
-    window.addEventListener('resize', smScreenVisibility);
+    const isMediumScreen = () => {
+        if(screenSize.innerWidth > 1025 && screenSize.innerWidth <= 1248) {      
+            setIsMedium(true);
+        }
+        else {
+            setIsMedium(false);
+        }
+    } 
 
     /**
      * To completely remove logo from flow. This was a dirty solution
@@ -64,12 +72,12 @@ const Navbar = () => {
     }
     
     /**
-     * Evaluate screen size on first render and show or not
-     * mobile menu button.
+     * Evaluate screen size (small, medium) for icons size and mobile menu.
      */
     useEffect(() => {
         smScreenVisibility();
-    }, []);
+        isMediumScreen();
+    }, [screenSize.innerWidth]);
 
     return (
         <>
@@ -94,10 +102,11 @@ const Navbar = () => {
                         </MobileIcon>
                     </MenuContainer>
                     <SocialContainer>
-                        <YTIcon />
-                        <InstaIcon />
-                        <FBIcon />
-                        <TwitIcon />
+                        {/* Fine tune icon width (some icons seems bigger due to svg design or canva)  */}
+                        <YTIcon width={isMedium ? 38 : 41} />
+                        <InstaIcon width={isMedium ? 35 : 39} />
+                        <FBIconAlt width={isMedium ? 30 : 33} />
+                        {/* <TwitIcon width={isMedium ? 35 : 39} /> */}
                     </SocialContainer>
                 </NavbarWrapper>
             </Nav>

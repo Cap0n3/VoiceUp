@@ -41,7 +41,7 @@ export const BoxWrapper = styled.div`
         margin-left: 0;
     }
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         width: 55%;
     }
 `;
@@ -65,7 +65,7 @@ export const TextBox = styled.div`
             font-size: 4em;
             margin-bottom: 5px;
 
-            @media screen and (max-width: 960px) {
+            @media only screen and (max-width: 1024px) {
                 font-size: 2.2em;
             }
         }
@@ -74,7 +74,7 @@ export const TextBox = styled.div`
         font-size: 3em;
         margin-bottom: 30px;
 
-        @media screen and (max-width: 960px) {
+        @media only screen and (max-width: 1024px) {
             font-size: 1.5em;
         }
     }

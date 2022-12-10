@@ -11,8 +11,8 @@ import {
     SiteLogo,
     CopyrightWrapper
 } from "./Footer.style";
-import LogoWH from "../../assets/logos/VoiceUp_Logo_WH.png"
-import FBIcon from "../../assets/icons/social/facebook_icon";
+import LogoWH from "../../assets/logos/VoiceUp_Logo_WH.png";
+import FBIconAlt from "../../assets/icons/social/facebook_icon_alt";
 import InstaIcon from "../../assets/icons/social/instagram_icon";
 import TwitIcon from "../../assets/icons/social/twitter_icon";
 import YTIcon from "../../assets/icons/social/youtube_icon";
@@ -38,10 +38,11 @@ const Footer = () => {
                     </FtNavList>
                 </FtNavWrapper>
                 <SocialWrapper>
-                    <YTIcon />
-                    <InstaIcon />
-                    <FBIcon />
-                    <TwitIcon />
+                    {/* Fine tune icon width (some icons seems bigger due to svg design or canva)  */}
+                    <YTIcon width={41} />
+                    <InstaIcon width={39} />
+                    <FBIconAlt width={33} />
+                    {/* <TwitIcon width={39} /> */}
                 </SocialWrapper>
                 <hr />
                 <LogoWrapper>

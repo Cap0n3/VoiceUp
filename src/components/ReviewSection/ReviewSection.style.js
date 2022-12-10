@@ -34,7 +34,7 @@ export const ReviewSlide = styled.div`
         opacity: 0;
         transition: ${({transitionTime}) => `opacity ${transitionTime}ms ease-in`};
     }
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         flex-direction: column;
     }
 `;
@@ -100,7 +100,7 @@ export const BackwardArrow = styled(IoIosArrowBack)`
         left: -32px;    
     }
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         display: none;
     }
 `;
@@ -122,7 +122,7 @@ export const ForwardArrow = styled(IoIosArrowForward)`
         right: -32px;    
     }
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         display: none;
     }
 `;
@@ -153,7 +153,7 @@ export const Dot = styled.div`
         font-size: 23px;
     }
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         margin: 0 8px;
     } 
 `;

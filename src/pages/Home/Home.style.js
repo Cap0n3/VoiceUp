@@ -7,7 +7,7 @@ export const SliderContainer = styled.div`
     max-height: 1280px;
     min-height: 300px;
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         height: ${({winHeight}) => (winHeight ? (winHeight - globVars.mobileNavbarHeight) : globVars.sectionHeight)}px;
     }
 `;

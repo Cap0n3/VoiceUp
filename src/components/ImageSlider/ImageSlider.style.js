@@ -36,7 +36,7 @@ export const Slide = styled.div`
         transition: ${({transitionTime}) => `opacity ${transitionTime}ms ease-in`};
     }
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         background-position: 65% 20%;
         background-size: cover;      
     }
@@ -79,7 +79,7 @@ export const BoxWrapper = styled.div`
         }};
     }
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         left: 25%;
         width: ${({headerWidth}) => (
             headerWidth ? `${(headerWidth / 2)}px` : "50px"
@@ -99,7 +99,7 @@ export const TextBox = styled.div`
         font-weight: normal;
         margin-bottom: 30px;
 
-        @media screen and (max-width: 960px) {
+        @media only screen and (max-width: 1024px) {
             font-size: 2.2em;
         }
     }
@@ -126,7 +126,7 @@ export const BackwardArrow = styled(IoIosArrowBack)`
         left: -32px;    
     }
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         display: none;
     }
 `;
@@ -148,7 +148,7 @@ export const ForwardArrow = styled(IoIosArrowForward)`
         right: -32px;
     }
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         display: none;
     }
 `;
@@ -179,7 +179,7 @@ export const Dot = styled.div`
         font-size: 23px;
     }
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         margin: 0 8px;
     } 
 `;

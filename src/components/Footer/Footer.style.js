@@ -42,7 +42,7 @@ export const FtNavList = styled.ul`
     gap: 150px;
     list-style-type: none;
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         font-size: 0.8em;
         gap: 25px;
     }
@@ -64,7 +64,7 @@ export const SocialWrapper = styled.div`
     gap: 40px;
     ${DEBUG ? "border: 1px solid purple;" : ""}
 
-    @media screen and (max-width: 960px) {
+    @media only screen and (max-width: 1024px) {
         gap: 20px;
     }
 `;
@@ -89,7 +89,7 @@ export const CopyrightWrapper = styled.div`
         font-weight: 300;
         color: ${VoiceUpColors.white};
 
-        @media screen and (max-width: 960px) {
+        @media only screen and (max-width: 1024px) {
             font-size: 0.6em;
         }
     }
