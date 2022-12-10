@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import * as globVars from "../../globalVars";
 
 // To see all borders (design debug)
-var DEBUG = false;
+var DEBUG = true;
 
 export const Nav = styled.nav `
     display: flex;
