@@ -38,8 +38,9 @@ export const NavbarWrapper = styled.div`
 export const LogoLink = styled(NavLink)`
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 15%;
+    justify-content: flex-start;
+    padding: 60px;
+    width: 17%;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
@@ -48,6 +49,7 @@ export const LogoLink = styled(NavLink)`
     /* 13" screen */
     @media only screen and (min-width: 1025px) and (max-width: 1248px) {
         width: 12%;
+        padding: 0;
         justify-content: flex-end;
     } 
 `;
@@ -75,7 +77,7 @@ export const MenuContainer = styled.div`
 
 export const NavMenu = styled.ul`
     display: flex;
-    gap: 5%;
+    gap: 2%;
     width: 100%;
     align-items: center;
     list-style: none;
@@ -210,7 +212,8 @@ export const SocialContainer = styled.div`
 
     /* 13" screen */
     @media only screen and (min-width: 1025px) and (max-width: 1248px) {
-       gap: 20px; 
+        width: 250px;
+        gap: 20px; 
     }
 
     /* Small screen */
