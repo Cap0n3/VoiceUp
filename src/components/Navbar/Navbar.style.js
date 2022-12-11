@@ -77,7 +77,7 @@ export const MenuContainer = styled.div`
 
 export const NavMenu = styled.ul`
     display: flex;
-    gap: 2%;
+    gap: 3%;
     width: 100%;
     align-items: center;
     list-style: none;

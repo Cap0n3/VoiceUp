@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { 
     FooterContainer, 
     FooterWrapper, 
@@ -11,6 +11,7 @@ import {
     SiteLogo,
     CopyrightWrapper
 } from "./Footer.style";
+import { LangContext } from "../../App";
 import LogoWH from "../../assets/logos/VoiceUp_Logo_WH.png";
 import FBIconAlt from "../../assets/icons/social/facebook_icon_alt";
 import InstaIcon from "../../assets/icons/social/instagram_icon";
@@ -18,6 +19,8 @@ import TwitIcon from "../../assets/icons/social/twitter_icon";
 import YTIcon from "../../assets/icons/social/youtube_icon";
 
 const Footer = () => {
+    const {language} = useContext(LangContext);
+    
     return(
         <FooterContainer>
             <FooterWrapper>
@@ -27,13 +30,13 @@ const Footer = () => {
                             <FtNavLinks to="/faq">F.A.Q</FtNavLinks>
                         </FtNavItem>
                         <FtNavItem>
-                            <FtNavLinks to="/conditions">Condition des cours</FtNavLinks>
+                            <FtNavLinks to="/conditions">{(language === "FR") ? "Conditions des cours" : "Conditions"}</FtNavLinks>
                         </FtNavItem>
                         <FtNavItem>
-                            <FtNavLinks to="/tarifs">Tarifs</FtNavLinks>
+                            <FtNavLinks to="/tarifs">{(language === "FR") ? "Tarifs" : "Pricing"}</FtNavLinks>
                         </FtNavItem>
                         <FtNavItem>
-                            <FtNavLinks to="/situation">Localisation</FtNavLinks>
+                            <FtNavLinks to="/situation">{(language === "FR") ? "Localisation" : "Situation"}</FtNavLinks>
                         </FtNavItem>
                     </FtNavList>
                 </FtNavWrapper>
