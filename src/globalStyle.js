@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
 import { VoiceUpColors } from "./colors";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import * as globVars from "./globalVars";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -49,20 +49,28 @@ const pulse = keyframes`
     }
 `;
 
-export const Container = styled.div`
-    z-index: 1;
+// TODO - Not used yet
+export const BaseContainer = styled.section`
     width: 100%;
-    max-width: 1300px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 30px;
-    padding-left: 30px;
-
-    ${'' /* @media only screen and (max-width: 991px) {
-        padding-right: 30px;
-        padding-left: 30px;
-    } */}
+    height: ${({height}) => (height ? height : globVars.sectionHeight)}px;
+    max-height: 1280px;
+    min-height: 300px;
 `;
+
+// export const Container = styled.div`
+//     z-index: 1;
+//     width: 100%;
+//     max-width: 1300px;
+//     margin-right: auto;
+//     margin-left: auto;
+//     padding-right: 30px;
+//     padding-left: 30px;
+
+//     ${'' /* @media only screen and (max-width: 991px) {
+//         padding-right: 30px;
+//         padding-left: 30px;
+//     } */}
+// `;
 
 // For more cool button FX : https://alvarotrigo.com/blog/best-css-button-hover-effects/
 export const OutlineBtn = styled.button`
