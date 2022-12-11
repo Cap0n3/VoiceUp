@@ -4,8 +4,8 @@ import { IoIosArrowUp } from "react-icons/io";
 
 export const ScrTopBtn = styled.button`
     position: fixed;
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     bottom: 20px;
     right: 20px;
     border: 0;
