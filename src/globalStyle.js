@@ -76,6 +76,7 @@ export const BaseContainer = styled.section`
 export const OutlineBtn = styled.button`
     white-space: nowrap;
     padding: 12px 60px;
+    max-width: 250px;
     color: ${VoiceUpColors.white};
     font-size: 16px;
     outline: none;

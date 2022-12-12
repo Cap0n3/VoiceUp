@@ -20,6 +20,11 @@ export const SlideImg = styled.div`
     background-position: 50% 20%;
     background-repeat: no-repeat;
     background-size: 100%;
+
+    @media only screen and (max-width: 1024px) {
+        background-position: 65% 20%;
+        background-size: cover;      
+    }
 `;
 
 export const SlideOverlay = styled.div`
@@ -31,15 +36,24 @@ export const SlideOverlay = styled.div`
 `;
 
 export const BoxWrapper = styled.div`
+    display: flex;
+    align-items: center;
     width: 45%;
     position: absolute;
     top: 0;
-    display: flex;
-    align-items: center;  
-    left: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    opacity: 0;
+    height: 0;
+    transition: ${({transitionTime}) => {
+        const duration = transitionTime;
+        return `opacity ${duration}ms ease, height ${duration}ms ease`
+    }};
     ${DEBUG ? "border: 1px solid pink;" : ""}
-    z-index: 500;
-
+    
     &.active {
         opacity: 1;
         height: 100%;
@@ -59,32 +73,38 @@ export const BoxWrapper = styled.div`
         }};
     }
 
-    /* @media only screen and (max-width: 1024px) {
-        left: 25%;
-        width: ${({headerWidth}) => (
-            headerWidth ? `${(headerWidth / 2)}px` : "50px"
-        )};
-    } */
+    @media only screen and (max-width: 1024px) {
+        width: 80%;
+    }
 `;
 
 export const TextBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     overflow-x: visible;
     overflow-wrap: break-word;
-    
-    & > h1 {
-        color: ${VoiceUpColors.white};
-        font-size: 4em;
-        text-transform: uppercase;
-        font-weight: normal;
-        margin-bottom: 30px;
+    ${DEBUG ? "border: 1px solid yellow;" : ""}
+`;
 
-        @media only screen and (max-width: 1024px) {
-            font-size: 2.2em;
-        }
-    }
+export const Title = styled.h1`
+    color: ${VoiceUpColors.white};
+    font-size: 4em;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 30px;
+    ${DEBUG ? "background: lightgreen;" : ""}
 
-    & > p {
-        color: ${VoiceUpColors.white};
+    @media only screen and (max-width: 1024px) {
+        font-size: 2.2em;
     }
+`;
+
+export const Description = styled.p`
+    text-align: center;
+    color: ${VoiceUpColors.white};
+
+    ${DEBUG ? "background: cyan;" : ""}
 `;

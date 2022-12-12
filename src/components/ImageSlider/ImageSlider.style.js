@@ -55,7 +55,7 @@ export const BoxWrapper = styled.div`
     position: absolute;
     top: 0;
     display: flex;
-    align-items: center;  
+    align-items: center;
     left: 15%;
     ${DEBUG ? "border: 1px solid pink;" : ""}
     z-index: 900;
@@ -80,14 +80,22 @@ export const BoxWrapper = styled.div`
     }
 
     @media only screen and (max-width: 1024px) {
-        left: 25%;
+        /* left: 25%;
         width: ${({headerWidth}) => (
             headerWidth ? `${(headerWidth / 2)}px` : "50px"
-        )};
+        )}; */
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
     }
 `;
 
 export const TextBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     overflow-x: visible;
     overflow-wrap: break-word;
@@ -98,14 +106,25 @@ export const TextBox = styled.div`
         text-transform: uppercase;
         font-weight: normal;
         margin-bottom: 30px;
-
-        @media only screen and (max-width: 1024px) {
-            font-size: 2.2em;
-        }
+        ${DEBUG ? "background: lightgreen;" : ""}
     }
 
     & > p {
         color: ${VoiceUpColors.white};
+        ${DEBUG ? "background: cyan;" : ""}
+    }
+
+    @media only screen and (max-width: 1024px) {
+        align-items: center;
+
+        & > h1 {
+            text-align: center;
+            font-size: 2.2em;
+        }
+        
+        & > p {
+            text-align: center;
+        }
     }
 `;
 

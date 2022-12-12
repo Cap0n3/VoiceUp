@@ -1,19 +1,30 @@
-import React from "react";
-import { HeaderContainer, SlideImg, SlideOverlay, BoxWrapper, TextBox } from "./Header.style";
+import React, { useEffect, useState } from "react";
+import { HeaderContainer, SlideImg, SlideOverlay, BoxWrapper, TextBox, Title, Description } from "./Header.style";
 import FooPic from "../../assets/headers/Header_Tania1.jpg";
 
 function Header() {
+    const [isActive, setIsActive] = useState(false);
+
+    useEffect(() => {
+        const handler = () => {
+            setIsActive(true);
+        }
+        window.addEventListener("load", handler);
+        return () => {
+            window.removeEventListener("load", handler);
+        }
+    }, [])
+
     return (
         <HeaderContainer>
             <SlideImg imageURL={FooPic}>
-                <SlideOverlay>
-                    <BoxWrapper>
+                <SlideOverlay></SlideOverlay>
+                    <BoxWrapper className={isActive ? "active" : ""} transitionTime={500}>
                         <TextBox>
-                            <h1>This is a title</h1>
-                            <p>Hello, I'm a text ! I'm so happy to be here with you !</p>
+                            <Title>This is a title</Title>
+                            <Description>Hello, I'm a text ! I'm so happy to be here with you !</Description>
                         </TextBox>
                     </BoxWrapper>
-                </SlideOverlay>
             </SlideImg>
         </HeaderContainer>
     );

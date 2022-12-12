@@ -76,7 +76,7 @@ const ImageSlider = ({slides, transitionTime}) => {
             <Slide imageURL={slides[currentIndex].url} className={isActive ? "active" : "inactive"} title={slides[currentIndex].imgTitle} transitionTime={transitionTime}>
                 {(windowSize.innerWidth <= 960) ? <SlideOverlay></SlideOverlay> : ""}
             </Slide>      
-            <BoxWrapper className={isActive ? "active" : "inactive"} transitionTime={transitionTime} headerWidth={windowSize.innerWidth ? windowSize.innerWidth : null}>
+            <BoxWrapper className={isActive ? "active" : "inactive"} transitionTime={transitionTime}>
                 <TextBox>
                     <h1>{(language === "FR") ? slides[currentIndex].titleFR : slides[currentIndex].titleEN}</h1>
                     <p style={{marginBottom: "40px"}}>{(language === "FR") ? slides[currentIndex].descriptionFR : slides[currentIndex].descriptionEN}</p>
