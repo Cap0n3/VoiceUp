@@ -2,15 +2,15 @@ import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-// Show borders for debugging
-const debug = false;
+// Show borders/background for debugging css
+const DEBUG = false;
 
 export const SliderWrapper = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
     background-color: #000;
-    ${debug ? "border: 1px solid red;" : ""}
+    ${DEBUG ? "border: 1px solid red;" : ""}
 `;
 
 export const Slide = styled.div`
@@ -47,7 +47,7 @@ export const SlideOverlay = styled.div`
     height: 100%;
     background-color: black;
     opacity: 0.4;
-    zIndex: 5;
+    z-index: 5;
 `;
 
 export const BoxWrapper = styled.div`
@@ -57,7 +57,7 @@ export const BoxWrapper = styled.div`
     display: flex;
     align-items: center;  
     left: 15%;
-    ${debug ? "border: 1px solid pink;" : ""}
+    ${DEBUG ? "border: 1px solid pink;" : ""}
     z-index: 900;
 
     &.active {
