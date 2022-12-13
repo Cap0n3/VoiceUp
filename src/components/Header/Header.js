@@ -11,7 +11,7 @@ function Header({data}) {
 
     return (
         <HeaderContainer ref={containerRef}>
-            <SlideImg imageURL={data.picURL} posX="0" posY="50">
+            <SlideImg imageURL={data.picURL} title={data.imgTitle} posX="0" posY="50">
                 <SlideOverlay></SlideOverlay>
                     <BoxWrapper className={isActive ? "active" : ""} transitionTime={300}>
                         <TextBox>

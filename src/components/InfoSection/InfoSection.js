@@ -18,7 +18,7 @@ const InfoSection = (props) => {
             <CardContainer>
                 <Card className={isVisible ? "active" : ""} direction={props.data.direction} transitionTime={props.transitionTime}>
                     <TextDiv>
-                        {props.data.icon}
+                        {props.data.icon ? props.data.icon : ""}
                         <h1>{(language === "FR") ? props.data.titleFR : props.data.titleEN}</h1>
                         <p>
                             {(language === "FR") ? props.data.descriptionFR : props.data.descriptionEN}

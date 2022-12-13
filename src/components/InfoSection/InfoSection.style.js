@@ -90,8 +90,8 @@ export const TextDiv = styled.div`
     &>p {
         text-align: center;
         margin-bottom: 30px;
-        padding-left: 20%;
-        padding-right: 20%;
+        /* padding-left: 20%;
+        padding-right: 20%; */
     }
     
     @media only screen and (max-width: 1024px) {
