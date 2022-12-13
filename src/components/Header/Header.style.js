@@ -3,7 +3,7 @@ import { VoiceUpColors } from "../../colors";
 import * as globVars from "../../globalVars";
 
 // Show borders/background for debugging css
-const DEBUG = true;
+const DEBUG = false;
 
 export const HeaderContainer = styled.header`
     position: relative;
@@ -17,7 +17,7 @@ export const SlideImg = styled.div`
     width: 100%;
     height: 100%;
     background-image: ${({imageURL}) => `url(${imageURL})`};
-    background-position: 50% 20%;
+    background-position: ${({posX, posY}) => `${posX}% ${posY}%`};
     background-repeat: no-repeat;
     background-size: 100%;
 

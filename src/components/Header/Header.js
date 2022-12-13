@@ -1,28 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import { HeaderContainer, SlideImg, SlideOverlay, BoxWrapper, TextBox, Title, Description } from "./Header.style";
-import FooPic from "../../assets/headers/Header_Tania1.jpg";
+import { LangContext } from "../../App";
+import useAppear from "../../hooks/useAppear";
+import * as globalVars from "../../globalVars";
 
-function Header() {
-    const [isActive, setIsActive] = useState(false);
-
-    useEffect(() => {
-        const handler = () => {
-            setIsActive(true);
-        }
-        window.addEventListener("load", handler);
-        return () => {
-            window.removeEventListener("load", handler);
-        }
-    }, [])
+function Header({data}) {
+    const containerRef = useRef(null);
+    const {language} = useContext(LangContext);
+    const isActive = useAppear(containerRef, globalVars.navbarHeight);
 
     return (
-        <HeaderContainer>
-            <SlideImg imageURL={FooPic}>
+        <HeaderContainer ref={containerRef}>
+            <SlideImg imageURL={data.picURL} posX="0" posY="50">
                 <SlideOverlay></SlideOverlay>
-                    <BoxWrapper className={isActive ? "active" : ""} transitionTime={500}>
+                    <BoxWrapper className={isActive ? "active" : ""} transitionTime={300}>
                         <TextBox>
-                            <Title>This is a title</Title>
-                            <Description>Hello, I'm a text ! I'm so happy to be here with you !</Description>
+                            <Title>{(language === "FR") ? data.titleFR : data.titleEN}</Title>
+                            <Description>{(language === "FR") ? data.descriptionFR : data.descriptionEN}</Description>
                         </TextBox>
                     </BoxWrapper>
             </SlideImg>
