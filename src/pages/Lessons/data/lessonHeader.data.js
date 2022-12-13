@@ -1,6 +1,6 @@
 import KimHeader from "../../../assets/headers/Header_Kim.jpg";
 
-export const headerData = {
+export const lessonHeaderData = {
     picURL: KimHeader,
     titleFR: "L'enseignement",
     titleEN: "Teaching style",
