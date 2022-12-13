@@ -1,16 +1,20 @@
 import React from "react";
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import InfoSection from "../../components/InfoSection/InfoSection";
-import { lessonHeaderData, lessonsInfoData } from "./data/lessons.data";
+import { lessonHeaderData, infoPhiloData, infoLearningPathData, infoTechniqueData, infoLessonsData , infoAuditionData} from "./data/lessons.data";
 
 const Lessons = () => {
     return(
-        <div>
+        <>
             <Header data={lessonHeaderData} />
-            <InfoSection data={lessonsInfoData} transitionTime={600} />
-            <h1>Lessons</h1>
-            <p>Let's talk about my lessons ...</p>
-        </div>
+            <InfoSection data={infoPhiloData} transitionTime={600} />
+            <InfoSection data={infoLearningPathData} direction={infoLearningPathData.direction} transitionTime={600} />
+            <InfoSection data={infoTechniqueData} direction={infoTechniqueData.direction} transitionTime={600} />
+            <InfoSection data={infoLessonsData} direction={infoLessonsData.direction} transitionTime={600} />
+            <InfoSection data={infoAuditionData} direction={infoAuditionData.direction} transitionTime={600} />
+            <Footer />
+        </>
     )
 }
 

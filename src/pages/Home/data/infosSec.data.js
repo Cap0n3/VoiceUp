@@ -8,6 +8,7 @@ import Val from "../../../assets/images/students/student_Val1.jpg";
 // === Infos section data === //
 
 export const SingSectionData = {
+    // Normal or reverse
     direction : "normal",
     icon : <MicIcon />,
     image : Vinz,
@@ -20,6 +21,7 @@ export const SingSectionData = {
 }
 
 export const PlaySectionData = {
+    // Normal or reverse
     direction : "reverse",
     icon : <GuitarIcon />,
     image : Lea,
@@ -32,6 +34,7 @@ export const PlaySectionData = {
 }
 
 export const TalkSectionData = {
+    // Normal or reverse
     direction : "normal",
     icon : <MasksIcon />,
     image : Val,

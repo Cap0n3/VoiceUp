@@ -1,5 +1,5 @@
-import { Route, Routes } from "react-router-dom";
-import { useState, createContext, useRef } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { useState, useEffect, createContext, useRef } from "react";
 import GlobalStyle from "./globalStyle";
 import ScrollTop from "./components/ScrollTop/ScrollTop";
 import Navbar from "./components/Navbar/Navbar";
@@ -14,12 +14,19 @@ import Contact from "./pages/Conctact";
 export const LangContext = createContext();
 export const ScrollContext = createContext();
 
+
 function App() {
 	// Set contexts
 	const [language, setLanguage] = useState("FR");
 	const [scrollTopPos, setScrollPos] = useState(0);
 	const langValue = { language, setLanguage };
 	const mainContainerRef = useRef(null);
+	const location = useLocation();
+
+	useEffect(() => {
+		// Scroll top on route change
+		mainContainerRef.current.scrollTo(0, 0);
+	}, [location]);
 	
 	const handleScroll = (e) => {
 		setScrollPos(e.currentTarget.scrollTop);

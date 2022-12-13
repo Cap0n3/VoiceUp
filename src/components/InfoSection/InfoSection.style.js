@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
+import * as globVars from "../../globalVars";
 
 const debug = false;
 
@@ -11,8 +12,12 @@ export const SectionWrapper = styled.div`
         "row"
     };
     width: 100%;
-    height: 500px;
+    height: ${globVars.sectionHeight}px;
     ${debug ? "border: 1px solid red;" : ""}
+
+    @media only screen and (max-width: 1024px) {
+        flex-direction: "column";
+    }
 `;
 
 export const ImgContainer = styled.div`
