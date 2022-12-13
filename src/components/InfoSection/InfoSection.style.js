@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import * as globVars from "../../globalVars";
 
-const debug = false;
+const DEBUG = false;
 
 export const SectionWrapper = styled.div`
     display: flex;
@@ -13,23 +13,19 @@ export const SectionWrapper = styled.div`
     };
     width: 100%;
     height: ${globVars.sectionHeight}px;
-    ${debug ? "border: 1px solid red;" : ""}
-
-    @media only screen and (max-width: 1024px) {
-        flex-direction: "column";
-    }
+    ${DEBUG ? "border: 1px solid red;" : ""}
 `;
 
 export const ImgContainer = styled.div`
     width: 100%;
     overflow: hidden;
-    ${debug ? "background-color: lightblue;" : ""}
+    ${DEBUG ? "background-color: lightblue;" : ""}
 `;
 
 export const CardContainer = styled.div`
     width: 100%;
     overflow: hidden;
-    ${debug ? "background-color: coral;" : ""}
+    ${DEBUG ? "background-color: coral;" : ""}
 `;
 
 export const ImageDiv = styled.div`
@@ -64,7 +60,7 @@ export const Card = styled.div`
         "0"
     };
     transition: margin-left ${({transitionTime}) => transitionTime}ms ease;
-    background-color:  ${debug ? "lightgreen" : VoiceUpColors.white};
+    background-color:  ${DEBUG ? "lightgreen" : VoiceUpColors.white};
     
     &.active {
         margin-left: 0;
@@ -74,7 +70,7 @@ export const Card = styled.div`
 export const TextDiv = styled.div`
     max-width: 80%;
     overflow-wrap: break-word;
-    ${debug ? "border: 1px solid brown;" : ""}
+    ${DEBUG ? "border: 1px solid brown;" : ""}
     
     #sectionIcon {
         display: block; 
