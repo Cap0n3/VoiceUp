@@ -14,8 +14,9 @@ export const SingSectionData = {
     imgTitle: "Vincent",
     titleFR : "Chanter",
     titleEN : "Sing",
-    descriptionFR : "Vous aimez chanter et vous désirez améliorer votre soutien, votre puissance vocale ou élargir votre registre vocal.",
-    descriptionEN : "Some text in english and some more jibberish to descibe a big bowl of nothing to advertise a total void."
+    // Each list element is a <p>
+    descriptionFR : ["Vous aimez chanter et vous désirez améliorer votre soutien, votre puissance vocale ou élargir votre registre vocal."],
+    descriptionEN : ["Some text in english and some more jibberish to descibe a big bowl of nothing to advertise a total void."]
 }
 
 export const PlaySectionData = {
@@ -25,8 +26,9 @@ export const PlaySectionData = {
     imgTitle: "Lea",
     titleFR : "Jouer",
     titleEN : "Play",
-    descriptionFR : "Vous êtes chanteur ou chanteuse dans un groupe ou auteur/compositeur, vous rêvez de trouver une manière personnelle d’interpréter vos morceaux en vu de concerts ou de l’enregistrement d’un album.",
-    descriptionEN : "Some other text in english and some more jibberish to descibe a big bowl of nothing to advertise a total void."
+    // Each list element is a <p>
+    descriptionFR : ["Vous êtes chanteur ou chanteuse dans un groupe ou auteur/compositeur, vous rêvez de trouver une manière personnelle d’interpréter vos morceaux en vu de concerts ou de l’enregistrement d’un album."],
+    descriptionEN : ["Some other text in english and some more jibberish to descibe a big bowl of nothing to advertise a total void."]
 }
 
 export const TalkSectionData = {
@@ -36,6 +38,7 @@ export const TalkSectionData = {
     imgTitle: "Valérie",
     titleFR : "Parler",
     titleEN : "Talk",
-    descriptionFR : "Vous êtes comédien ou orateur de profession (avocat, conférencier, manager ou professeur) vous aimeriez vous sentir à l’aise face à votre public et poser votre voix.",
-    descriptionEN : "Some other text about 'talking' in english and some more jibberish to descibe a big bowl of nothing to advertise a total void."
+    // Each list element is a <p>
+    descriptionFR : ["Vous êtes comédien ou orateur de profession (avocat, conférencier, manager ou professeur) vous aimeriez vous sentir à l’aise face à votre public et poser votre voix."],
+    descriptionEN : ["Some other text about 'talking' in english and some more jibberish to descibe a big bowl of nothing to advertise a total void."]
 }

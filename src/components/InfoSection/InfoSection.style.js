@@ -80,15 +80,16 @@ export const TextDiv = styled.div`
         margin-bottom: 30px;
     }
 
-    &>h1 {
+    & > h1 {
         text-align: center;
         margin-bottom: 30px;
         font-size: 2.5em;
         text-transform: uppercase;
     }
 
-    &>p {
+    & > p {
         text-align: center;
+        font-weight: 300;
         margin-bottom: 30px;
         /* padding-left: 20%;
         padding-right: 20%; */
@@ -99,15 +100,14 @@ export const TextDiv = styled.div`
             width: 80px;
         }
 
-        &>h1 {
+        & > h1 {
             font-size: 2em;
         }
 
-        &>p {
+        & > p {
             margin-bottom: 30px;
             padding-left: 0;
             padding-right: 0;
         }
     }
-
 `;

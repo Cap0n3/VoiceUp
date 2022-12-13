@@ -9,7 +9,27 @@ const InfoSection = (props) => {
     const {language} = useContext(LangContext);
     const containerRef = useRef(null);
     const isVisible = useAppear(containerRef, navbarHeight);
-    
+
+    const displayDescription = (lang) => {
+        if(lang === "FR") {
+            return (
+                props.data.descriptionFR.map((text, index) => (
+                    <p key={index}>{text}</p>  
+                ))
+            );
+        }       
+        else if(lang === "EN") {
+                return(
+                    props.data.descriptionEN.map((text, index) => (
+                        <p key={index}>{text}</p>  
+                    ))
+                );    
+        }
+        else {
+            console.error("Language state is not defined or have a wrong value !")
+        }
+    }
+
     return(
         <SectionWrapper direction={props.data.direction} ref={containerRef}>
             <ImgContainer>
@@ -20,9 +40,7 @@ const InfoSection = (props) => {
                     <TextDiv>
                         {props.data.icon ? props.data.icon : ""}
                         <h1>{(language === "FR") ? props.data.titleFR : props.data.titleEN}</h1>
-                        <p>
-                            {(language === "FR") ? props.data.descriptionFR : props.data.descriptionEN}
-                        </p>
+                        {displayDescription(language)}
                     </TextDiv>
                 </Card>
             </CardContainer>
