@@ -14,6 +14,11 @@ export const SectionWrapper = styled.div`
     width: 100%;
     height: ${globVars.sectionHeight}px;
     ${DEBUG ? "border: 1px solid red;" : ""}
+
+    @media only screen and (max-width: 1024px) {
+        height: ${globVars.sectionHeight * 2}px;
+        flex-direction: column;
+    }
 `;
 
 export const ImgContainer = styled.div`
