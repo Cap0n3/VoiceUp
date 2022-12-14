@@ -8,9 +8,9 @@ const Lessons = () => {
     return(
         <>
             <Header data={lessonHeaderData} />
-            <InfoSection data={infoPhiloData} transitionTime={600} />
+            <InfoSection data={infoPhiloData} direction={infoPhiloData.direction} transitionTime={600} />
             <InfoSection data={infoLearningPathData} direction={infoLearningPathData.direction} transitionTime={600} />
-            <InfoSection data={infoTechniqueData} direction={infoTechniqueData.direction} transitionTime={600} />
+            <InfoSection data={infoTechniqueData} direction={infoTechniqueData.direction} transitionTime={600}  />
             <InfoSection data={infoLessonsData} direction={infoLessonsData.direction} transitionTime={600} />
             <InfoSection data={infoAuditionData} direction={infoAuditionData.direction} transitionTime={600} />
             <Footer />

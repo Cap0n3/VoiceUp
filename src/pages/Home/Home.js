@@ -9,7 +9,6 @@ import { SliderContainer } from "./Home.style";
 import { slides } from "./data/slideImg.data";
 import { SingSectionData, PlaySectionData, TalkSectionData } from "./data/infosSec.data";
 import useWindowSize from "../../hooks/useWindowSize";
-import ScrollTop from "../../components/ScrollTop/ScrollTop";
 
 const Home = () => {
     const windowSize = useWindowSize();

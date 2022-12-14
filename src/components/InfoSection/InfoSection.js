@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { LangContext } from '../../App';
 import { SectionWrapper, ImgContainer, CardContainer, ImageDiv, Card, TextDiv } from "./InfoSection.style";
 import { navbarHeight } from "../../globalVars";
@@ -37,7 +37,7 @@ const InfoSection = (props) => {
             </ImgContainer>
             <CardContainer>
                 <Card className={isVisible ? "active" : ""} direction={props.data.direction} transitionTime={props.transitionTime}>
-                    <TextDiv>
+                    <TextDiv fontSize={props.fontSize} >
                         {props.data.icon ? props.data.icon : ""}
                         <h1>{(language === "FR") ? props.data.titleFR : props.data.titleEN}</h1>
                         {displayDescription(language)}

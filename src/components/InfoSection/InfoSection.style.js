@@ -99,12 +99,15 @@ export const TextDiv = styled.div`
         margin-bottom: 30px;
         font-size: 2.5em;
         text-transform: uppercase;
+        ${DEBUG ? "background-color: lightgreen;" : ""}
     }
 
     & > p {
         text-align: center;
         font-weight: 300;
+        font-size: 1em;
         margin-bottom: 30px;
+        ${DEBUG ? "background-color: lightblue;" : ""}
         /* padding-left: 20%;
         padding-right: 20%; */
     }
@@ -119,6 +122,7 @@ export const TextDiv = styled.div`
         }
 
         & > p {
+            font-size: 0.9em;
             margin-bottom: 30px;
             padding-left: 0;
             padding-right: 0;

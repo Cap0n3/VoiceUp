@@ -26,6 +26,7 @@ function App() {
 	useEffect(() => {
 		// Scroll top on route change
 		mainContainerRef.current.scrollTo(0, 0);
+		setScrollPos(0);
 	}, [location]);
 	
 	const handleScroll = (e) => {
