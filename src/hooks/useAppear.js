@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import useWindowSize from "./useWindowSize";
 import { ScrollContext } from "../App";
 
