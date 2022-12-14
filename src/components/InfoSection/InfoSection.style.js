@@ -25,12 +25,20 @@ export const ImgContainer = styled.div`
     width: 100%;
     overflow: hidden;
     ${DEBUG ? "background-color: lightblue;" : ""}
+
+    @media only screen and (max-width: 1024px) {
+        height: ${globVars.sectionHeight}px;
+    }
 `;
 
 export const CardContainer = styled.div`
     width: 100%;
     overflow: hidden;
     ${DEBUG ? "background-color: coral;" : ""}
+
+    @media only screen and (max-width: 1024px) {
+        height: ${globVars.sectionHeight}px;
+    }
 `;
 
 export const ImageDiv = styled.div`
