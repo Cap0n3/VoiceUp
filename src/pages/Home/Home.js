@@ -14,6 +14,27 @@ import ScrollTop from "../../components/ScrollTop/ScrollTop";
 const Home = () => {
     const windowSize = useWindowSize();
 
+    /**
+     * Set number of reviews in page depending on screen width
+     * @param   {int}   scrWidth    Screen width 
+     * @returns                     Number of review to be displayed                 
+     */
+    const setNbOfReview = (scrWidth) => {
+        if(scrWidth > 1280){
+            return 3;
+        }
+        else if(scrWidth > 1024 && scrWidth < 1280) {
+            return 2;
+        }
+        else if(scrWidth < 1025) {
+            return 1;
+        } 
+        else {
+            console.error("Number of reviews was not set for review component !")
+            return 3;
+        }      
+    }   
+
     return(
         <>
             <SliderContainer winHeight={windowSize.innerHeight}>
@@ -22,7 +43,7 @@ const Home = () => {
             <InfoSection data={SingSectionData} transitionTime={600} />
             <InfoSection data={PlaySectionData} transitionTime={600} />
             <InfoSection data={TalkSectionData} transitionTime={600} />
-            <ReviewSection transitionTime={800} nbOfReviews={windowSize.innerWidth > 960 ? 3 : 1} />
+            <ReviewSection transitionTime={800} nbOfReviews={setNbOfReview(windowSize.innerWidth)} />
             <C2ASection transitionTime={600} />
             <ContactSection />
             <Footer />

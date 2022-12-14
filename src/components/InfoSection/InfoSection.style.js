@@ -17,7 +17,7 @@ export const SectionWrapper = styled.div`
 
     @media only screen and (max-width: 1024px) {
         height: ${globVars.sectionHeight * 2}px;
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 `;
 

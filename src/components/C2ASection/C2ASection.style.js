@@ -15,6 +15,10 @@ export const C2AContainer = styled.section`
     transform-style: preserve-3d;
     z-index: -1;
     ${DEBUG ? "border: 1px solid blue;" : ""}
+
+    @media only screen and (max-width: 1024px) {
+        height: ${sectionHeight - 300}px;
+    }
 `;
 
 export const ImgDiv = styled.div`
@@ -28,6 +32,10 @@ export const ImgDiv = styled.div`
     transform: translate3d(0%, ${({paralOffset}) => paralOffset}px, 0px);
     background-color: black;
     z-index: -1;
+
+    @media only screen and (max-width: 1024px) {
+        height: ${sectionHeight + 100}px;
+    }
 `;
 
 export const BoxWrapper = styled.div`
