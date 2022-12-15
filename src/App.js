@@ -14,6 +14,8 @@ import Contact from "./pages/Conctact";
 export const LangContext = createContext();
 export const ScrollContext = createContext();
 
+export const FooContext = createContext();
+
 function App() {
 	// Set contexts
 	const [language, setLanguage] = useState("FR");
@@ -34,6 +36,7 @@ function App() {
 
 	return (
 		<>
+			<FooContext.Provider value={mainContainerRef}>
 			<ScrollContext.Provider value={scrollTopPos}>
 			<LangContext.Provider value={langValue}>
 				<ScrollTop containerRef={mainContainerRef} />
@@ -51,6 +54,7 @@ function App() {
 				</div>
 			</LangContext.Provider>
 			</ScrollContext.Provider>
+			</FooContext.Provider>
 		</>
 		
 	);

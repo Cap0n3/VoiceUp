@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import InfoSection from "../../components/InfoSection/InfoSection";
 import ReviewSection from "../../components/ReviewSection/ReviewSection";
@@ -10,8 +10,16 @@ import { slides } from "./data/slideImg.data";
 import { SingSectionData, PlaySectionData, TalkSectionData } from "./data/infosSec.data";
 import useWindowSize from "../../hooks/useWindowSize";
 
+import { FooContext } from "../../App";
+
 const Home = () => {
     const windowSize = useWindowSize();
+
+    const foo = useContext(FooContext);
+
+    useEffect(() => {
+        console.log(foo.current.scrollTop)
+    })
 
     /**
      * Set number of reviews in page depending on screen width
