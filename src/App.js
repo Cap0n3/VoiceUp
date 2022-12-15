@@ -14,7 +14,6 @@ import Contact from "./pages/Conctact";
 export const LangContext = createContext();
 export const ScrollContext = createContext();
 
-
 function App() {
 	// Set contexts
 	const [language, setLanguage] = useState("FR");
@@ -24,8 +23,8 @@ function App() {
 	const location = useLocation();
 
 	useEffect(() => {
-		setScrollPos(0);
 		// Scroll top on route change
+		setScrollPos(0);
 		mainContainerRef.current.scrollTo(0, 0);
 	}, [location]);
 	

@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { LangContext } from '../../App';
 import { SectionWrapper, ImgContainer, CardContainer, ImageDiv, Card, TextDiv } from "./InfoSection.style";
 import { navbarHeight } from "../../globalVars";
 import useAppear from "../../hooks/useAppear";
 
 const InfoSection = (props) => {
-    
     const {language} = useContext(LangContext);
     const containerRef = useRef(null);
     const isVisible = useAppear(containerRef, navbarHeight);
