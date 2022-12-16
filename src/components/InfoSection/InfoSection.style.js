@@ -112,7 +112,7 @@ export const TextDiv = styled.div`
         padding-right: 20%; */
     }
     
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 950px) {
         #sectionIcon {
             width: 80px;
         }
@@ -122,7 +122,7 @@ export const TextDiv = styled.div`
         }
 
         & > p {
-            font-size: 0.9em;
+            font-size: 0.8em;
             margin-bottom: 30px;
             padding-left: 0;
             padding-right: 0;
