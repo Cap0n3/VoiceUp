@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
 
+/**
+ * Hook to get current scroll position of page.
+ *  
+ * @returns     Float that represents current position. 
+ */
 const useScroll = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
 
