@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useScroll from "./useScroll";
 
 /**
  * This custom hook provide allow the creation of a parallax effect on an image.
@@ -85,15 +86,15 @@ import { useEffect, useState } from "react";
  * `;
  * ```
  * @param   {object}    componentRef    - Reference of parent component.
- * @param   {int}       scrollPosition  - Current scrollTop position in page.
  * @param   {int}       screenHeight    - Screen inner height value.
  * @returns                             - Dynamic value (int).
  */
-const useParallax = (componentRef, scrollPosition, screenHeight) => {
+const useParallax = (componentRef, screenHeight) => {
     const [elementPosition, setElementPos] = useState(null);
     const [parallaxOffset, setParallaxOffset] = useState(0);
     const [divider, setDivider] = useState(null);
-    
+    const scrollPosition = useScroll();
+
     /**
      * Utils function that returns a divider value depending on screen height
      * to setup an optimal parallax effect for images. The divider will

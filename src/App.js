@@ -12,32 +12,24 @@ import Contact from "./pages/Conctact";
 
 // Define contexts
 export const LangContext = createContext();
-export const ScrollContext = createContext();
 
 function App() {
 	// Set contexts
 	const [language, setLanguage] = useState("FR");
-	const [scrollTopPos, setScrollPos] = useState(0);
 	const langValue = { language, setLanguage };
 	const mainContainerRef = useRef(null);
 	const location = useLocation();
 
 	useEffect(() => {
 		// Scroll top on route change
-		setScrollPos(0);
-		mainContainerRef.current.scrollTo(0, 0);
+		window.scrollTo(0, 0);
 	}, [location]);
-	
-	const handleScroll = (e) => {
-		setScrollPos(e.currentTarget.scrollTop);
-	}
 
 	return (
 		<>
-			<ScrollContext.Provider value={scrollTopPos}>
 			<LangContext.Provider value={langValue}>
-				<ScrollTop containerRef={mainContainerRef} />
-				<div className="main" onScroll={handleScroll} ref={mainContainerRef}>
+				<ScrollTop />
+				<div className="main">
 					<GlobalStyle />
 					<Navbar />
 					<Routes>
@@ -50,7 +42,6 @@ function App() {
 					</Routes>
 				</div>
 			</LangContext.Provider>
-			</ScrollContext.Provider>
 		</>
 		
 	);

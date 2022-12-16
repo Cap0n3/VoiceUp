@@ -5,16 +5,17 @@ import { LangContext } from '../../App';
 import { C2AContainer, ImgDiv, BoxWrapper, TextBox } from "./C2ASection.style";
 import { OutlineBtn } from "../../globalStyle";
 import useParallax from "../../hooks/useParallax";
+import useScroll from "../../hooks/useScroll";
 import useAppear from "../../hooks/useAppear";
 import { C2AData } from "../../pages/Home/data/C2ASec.data";
 import { navbarHeight } from "../../globalVars";
 
 const C2ASection = ({transitionTime}) => {
     const containerRef = useRef(); // Get position of component in page
-    const scrollPos = useContext(ScrollContext);
+    const scrollPos = useScroll();
     const windowSize = useWindowSize();
     const {language} = useContext(LangContext);
-    const parallaxOffset = useParallax(containerRef, scrollPos, windowSize.innerHeight);
+    const parallaxOffset = useParallax(containerRef, windowSize.innerHeight);
     const isVisible = useAppear(containerRef, navbarHeight);
 
     return(

@@ -1,31 +1,29 @@
 import { useState, useEffect, useContext } from "react";
-import { ScrollContext } from "../../App";
 import { ScrTopBtn, UpArrow } from "./ScrollTop.style";
+import useScroll from "../../hooks/useScroll";
 
-const ScrollTop = ({containerRef}) => {
+const ScrollTop = () => {
     const [showScrollBtn, setScrollBtn] = useState(false);
-    const scrollPos = useContext(ScrollContext);
+    const scrollPosition = useScroll();
 
     /**
      * Scrool back to top of page.
-     * 
-     * > **Note :** must give reference of scrollable container and not window.
      */
     const handleClick = () => {
-        containerRef.current.scroll({
+        window.scroll({
             top: 0,
             behavior: "smooth"
         });     
     }
 
     useEffect(() => {
-        if(scrollPos > 800) {
+        if(scrollPosition > 800) {
             setScrollBtn(true);
         } else {
             setScrollBtn(false);
         }
         
-    }, [scrollPos])
+    }, [scrollPosition])
 
     return(
         <>
