@@ -16,10 +16,6 @@ const useScroll = () => {
         };
     }, []);
 
-    useEffect(() => {
-      console.log(scrollPosition)
-    }, [scrollPosition])
-    
     return scrollPosition;
 }
 

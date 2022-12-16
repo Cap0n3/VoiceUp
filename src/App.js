@@ -1,5 +1,5 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import { useState, useEffect, createContext, useRef } from "react";
+import { useState, useEffect, createContext } from "react";
 import GlobalStyle from "./globalStyle";
 import ScrollTop from "./components/ScrollTop/ScrollTop";
 import Navbar from "./components/Navbar/Navbar";
@@ -17,7 +17,6 @@ function App() {
 	// Set contexts
 	const [language, setLanguage] = useState("FR");
 	const langValue = { language, setLanguage };
-	const mainContainerRef = useRef(null);
 	const location = useLocation();
 
 	useEffect(() => {

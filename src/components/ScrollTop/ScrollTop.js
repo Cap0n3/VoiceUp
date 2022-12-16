@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { ScrTopBtn, UpArrow } from "./ScrollTop.style";
 import useScroll from "../../hooks/useScroll";
 

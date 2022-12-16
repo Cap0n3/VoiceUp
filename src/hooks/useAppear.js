@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import useWindowSize from "./useWindowSize";
 import useScroll from "./useScroll";
 
 /**
  * Custom hook allowing to indicate whether an element is visible at the bottom of the page page
- * at least a third of its total height. It's very useful to trigger an appearing effect when scolling down. 
+ * at least a third of its total height. It's very useful to trigger an appearing effect when scolling down.
+ * 
+ * > **Dependency** : useScroll hook (hook that provides scroll position).
  * 
  * @param   {object}    containerRef    Element reference.
  * @param   {*}         navbarHeight    Navbar height used to calculate "true" window height.
