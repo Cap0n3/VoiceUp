@@ -13,10 +13,14 @@ export const Nav = styled.nav `
     justify-content: center;
     align-items: center;
     font-size: 1.1em;
-    position: sticky;
-    top: 0;
     z-index: 999;
     background: ${VoiceUpColors.white};
+
+    &.sticky {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+    }
 
     /* Small screen */
     @media only screen and (max-width: 1024px) {

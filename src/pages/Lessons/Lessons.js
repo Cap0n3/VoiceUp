@@ -7,7 +7,7 @@ import { lessonHeaderData, infoPhiloData, infoLearningPathData, infoTechniqueDat
 const Lessons = () => {
     return(
         <>
-            <Header data={lessonHeaderData} />
+            <Header data={lessonHeaderData} position={{posX: 0, posY: 50}} />
             <InfoSection data={infoPhiloData} direction={infoPhiloData.direction} transitionTime={600} />
             <InfoSection data={infoLearningPathData} direction={infoLearningPathData.direction} transitionTime={600} />
             <InfoSection data={infoTechniqueData} direction={infoTechniqueData.direction} transitionTime={600}  />

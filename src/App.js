@@ -5,7 +5,7 @@ import ScrollTop from "./components/ScrollTop/ScrollTop";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Lessons from "./pages/Lessons/Lessons";
-import Teacher from "./pages/Teacher";
+import Teacher from "./pages/Teacher/Teacher";
 import Conditions from "./pages/Conditions";
 import Prices from "./pages/Prices";
 import Contact from "./pages/Conctact";

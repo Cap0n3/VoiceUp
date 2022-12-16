@@ -20,6 +20,7 @@ export const SlideImg = styled.div`
     background-position: ${({posX, posY}) => `${posX}% ${posY}%`};
     background-repeat: no-repeat;
     background-size: 100%;
+    background-color: ${VoiceUpColors.black};
 
     @media only screen and (max-width: 1024px) {
         background-position: 65% 20%;

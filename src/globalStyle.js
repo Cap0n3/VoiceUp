@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
         /* height: 100vh; */
         overflow-x: hidden;
         overflow-y: auto;
-        perspective: 10px; /* For parallax FX */
+        /* perspective: 10px; /* For parallax FX */
         z-index: 1;
     }
 
