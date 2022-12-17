@@ -45,21 +45,23 @@ export const DescriptionWrapper = styled.div`
     /* Resize block with computed values (should be both with same size) */
     width: ${({width}) => (width ? `${width}px` : "33%")};
     height: ${({height}) => (height ? `${height}px` : "")};
-    padding: 30px;
-    overflow-y: auto;
+    padding: 3%;
+    overflow-y: hidden;
     transition: margin-right 600ms ease;
     background-color: ${DEBUG ? "lightgreen" : VoiceUpColors.lightGrey};
 
     & > h2 {
         font-size: 1.8vw;
-        margin-bottom: 5px;
+        margin-bottom: -5px;
+        ${DEBUG ? "background-color: cyan;" : ""};
     }
 
     & > sub {
         display: inline-block;
         font-size: 1.1vw;
         font-weight: 400;
-        margin-bottom: 3vw;
+        margin-bottom: 2vw;
+        ${DEBUG ? "background-color: yellow;" : ""};
     }
 
     & > p {
@@ -77,6 +79,7 @@ export const DescriptionWrapper = styled.div`
         margin-top: ${({height}) => (height ? `${height + sectionPadding / 2}px` : "")};
         /* Center element in section */
         right: ${({width, scrWidth}) => (scrWidth - width) / 2}px;
+        padding: 7%;
 
         & > h2 {
             font-size: 3.5vw;
