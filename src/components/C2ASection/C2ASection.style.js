@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Tania2 from "../../assets/images/Tania/Tania2_medium_header_over.jpg";
 import { VoiceUpColors } from "../../colors";
+import { ftSizes } from "../../globalVars";
 
 const DEBUG = false;
 const sectionHeight = 700;
@@ -70,25 +71,26 @@ export const TextBox = styled.div`
     }
 
     & > h1 {
-            font-size: 4em;
+            font-size: ${ftSizes.M_ftSizeXL};
             margin-bottom: 5px;
 
             @media only screen and (max-width: 1024px) {
-                font-size: 2.2em;
+                font-size: ${ftSizes.S_ftSizeXL};
             }
         }
 
     & > h2 {
-        font-size: 3em;
+        font-size: ${ftSizes.M_ftSizeL};
         margin-bottom: 30px;
 
         @media only screen and (max-width: 1024px) {
-            font-size: 1.5em;
+            font-size: ${ftSizes.S_ftSizeL};
         }
     }
 
     & > p {
         text-align: center;
+        font-size: ${ftSizes.M_ftSizeMD};
         color: ${VoiceUpColors.white};
         ${DEBUG ? "border: 1px solid purple;" : ""}
     }

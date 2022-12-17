@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import * as globVars from "../../globalVars";
+import { ftSizes } from "../../globalVars";
 import { NavLink } from 'react-router-dom';
 import { VoiceUpColors } from "../../colors";
 
@@ -41,9 +42,10 @@ export const FtNavList = styled.ul`
     justify-content: center;
     gap: 150px;
     list-style-type: none;
+    font-size: ${ftSizes.M_ftSizeSM};
 
     @media only screen and (max-width: 1024px) {
-        font-size: 0.8em;
+        font-size: ${ftSizes.S_ftSizeMD};
         gap: 25px;
     }
 `;
@@ -85,12 +87,12 @@ export const CopyrightWrapper = styled.div`
     ${DEBUG ? "border: 1px solid pink;" : ""}
 
     & > p {
-        font-size: 0.8em;
+        font-size: ${ftSizes.S_ftSizeSM};
         font-weight: 300;
         color: ${VoiceUpColors.white};
 
         @media only screen and (max-width: 1024px) {
-            font-size: 0.6em;
+            font-size: ${ftSizes.XS_ftSizeSM};
         }
     }
 `;

@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
 import { VoiceUpColors } from "./colors";
 import * as globVars from "./globalVars";
+import { ftSizes } from './globalVars';
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -85,7 +86,7 @@ export const OutlineBtn = styled.button`
     padding: 12px 60px;
     max-width: 250px;
     color: ${VoiceUpColors.white};
-    font-size: 16px;
+    font-size: ${ftSizes.M_ftSizeMD};
     outline: none;
     background: none;
     border: 2px solid ${VoiceUpColors.white};
@@ -110,7 +111,7 @@ export const FilledBtn =  styled.button`
     color: ${VoiceUpColors.white};
     background: ${VoiceUpColors.gold};
     border: none;
-    font-size: 16px;
+    font-size: ${ftSizes.M_ftSizeMD};
     cursor: pointer;
     transition: 0.25s;
 

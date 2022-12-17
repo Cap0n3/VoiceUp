@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import * as globVars from "../../globalVars";
+import { ftSizes } from "../../globalVars";
 
 const debug = false;
 
@@ -24,7 +25,7 @@ export const FormContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-    font-size: 1.4em;
+    font-size: ${ftSizes.M_ftSizeL};
     font-weight: 400;
     text-transform: uppercase;
     margin-bottom: 50px;
@@ -82,7 +83,7 @@ export const Textarea = styled.textarea`
     overflow-y: auto;
     border: 1px solid ${VoiceUpColors.grey};
     border-radius: 10px;
-    font-size: 1em;
+    font-size: ${ftSizes.M_ftSizeSM};
     outline: 0;
     padding: 10px;
 `;
@@ -99,7 +100,7 @@ export const Input = styled.input`
     width: 100%;
     border: 1px solid ${VoiceUpColors.grey};
     border-radius: 10px;
-    font-size: 1em;
+    font-size: ${ftSizes.M_ftSizeSM};
     outline: 0;
     padding: 10px;
 `;

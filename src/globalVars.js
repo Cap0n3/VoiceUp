@@ -12,14 +12,14 @@ export const sectionHeight = 600; // Default section height
 export const ftSizes = {
     // Medium screen
     M_ftSizeXL : "4.5rem",
-    M_ftSizeL : "3rem",
-    M_ftSizeMD : "1.2rem",
-    M_ftSizeSM : "1rem",
+    M_ftSizeL : "2.2rem",
+    M_ftSizeMD : "1rem",
+    M_ftSizeSM : "0.9rem",
     // Small screen
     S_ftSizeXL : "3.6rem",
-    S_ftSizeL : "2.5rem",
-    S_ftSizeMD : "1rem",
-    S_ftSizeSM : "0.9rem",
+    S_ftSizeL : "2rem",
+    S_ftSizeMD : "0.9rem",
+    S_ftSizeSM : "0.8rem",
     // Extra small screen
     XS_ftSizeXL : "3rem",
     XS_ftSizeMD : "0.8rem",
