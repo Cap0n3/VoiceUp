@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import * as globVars from "../../globalVars";
+import { ftSizes } from "../../globalVars";
 
 const DEBUG = false;
 
@@ -97,7 +98,7 @@ export const TextDiv = styled.div`
     & > h1 {
         text-align: center;
         margin-bottom: 30px;
-        font-size: 2.5em;
+        font-size: ${ftSizes.M_ftSizeL};
         text-transform: uppercase;
         ${DEBUG ? "background-color: lightgreen;" : ""}
     }
@@ -105,7 +106,7 @@ export const TextDiv = styled.div`
     & > p {
         text-align: center;
         font-weight: 300;
-        font-size: 1em;
+        font-size: ${ftSizes.M_ftSizeMD};
         margin-bottom: 30px;
         ${DEBUG ? "background-color: lightblue;" : ""}
         /* padding-left: 20%;
@@ -118,11 +119,11 @@ export const TextDiv = styled.div`
         }
 
         & > h1 {
-            font-size: 2em;
+            font-size: ${ftSizes.S_ftSizeL};
         }
 
         & > p {
-            font-size: 0.8em;
+            font-size: ${ftSizes.S_ftSizeMD};
             margin-bottom: 30px;
             padding-left: 0;
             padding-right: 0;

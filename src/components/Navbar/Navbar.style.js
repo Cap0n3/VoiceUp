@@ -2,6 +2,7 @@ import { VoiceUpColors } from "../../colors";
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
 import * as globVars from "../../globalVars";
+import { ftSizes } from "../../globalVars";
 
 // To see all borders (design debug)
 var DEBUG = false;
@@ -15,7 +16,6 @@ export const Nav = styled.nav `
     top: 0px;
     width: 100%;
     height: ${globVars.navbarHeight}px;
-    font-size: 1.1em;
     z-index: 999;
     background: ${VoiceUpColors.white};
 
@@ -145,7 +145,7 @@ export const NavLinks = styled(NavLink)`
     justify-content: center;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.9em;
+    font-size: ${ftSizes.M_ftSizeSM};
     font-weight: 400;
     width: 100px;
     height: ${globVars.navbarHeight - 15}px;
@@ -158,7 +158,7 @@ export const NavLinks = styled(NavLink)`
 
     /* 13" screen */
     @media only screen and (min-width: 1025px) and (max-width: 1248px) {
-        font-size: 0.8em;
+        font-size: ${ftSizes.S_ftSizeSM};;
     } 
 `;
 
@@ -167,7 +167,7 @@ export const LangSwitch = styled.li`
     align-items: center;
     height: ${globVars.navbarHeight}px;
     cursor: pointer;
-    font-size: 0.8em;
+    font-size: ${ftSizes.XS_ftSizeMD};
     color: ${VoiceUpColors.grey};
     ${(DEBUG) ? "background: pink;" : ""}
     margin-left: auto;
@@ -179,7 +179,7 @@ export const LangSwitch = styled.li`
         padding: 0.5rem .4rem;
         margin-left: 1%;
         margin-right: 1%;
-        font-size: 0.6em;
+        font-size: ${ftSizes.XS_ftSizeSM};
     }
 
     /* Small screen */

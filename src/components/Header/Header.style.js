@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import * as globVars from "../../globalVars";
+import { ftSizes } from "../../globalVars";
 
 // Show borders/background for debugging css
 const DEBUG = false;
@@ -92,19 +93,20 @@ export const TextBox = styled.div`
 
 export const Title = styled.h1`
     color: ${VoiceUpColors.white};
-    font-size: 4em;
+    font-size: ${ftSizes.M_ftSizeXL};
     text-transform: uppercase;
     font-weight: normal;
     margin-bottom: 30px;
     ${DEBUG ? "background: lightgreen;" : ""}
 
     @media only screen and (max-width: 1024px) {
-        font-size: 2.2em;
+        font-size: ${ftSizes.S_ftSizeXL};
     }
 `;
 
 export const Description = styled.p`
     text-align: center;
+    font-size: ${ftSizes.M_ftSizeMD};
     color: ${VoiceUpColors.white};
 
     ${DEBUG ? "background: cyan;" : ""}
