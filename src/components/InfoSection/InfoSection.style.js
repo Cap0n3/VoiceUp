@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import * as globVars from "../../globalVars";
-import { ftSizes } from "../../globalVars";
+import { ftSizes, elementHeights } from "../../globalVars";
 
 const DEBUG = false;
 
@@ -13,11 +12,11 @@ export const SectionWrapper = styled.div`
         "row"
     };
     width: 100%;
-    height: ${globVars.sectionHeight}px;
+    height: ${elementHeights.sectionHeight}px;
     ${DEBUG ? "border: 1px solid red;" : ""}
 
     @media only screen and (max-width: 1024px) {
-        height: ${globVars.sectionHeight * 2}px;
+        height: ${elementHeights.sectionHeight * 2}px;
         flex-direction: column-reverse;
     }
 `;
@@ -28,7 +27,7 @@ export const ImgContainer = styled.div`
     ${DEBUG ? "background-color: lightblue;" : ""}
 
     @media only screen and (max-width: 1024px) {
-        height: ${globVars.sectionHeight}px;
+        height: ${elementHeights.sectionHeight}px;
     }
 `;
 
@@ -38,7 +37,7 @@ export const CardContainer = styled.div`
     ${DEBUG ? "background-color: coral;" : ""}
 
     @media only screen and (max-width: 1024px) {
-        height: ${globVars.sectionHeight}px;
+        height: ${elementHeights.sectionHeight}px;
     }
 `;
 

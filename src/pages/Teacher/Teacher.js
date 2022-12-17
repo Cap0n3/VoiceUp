@@ -5,12 +5,12 @@ import useAppear from "../../hooks/useAppear";
 import { teacherHeaderData, descrParagraphs } from "./data/teacher.data";
 import { AboutSection, AboutImage, DescriptionWrapper } from "./Teacher.style";
 import TaniaAbout from "../../assets/images/Tania/TaniaAbout.jpg";
-import { navbarHeight } from "../../globalVars";
+import { elementHeights } from "../../globalVars";
 
 const Teacher = () => {
     const screenSize = useWindowSize();
     const AboutRef = useRef(null);
-    const isVisible = useAppear(AboutRef, navbarHeight);
+    const isVisible = useAppear(AboutRef, elementHeights.navbarHeight);
     const [blockDimensions, setblockDimensions] = useState({});
     
     /**

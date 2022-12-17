@@ -23,7 +23,7 @@ export const Slide = styled.div`
     }};
     background-position: 50% 20%;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-color: ${VoiceUpColors.black};
     z-index: 1;
 
@@ -38,8 +38,7 @@ export const Slide = styled.div`
     }
 
     @media only screen and (max-width: 1024px) {
-        background-position: 65% 20%;
-        background-size: cover;      
+        background-position: 65% 20%;      
     }
 `;
 

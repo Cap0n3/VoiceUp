@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import * as globVars from "../../globalVars";
-import { ftSizes } from "../../globalVars";
+import { ftSizes, elementHeights } from "../../globalVars";
 
 const debug = false;
 
 export const FormSection = styled.section`
     display: flex;
     align-items: center;
-    height: ${({winHeight}) => (winHeight ? (winHeight - globVars.navbarHeight) : 800)}px;
+    height: ${({winHeight}) => (winHeight ? (winHeight - elementHeights.navbarHeight) : 800)}px;
     max-height: 1280px;
     min-height: 800px;
     width: 100%;

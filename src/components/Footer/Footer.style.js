@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import * as globVars from "../../globalVars";
 import { ftSizes } from "../../globalVars";
 import { NavLink } from 'react-router-dom';
 import { VoiceUpColors } from "../../colors";

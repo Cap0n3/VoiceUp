@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import * as globVars from "../../globalVars";
-import { ftSizes } from "../../globalVars";
+import { ftSizes, elementHeights } from "../../globalVars";
 
 // Show borders/background for debugging css
 const DEBUG = false;
@@ -9,7 +8,7 @@ const DEBUG = false;
 export const HeaderContainer = styled.header`
     position: relative;
     width: 100%;
-    height: ${globVars.headerHeight}px;
+    height: ${elementHeights.headerHeight}px;
     overflow: hidden;
     ${DEBUG ? "border: 1px solid red;" : ""}
 `;

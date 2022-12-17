@@ -3,10 +3,12 @@
  */
 
 // === ELEMENTS SIZE === //
-export const navbarHeight = 80;
-export const mobileNavbarHeight = 60;
-export const headerHeight = 600;
-export const sectionHeight = 600; // Default section height
+export const elementHeights = {
+    navbarHeight : 80,
+    mobileNavbarHeight : 60,
+    headerHeight : 600,
+    sectionHeight : 600 // Default section height
+}
 
 // === FONT SIZES === //
 export const ftSizes = {

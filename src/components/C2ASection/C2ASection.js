@@ -6,14 +6,14 @@ import { OutlineBtn } from "../../globalStyle";
 import useParallax from "../../hooks/useParallax";
 import useAppear from "../../hooks/useAppear";
 import { C2AData } from "../../pages/Home/data/C2ASec.data";
-import { navbarHeight } from "../../globalVars";
+import { elementHeights } from "../../globalVars";
 
 const C2ASection = ({transitionTime}) => {
     const containerRef = useRef(); // Get position of component in page
     const windowSize = useWindowSize();
     const {language} = useContext(LangContext);
     const parallaxOffset = useParallax(containerRef, windowSize.innerHeight);
-    const isVisible = useAppear(containerRef, navbarHeight);
+    const isVisible = useAppear(containerRef, elementHeights.navbarHeight);
 
     return(
         <C2AContainer ref={containerRef}>

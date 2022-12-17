@@ -1,7 +1,6 @@
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
 import { VoiceUpColors } from "./colors";
-import * as globVars from "./globalVars";
-import { ftSizes } from './globalVars';
+import { ftSizes, elementHeights } from './globalVars';
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -19,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
     &.main {
         /* height: 100vh; */
-        padding-top: ${globVars.navbarHeight}px;
+        padding-top: ${elementHeights.navbarHeight}px;
         overflow-x: hidden;
         overflow-y: auto;
         /* perspective: 10px; /* For parallax FX */
@@ -46,7 +45,7 @@ const GlobalStyle = createGlobalStyle`
 
     @media only screen and (max-width: 1024px) {
         &.main {
-            padding-top: ${globVars.mobileNavbarHeight}px;
+            padding-top: ${elementHeights.mobileNavbarHeight}px;
         }
     }
 `;
@@ -60,7 +59,7 @@ const pulse = keyframes`
 // TODO - Not used yet
 export const BaseContainer = styled.section`
     width: 100%;
-    height: ${({height}) => (height ? height : globVars.sectionHeight)}px;
+    height: ${({height}) => (height ? height : elementHeights.sectionHeight)}px;
     max-height: 1280px;
     min-height: 300px;
 `;
