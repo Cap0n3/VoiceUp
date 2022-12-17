@@ -1,12 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Header from "../../components/Header/Header";
 import useWindowSize from "../../hooks/useWindowSize";
+import useAppear from "../../hooks/useAppear";
 import { teacherHeaderData, descrParagraphs } from "./data/teacher.data";
 import { AboutSection, AboutImage, DescriptionWrapper } from "./Teacher.style";
 import TaniaAbout from "../../assets/images/Tania/TaniaAbout.jpg";
+import { navbarHeight } from "../../globalVars";
 
 const Teacher = () => {
     const screenSize = useWindowSize();
+    const AboutRef = useRef(null);
+    const isVisible = useAppear(AboutRef, navbarHeight);
     const [blockDimensions, setblockDimensions] = useState({});
     
     /**
@@ -35,17 +39,12 @@ const Teacher = () => {
         setBlockSize(1.5);
     }, [screenSize.innerWidth])
 
-    useEffect(() => {
-      console.log(blockDimensions);
-    }, [blockDimensions])
-    
-
     return(
         <>
             <Header data={teacherHeaderData} position={{posX: 0, posY: 40}} />
-            <AboutSection blocksHeight={blockDimensions.compHeight}>
-                <AboutImage src={TaniaAbout} width={blockDimensions.compWidth} height={blockDimensions.compHeight} />
-                <DescriptionWrapper width={blockDimensions.compWidth} height={blockDimensions.compHeight}>
+            <AboutSection blocksHeight={blockDimensions.compHeight} ref={AboutRef}>
+                <AboutImage src={TaniaAbout} className={isVisible ? "active" : ""} width={blockDimensions.compWidth} height={blockDimensions.compHeight} scrWidth={screenSize.innerWidth} />
+                <DescriptionWrapper className={isVisible ? "active" : ""} width={blockDimensions.compWidth} height={blockDimensions.compHeight} scrWidth={screenSize.innerWidth}>
                     <h2>Tania Guillin</h2>
                     <sub>Chanteuse professionelle</sub>
                     {descrParagraphs.map((para, index) => 

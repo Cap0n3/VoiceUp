@@ -82,7 +82,7 @@ const Navbar = () => {
 
     return (
         <>
-            <Nav className={scrollPosition > 80 ? "sticky" : ""}>
+            <Nav>
                 <NavbarWrapper>
                     <MenuContainer>
                         { isMobile ? "" : SiteLogo() }
