@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
     &.main {
         /* height: 100vh; */
+        padding-top: ${globVars.navbarHeight}px;
         overflow-x: hidden;
         overflow-y: auto;
         /* perspective: 10px; /* For parallax FX */
@@ -39,6 +40,12 @@ const GlobalStyle = createGlobalStyle`
         &:hover {
             filter: drop-shadow(3px 5px 2px ${VoiceUpColors.purple});
             transform: translateY(-0.25em);
+        }
+    }
+
+    @media only screen and (max-width: 1024px) {
+        &.main {
+            padding-top: ${globVars.mobileNavbarHeight}px;
         }
     }
 `;

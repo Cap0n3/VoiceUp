@@ -8,19 +8,22 @@ var DEBUG = false;
 
 export const Nav = styled.nav `
     display: flex;
-    flex-grow: 1;
-    height: ${globVars.navbarHeight}px;
     justify-content: center;
     align-items: center;
+    ${'' /* flex-grow: 1; */}
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: ${globVars.navbarHeight}px;
     font-size: 1.1em;
     z-index: 999;
     background: ${VoiceUpColors.white};
 
-    &.sticky {
+    /* &.sticky {
         position: fixed;
         top: 0px;
         width: 100%;
-    }
+    } */
 
     /* Small screen */
     @media only screen and (max-width: 1024px) {
