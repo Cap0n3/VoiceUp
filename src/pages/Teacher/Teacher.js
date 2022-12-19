@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import Header from "../../components/Header/Header";
 import useWindowSize from "../../hooks/useWindowSize";
 import useAppear from "../../hooks/useAppear";
+import VideoModal from "../../components/VideoModal/VideoModal";
 import { teacherHeaderData, descrParagraphs } from "./data/teacher.data";
-import { AboutSection, AboutImage, DescriptionWrapper } from "./Teacher.style";
+import { AboutSection, AboutImage, DescriptionWrapper, VideoSection } from "./Teacher.style";
 import TaniaAbout from "../../assets/images/Tania/TaniaAbout.jpg";
 import { elementHeights } from "../../globalVars";
 
@@ -52,6 +53,11 @@ const Teacher = () => {
                     )}
                 </DescriptionWrapper>
             </AboutSection>
+            <VideoSection>
+                <VideoModal thumbWidth={blockDimensions.compWidth} imgSRC="https://www.nsbpictures.com/wp-content/uploads/2021/01/background-for-thumbnail-youtube-1.png" />
+                <VideoModal thumbWidth={blockDimensions.compWidth} imgSRC="https://www.nsbpictures.com/wp-content/uploads/2021/01/background-for-thumbnail-youtube-12.jpg" />
+            </VideoSection>
+
         </>
     )
 }

@@ -96,3 +96,18 @@ export const DescriptionWrapper = styled.div`
         }
     }
 `;
+
+export const VideoSection = styled.section`
+    display: flex;
+    justify-content: center;
+    gap: 4%;
+    padding: 50px 0 50px 0;
+    background-color: ${VoiceUpColors.lightGrey};
+    ${DEBUG ? "border: 1px solid yellow;" : ""}
+
+    @media only screen and (max-width: 1024px) {
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+    }
+`;
