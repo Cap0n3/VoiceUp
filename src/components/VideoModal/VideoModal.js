@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { VideoThumbnail, PlayButton } from './VideoModal.style';
 import VideoWindow from './VideoWindow/VideoWindow';
-import { ImPlay } from "react-icons/im";
 
 const VideoModal = ({thumbWidth, vidData}) => {
     const [isOpen, setIsOpen] = useState(false);
