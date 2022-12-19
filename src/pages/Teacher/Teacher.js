@@ -3,29 +3,10 @@ import Header from "../../components/Header/Header";
 import useWindowSize from "../../hooks/useWindowSize";
 import useAppear from "../../hooks/useAppear";
 import VideoModal from "../../components/VideoModal/VideoModal";
-import { teacherHeaderData, descrParagraphs } from "./data/teacher.data";
+import { teacherHeaderData, descrParagraphs, vidsInfos } from "./data/teacher.data";
 import { AboutSection, AboutImage, DescriptionWrapper, VideoSection } from "./Teacher.style";
 import TaniaAbout from "../../assets/images/Tania/TaniaAbout.jpg";
 import { elementHeights } from "../../globalVars";
-import { Description } from "../../components/Header/Header.style";
-
-// Object
-
-
-const Vids = [
-    {
-        thumbnail: "https://www.nsbpictures.com/wp-content/uploads/2021/01/background-for-thumbnail-youtube-1.png",
-        title: "title1",
-        embed: <iframe width="560" height="315" src="https://www.youtube.com/embed/KgbzRiqHnvE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>,
-        description: "Lorem Ipsum1"
-    },
-    {
-        thumbnail: "https://www.nsbpictures.com/wp-content/uploads/2021/01/background-for-thumbnail-youtube-12.jpg",
-        title: "title2",
-        embed: <iframe width="560" height="315" src="https://www.youtube.com/embed/yWJjvqDGKeA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>,
-        description: "Lorem Ipsum2"
-    }
-]
 
 const Teacher = () => {
     const screenSize = useWindowSize();
@@ -74,7 +55,7 @@ const Teacher = () => {
             </AboutSection>
             <VideoSection>
                 {
-                    Vids.map((data, index) => (
+                    vidsInfos.map((data, index) => (
                         <div key={index}>
                             <VideoModal thumbWidth={blockDimensions.compWidth} vidData={data} />
                         </div>

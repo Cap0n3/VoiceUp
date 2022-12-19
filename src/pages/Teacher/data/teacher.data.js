@@ -1,4 +1,8 @@
 import TaniaHeader from "../../../assets/headers/Header_Tania2.jpg";
+import BadShore from "../../../assets/VidThumbnail/BadShore.jpg";
+import SlideOver from "../../../assets/VidThumbnail/SlideOverMe.jpg";
+import LowTV from "../../../assets/VidThumbnail/LowTV.jpg";
+import MyName from "../../../assets/VidThumbnail/MyName.jpg";
 
 // HEADER DATA (pic + text)
 export const teacherHeaderData = {
@@ -15,4 +19,36 @@ export const descrParagraphs = [
     "En 2011, elle suivit une formation intensive au Complete Vocal Institute à Copenhague ou elle apprit la méthode de la « Complete Vocal Technique ». Une technique qui, selon elle, révolutionnera sa manière d’enseigner et de chanter. D’ailleurs ce fut l’année où elle commença à enseigner la chant avec sa structure Voice Up.",
     "En 2014 elle fut la gagnante d’un concours de chant transfrontalier lors duquel elle gagna l’enregistrement d’un album d’une valeur de 35’000 euros. Suite auquel elle tourna avec son projet solo Tania Silversen durant deux ans.",
     "Elle enseigne maintenant le chant à Genève et depuis 2020 elle suit la formation de 3 ans afin de devenir une professeure attitrée de la technique CVT. Tania est aussi une musicienne active de la scène locale. Elle joue en tant que guitariste et chanteuse avec son groupe de power rock « Killing Volts ». Ils partirent notamment en tournée en Russie en 2018."
+]
+
+// Videos data
+export const vidsInfos = [
+    {
+        thumbnail: BadShore,
+        title: "Bad Shore - Tania Silversen",
+        /* Get embed link in youtube iframe */
+        embed: "https://www.youtube.com/embed/X9YZBhwcUZ0",
+        description: "Lorem Ipsum1"
+    },
+    {
+        thumbnail: SlideOver,
+        title: "Slide Over Me (Live) - Tania Silversen",
+        /* Get embed link in youtube iframe */
+        embed: "https://www.youtube.com/embed/WuBVXnvzdzA",
+        description: "Lorem Ipsum2"
+    },
+    {
+        thumbnail: LowTV,
+        title: "Low (Live TV) - Killing Volts",
+        /* Get embed link in youtube iframe */
+        embed: "https://www.youtube.com/embed/qE5aqAhDoOU",
+        description: "Lorem Ipsum2"
+    },
+    {
+        thumbnail: MyName,
+        title: "My Name - Solartones",
+        /* Get embed link in youtube iframe */
+        embed: "https://www.youtube.com/embed/gA_u0RBfmh8",
+        description: "Lorem Ipsum2"
+    }
 ]

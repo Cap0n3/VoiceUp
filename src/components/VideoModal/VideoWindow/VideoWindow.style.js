@@ -3,7 +3,7 @@ import { VoiceUpColors } from "../../../colors";
 import { ftSizes } from "../../../globalVars";
 import { GrClose } from "react-icons/gr";
 
-const DEBUG = true;
+const DEBUG = false;
 
 export const ModalBox = styled.div`
     position: fixed;
@@ -15,7 +15,6 @@ export const ModalBox = styled.div`
     transform: translate(-50%, -50%);
     background-color: ${VoiceUpColors.black};
     width: 90%;
-    height: 800px;
     padding: 80px;
     z-index: 1000;
 
@@ -56,6 +55,5 @@ export const ExitButton = styled.button`
     right: 30px;
     width: 40px;
     height: 40px;
-    
-    
+
 `;

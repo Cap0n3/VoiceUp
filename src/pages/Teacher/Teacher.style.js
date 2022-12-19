@@ -100,8 +100,9 @@ export const DescriptionWrapper = styled.div`
 export const VideoSection = styled.section`
     display: flex;
     justify-content: center;
-    gap: 4%;
-    padding: 50px 0 50px 0;
+    gap: 50px 50px;
+    flex-wrap: wrap;
+    padding: 30px 0 30px 0;
     background-color: ${VoiceUpColors.lightGrey};
     ${DEBUG ? "border: 1px solid yellow;" : ""}
 
