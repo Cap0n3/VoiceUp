@@ -14,7 +14,7 @@ export const ModalBox = styled.div`
     justify-content: center;
     transform: translate(-50%, -50%);
     background-color: ${VoiceUpColors.black};
-    width: 90%;
+    width: 80%;
     padding: 80px;
     z-index: 1000;
 
@@ -55,5 +55,4 @@ export const ExitButton = styled.button`
     right: 30px;
     width: 40px;
     height: 40px;
-
 `;

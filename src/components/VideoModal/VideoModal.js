@@ -10,8 +10,7 @@ const VideoModal = ({thumbWidth, vidData}) => {
             <VideoThumbnail onClick={() => setIsOpen(true)} width={thumbWidth} imgSRC={vidData.thumbnail}>
                 <PlayButton />
             </VideoThumbnail>   
-            <VideoWindow open={isOpen} onClose={() => setIsOpen(false)} vidInfos={vidData} />
-            
+            <VideoWindow open={isOpen} onClose={() => setIsOpen(false)} vidInfos={vidData} />    
         </>
     );
 }

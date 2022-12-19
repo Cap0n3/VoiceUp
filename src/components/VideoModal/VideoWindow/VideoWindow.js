@@ -12,6 +12,7 @@ const VideoWindow = ({ open, onClose, vidInfos}) => {
             <Overlay onClick={onClose} />
             <ModalBox>
                 <VidTitle>{vidInfos.title}</VidTitle>
+                {/* Video frame component */}
                 <VideoFrame embed={vidInfos.embed} />
                 <VidDescription>{vidInfos.description}</VidDescription>
                 <ExitButton onClick={onClose}><GrClose color="#fff" fontSize="1.5em" /></ExitButton>
