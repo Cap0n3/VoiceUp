@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../../colors";
 import { ftSizes } from "../../../globalVars";
-import { GrClose } from "react-icons/gr";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 const DEBUG = false;
 
@@ -14,14 +14,13 @@ export const ModalBox = styled.div`
     justify-content: center;
     transform: translate(-50%, -50%);
     background-color: ${VoiceUpColors.black};
-    width: 80%;
+    width: 70%;
     padding: 80px;
     z-index: 1000;
 
     @media only screen and (max-width: 1024px) {
         padding: 80px;
         width: 90%;
-
     }
 `;
 
@@ -33,6 +32,7 @@ export const Overlay = styled.div`
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
+    overflow-y: auto;
 `;
 
 export const VidTitle = styled.h2`
@@ -46,13 +46,19 @@ export const VidDescription = styled.p`
     margin-top: 40px;
     color: ${VoiceUpColors.white};
     font-size: ${ftSizes.M_ftSizeSM};
+    max-height: 100px;
+    overflow-y: auto;
     ${DEBUG ? "background-color: lightblue;" : ""}
 `;
 
-export const ExitButton = styled.button`
+export const ExitButton = styled(IoCloseCircleOutline)`
     position: absolute;
     top: 30px;
     right: 30px;
     width: 40px;
     height: 40px;
+    font-size: 1.5em;
+    cursor: pointer;
+    stroke: white;
+    
 `;
