@@ -10,7 +10,7 @@ const VideoWindow = ({ open, onClose, vidInfos}) => {
         <>
             <Overlay onClick={onClose} />
             <ModalBox>
-                <VidTitle>{vidInfos.title}</VidTitle>
+                {/* <VidTitle>{vidInfos.title}</VidTitle> */}
                 {/* Video frame component */}
                 <VideoFrame embed={vidInfos.embed} />
                 <VidDescription>{vidInfos.description}</VidDescription>

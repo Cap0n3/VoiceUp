@@ -33,8 +33,8 @@ function App() {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/cours" element={<Lessons />} />
-						<Route path="/prof" element={<Teacher />} />
+						<Route path="/methode" element={<Lessons />} />
+						<Route path="/tania" element={<Teacher />} />
 						<Route path="/conditions" element={<Conditions />} />
 						<Route path="/tarifs" element={<Prices />} />
 						<Route path="/contact" element={<Contact />} />

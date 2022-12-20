@@ -1,4 +1,6 @@
 /**
+ * Video frame is the iframe of youtube video embed code turned into a component.
+ * 
  * For styling of iframe see : https://codepen.io/susanwinters/pen/gvqOwd
  */
 

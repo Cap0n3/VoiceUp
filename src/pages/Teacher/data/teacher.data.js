@@ -8,8 +8,8 @@ import MyName from "../../../assets/VidThumbnail/MyName.jpg";
 export const teacherHeaderData = {
     picURL: TaniaHeader,
     imgTitle: "Tania",
-    titleFR: "La Prof",
-    titleEN: "Teacher",
+    titleFR: "À propos",
+    titleEN: "About",
 }
 
 // Teacher description data
@@ -25,7 +25,7 @@ export const descrParagraphs = [
 export const vidsInfos = [
     {
         thumbnail: BadShore,
-        title: "Bad Shore - Tania Silversen",
+        title: "Bad Shore - Tania Silversen", // Not in modal (removed for now)
         /* Get embed link in youtube iframe */
         embed: "https://www.youtube.com/embed/X9YZBhwcUZ0",
         description: "Do tempor velit qui exercitation commodo amet proident ut Lorem."

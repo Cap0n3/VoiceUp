@@ -35,12 +35,12 @@ export const Overlay = styled.div`
     overflow-y: auto;
 `;
 
-export const VidTitle = styled.h2`
-    color: ${VoiceUpColors.white};
-    font-size: ${ftSizes.M_ftSizeL};
-    margin-bottom: 40px;
-    ${DEBUG ? "background-color: lightgreen;" : ""}
-`;
+// export const VidTitle = styled.h2`
+//     color: ${VoiceUpColors.white};
+//     font-size: ${ftSizes.M_ftSizeL};
+//     margin-bottom: 40px;
+//     ${DEBUG ? "background-color: lightgreen;" : ""}
+// `;
 
 export const VidDescription = styled.p`
     margin-top: 40px;

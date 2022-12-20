@@ -16,7 +16,7 @@ export const SingSectionData = {
     titleFR : "Chanter",
     titleEN : "Sing",
     // Each list element is a <p>
-    descriptionFR : ["Vous aimez chanter et vous désirez améliorer votre soutien, votre puissance vocale ou élargir votre registre vocal."],
+    descriptionFR : ["Vous aimez chanter et vous désirez améliorer votre soutien, votre puissance vocale ou élargir votre registre vocal. Ou vous aspirez simplement à avoir un moment à vous pour chanter et vous exprimer."],
     descriptionEN : ["Some text in english and some more jibberish to descibe a big bowl of nothing to advertise a total void."]
 }
 
@@ -29,7 +29,7 @@ export const PlaySectionData = {
     titleFR : "Jouer",
     titleEN : "Play",
     // Each list element is a <p>
-    descriptionFR : ["Vous êtes chanteur ou chanteuse dans un groupe ou auteur/compositeur, vous rêvez de trouver une manière personnelle d’interpréter vos morceaux en vu de concerts ou de l’enregistrement d’un album."],
+    descriptionFR : ["Vous êtes chanteur ou chanteuse dans un groupe ou auteur/compositeur, vous rêvez de trouver une manière personnelle d’interpréter vos morceaux en vu de concerts, de castings ou de l’enregistrement d’un album."],
     descriptionEN : ["Some other text in english and some more jibberish to descibe a big bowl of nothing to advertise a total void."]
 }
 
