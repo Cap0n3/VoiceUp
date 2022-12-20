@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import useWindowSize from "../../hooks/useWindowSize";
 import useAppear from "../../hooks/useAppear";
 import VideoModal from "../../components/VideoModal/VideoModal";
@@ -62,6 +63,7 @@ const Teacher = () => {
                     ))
                 }
             </VideoSection>
+            <Footer />
         </>
     );
 }
