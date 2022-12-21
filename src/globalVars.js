@@ -15,6 +15,7 @@ export const ftSizes = {
     // Medium screen
     M_ftSizeXL : "4.5rem",
     M_ftSizeL : "2.2rem",
+    M_ftSizeL_alt: "1.3rem",
     M_ftSizeMD : "1rem",
     M_ftSizeSM : "0.9rem",
     // Small screen
