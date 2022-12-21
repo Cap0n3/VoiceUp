@@ -17,7 +17,7 @@ const ScrollTop = () => {
     }
 
     useEffect(() => {
-        if(scrollPosition > 800) {
+        if(scrollPosition > 600) {
             setScrollBtn(true);
         } else {
             setScrollBtn(false);
