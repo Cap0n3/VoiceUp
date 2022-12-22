@@ -1,16 +1,19 @@
 import React from 'react'
-import { PricingSection } from "./PriceCard.style";
+import { PCard, CardHeader, CardBodyWrapper } from "./PriceCard.style";
 
-const Pricing = () => {
+const PriceCard = () => {
   return (
     <>
-        <PricingSection>
-            <PriceCard>
-            
-            </PriceCard>
-        </PricingSection>
+		<PCard>
+			<CardHeader>
+				<p>HELLO</p>
+			</CardHeader>
+			<CardBodyWrapper>
+
+			</CardBodyWrapper>
+		</PCard>
     </>
   )
 }
 
-export default Pricing;
+export default PriceCard;
