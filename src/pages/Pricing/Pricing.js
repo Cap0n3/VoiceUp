@@ -1,12 +1,12 @@
 import React from 'react';
 import { PricingSection } from './Pricing.style';
-import { PCard } from '../../components/PriceCard/PriceCard.style';
+import PriceCard from '../../components/PriceCard/PriceCard';
 
 const Prices = () => {
     return(
         <>
             <PricingSection>
-                <PCard />
+                <PriceCard />
             </PricingSection>
         </>
     )
