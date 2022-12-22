@@ -7,7 +7,7 @@ import Home from "./pages/Home/Home";
 import Lessons from "./pages/Lessons/Lessons";
 import Teacher from "./pages/Teacher/Teacher";
 import Conditions from "./pages/Conditions/Conditions";
-import Prices from "./pages/Prices";
+import Prices from "./pages/Pricing/Pricing";
 import Contact from "./pages/Conctact";
 
 // Define contexts
