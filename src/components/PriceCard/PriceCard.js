@@ -1,20 +1,23 @@
-import React from "react";
-import { PCard, CardHeader, CardBodyWrapper } from "./PriceCard.style";
+import React, { useState } from "react";
+import { PCard, CardHeader, CardBodyWrapper, InnerCircle, PriceTag } from "./PriceCard.style";
 
 const PriceCard = () => {
-  return (
-    <>
-		<PCard>
-			
-			<CardHeader>
-				
-			</CardHeader>
+	const [isHovered, setIsHovered] = useState(false);
+
+	return (
+	<>
+		<PCard onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+			<CardHeader className={isHovered ? "active" : ""} />
+			<InnerCircle />
 			<CardBodyWrapper>
-				<p>HELLO</p>
+				<PriceTag>
+					<h2>Hebdomadaire</h2>
+					<h1>80 CHF</h1>
+				</PriceTag>
 			</CardBodyWrapper>
 		</PCard>
-    </>
-  )
+	</>
+	)
 }
 
 export default PriceCard;
