@@ -7,13 +7,17 @@ const cardWidth = 380;
 const cardHeight = 600;
 const cardHeadHeight = cardHeight / 3;
 const circleSize = 100;
+const circleIconHeight = 30;
 
 // DEBUG
 const DEBUG = true;
 
-const makeSlide = keyframes`
-    from {background-position: 0% 0%;}
-    to {background-position: 100% 0%;}
+const launch = keyframes`
+    0%{left:1px;}
+    25%{top:-150px;left:1px}
+    50%{left:-200px;}
+    75%{top:100px;transform:rotate(40deg)}
+    100%{left:1px}
 `;
 
 export const PCard = styled.div`
@@ -49,20 +53,44 @@ export const InnerCircle = styled.div`
     position: absolute;
     top: ${cardHeadHeight - (circleSize + 5)}px;
     left: ${(cardWidth - circleSize) / 2}px; /* Center circle */
-    display: flex;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
     border: 5px solid white;
     width: ${circleSize}px;
     height: ${circleSize}px;
     border-radius: 50px;
     background-color: ${VoiceUpColors.lightGrey};
+    overflow: hidden;
     z-index: 10;
+`;
+
+export const CircleIcon = styled.img`
+    position: absolute;
+    /* top: ${(circleSize / 2) - (circleIconHeight / 2)}px; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: ${circleIconHeight}px;
+    ${DEBUG ? "border: solid 1px yellow;" : ""}
+
+    &.active {
+        animation: ${launch} 1s forwards;
+    }
 `;
 
 export const CardBodyWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 70px 30px 30px 30px;
+    gap: 30px;
+    padding: 70px 40px 0px 40px;
     width: 100%;
     height: 100%;
 `;
@@ -73,13 +101,32 @@ export const PriceTag = styled.div`
     align-items: center;
     ${DEBUG ? "border: solid 1px blue;" : ""}
 
-    & > h2 {
+    & > h3 {
         font-size: ${ftSizes.M_ftSizeMD};
         text-transform: uppercase;
+        margin-bottom: 10px;
     }
 
-    & > h1 {
-        font-size: 2.9rem;
+    & > h2 {
+        font-size: ${ftSizes.M_ftSizeL};
+        text-transform: uppercase;
     }
+`;
 
+export const List = styled.ul`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    ${DEBUG ? "border: solid 1px blue;" : ""}
+`;
+
+export const ListItem = styled.li`
+    font-weight: 300;
+    font-size: ${ftSizes.S_ftSizeMD};
+`;
+
+export const Sub = styled.span`
+    color: ${VoiceUpColors.altGrey};
+    font-weight: 300;
+    font-size: ${ftSizes.S_ftSizeSM};
 `;
