@@ -15,6 +15,7 @@ export const VideoThumbnail = styled.button`
     height: ${({width}) => (width ? `${width / 1.77}px` : "19%")};;
     border: 0;
     outline:0;
+    box-shadow: 0px 17px 46px -10px #777777;
 `;
 
 export const PlayButton = styled(ImPlay)`

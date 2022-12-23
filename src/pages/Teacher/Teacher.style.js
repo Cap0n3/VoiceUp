@@ -26,14 +26,10 @@ export const AboutImage = styled.img`
     width: ${({width}) => (width ? `${width}px` : "33%")};
     height: ${({height}) => (height ? `${height}px` : "")};
     transition: margin-left 600ms ease;
+    box-shadow: 0px 17px 46px -10px #777777;
 
     &.active {
         margin-left: 0;
-    }
-
-    @media only and screen (max-width: 1024px) {
-        /* Center element in section */
-        left: ${({height, scrWidth}) => (scrWidth - height) / 2}px;
     }
 `;
 
@@ -46,13 +42,16 @@ export const DescriptionWrapper = styled.div`
     width: ${({width}) => (width ? `${width}px` : "33%")};
     height: ${({height}) => (height ? `${height}px` : "")};
     padding: 3%;
+    box-shadow: 0px 17px 46px -10px #777777;
     overflow-y: hidden;
     transition: margin-right 600ms ease;
-    background-color: ${DEBUG ? "lightgreen" : VoiceUpColors.lightGrey};
+    background-image: linear-gradient(45deg, ${VoiceUpColors.lightGrey} 0%, ${VoiceUpColors.altGrey} 100%);
+    /* background-color: ${DEBUG ? "lightgreen" : VoiceUpColors.lightGrey}; */
 
     & > h2 {
         font-size: 1.8vw;
         margin-bottom: -5px;
+        text-transform: uppercase;
         ${DEBUG ? "background-color: cyan;" : ""};
     }
 

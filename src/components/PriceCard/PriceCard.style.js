@@ -10,7 +10,7 @@ const circleSize = 100;
 const circleIconHeight = 30;
 
 // DEBUG
-const DEBUG = true;
+const DEBUG = false;
 
 const launch = keyframes`
     0%{left:1px;}
@@ -26,7 +26,9 @@ export const PCard = styled.div`
     flex-direction: column;
     width: ${cardWidth}px;
     height: ${cardHeight}px;
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 17px 46px -10px #777777;
+    background-image: linear-gradient(45deg, #c96881 0%, #f7b695 100%);
     overflow: hidden;
     z-index: 5;
     ${DEBUG ? "background-color: lightgreen;" : ""}
@@ -40,7 +42,6 @@ export const CardHeader = styled.div`
     width: 100%;
     height: ${cardHeadHeight}px;
     transition: background-position 0.6s; /* Return to position quickly */
-    
     ${DEBUG ? "background-color: purple;" : ""}
 
     &.active {
@@ -53,9 +54,6 @@ export const InnerCircle = styled.div`
     position: absolute;
     top: ${cardHeadHeight - (circleSize + 5)}px;
     left: ${(cardWidth - circleSize) / 2}px; /* Center circle */
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     border: 5px solid white;
     width: ${circleSize}px;
     height: ${circleSize}px;
@@ -102,14 +100,17 @@ export const PriceTag = styled.div`
     ${DEBUG ? "border: solid 1px blue;" : ""}
 
     & > h3 {
-        font-size: ${ftSizes.M_ftSizeMD};
+        color: rgba(255, 255, 255, 0.64);
+        font-size: 1.3rem;
         text-transform: uppercase;
         margin-bottom: 10px;
     }
 
     & > h2 {
+        color: ${VoiceUpColors.white};
         font-size: ${ftSizes.M_ftSizeL};
         text-transform: uppercase;
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
     }
 `;
 
@@ -121,12 +122,14 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
+    color: rgba(255, 255, 255, 0.7);
     font-weight: 300;
     font-size: ${ftSizes.S_ftSizeMD};
 `;
 
 export const Sub = styled.span`
-    color: ${VoiceUpColors.altGrey};
+    color: rgba(255, 255, 255, 0.64);;
     font-weight: 300;
     font-size: ${ftSizes.S_ftSizeSM};
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
 `;
