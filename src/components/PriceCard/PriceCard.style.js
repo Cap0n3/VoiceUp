@@ -12,7 +12,7 @@ const circleIconHeight = 30;
 // DEBUG
 const DEBUG = false;
 
-const launch = keyframes`
+const rocket = keyframes`
     0%{left:1px;}
     25%{top:-150px;left:1px}
     50%{left:-200px;}
@@ -65,7 +65,6 @@ export const InnerCircle = styled.div`
 
 export const CircleIcon = styled.img`
     position: absolute;
-    /* top: ${(circleSize / 2) - (circleIconHeight / 2)}px; */
     top: 0;
     bottom: 0;
     left: 0;
@@ -79,7 +78,7 @@ export const CircleIcon = styled.img`
     ${DEBUG ? "border: solid 1px yellow;" : ""}
 
     &.active {
-        animation: ${launch} 1s forwards;
+        animation: ${rocket} 1s forwards;
     }
 `;
 
@@ -87,7 +86,7 @@ export const CardBodyWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
     padding: 70px 40px 0px 40px;
     width: 100%;
     height: 100%;
@@ -114,17 +113,32 @@ export const PriceTag = styled.div`
     }
 `;
 
+export const ListWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 180px;
+    padding-left: 10%;
+    overflow-y: auto;
+    ${DEBUG ? "border: 1px solid pink;" : ""}
+`;
+
 export const List = styled.ul`
+    list-style-type: none;
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 10px;
     ${DEBUG ? "border: solid 1px blue;" : ""}
 `;
 
 export const ListItem = styled.li`
+    display: flex;
+    align-items: center;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 300;
     font-size: ${ftSizes.S_ftSizeMD};
+    ${DEBUG ? "background-color: purple;" : ""}
 `;
 
 export const Sub = styled.span`
