@@ -26,7 +26,7 @@ export const AboutImage = styled.img`
     width: ${({width}) => (width ? `${width}px` : "33%")};
     height: ${({height}) => (height ? `${height}px` : "")};
     transition: margin-left 600ms ease;
-    box-shadow: 0px 17px 46px -10px #777777;
+    /* box-shadow: 0px 17px 46px -10px #777777; */
 
     &.active {
         margin-left: 0;
@@ -42,10 +42,10 @@ export const DescriptionWrapper = styled.div`
     width: ${({width}) => (width ? `${width}px` : "33%")};
     height: ${({height}) => (height ? `${height}px` : "")};
     padding: 3%;
-    box-shadow: 0px 17px 46px -10px #777777;
+    /* box-shadow: 0px 17px 46px -10px #777777; */
     overflow-y: hidden;
     transition: margin-right 600ms ease;
-    background-image: linear-gradient(45deg, ${VoiceUpColors.lightGrey} 0%, ${VoiceUpColors.altGrey} 100%);
+    background-image: linear-gradient(45deg, #F8F6F6 0%, ${VoiceUpColors.lightGrey} 100%);
     /* background-color: ${DEBUG ? "lightgreen" : VoiceUpColors.lightGrey}; */
 
     & > h2 {

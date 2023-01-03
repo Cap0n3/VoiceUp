@@ -28,14 +28,15 @@ export const PCard = styled.div`
     height: ${cardHeight}px;
     border-radius: 5px;
     box-shadow: 0px 17px 46px -10px #777777;
-    background-image: linear-gradient(45deg, #c96881 0%, #f7b695 100%);
+    background-image: ${({colors}) => `linear-gradient(45deg, ${colors[0]} 0%, ${colors[1]} 100%)`};
     overflow: hidden;
     z-index: 5;
     ${DEBUG ? "background-color: lightgreen;" : ""}
 `;
 
 export const CardHeader = styled.div`
-    background-image: url("https://2.bp.blogspot.com/-E9_QZh1-08U/UOc0R0skSoI/AAAAAAAAB9A/ppu2Q2giHGs/s1600/Facebook-Timeline-Profile-Covers-New-York-NYC14.jpg");
+    background-image: url(${({headerImg}) => headerImg});
+    background-color: ${VoiceUpColors.black};
     background-repeat: no-repeat;
     background-size: 150%;
     background-position: 0% 0%;
@@ -78,7 +79,11 @@ export const CircleIcon = styled.img`
     ${DEBUG ? "border: solid 1px yellow;" : ""}
 
     &.active {
-        animation: ${rocket} 1s forwards;
+        /* animation: ${rocket} 1s forwards; */
+        animation: ${({animIcon}) => 
+            (animIcon === "rocket" && rocket) ||
+            ""
+        } 1s forwards;
     }
 `;
 

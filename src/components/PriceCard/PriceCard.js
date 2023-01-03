@@ -2,16 +2,23 @@ import React, { useState } from "react";
 import { PCard, CardHeader, CardBodyWrapper, InnerCircle, CircleIcon, PriceTag, ListWrapper, List, ListItem, Sub } from "./PriceCard.style";
 import { OutlineBtn } from "../../globalStyle";
 import {AiOutlineCheckCircle} from "react-icons/ai";
-
+import Turtle from "../../assets/icons/myIcons/Turtle.svg";
+;
 const PriceCard = ({data}) => {
 	const [isHovered, setIsHovered] = useState(false);
 
+	const chooseIcon = (icon) => {
+		if(icon == "rocket") {
+			return Turtle;
+		}
+	}
+
 	return (
 	<>
-		<PCard onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-			<CardHeader className={isHovered ? "active" : ""} />
+		<PCard onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} colors={data.bckColors}>
+			<CardHeader className={isHovered ? "active" : ""} headerImg={data.headerImage} />
 			<InnerCircle>
-				<CircleIcon src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/rocket.png" className={isHovered ? "active" : ""} animIcon={data.animIcon} />
+				<CircleIcon src={(chooseIcon(data.animIcon))} className={isHovered ? "active" : ""} animIcon={data.animIcon} />
 			</InnerCircle>
 			<CardBodyWrapper>
 				<PriceTag>
