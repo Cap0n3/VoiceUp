@@ -14,7 +14,7 @@ export const WeeklyAdult = {
 
 export const BiAdult = {
     headerImage: BiHeader,
-    animIcon: "rocket",
+    animIcon: "turtle",
     bckColors: ["#63FF00", "#4E7634"],
     cardNameFR: "Bimensuel Adulte",
     cardNameEN: "Adult Bimonthly",

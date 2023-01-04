@@ -12,6 +12,7 @@ const circleIconHeight = 30;
 // DEBUG
 const DEBUG = false;
 
+// Animations
 const rocket = keyframes`
     0%{left:1px;}
     25%{top:-150px;left:1px}
@@ -64,7 +65,7 @@ export const InnerCircle = styled.div`
     z-index: 10;
 `;
 
-export const CircleIcon = styled.img`
+export const IconWrapper = styled.div`
     position: absolute;
     top: 0;
     bottom: 0;
