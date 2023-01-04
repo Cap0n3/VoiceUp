@@ -13,13 +13,25 @@ const circleIconHeight = 30;
 const DEBUG = false;
 
 // Animations
-const rocket = keyframes`
+const launch = keyframes`
     0%{left:1px;}
     25%{top:-150px;left:1px}
     50%{left:-200px;}
     75%{top:100px;transform:rotate(40deg)}
     100%{left:1px}
 `;
+
+const jump = keyframes`
+    from {transform:rotate(0deg)}
+    50% {top: -20px;}
+    to {transform:rotate(-360deg); top: 0px}
+`;
+
+const spin = keyframes`
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(720deg)}
+`;
+
 
 export const PCard = styled.div`
     position: relative;
@@ -80,9 +92,10 @@ export const IconWrapper = styled.div`
     ${DEBUG ? "border: solid 1px yellow;" : ""}
 
     &.active {
-        /* animation: ${rocket} 1s forwards; */
         animation: ${({animIcon}) => 
-            (animIcon === "rocket" && rocket) ||
+            (animIcon === "rocket" && launch) ||
+            (animIcon === "turtle" && jump) ||
+            (animIcon === "gear" && spin) ||
             ""
         } 1s forwards;
     }

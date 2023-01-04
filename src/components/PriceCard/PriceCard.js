@@ -4,17 +4,23 @@ import { OutlineBtn } from "../../globalStyle";
 import {AiOutlineCheckCircle} from "react-icons/ai";
 import Rocket from "../../assets/icons/myIcons/rocket_icon";
 import Turtle from "../../assets/icons/myIcons/turtle_icon";
-import { VoiceUpColors } from "../../colors";
+import Gear from "../../assets/icons/misc/gear_icon";
 
 const PriceCard = ({data}) => {
 	const [isHovered, setIsHovered] = useState(false);
 	
-	const chooseIcon = (anim) => {
+	/**
+	 * Choose icon according to choice
+	 */
+	const chooseIcon = (anim, colors) => {
 		if(anim === "rocket") {
-			return <Rocket fill="red" />;
+			return <Rocket fill={colors[0]} />;
 		}
 		else if(anim === "turtle") {
-			return <Turtle fill="red" />;
+			return <Turtle fill={colors[0]} />;
+		}
+		else if(anim === "gear") {
+			return <Gear fill={colors[0]} />;
 		}
 	}
 
@@ -24,13 +30,13 @@ const PriceCard = ({data}) => {
 			<CardHeader className={isHovered ? "active" : ""} headerImg={data.headerImage} />
 			<InnerCircle>
 				<IconWrapper className={isHovered ? "active" : ""} animIcon={data.animIcon}>
-					{chooseIcon(data.animIcon)}
+					{chooseIcon(data.animIcon, data.bckColors)}
 				</IconWrapper>
 			</InnerCircle>
 			<CardBodyWrapper>
 				<PriceTag>
 					<h3>{data.cardNameFR}</h3>
-					<h2>{data.priceTag} Chf <Sub>/ Mois</Sub></h2>
+					<h2>{data.priceTag} Chf <Sub>/ {data.perFR}</Sub></h2>
 				</PriceTag>
 				<ListWrapper>
 					<List>
