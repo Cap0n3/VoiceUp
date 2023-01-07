@@ -12,7 +12,7 @@ const circleIconHeight = 30;
 // DEBUG
 const DEBUG = false;
 
-// Animations
+// === Animations === //
 const launch = keyframes`
     0%{left:1px;}
     25%{top:-150px;left:1px}
@@ -32,6 +32,7 @@ const spin = keyframes`
     100%{transform:rotate(720deg)}
 `;
 
+// === Card Styles === //
 
 export const PCard = styled.div`
     position: relative;
@@ -45,6 +46,10 @@ export const PCard = styled.div`
     overflow: hidden;
     z-index: 5;
     ${DEBUG ? "background-color: lightgreen;" : ""}
+
+    @media only screen and (max-width: 1280px) and (min-width: 1024px) {
+        width: ${cardWidth - 50}px;
+    }
 `;
 
 export const CardHeader = styled.div`
@@ -75,6 +80,10 @@ export const InnerCircle = styled.div`
     background-color: ${VoiceUpColors.lightGrey};
     overflow: hidden;
     z-index: 10;
+
+    @media only screen and (max-width: 1280px) and (min-width: 1024px) {
+        left: ${(cardWidth - circleSize- 50) / 2}px; /* Center circle */
+    }
 `;
 
 export const IconWrapper = styled.div`
