@@ -34,7 +34,7 @@ export const TableSection = styled.section`
 
 export const Table = styled.table`
     width: 80%;
-
+    border-collapse: collapse; // Remove borders
 `;
 
 export const Thead = styled.thead`
@@ -51,10 +51,14 @@ export const Row = styled.tr`
 `;
 
 export const HeadCell = styled.th`
+    border-left: ${({cellBorder}) => (cellBorder ? "1px solid lightgrey" :  "none")};
+    border-right: ${({cellBorder}) => (cellBorder ? "1px solid lightgrey" :  "none")};
     vertical-align: center;
 `;
 
 export const Cell = styled.td`
+    border-left: ${({cellBorder}) => (cellBorder ? "1px solid lightgrey" :  "none")};
+    border-right: ${({cellBorder}) => (cellBorder ? "1px solid lightgrey" :  "none")};
     text-align: center;
     vertical-align: center;
 `;

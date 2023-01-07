@@ -17,7 +17,7 @@ const Prices = () => {
                         <Row rowHeight="180px">
                             <td className="empty"></td>
                             <HeadCell>Bimensuel</HeadCell>
-                            <HeadCell>Hebdomadaire</HeadCell>
+                            <HeadCell cellBorder="true">Hebdomadaire</HeadCell>
                             <HeadCell>A la carte</HeadCell>
                         </Row>
                     </Thead>
@@ -25,13 +25,13 @@ const Prices = () => {
                         <Row>
                             <HeadCell>Rattrapages</HeadCell>
                             <Cell>Yep</Cell>
-                            <Cell>Yep</Cell>
+                            <Cell cellBorder="true">Yep</Cell>
                             <Cell>Nope</Cell>
                         </Row>
                         <Row alt="true">
                             <HeadCell>Rattrapages</HeadCell>
                             <Cell>Yep</Cell>
-                            <Cell>Yep</Cell>
+                            <Cell cellBorder="true">Yep</Cell>
                             <Cell>Nope</Cell>
                         </Row>
                     </Tbody>
