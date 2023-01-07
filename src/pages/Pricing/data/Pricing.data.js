@@ -2,6 +2,7 @@ import DkBlueHeader from "../../../assets/images/stock/PriceHeaderDkBlue.jpg";
 import PurpleHeader from "../../../assets/images/stock/PriceHeaderPurple.jpg";
 import GoldHeader from "../../../assets/images/stock/PriceHeaderGold.jpg";
 
+// === Price Cards === //
 export const WeeklyAdult = {
     headerImage: PurpleHeader,
     animIcon: "rocket",
@@ -37,3 +38,21 @@ export const OnDemand = {
     // Max 6 bullets
     bulletsFR: ["Cours d’essai", "Idéal pour un petit projet", "100% Flexible", "Créez votre planning de cours"]
 }
+
+// === Comparison Table === //
+export const ComparisonTable = [
+    {
+        titleFR: "Débutant",
+        titleEN: "Beginner",
+        biAdult: false,
+        weeklyAdult: true,
+        onDemand: true,
+    },
+    {
+        titleFR: "Intermédiaire",
+        titleEN: "Intermediate",
+        biAdult: true,
+        weeklyAdult: true,
+        onDemand: true,
+    }
+]
