@@ -17,10 +17,10 @@ const PriceCard = ({data}) => {
 			return <Rocket fill={colors[0]} />;
 		}
 		else if(anim === "turtle") {
-			return <Turtle fill={colors[0]} />;
+			return <Turtle size="35%" fill={colors[0]} />;
 		}
 		else if(anim === "gear") {
-			return <Gear fill={colors[0]} />;
+			return <Gear size="30%" fill={colors[0]} />;
 		}
 	}
 

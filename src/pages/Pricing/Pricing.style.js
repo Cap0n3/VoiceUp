@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ftSizes } from "../../globalVars";
 
 const DEBUG = true;
 
@@ -54,6 +55,12 @@ export const HeadCell = styled.th`
     border-left: ${({cellBorder}) => (cellBorder ? "1px solid lightgrey" :  "none")};
     border-right: ${({cellBorder}) => (cellBorder ? "1px solid lightgrey" :  "none")};
     vertical-align: center;
+
+    & > h2 {
+        margin-top: 30px;
+        font-size: ${ftSizes.M_ftSizeL_alt};
+        text-transform: uppercase;
+    }
 `;
 
 export const Cell = styled.td`

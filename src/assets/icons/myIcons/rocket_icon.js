@@ -6,7 +6,7 @@
  */
 const RocketIcon = ({fill, size}) => {
     return(
-        <svg width="100%" height="100%" viewBox="0 0 57 79" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlSpace="preserve">
+        <svg width={size || "100%"} height="100%" viewBox="0 0 57 79" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlSpace="preserve">
             <g fill={fill || "#000"}>
                 <path id="Wing-L" d="M2,77l0,-19.976l4.185,-4.318l5.068,-0.654c-0.085,11.058 5.732,14.89 5.732,14.89l-14.985,10.058Z" />
                 <path id="Wing-R" d="M53.966,77l0,-19.976l-4.185,-4.318l-5.068,-0.654c0.085,11.058 -5.732,14.89 -5.732,14.89l14.985,10.058Z" />
