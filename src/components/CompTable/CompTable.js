@@ -34,7 +34,7 @@ const CompTable = ({tableData, iconColors}) => {
                     </Thead>
                     <Tbody>
                         {tableData.map((data, index) => 
-                            <Row key={index} alt={(index % 2 !== 0) ? true : false}>
+                            <Row key={index} alt={(index % 2 !== 0) ? "true" : ""}>
                                 <HeadCell textAlign="left">{data.titleFR}</HeadCell>
                                 <Cell>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineCloseCircle size="20" fill="red" />}</Cell>
                                 <Cell cellBorder="true">{data.weeklyAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineCloseCircle size="20" fill="red" />}</Cell>
