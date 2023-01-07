@@ -33,10 +33,28 @@ export const TableSection = styled.section`
 // === Table style === //
 
 export const Table = styled.table`
-    border: 1px solid lightgray;
-    
-    & > th {
-        border: 1px solid black;
-        background-color: red;
-    }
+    width: 80%;
+
+`;
+
+export const Thead = styled.thead`
+    background-color: red;
+`;
+
+export const Tbody = styled.tbody`
+    background-color: purple;
+`;
+
+export const Row = styled.tr`
+    background-color: ${({alt}) => (alt ? "cyan" : "")};
+    height: ${({rowHeight}) => (rowHeight ? rowHeight : "80px")};
+`;
+
+export const HeadCell = styled.th`
+    vertical-align: center;
+`;
+
+export const Cell = styled.td`
+    text-align: center;
+    vertical-align: center;
 `;
