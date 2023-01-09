@@ -38,7 +38,7 @@ export const PCard = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-top: 100%;
+    margin-top: 50%;
     width: ${cardWidth}px;
     height: ${cardHeight}px;
     border-radius: 5px;
@@ -46,8 +46,8 @@ export const PCard = styled.div`
     background-image: ${({colors}) => `linear-gradient(45deg, ${colors[0]} 0%, ${colors[1]} 100%)`};
     overflow: hidden;
     z-index: 5;
-    opacity: 0.2;
-    transition: margin-top 600ms ease, opacity 1000ms ease;
+    opacity: 0;
+    transition: margin-top 600ms ease, opacity 2000ms ease;
     ${DEBUG ? "background-color: lightgreen;" : ""}
 
     &.active {

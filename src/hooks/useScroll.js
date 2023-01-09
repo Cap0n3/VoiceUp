@@ -24,4 +24,4 @@ const useScroll = () => {
     return scrollPosition;
 }
 
-export default useScroll
+export default useScroll;

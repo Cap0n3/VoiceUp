@@ -4,12 +4,11 @@ import PriceCard from '../../components/PriceCard/PriceCard';
 import { WeeklyAdult, BiAdult, OnDemand, ComparisonTable, pricingHeaderData } from './data/Pricing.data';
 import Header from "../../components/Header/Header";
 import CompTable from '../../components/CompTable/CompTable';
-import { elementHeights } from "../../globalVars";
 import useAppear from '../../hooks/useAppear';
 
 const Prices = () => {
     const containerRef = useRef(null);
-    const isVisible = useAppear(containerRef, elementHeights.navbarHeight, 2);
+    const isVisible = useAppear(containerRef, 380);
 
     return(
         <>

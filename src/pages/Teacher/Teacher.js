@@ -7,37 +7,35 @@ import VideoModal from "../../components/VideoModal/VideoModal";
 import { teacherHeaderData, descrParagraphs, vidsInfos } from "./data/teacher.data";
 import { AboutSection, AboutImage, DescriptionWrapper, VideoSection } from "./Teacher.style";
 import TaniaAbout from "../../assets/images/Tania/TaniaAbout.jpg";
-import { elementHeights } from "../../globalVars";
 
 const Teacher = () => {
     const screenSize = useWindowSize();
     const AboutRef = useRef(null);
-    const isVisible = useAppear(AboutRef, elementHeights.navbarHeight);
+    const isVisible = useAppear(AboutRef, 300);
     const [blockDimensions, setblockDimensions] = useState({});
     
-    /**
-     * Function to calculate width to height proportion according to given ratio and screen width.
-     * The goal of this function is to keep image and description block with locked dimensions
-     * and give computed values the to styled components.
-     * 
-     * @param {*} ratio 
-     */
-    const setBlockSize = (ratio) => {
-        let computedWidth = 0;
-        let computedHeight = 0;
-
-        if(screenSize.innerWidth <= 1024){
-            computedWidth = screenSize.innerWidth / 1.2;
-            computedHeight = computedWidth * ratio;
-        } 
-        else {
-            computedWidth = screenSize.innerWidth / 2.5;
-            computedHeight = computedWidth * ratio;
-        }
-        setblockDimensions({ compWidth: computedWidth, compHeight: computedHeight })
-    }
-
     useEffect(() => {
+        /**
+         * Function to calculate width to height proportion according to given ratio and screen width.
+         * The goal of this function is to keep image and description block with locked dimensions
+         * and give computed values the to styled components.
+         * 
+         * @param {*} ratio 
+         */
+        const setBlockSize = (ratio) => {
+            let computedWidth = 0;
+            let computedHeight = 0;
+
+            if(screenSize.innerWidth <= 1024){
+                computedWidth = screenSize.innerWidth / 1.2;
+                computedHeight = computedWidth * ratio;
+            } 
+            else {
+                computedWidth = screenSize.innerWidth / 2.5;
+                computedHeight = computedWidth * ratio;
+            }
+            setblockDimensions({ compWidth: computedWidth, compHeight: computedHeight })
+        }
         setBlockSize(1.5);
     }, [screenSize.innerWidth])
 

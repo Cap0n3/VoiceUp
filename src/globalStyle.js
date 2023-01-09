@@ -17,11 +17,9 @@ const GlobalStyle = createGlobalStyle`
     }
 
     &.main {
-        /* height: 100vh; */
         padding-top: ${elementHeights.navbarHeight}px;
         overflow-x: hidden;
         overflow-y: auto;
-        /* perspective: 10px; /* For parallax FX */
         z-index: 1;
     }
 

@@ -1,13 +1,12 @@
 import React, { useContext, useRef } from "react";
 import { LangContext } from '../../App';
 import { SectionWrapper, ImgContainer, CardContainer, ImageDiv, Card, TextDiv } from "./InfoSection.style";
-import { elementHeights } from "../../globalVars";
 import useAppear from "../../hooks/useAppear";
 
 const InfoSection = (props) => {
     const {language} = useContext(LangContext);
     const containerRef = useRef(null);
-    const isVisible = useAppear(containerRef, elementHeights.navbarHeight);
+    const isVisible = useAppear(containerRef);
 
     const displayDescription = (lang) => {
         if(lang === "FR") {

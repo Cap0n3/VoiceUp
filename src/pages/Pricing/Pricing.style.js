@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { elementHeights } from "../../globalVars";
 
-const DEBUG = false;
+const DEBUG = true;
 
 export const PricingSection = styled.section`
     display: flex;
@@ -9,7 +9,7 @@ export const PricingSection = styled.section`
     justify-content: center;
     gap: 25px;
     width: 100%;
-    height: ${elementHeights.sectionHeight + 100}px;
+    min-height: ${elementHeights.sectionHeight + 100}px;
     overflow: hidden;
     /* padding: 60px 0 60px 0; */
     ${DEBUG ? "background-color: lightblue;" : ""}
@@ -30,5 +30,6 @@ export const TableSection = styled.section`
     justify-content: center;
     width: 100%;
     padding: 60px 0 60px 0;
+    overflow: hidden;
     ${DEBUG ? "background-color: lightgreen;" : ""}
 `;

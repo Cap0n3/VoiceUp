@@ -1,8 +1,7 @@
-import React, { useEffect, useState, useRef, useContext } from "react";
+import React, { useRef, useContext } from "react";
 import { HeaderContainer, SlideImg, SlideOverlay, BoxWrapper, TextBox, Title, Description } from "./Header.style";
 import { LangContext } from "../../App";
 import useAppear from "../../hooks/useAppear";
-import { elementHeights } from "../../globalVars";
 
 /**
  * Pages's header component.
@@ -14,7 +13,7 @@ import { elementHeights } from "../../globalVars";
 function Header({data, position}) {
     const containerRef = useRef(null);
     const {language} = useContext(LangContext);
-    const isActive = useAppear(containerRef, elementHeights.navbarHeight);
+    const isActive = useAppear(containerRef);
 
     /**
      * Conditional rendering of description.
