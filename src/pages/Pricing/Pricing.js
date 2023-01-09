@@ -9,16 +9,15 @@ import useAppear from '../../hooks/useAppear';
 const Prices = () => {
     const priceSectionRef = useRef(null);
     const tableSectionRef = useRef(null);
-    const isPriceVisible = useAppear(priceSectionRef, 380);
     const isTableVisible = useAppear(tableSectionRef, 380);
 
     return(
         <>
             <Header data={pricingHeaderData} position={{posX: 0, posY: 50}} />
             <PricingSection ref={priceSectionRef}>
-                <PriceCard data={BiAdult}  isActive={isPriceVisible} />
-                <PriceCard data={WeeklyAdult} isActive={isPriceVisible} />
-                <PriceCard data={OnDemand} isActive={isPriceVisible} />
+                <PriceCard data={BiAdult}  />
+                <PriceCard data={WeeklyAdult} />
+                <PriceCard data={OnDemand} />
             </PricingSection>
             <TableSection ref={tableSectionRef}>
                 <CompTable isActive={isTableVisible ? "active" : ""} tableData={ComparisonTable} iconColors={["#1B173", "#896FBC", "#D9A47D"]}/>

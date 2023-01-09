@@ -33,12 +33,22 @@ const spin = keyframes`
 `;
 
 // === Card Styles === //
+export const CardContainer = styled.div`
+    width: ${cardWidth}px;
+    height: ${cardHeight}px;
+    overflow: hidden;
+    ${DEBUG ? "border: 1px solid green;" : ""}
+
+    @media only screen and (max-width: 1280px) and (min-width: 1024px) {
+        width: ${cardWidth - 50}px;
+    }
+`;
 
 export const PCard = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-top: 50%;
+    margin-top: 100%;
     width: ${cardWidth}px;
     height: ${cardHeight}px;
     border-radius: 5px;
@@ -52,7 +62,7 @@ export const PCard = styled.div`
 
     &.active {
         opacity: 1;
-        margin-top: 0%;
+        margin-top: 0;
     }
 
     @media only screen and (max-width: 1280px) and (min-width: 1024px) {

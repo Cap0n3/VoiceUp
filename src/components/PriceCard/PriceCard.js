@@ -1,13 +1,16 @@
-import React, { useState } from "react";
-import { PCard, CardHeader, CardBodyWrapper, InnerCircle, IconWrapper, PriceTag, ListWrapper, List, ListItem, Sub } from "./PriceCard.style";
+import React, { useState, useRef } from "react";
+import { CardContainer, PCard, CardHeader, CardBodyWrapper, InnerCircle, IconWrapper, PriceTag, ListWrapper, List, ListItem, Sub } from "./PriceCard.style";
 import { OutlineBtn } from "../../globalStyle";
 import {AiOutlineCheckCircle} from "react-icons/ai";
 import Rocket from "../../assets/icons/myIcons/rocket_icon";
 import Turtle from "../../assets/icons/myIcons/turtle_icon";
 import Gear from "../../assets/icons/misc/gear_icon";
+import useAppear from "../../hooks/useAppear";
 
-const PriceCard = ({data, isActive}) => {
+const PriceCard = ({data}) => {
 	const [isHovered, setIsHovered] = useState(false);
+	const cardRef = useRef(null);
+	const isVisible = useAppear(cardRef, 250);
 	
 	/**
 	 * Choose icon according to choice
@@ -25,8 +28,8 @@ const PriceCard = ({data, isActive}) => {
 	}
 
 	return (
-	<>
-		<PCard onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} colors={data.bckColors} className={isActive ? "active" : ""}>
+	<CardContainer ref={cardRef}>
+		<PCard onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} colors={data.bckColors} className={isVisible ? "active" : ""}>
 			<CardHeader className={isHovered ? "active" : ""} headerImg={data.headerImage} />
 			<InnerCircle>
 				<IconWrapper className={isHovered ? "active" : ""} animIcon={data.animIcon}>
@@ -48,7 +51,7 @@ const PriceCard = ({data, isActive}) => {
 				<OutlineBtn style={{marginTop: "10px"}}>S'inscrire</OutlineBtn>
 			</CardBodyWrapper>
 		</PCard>
-	</>
+	</CardContainer>
 	)
 }
 

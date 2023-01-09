@@ -9,7 +9,8 @@ export const PricingSection = styled.section`
     justify-content: center;
     gap: 25px;
     width: 100%;
-    height: ${elementHeights.sectionHeight + 100}px;
+    min-height: ${elementHeights.sectionHeight + 100}px;
+    padding: 60px 0 60px 0;
     overflow: hidden;
     /* padding: 60px 0 60px 0; */
     ${DEBUG ? "background-color: lightblue;" : ""}
