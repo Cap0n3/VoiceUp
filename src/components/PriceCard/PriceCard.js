@@ -6,7 +6,7 @@ import Rocket from "../../assets/icons/myIcons/rocket_icon";
 import Turtle from "../../assets/icons/myIcons/turtle_icon";
 import Gear from "../../assets/icons/misc/gear_icon";
 
-const PriceCard = ({data}) => {
+const PriceCard = ({data, isActive}) => {
 	const [isHovered, setIsHovered] = useState(false);
 	
 	/**
@@ -26,7 +26,7 @@ const PriceCard = ({data}) => {
 
 	return (
 	<>
-		<PCard onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} colors={data.bckColors}>
+		<PCard onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} colors={data.bckColors} className={isActive ? "active" : ""}>
 			<CardHeader className={isHovered ? "active" : ""} headerImg={data.headerImage} />
 			<InnerCircle>
 				<IconWrapper className={isHovered ? "active" : ""} animIcon={data.animIcon}>

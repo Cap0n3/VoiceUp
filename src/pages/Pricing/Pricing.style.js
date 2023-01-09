@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { ftSizes } from "../../globalVars";
-import { VoiceUpColors } from "../../colors";
+import { elementHeights } from "../../globalVars";
 
 const DEBUG = false;
 
@@ -10,7 +9,9 @@ export const PricingSection = styled.section`
     justify-content: center;
     gap: 25px;
     width: 100%;
-    padding: 60px 0 60px 0;
+    height: ${elementHeights.sectionHeight + 100}px;
+    overflow: hidden;
+    /* padding: 60px 0 60px 0; */
     ${DEBUG ? "background-color: lightblue;" : ""}
 
     @media only screen and (max-width: 1280px) {
