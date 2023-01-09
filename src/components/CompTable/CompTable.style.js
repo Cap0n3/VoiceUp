@@ -4,9 +4,28 @@ import { ftSizes } from "../../globalVars";
 
 const DEBUG = false;
 
+export const TableWrapper = styled.div`
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: ${({tableHeight}) => (tableHeight ? `${tableHeight}px` : "0px")}; // + padding
+    overflow: hidden;
+    ${DEBUG ? "background-color: #7DCAD9;" : ""}
+`;
+
 export const Table = styled.table`
+    margin-top: 100%;
     width: 80%;
     border-collapse: collapse; // Remove borders
+    opacity: 0;
+    transition: margin-top 600ms ease, opacity 2000ms ease;
+    
+    
+    &.active {
+        opacity: 1;
+        margin-top: 0;
+    }
 `;
 
 export const Thead = styled.thead`
@@ -46,7 +65,7 @@ export const HeadCell = styled.th`
         @media only screen and (max-width: 1024px) and (min-width: 691px) {
             font-size: ${ftSizes.M_ftSizeMD};
         }
-        
+
         @media only screen and (max-width: 690px) {
             font-size: ${ftSizes.XS_ftSizeMD};
         }

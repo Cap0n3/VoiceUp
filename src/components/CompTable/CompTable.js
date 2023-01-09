@@ -1,4 +1,6 @@
-import { 
+import React, { useState, useEffect, useRef } from "react";
+import {
+    TableWrapper,
     Table,
     Thead,
     Tbody,
@@ -12,10 +14,19 @@ import {
  import Gear from "../../assets/icons/misc/gear_icon";
  import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
 
-const CompTable = ({tableData, iconColors}) => {
+const CompTable = ({isActive, tableData, iconColors}) => {
+    const [tableHeight, setTableHeight] = useState(0);
+    const tableRef = useRef(null);
+    
+    useEffect(() => {
+        if(tableRef.current != null) {
+            setTableHeight(tableRef.current.clientHeight);
+        }
+    }, [tableRef])
+
     return(
-        <>
-            <Table>
+        <TableWrapper tableHeight={tableHeight}>
+            <Table className={isActive} ref={tableRef}>
                     <Thead>
                         <Row rowHeight="180px">
                             <td className="empty"></td>
@@ -50,7 +61,7 @@ const CompTable = ({tableData, iconColors}) => {
                         )}
                     </Tbody>
                 </Table>
-        </>
+        </TableWrapper>
     );
 }
 

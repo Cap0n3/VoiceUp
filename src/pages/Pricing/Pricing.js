@@ -7,19 +7,21 @@ import CompTable from '../../components/CompTable/CompTable';
 import useAppear from '../../hooks/useAppear';
 
 const Prices = () => {
-    const containerRef = useRef(null);
-    const isVisible = useAppear(containerRef, 380);
+    const priceSectionRef = useRef(null);
+    const tableSectionRef = useRef(null);
+    const isPriceVisible = useAppear(priceSectionRef, 380);
+    const isTableVisible = useAppear(tableSectionRef, 380);
 
     return(
         <>
             <Header data={pricingHeaderData} position={{posX: 0, posY: 50}} />
-            <PricingSection ref={containerRef}>
-                <PriceCard data={BiAdult}  isActive={isVisible} />
-                <PriceCard data={WeeklyAdult} isActive={isVisible} />
-                <PriceCard data={OnDemand} isActive={isVisible} />
+            <PricingSection ref={priceSectionRef}>
+                <PriceCard data={BiAdult}  isActive={isPriceVisible} />
+                <PriceCard data={WeeklyAdult} isActive={isPriceVisible} />
+                <PriceCard data={OnDemand} isActive={isPriceVisible} />
             </PricingSection>
-            <TableSection>
-                <CompTable tableData={ComparisonTable} iconColors={["#1B173", "#896FBC", "#D9A47D"]}/>
+            <TableSection ref={tableSectionRef}>
+                <CompTable isActive={isTableVisible ? "active" : ""} tableData={ComparisonTable} iconColors={["#1B173", "#896FBC", "#D9A47D"]}/>
             </TableSection>
         </>
     )
