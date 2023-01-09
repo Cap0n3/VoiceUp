@@ -32,7 +32,32 @@ export const HeadCell = styled.th`
         margin-top: 30px;
         font-size: ${ftSizes.M_ftSizeL_alt};
         text-transform: uppercase;
+
+        @media only screen and (max-width: 1024px) and (min-width: 691px) {
+            font-size: ${ftSizes.M_ftSizeMD};
+        }
+
+        @media only screen and (max-width: 690px) {
+            font-size: ${ftSizes.S_ftSizeSM};
+        }
     }
+
+    & > span {
+        @media only screen and (max-width: 1024px) and (min-width: 691px) {
+            font-size: ${ftSizes.M_ftSizeMD};
+        }
+        
+        @media only screen and (max-width: 690px) {
+            font-size: ${ftSizes.XS_ftSizeMD};
+        }
+    }
+`;
+
+export const IconWrapper = styled.div`
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    ${DEBUG ? "border: 1px solid purple;" : ""}
 `;
 
 export const Cell = styled.td`

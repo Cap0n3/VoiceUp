@@ -4,6 +4,7 @@ import {
     Tbody,
     Row,
     HeadCell,
+    IconWrapper,
     Cell
  } from "./CompTable.style";
  import Turtle from "../../assets/icons/myIcons/turtle_icon";
@@ -19,15 +20,21 @@ const CompTable = ({tableData, iconColors}) => {
                         <Row rowHeight="180px">
                             <td className="empty"></td>
                             <HeadCell>
-                                <Turtle fill={iconColors[0]} size="32"/>
+                                <IconWrapper>
+                                    <Turtle fill={iconColors[0]} size="32"/>
+                                </IconWrapper>
                                 <h2>Bimensuel</h2>
                             </HeadCell>
                             <HeadCell cellBorder="true">
-                                <Rocket fill={iconColors[1]} size="24" />
+                                <IconWrapper>
+                                    <Rocket fill={iconColors[1]} size="24" />
+                                </IconWrapper>
                                 <h2>Hebdomadaire</h2>
                             </HeadCell>
                             <HeadCell>
-                                <Gear fill={iconColors[2]} size="26" />
+                                <IconWrapper>
+                                    <Gear fill={iconColors[2]} size="26" />
+                                </IconWrapper>
                                 <h2>à la carte</h2>
                             </HeadCell>
                         </Row>
@@ -35,7 +42,7 @@ const CompTable = ({tableData, iconColors}) => {
                     <Tbody>
                         {tableData.map((data, index) => 
                             <Row key={index} alt={(index % 2 !== 0) ? "true" : ""}>
-                                <HeadCell textAlign="left">{data.titleFR}</HeadCell>
+                                <HeadCell textAlign="left" style={{paddingLeft: "10px"}}><span>{data.titleFR}</span></HeadCell>
                                 <Cell>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineCloseCircle size="20" fill="red" />}</Cell>
                                 <Cell cellBorder="true">{data.weeklyAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineCloseCircle size="20" fill="red" />}</Cell>
                                 <Cell>{data.onDemand ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineCloseCircle size="20" fill="red" />}</Cell>

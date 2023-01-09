@@ -54,5 +54,12 @@ export const ComparisonTable = [
         biAdult: true,
         weeklyAdult: true,
         onDemand: true,
+    },
+    {
+        titleFR: "Avancés",
+        titleEN: "Advanced",
+        biAdult: true,
+        weeklyAdult: true,
+        onDemand: true,
     }
 ]
