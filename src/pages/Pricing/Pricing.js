@@ -1,16 +1,14 @@
 import React from 'react';
-import { PricingSection, TableSection, Table, Thead, Tbody, Row, HeadCell, Cell } from './Pricing.style';
+import { PricingSection, TableSection } from './Pricing.style';
 import PriceCard from '../../components/PriceCard/PriceCard';
-import { WeeklyAdult, BiAdult, OnDemand, ComparisonTable } from './data/Pricing.data';
-import Turtle from "../../assets/icons/myIcons/turtle_icon";
-import Rocket from "../../assets/icons/myIcons/rocket_icon";
-import Gear from "../../assets/icons/misc/gear_icon";
-
+import { WeeklyAdult, BiAdult, OnDemand, ComparisonTable, pricingHeaderData } from './data/Pricing.data';
+import Header from "../../components/Header/Header";
 import CompTable from '../../components/CompTable/CompTable';
 
 const Prices = () => {
     return(
         <>
+            <Header data={pricingHeaderData} position={{posX: 0, posY: 50}} />
             <PricingSection>
                 <PriceCard data={BiAdult} />
                 <PriceCard data={WeeklyAdult} />

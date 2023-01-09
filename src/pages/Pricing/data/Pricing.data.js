@@ -1,6 +1,15 @@
 import DkBlueHeader from "../../../assets/images/stock/PriceHeaderDkBlue.jpg";
 import PurpleHeader from "../../../assets/images/stock/PriceHeaderPurple.jpg";
 import GoldHeader from "../../../assets/images/stock/PriceHeaderGold.jpg";
+import PricingHeader from "../../../assets/headers/Header_Pricing.jpg";
+
+// === Header === //
+export const pricingHeaderData = {
+    picURL: PricingHeader,
+    imgTitle: "Pricing",
+    titleFR: "Les formules",
+    titleEN: "Pricing",
+}
 
 // === Price Cards === //
 export const WeeklyAdult = {
