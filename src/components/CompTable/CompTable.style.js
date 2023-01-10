@@ -21,7 +21,6 @@ export const Table = styled.table`
     opacity: 0;
     transition: margin-top 600ms ease, opacity 2000ms ease;
     
-    
     &.active {
         opacity: 1;
         margin-top: 0;
@@ -37,7 +36,7 @@ export const Tbody = styled.tbody`
 `;
 
 export const Row = styled.tr`
-    background-color: ${({alt}) => (alt ? VoiceUpColors.lightGrey : "")};
+    background-color: ${({alt}) => (alt ? VoiceUpColors.white : "")};
     height: ${({rowHeight}) => (rowHeight ? rowHeight : "80px")};
 `;
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { VoiceUpColors } from "../../colors";
 import { elementHeights } from "../../globalVars";
 
 const DEBUG = false;
@@ -33,5 +34,6 @@ export const TableSection = styled.section`
     min-height: ${elementHeights.sectionHeight}px;
     padding: 60px 0 60px 0;
     overflow: hidden;
+    background-color: ${VoiceUpColors.lightGrey};
     ${DEBUG ? "background-color: lightgreen;" : ""}
 `;

@@ -12,7 +12,7 @@ import {
  import Turtle from "../../assets/icons/myIcons/turtle_icon";
  import Rocket from "../../assets/icons/myIcons/rocket_icon";
  import Gear from "../../assets/icons/misc/gear_icon";
- import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
+ import { AiOutlineCheckCircle, AiOutlineMinus } from "react-icons/ai";
 
 const CompTable = ({isActive, tableData, iconColors}) => {
     const [tableHeight, setTableHeight] = useState(0);
@@ -54,9 +54,9 @@ const CompTable = ({isActive, tableData, iconColors}) => {
                         {tableData.map((data, index) => 
                             <Row key={index} alt={(index % 2 !== 0) ? "true" : ""}>
                                 <HeadCell textAlign="left" style={{paddingLeft: "10px"}}><span>{data.titleFR}</span></HeadCell>
-                                <Cell>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineCloseCircle size="20" fill="red" />}</Cell>
-                                <Cell cellBorder="true">{data.weeklyAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineCloseCircle size="20" fill="red" />}</Cell>
-                                <Cell>{data.onDemand ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineCloseCircle size="20" fill="red" />}</Cell>
+                                <Cell>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</Cell>
+                                <Cell cellBorder="true">{data.weeklyAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</Cell>
+                                <Cell>{data.onDemand ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</Cell>
                             </Row>
                         )}
                     </Tbody>

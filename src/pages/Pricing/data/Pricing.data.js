@@ -70,5 +70,33 @@ export const ComparisonTable = [
         biAdult: true,
         weeklyAdult: true,
         onDemand: true,
+    },
+    {
+        titleFR: "Cours en ligne",
+        titleEN: "Lorum ipsum",
+        biAdult: true,
+        weeklyAdult: true,
+        onDemand: true,
+    },
+    {
+        titleFR: "Progrès rapide",
+        titleEN: "Lorum ipsum",
+        biAdult: false,
+        weeklyAdult: true,
+        onDemand: false,
+    },
+    {
+        titleFR: "Audition",
+        titleEN: "Audition",
+        biAdult: true,
+        weeklyAdult: true,
+        onDemand: false,
+    },
+    {
+        titleFR: "Rattrapages",
+        titleEN: "Lorum ipsum",
+        biAdult: true,
+        weeklyAdult: true,
+        onDemand: false,
     }
 ]
