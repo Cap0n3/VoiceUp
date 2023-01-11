@@ -56,11 +56,12 @@ export const HeadCell = styled.th`
         }
 
         @media only screen and (max-width: 690px) {
-            font-size: ${ftSizes.S_ftSizeSM};
+            font-size: 0.7em;
         }
     }
 
     & > span {
+        font-weight: 500;
         @media only screen and (max-width: 1024px) and (min-width: 691px) {
             font-size: ${ftSizes.M_ftSizeMD};
         }

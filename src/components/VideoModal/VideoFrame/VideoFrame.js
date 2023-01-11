@@ -5,7 +5,7 @@
  */
 
 import React from 'react'
-import { VidWrapper, iFrame } from "./VideoFrame.style";
+import { VidWrapper } from "./VideoFrame.style";
 
 const VideoFrame = ({embed}) => {
   return (

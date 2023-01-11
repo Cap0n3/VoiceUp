@@ -6,6 +6,7 @@ import Header from "../../components/Header/Header";
 import Footer from '../../components/Footer/Footer';
 import CompTable from '../../components/CompTable/CompTable';
 import useAppear from '../../hooks/useAppear';
+import Tooltip from "../../components/Tooltip/Tooltip";
 
 const Prices = () => {
     const priceSectionRef = useRef(null);
@@ -23,6 +24,11 @@ const Prices = () => {
             <TableSection ref={tableSectionRef}>
                 <CompTable isActive={isTableVisible ? "active" : ""} tableData={ComparisonTable} iconColors={["#1B173", "#896FBC", "#D9A47D"]}/>
             </TableSection>
+            <div style={{width: "100%", height: "150px", display: "flex", alignItems: "center", justifyContent: "center"}}>
+                <Tooltip>
+                    <p>Tooltip</p>
+                </Tooltip>
+            </div>
             <Footer />
         </>
     )

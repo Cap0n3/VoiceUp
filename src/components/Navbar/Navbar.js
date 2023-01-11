@@ -19,13 +19,10 @@ import Logo from "../../assets/logos/VoiceUp_Logo_BLK.png";
 import YTIcon from "../../assets/icons/social/youtube_icon";
 import InstaIcon from "../../assets/icons/social/instagram_icon";
 import FBIconAlt from '../../assets/icons/social/facebook_icon_alt';
-import TwitIcon from "../../assets/icons/social/twitter_icon";
 import { LangContext } from '../../App';
 import useWindowSize from '../../hooks/useWindowSize';
-import useScroll from '../../hooks/useScroll';
 
 const Navbar = () => {
-    const scrollPosition = useScroll();
     const [click, setClick] = useState(false);
     const [isMedium, setIsMedium] = useState(false);
     const [isMobile, setIsMobile] = useState(false);

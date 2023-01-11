@@ -15,7 +15,6 @@ import { LangContext } from "../../App";
 import LogoWH from "../../assets/logos/VoiceUp_Logo_WH.png";
 import FBIconAlt from "../../assets/icons/social/facebook_icon_alt";
 import InstaIcon from "../../assets/icons/social/instagram_icon";
-import TwitIcon from "../../assets/icons/social/twitter_icon";
 import YTIcon from "../../assets/icons/social/youtube_icon";
 
 const Footer = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { Overlay, ModalBox, ExitButton, VidTitle, VidDescription } from "./VideoWindow.style";
+import { Overlay, ModalBox, ExitButton, VidDescription } from "./VideoWindow.style";
 import VideoFrame from "../VideoFrame/VideoFrame";
 
 const VideoWindow = ({ open, onClose, vidInfos}) => {
