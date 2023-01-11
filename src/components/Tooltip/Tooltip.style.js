@@ -14,9 +14,24 @@ export const TooltipBox = styled.div`
     width: 200px;
     border-radius: 10px;
     color: white;
-    bottom: 40px;
-    /* Top center tooltip */
-    left: -${({childWidth}) => (childWidth * 1.5)}px;
+    /* Tooltip placement */
+    ${({place, childWidth}) =>
+        /* Top center tooltip */
+        (place === "top" && `
+            left: -${childWidth * 1.5}px;
+            bottom: 40px;
+        `) ||
+        /* HERE !!!! */
+        (place === "left" && `
+            left: ${childWidth + 20}px;
+            top: 0;
+            bottom: 0;
+            height: 240px;
+            margin-top: auto;
+            margin-bottom: auto;
+        `) ||
+        "0"
+    }
     z-index: 900;
 
     &:after {

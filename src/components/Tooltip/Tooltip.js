@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { TooltipWrapper, TooltipBox } from "./Tooltip.style";
 
-const Tooltip = ({children, content}) => {
+const Tooltip = ({children, content, place}) => {
     const [isHovered, setIsHovered] = useState(false);
     const [childWidth, setChildWidth] = useState(0);
     const childRef = useRef(null);
@@ -19,7 +19,7 @@ const Tooltip = ({children, content}) => {
         <TooltipWrapper onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             
             { isHovered && 
-                <TooltipBox childWidth={childWidth} ref={contentRef}>{content}</TooltipBox>
+                <TooltipBox childWidth={childWidth} ref={contentRef} place={place}>{content}</TooltipBox>
             }
             <div ref={childRef}>{children}</div>
             
