@@ -50,7 +50,7 @@ export const TooltipBox = styled.div`
             `) ||
             (place === "left" && `
                 left: -15px;
-                top: ${(toolTipSize.height / 2) - 5}px;
+                top: ${(toolTipSize.height / 2)}px;
                 border-top: 10px solid black;
                 border-right: 10px solid transparent;
                 border-left: 10px solid transparent;
