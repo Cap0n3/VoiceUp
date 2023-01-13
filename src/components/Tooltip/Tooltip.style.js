@@ -11,22 +11,23 @@ export const TooltipBox = styled.div`
     justify-content: center;
     background-color: black;
     padding: 15px;
-    width: ${({size}) => size.width}px;
+    width: ${({toolTipSize}) => toolTipSize.width}px;
     border-radius: 10px;
     color: white;
     /* Tooltip placement */
-    ${({place, childWidth, size}) =>
+    ${({place, contentSize, toolTipSize}) =>
         /* Top center tooltip */
         (place === "top" && `
-            left: -${childWidth * 1.5}px;
-            bottom: 40px;
+            width: ${toolTipSize.width}px;
+            left: ${(contentSize.width / 2) - (toolTipSize.width / 2)}px;
+            bottom: ${contentSize.height + 15}px;
         `) ||
         /* HERE !!!! */
         (place === "left" && `
-            left: ${childWidth + 20}px;
+            left: ${contentSize.width + 20}px;
             top: 0;
             bottom: 0;
-            height: ${size.height}px;
+            height: ${toolTipSize.height}px;
             margin-top: auto;
             margin-bottom: auto;
         `) ||
@@ -38,7 +39,7 @@ export const TooltipBox = styled.div`
         content: " ";
         position: absolute;
         display: block;
-        ${({place, size}) => 
+        ${({place, toolTipSize}) => 
             (place === "top" && `
                 left: 90px; 
                 bottom: -10px;
@@ -49,7 +50,7 @@ export const TooltipBox = styled.div`
             `) ||
             (place === "left" && `
                 left: -15px;
-                top: ${(size.height / 2) - 5}px;
+                top: ${(toolTipSize.height / 2) - 5}px;
                 border-top: 10px solid black;
                 border-right: 10px solid transparent;
                 border-left: 10px solid transparent;

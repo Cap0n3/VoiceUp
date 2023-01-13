@@ -25,8 +25,8 @@ const Prices = () => {
                 <CompTable isActive={isTableVisible ? "active" : ""} tableData={ComparisonTable} iconColors={["#1B173", "#896FBC", "#D9A47D"]}/>
             </TableSection>
             <div style={{width: "100%", height: "150px", display: "flex", alignItems: "center", justifyContent: "center"}}>
-                <Tooltip content="Cillum consequat fugiat ullamco labore consectetur nostrud exercitation et reprehenderit consectetur tempor. Reprehenderit adipisicing cupidatat veniam deserunt Lorem eiusmod eu est laborum do." place="top" size={{width: 200, height: 240}}>
-                    <p style={{fontSize: "2.2em"}}>Tooltip</p>
+                <Tooltip content="Cillum consequat fugiat ullamco labore consectetur nostrud exercitation et reprehenderit consectetur tempor. Reprehenderit adipisicing cupidatat veniam deserunt Lorem eiusmod eu est laborum do." place="left" size={{width: 200, height: 240}}>
+                    <p style={{fontSize: "3em"}}>Tooltip</p>
                 </Tooltip>
             </div>
             <Footer />

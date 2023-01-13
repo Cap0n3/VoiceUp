@@ -3,13 +3,13 @@ import { TooltipWrapper, TooltipBox } from "./Tooltip.style";
 
 const Tooltip = ({children, content, place, size}) => {
     const [isHovered, setIsHovered] = useState(false);
-    const [childWidth, setChildWidth] = useState(0);
+    const [contentSize, setContentSize] = useState(null);
     const childRef = useRef(null);
 
     /* Get child width to help center tooltip */
     useEffect(() => {
         if(childRef.current !== null) {
-            setChildWidth(childRef.current.clientWidth);
+            setContentSize({width: childRef.current.clientWidth, height: childRef.current.clientHeight})
         }
     }, [childRef])
 
@@ -18,7 +18,7 @@ const Tooltip = ({children, content, place, size}) => {
             
             {
                 isHovered && 
-                <TooltipBox isHovered={isHovered} childWidth={childWidth} size={size} place={place}> 
+                <TooltipBox isHovered={isHovered} contentSize={contentSize} toolTipSize={size} place={place}> 
                     {content}
                 </TooltipBox>
             }
