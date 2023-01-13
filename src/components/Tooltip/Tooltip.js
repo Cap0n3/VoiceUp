@@ -1,27 +1,29 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { TooltipWrapper, TooltipBox } from "./Tooltip.style";
 
-const Tooltip = ({children, content, place}) => {
+const Tooltip = ({children, content, place, size}) => {
     const [isHovered, setIsHovered] = useState(false);
     const [childWidth, setChildWidth] = useState(0);
     const childRef = useRef(null);
-    const contentRef = useRef(null);
 
     /* Get child width to help center tooltip */
     useEffect(() => {
         if(childRef.current !== null) {
-            console.log(childRef.current.clientWidth)
             setChildWidth(childRef.current.clientWidth);
         }
     }, [childRef])
-    
+
     return(
-        <TooltipWrapper onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+        <TooltipWrapper ref={childRef} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             
-            { isHovered && 
-                <TooltipBox childWidth={childWidth} ref={contentRef} place={place}>{content}</TooltipBox>
+            {
+                isHovered && 
+                <TooltipBox isHovered={isHovered} childWidth={childWidth} size={size} place={place}> 
+                    {content}
+                </TooltipBox>
             }
-            <div ref={childRef}>{children}</div>
+            
+            <div>{children}</div>
             
         </TooltipWrapper>
     );
