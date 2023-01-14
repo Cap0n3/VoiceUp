@@ -33,7 +33,9 @@ const Tooltip = ({children, content, place, size}) => {
             {
                 isHovered && 
                 <TooltipBox isHovered={isHovered} contentSize={contentSize} toolTipSize={size} place={place}>
+                    
                     {content}
+                   
                 </TooltipBox>
             }
             

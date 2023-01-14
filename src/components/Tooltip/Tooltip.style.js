@@ -11,8 +11,7 @@ export const TooltipBox = styled.div`
     justify-content: center;
     background-color: black;
     padding: 15px;
-    width: ${({toolTipSize}) => toolTipSize.width}px;
-    width: 12px;
+    width: ${({toolTipSize}) => (toolTipSize.width)}px;
     border-radius: 10px;
     color: white;
     /* Tooltip placement */
@@ -24,7 +23,7 @@ export const TooltipBox = styled.div`
             left: ${(contentSize.width / 2) - (toolTipSize.width / 2)}px;
         `) ||
         (place === "right" &&`
-            right: ${contentSize.width + 20}px;
+            left: ${contentSize.width + 20}px;
             top: 0;
             bottom: 0;
             height: ${toolTipSize.height}px;
@@ -37,7 +36,7 @@ export const TooltipBox = styled.div`
             left: ${(contentSize.width / 2) - (toolTipSize.width / 2)}px;    
         `) ||
         (place === "left" && `
-            left: ${contentSize.width + 20}px;
+            right: ${contentSize.width + 20}px;
             top: 0;
             bottom: 0;
             height: ${toolTipSize.height}px;
@@ -64,12 +63,12 @@ export const TooltipBox = styled.div`
             `) ||
             (place === "right" &&`
                 top: ${(toolTipSize.height / 2) - 5}px;
-                right: -15px;
+                left: -15px;
                 border-top: 10px solid black;
                 border-right: 10px solid transparent;
                 border-left: 10px solid transparent;
                 border-bottom: none;
-                transform: rotate(-0.25turn);
+                transform: rotate(0.25turn);
             `)
             ||
             (place === "bottom" &&`
@@ -83,12 +82,12 @@ export const TooltipBox = styled.div`
             `) ||
             (place === "left" && `
                 top: ${(toolTipSize.height / 2) - 5}px;
-                left: -15px;
+                right: -15px;
                 border-top: 10px solid black;
                 border-right: 10px solid transparent;
                 border-left: 10px solid transparent;
                 border-bottom: none;
-                transform: rotate(0.25turn);
+                transform: rotate(-0.25turn);
             `) ||
             "0"
         }
