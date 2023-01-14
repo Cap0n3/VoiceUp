@@ -9,12 +9,16 @@ export const TooltipBox = styled.div`
     display: ${({isHovered}) => (isHovered ? "flex" : "none")};
     align-items: center;
     justify-content: center;
-    background-color: black;
+    background-color: ${({boxStyle}) => (boxStyle.bgColor ? boxStyle.bgColor : "black")};
     padding: 15px;
     width: ${({toolTipSize}) => (toolTipSize.width)}px;
     border-radius: 10px;
-    color: white;
+    color: ${({boxStyle}) => (boxStyle.fontColor ? boxStyle.fontColor : "white")};
     /* Tooltip placement */
+    /*
+        - Value 15 represents gap between content and tooltip
+        - Value 20 represents padding of tooltip
+    */
     ${({place, contentSize, toolTipSize}) =>
         /* Tooltip positions */
         (place === "top" && `
@@ -51,12 +55,13 @@ export const TooltipBox = styled.div`
         content: " ";
         position: absolute;
         display: block;
-        ${({place, toolTipSize}) => 
+        ${({place, toolTipSize, boxStyle}) => 
             /* Arrow position */
+            /* Value 5 represent half of arrow size */
             (place === "top" && `
                 bottom: -10px;
                 left: 90px;
-                border-top: 10px solid black;
+                border-top: 10px solid ${boxStyle.bgColor ? boxStyle.bgColor : "black"};
                 border-right: 10px solid transparent;
                 border-left: 10px solid transparent;
                 border-bottom: none;
@@ -64,7 +69,7 @@ export const TooltipBox = styled.div`
             (place === "right" &&`
                 top: ${(toolTipSize.height / 2) - 5}px;
                 left: -15px;
-                border-top: 10px solid black;
+                border-top: 10px solid ${boxStyle.bgColor ? boxStyle.bgColor : "black"};
                 border-right: 10px solid transparent;
                 border-left: 10px solid transparent;
                 border-bottom: none;
@@ -74,7 +79,7 @@ export const TooltipBox = styled.div`
             (place === "bottom" &&`
                 top: -10px;
                 left: 90px; 
-                border-top: 10px solid black;
+                border-top: 10px solid ${boxStyle.bgColor ? boxStyle.bgColor : "black"};
                 border-right: 10px solid transparent;
                 border-left: 10px solid transparent;
                 border-bottom: none;
@@ -83,7 +88,7 @@ export const TooltipBox = styled.div`
             (place === "left" && `
                 top: ${(toolTipSize.height / 2) - 5}px;
                 right: -15px;
-                border-top: 10px solid black;
+                border-top: 10px solid ${boxStyle.bgColor ? boxStyle.bgColor : "black"};
                 border-right: 10px solid transparent;
                 border-left: 10px solid transparent;
                 border-bottom: none;

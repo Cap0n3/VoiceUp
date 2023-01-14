@@ -6,16 +6,17 @@ import { TooltipWrapper, TooltipBox } from "./Tooltip.style";
  * ## Usage
  * 
  * ```js
- * <Tooltip content="Place tooltip content here" place="right" size={{width: 200, height: 240}}>
+ * <Tooltip content="Place tooltip content here" place="right" size={{width: 200, height: 240}} boxStyle={{fontColor: "white", bgColor: "#666"}}>
  *      <p>Hover me, I'm a Tooltip</p>
  * </Tooltip>
  * ```
- * @param   {String}    content     Text to display in tooltip
- * @param   {String}    place       Position of tooltip. Can be top, right, bottom or left
+ * @param   {String}    content     Text to display in tooltip.
+ * @param   {String}    place       Position of tooltip. Can be top, right, bottom or left.
  * @param   {Object}    size        Size of tooltip (mandatory). Must indicate desired width and height in an object (see example).
+ * @param   {Object}    boxStyle    Basic style of box (font color & background color). Object should be formatted width key 'fontColor' and 'bgColor' (see example).
  * @returns 
  */
-const Tooltip = ({children, content, place, size}) => {
+const Tooltip = ({children, content, place, size, boxStyle}) => {
     const [isHovered, setIsHovered] = useState(false);
     const [contentSize, setContentSize] = useState(null);
     const childRef = useRef(null);
@@ -32,7 +33,7 @@ const Tooltip = ({children, content, place, size}) => {
             
             {
                 isHovered && 
-                <TooltipBox isHovered={isHovered} contentSize={contentSize} toolTipSize={size} place={place}>
+                <TooltipBox isHovered={isHovered} contentSize={contentSize} toolTipSize={size} place={place} boxStyle={boxStyle ? boxStyle : ""}>
                     
                     {content}
                    
