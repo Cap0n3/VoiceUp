@@ -1,6 +1,20 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { TooltipWrapper, TooltipBox } from "./Tooltip.style";
 
+/**
+ * Custom basic Tooltip component, it allows you to display a tooltip on top, right, bottom or left position.
+ * ## Usage
+ * 
+ * ```js
+ * <Tooltip content="Place tooltip content here" place="right" size={{width: 200, height: 240}}>
+ *      <p>Hover me, I'm a Tooltip</p>
+ * </Tooltip>
+ * ```
+ * @param   {String}    content     Text to display in tooltip
+ * @param   {String}    place       Position of tooltip. Can be top, right, bottom or left
+ * @param   {Object}    size        Size of tooltip (mandatory). Must indicate desired width and height in an object (see example).
+ * @returns 
+ */
 const Tooltip = ({children, content, place, size}) => {
     const [isHovered, setIsHovered] = useState(false);
     const [contentSize, setContentSize] = useState(null);
@@ -18,7 +32,7 @@ const Tooltip = ({children, content, place, size}) => {
             
             {
                 isHovered && 
-                <TooltipBox isHovered={isHovered} contentSize={contentSize} toolTipSize={size} place={place}> 
+                <TooltipBox isHovered={isHovered} contentSize={contentSize} toolTipSize={size} place={place}>
                     {content}
                 </TooltipBox>
             }

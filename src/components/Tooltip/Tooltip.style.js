@@ -12,17 +12,30 @@ export const TooltipBox = styled.div`
     background-color: black;
     padding: 15px;
     width: ${({toolTipSize}) => toolTipSize.width}px;
+    width: 12px;
     border-radius: 10px;
     color: white;
     /* Tooltip placement */
     ${({place, contentSize, toolTipSize}) =>
-        /* Top center tooltip */
+        /* Tooltip positions */
         (place === "top" && `
+            bottom: ${contentSize.height + 15}px;
             width: ${toolTipSize.width}px;
             left: ${(contentSize.width / 2) - (toolTipSize.width / 2)}px;
-            bottom: ${contentSize.height + 15}px;
         `) ||
-        /* HERE !!!! */
+        (place === "right" &&`
+            right: ${contentSize.width + 20}px;
+            top: 0;
+            bottom: 0;
+            height: ${toolTipSize.height}px;
+            margin-top: auto;
+            margin-bottom: auto;
+        `) ||
+        (place === "bottom" &&`
+            top: ${contentSize.height + 15}px;
+            width: ${toolTipSize.width}px;
+            left: ${(contentSize.width / 2) - (toolTipSize.width / 2)}px;    
+        `) ||
         (place === "left" && `
             left: ${contentSize.width + 20}px;
             top: 0;
@@ -40,17 +53,37 @@ export const TooltipBox = styled.div`
         position: absolute;
         display: block;
         ${({place, toolTipSize}) => 
+            /* Arrow position */
             (place === "top" && `
-                left: 90px; 
                 bottom: -10px;
+                left: 90px;
                 border-top: 10px solid black;
                 border-right: 10px solid transparent;
                 border-left: 10px solid transparent;
                 border-bottom: none;
             `) ||
+            (place === "right" &&`
+                top: ${(toolTipSize.height / 2) - 5}px;
+                right: -15px;
+                border-top: 10px solid black;
+                border-right: 10px solid transparent;
+                border-left: 10px solid transparent;
+                border-bottom: none;
+                transform: rotate(-0.25turn);
+            `)
+            ||
+            (place === "bottom" &&`
+                top: -10px;
+                left: 90px; 
+                border-top: 10px solid black;
+                border-right: 10px solid transparent;
+                border-left: 10px solid transparent;
+                border-bottom: none;
+                transform: rotate(0.5turn);
+            `) ||
             (place === "left" && `
+                top: ${(toolTipSize.height / 2) - 5}px;
                 left: -15px;
-                top: ${(toolTipSize.height / 2)}px;
                 border-top: 10px solid black;
                 border-right: 10px solid transparent;
                 border-left: 10px solid transparent;
