@@ -53,6 +53,9 @@ export const ComparisonTable = [
     {
         titleFR: "Débutant",
         titleEN: "Beginner",
+        descriptionFR: "Niveau débutants et faux-débutant blabla",
+        descriptionEN: "Beginner and such",
+        tooltipSize: {width: 200, height: 200},
         biAdult: false,
         weeklyAdult: true,
         onDemand: true,
@@ -60,6 +63,9 @@ export const ComparisonTable = [
     {
         titleFR: "Intermédiaire",
         titleEN: "Intermediate",
+        descriptionFR: "Niveau intermédiaire blabla",
+        descriptionEN: "Intermediary and such blabla",
+        tooltipSize: {width: 200, height: 200},
         biAdult: true,
         weeklyAdult: true,
         onDemand: true,
@@ -67,6 +73,9 @@ export const ComparisonTable = [
     {
         titleFR: "Avancés",
         titleEN: "Advanced",
+        descriptionFR: "Niveau avancés et blabla",
+        descriptionEN: "Advanced level blabla",
+        tooltipSize: {width: 200, height: 200},
         biAdult: true,
         weeklyAdult: true,
         onDemand: true,
@@ -74,6 +83,9 @@ export const ComparisonTable = [
     {
         titleFR: "Cours en ligne",
         titleEN: "Lorum ipsum",
+        descriptionFR: "Cours par Zoom blabla",
+        descriptionEN: "Online lessons on Zoom and blabla",
+        tooltipSize: {width: 200, height: 200},
         biAdult: true,
         weeklyAdult: true,
         onDemand: true,
@@ -81,6 +93,9 @@ export const ComparisonTable = [
     {
         titleFR: "Progrès rapide",
         titleEN: "Lorum ipsum",
+        descriptionFR: "Avec un cours par semaine blabla",
+        descriptionEN: "With one lesson a week, blabla",
+        tooltipSize: {width: 200, height: 200},
         biAdult: false,
         weeklyAdult: true,
         onDemand: false,
@@ -88,6 +103,9 @@ export const ComparisonTable = [
     {
         titleFR: "Audition",
         titleEN: "Audition",
+        descriptionFR: "Concert de fin d'année, blabla",
+        descriptionEN: "End of the year concert blabla",
+        tooltipSize: {width: 200, height: 200},
         biAdult: true,
         weeklyAdult: true,
         onDemand: false,
@@ -95,6 +113,9 @@ export const ComparisonTable = [
     {
         titleFR: "Rattrapages",
         titleEN: "Lorum ipsum",
+        descriptionFR: "Maximum 4 rattrapages par année de cours",
+        descriptionEN: "Maximum 4 blablabla",
+        tooltipSize: {width: 200, height: 200},
         biAdult: true,
         weeklyAdult: true,
         onDemand: false,

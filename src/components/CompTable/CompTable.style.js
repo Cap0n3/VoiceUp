@@ -10,7 +10,6 @@ export const TableWrapper = styled.div`
     justify-content: center;
     width: 100%;
     height: ${({tableHeight}) => (tableHeight ? `${tableHeight}px` : "0px")}; // + padding
-    overflow: hidden;
     ${DEBUG ? "background-color: #7DCAD9;" : ""}
 `;
 
@@ -84,4 +83,12 @@ export const Cell = styled.td`
     border-right: ${({cellBorder}) => (cellBorder ? `1px solid ${VoiceUpColors.altGrey}` :  "none")};
     text-align: center;
     vertical-align: center;
+`;
+
+export const InfoWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    height: 40px;
+    gap: 15px;
+    ${DEBUG ? "border: 1px solid pink;" : ""}
 `;
