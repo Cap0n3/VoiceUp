@@ -121,3 +121,13 @@ export const ComparisonTable = [
         onDemand: false,
     }
 ]
+
+// === FAQ section === //
+export const QuestionsAnswers = [
+    {
+        questionFR: "Hey c'est qui ??",
+        questionEN: "Hey who is it ??",
+        answerFR: "Mais c'est moi, Mario !!!",
+        answerEN: "It's me, eh Mario !!!"
+    }
+]
