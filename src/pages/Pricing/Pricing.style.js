@@ -37,3 +37,15 @@ export const TableSection = styled.section`
     background-color: ${VoiceUpColors.lightGrey};
     ${DEBUG ? "background-color: lightgreen;" : ""}
 `;
+
+export const FaqSection = styled.section`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: ${elementHeights.sectionHeight}px;
+    padding: 60px 0 60px 0;
+    overflow: hidden;
+    background-color: ${VoiceUpColors.white};
+    ${DEBUG ? "background-color: lightgreen;" : ""}
+`;
