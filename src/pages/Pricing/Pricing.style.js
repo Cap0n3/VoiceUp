@@ -40,8 +40,8 @@ export const TableSection = styled.section`
 
 export const FaqSection = styled.section`
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
     min-height: ${elementHeights.sectionHeight}px;
     padding: 60px 0 60px 0;

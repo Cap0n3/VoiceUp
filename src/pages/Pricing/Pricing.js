@@ -26,6 +26,7 @@ const Prices = () => {
             </TableSection>
             <FaqSection>
                 <CollapseQuestion question={QuestionsAnswers[0].questionFR} answer={QuestionsAnswers[0].answerFR} />
+                <CollapseQuestion question={QuestionsAnswers[0].questionFR} answer={QuestionsAnswers[0].answerFR} />
             </FaqSection>
             <Footer />
         </>
