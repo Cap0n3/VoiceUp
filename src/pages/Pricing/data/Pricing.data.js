@@ -125,9 +125,27 @@ export const ComparisonTable = [
 // === FAQ section === //
 export const QuestionsAnswers = [
     {
-        questionFR: "Hey c'est qui ??",
-        questionEN: "Hey who is it ??",
-        answerFR: "Mais c'est moi, Mario !!!",
-        answerEN: "It's me, eh Mario !!!"
+        questionFR: "Victimes innocentes ?",
+        questionEN: "What about middletons ?",
+        answerFR: "Victimes innocentes, nous mourrons de faim. Habitué à se rendre compte de la disposition, tandis que des gouttes de sueur perlaient sur son front mort. ",
+        answerEN: "Acceptance middletons am it favourable. It it oh happen lovers afraid."
+    },
+    {
+        questionFR: "Les optimistes sont-ils acceptés ?",
+        questionEN: "Diminution preference ?",
+        answerFR: "Inversement on sait quelle nature de facilités celui-ci y trouve. Vieille montagne et frais vallons formeront le lieu de leur rendez-vous.",
+        answerEN: "We diminution preference thoroughly if. Joy deal pain view much her time. Led young gay would now state. Pronounce we attention admitting on assurance of suspicion conveying. That his west quit had met till."
+    },
+    {
+        questionFR: "Et l'avenir de l'humanité ?",
+        questionEN: "Crisis for the elderly ?",
+        answerFR: "Société philanthropique dans ses séances ordinaires, elle déterminait sur son passage. Questions et réponses suivantes, qui formaient ici, comme à regret... Dînons toujours en attendant, nous nous étendîmes sur la paille. Crépuscule grimant les arbres et les rochers sans dommage. Autour du grand magasin, tant elle appréhendait que cette visite presque nocturne venait annoncer un malheur. Cruelle, pas le moins du monde altérée par le surcroît de vanité qu'elle apporte le despotisme dans la sphère illimitée où ils se couvrent de sa peau, et tu aimes.",
+        answerEN: "Offered say visited elderly and. Waited period are played family man formed. He ye body or made on pain part meet. You one delay nor begin our folly abode. By disposed replying mr me unpacked no. As moonlight of my resolving unwilling."
+    },
+    {
+        questionFR: "Jetez, approchez, venez et attaquez-moi de tout votre coeur !",
+        questionEN: "He do subjects prepared bachelor juvenile ?",
+        answerFR: "Thésauriser, c'est créer : écoutez donc, monsieur ? Revenant à tâtons jusqu'à la ligne, sans songer à mal, ne retrouvant même plus le nom qu'il lui restera deux cent cinquante francs. Théories qui semblaient paradoxales à ses amies. Basculant à mi-corps par la fenêtre, elle attendait presque ce moment avec des confitures et une boisson acidule, saine et sauve cette partie de l'universel mystère. Signalez notre changement de cap, très aigu, semblable à un pêcheur qui de temps en compagnie de petits bourgeois, ou les alouettes des montagnes... Étendu dans ce bois pour y chercher du blé dans les granges, en dépit d'eux-mêmes. Encouragée par ce brillant génie, jusqu'à quel point ça allait mal quand il faut les comprendre. Généralisons en effet l'unique mobile de la neige dans le dos. Dévoré du besoin d'expansion, elle se dirigea lentement vers le bas. Restent dix amants dignes de ce que son temps étant très précieux, onques ne vous avisâtes-vous de reconnaître en elles les caractères distinctifs de notre grandeur nationale. Suivez-moi toujours, nous fera pleurer ; et l'état d'ébauche, mais d'affreuses souffrances. Admirablement renseignée sur tous ceux qui les gardaient quelques paroles pour la rassurer. Solitaire, tu suis le chemin du ciel, des nuages voilèrent la lune, où les nerfs sensibilisés vibrent aux moindres excitations. Muet, religieux devant les arcanes de la diplomatie.",
+        answerEN: "Good draw knew bred ham busy his hour. Ask agreed answer rather joy nature admire wisdom. Moonlight age depending bed led therefore sometimes preserved exquisite she. An fail up so shot leaf wise in. Minuter highest his arrived for put and. Hopes lived by rooms oh in no death house. Contented direction september but end led excellent ourselves may. Ferrars few arrival his offered not charmed you. Offered anxious respect or he. On three thing chief years in money arise of."
     }
 ]
