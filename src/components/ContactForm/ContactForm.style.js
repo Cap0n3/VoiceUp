@@ -2,44 +2,23 @@ import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import { ftSizes, elementHeights } from "../../globalVars";
 
-const debug = false;
+const DEBUG = true;
 
-export const FormSection = styled.section`
-    display: flex;
-    align-items: center;
-    height: ${({winHeight}) => (winHeight ? (winHeight - elementHeights.navbarHeight) : 800)}px;
-    max-height: 1280px;
-    min-height: 800px;
-    width: 100%;
-    padding: 50px 10% 50px 10%;
-    background-color: ${VoiceUpColors.lightGrey};
-    ${debug ? "border: 1px solid blue;" : ""}
-    overflow: hidden;
-`;
-
-export const FormContainer = styled.div`
-    width: 100%;
-    padding: 10px;
-    ${debug ? "border: 1px solid orange;" : ""}
-`;
-
-export const Title = styled.h1`
-    font-size: ${ftSizes.M_ftSizeL};
-    font-weight: 400;
-    text-transform: uppercase;
-    margin-bottom: 50px;
-    color: ${VoiceUpColors.black};
+// export const Title = styled.h1`
+//     font-size: ${ftSizes.M_ftSizeL};
+//     font-weight: 400;
+//     text-transform: uppercase;
+//     margin-bottom: 50px;
+//     color: ${VoiceUpColors.black};
     
-    @media only screen and (max-width: 1024px) {
-        margin-bottom: 15px;
-    }
-`;
+//     @media only screen and (max-width: 1024px) {
+//         margin-bottom: 15px;
+//     }
+// `;
 
 export const Form = styled.form`
-    width: 60%;
-    
-    
-    ${debug ? "border: 1px solid green;" : ""}
+    width: 100%;
+    ${DEBUG ? "border: 1px solid green;" : ""}
 
     @media only screen and (max-width: 1024px) {
         width: 100%;
@@ -51,7 +30,7 @@ export const InputContainer = styled.div`
     gap: 40px;
     width: 100%;
     margin-bottom: 20px;
-    ${debug ? "border: 1px solid red;" : ""}
+    ${DEBUG ? "border: 1px solid red;" : ""}
 
     @media only screen and (max-width: 1024px) {
         flex-direction: column;
@@ -63,7 +42,7 @@ export const InputsWrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    ${debug ? "border: 1px solid yellow;" : ""}
+    ${DEBUG ? "border: 1px solid yellow;" : ""}
 
     & > label {
         color: ${VoiceUpColors.grey};

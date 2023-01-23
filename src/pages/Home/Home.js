@@ -1,11 +1,12 @@
 import React from "react";
+import {Title} from "../../globalStyle";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import InfoSection from "../../components/InfoSection/InfoSection";
 import ReviewSection from "../../components/ReviewSection/ReviewSection";
 import C2ASection from "../../components/C2ASection/C2ASection";
-import ContactSection from "../../components/ContactSection/ContactSection";
+import ContactForm from "../../components/ContactForm/ContactForm";
 import Footer from "../../components/Footer/Footer";
-import { SliderContainer } from "./Home.style";
+import { SliderContainer, ContactSection, FormContainer } from "./Home.style";
 import { slides } from "./data/slideImg.data";
 import { SingSectionData, PlaySectionData, TalkSectionData } from "./data/infosSec.data";
 import useWindowSize from "../../hooks/useWindowSize";
@@ -44,7 +45,12 @@ const Home = () => {
             <InfoSection data={TalkSectionData} transitionTime={600} />
             <ReviewSection transitionTime={800} nbOfReviews={setNbOfReview(windowSize.innerWidth)} />
             <C2ASection transitionTime={600} />
-            <ContactSection />
+            <ContactSection winHeight={windowSize.innerHeight}>
+                <FormContainer>
+                    <Title>Contact</Title>
+                    <ContactForm />
+                </FormContainer>
+            </ContactSection>
             <Footer />
         </>
     )
