@@ -11,7 +11,9 @@ import useAppear from '../../hooks/useAppear';
 const Prices = () => {
     const priceSectionRef = useRef(null);
     const tableSectionRef = useRef(null);
+    const faqSectionRef = useRef(null);
     const isTableVisible = useAppear(tableSectionRef, 380);
+    const isFaqVisible = useAppear(faqSectionRef, 380);
 
     return(
         <>
@@ -24,8 +26,8 @@ const Prices = () => {
             <TableSection ref={tableSectionRef}>
                 <CompTable isActive={isTableVisible ? "active" : ""} tableData={ComparisonTable} iconColors={["#1B173", "#896FBC", "#D9A47D"]}/>
             </TableSection>
-            <FaqSection>
-                <FaqContainer>
+            <FaqSection ref={faqSectionRef}>
+                <FaqContainer isVisible={isFaqVisible}>
                     {
                         QuestionsAnswers.map((data, index) =>
                             <CollapseQuestion key={index} question={data.questionFR} answer={data.answerFR} />

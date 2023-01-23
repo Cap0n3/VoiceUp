@@ -13,7 +13,6 @@ export const PricingSection = styled.section`
     min-height: ${elementHeights.sectionHeight + 100}px;
     padding: 60px 0 60px 0;
     overflow: hidden;
-    /* padding: 60px 0 60px 0; */
     ${DEBUG ? "background-color: lightblue;" : ""}
 
     @media only screen and (max-width: 1280px) {
@@ -40,8 +39,6 @@ export const TableSection = styled.section`
 
 export const FaqSection = styled.section`
     display: flex;
-    /* flex-direction: column;
-    align-items: center; */
     justify-content: center;
     width: 100%;
     min-height: ${elementHeights.sectionHeight}px;
@@ -57,10 +54,8 @@ export const FaqContainer = styled.div`
     align-items: center;
     width: 75%;
     transition: margin-top 1s ease;
-
+    opacity: ${({isVisible}) => (isVisible ?  1 : 0)};
+    transform: ${({isVisible}) => (isVisible ?  "translateY(0)" : "translateY(120%)")};
+    transition: transform .6s ease, opacity 2s ease;
     ${DEBUG ? "border: 1px solid red;" : ""}
-
-    &.active {
-        /* margin-top: 0; */
-    }
 `;

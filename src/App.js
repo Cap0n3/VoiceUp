@@ -8,7 +8,7 @@ import Lessons from "./pages/Lessons/Lessons";
 import Teacher from "./pages/Teacher/Teacher";
 import Conditions from "./pages/Conditions/Conditions";
 import Prices from "./pages/Pricing/Pricing";
-import Contact from "./pages/Conctact";
+import Contact from "./pages/Contact/Contact";
 
 // Define contexts
 export const LangContext = createContext();
