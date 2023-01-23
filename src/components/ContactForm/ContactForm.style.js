@@ -2,19 +2,7 @@ import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import { ftSizes, elementHeights } from "../../globalVars";
 
-const DEBUG = true;
-
-// export const Title = styled.h1`
-//     font-size: ${ftSizes.M_ftSizeL};
-//     font-weight: 400;
-//     text-transform: uppercase;
-//     margin-bottom: 50px;
-//     color: ${VoiceUpColors.black};
-    
-//     @media only screen and (max-width: 1024px) {
-//         margin-bottom: 15px;
-//     }
-// `;
+const DEBUG = false;
 
 export const Form = styled.form`
     width: 100%;

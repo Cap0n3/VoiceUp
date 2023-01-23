@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { elementHeights } from "../../globalVars";
 import { VoiceUpColors } from "../../colors";
 
-const DEBUG = true;
+const DEBUG = false;
 
 export const SliderContainer = styled.div`
     width: 100%;
@@ -20,7 +20,7 @@ export const ContactSection = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: ${({winHeight}) => (winHeight ? (winHeight - elementHeights.navbarHeight) : 800)}px;
+    min-height: ${({winHeight}) => (winHeight ? (winHeight - elementHeights.navbarHeight) : elementHeights.sectionHeight)}px;
     /* max-height: 1280px; */
     padding: 60px 0 60px 0;
     /* min-height: 800px; */
@@ -32,6 +32,10 @@ export const ContactSection = styled.section`
 
 export const FormContainer = styled.div`
     width: 75%;
-    /* padding: 10px; */
+    padding-right: 30%;
     ${DEBUG ? "border: 1px solid orange;" : ""}
+
+    @media only screen and (max-width: 1024px) {
+        padding-right: 0;
+    }
 `;

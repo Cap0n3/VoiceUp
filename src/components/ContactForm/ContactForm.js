@@ -10,7 +10,7 @@ import {
 import { LangContext } from "../../App";
 import { FilledBtn } from "../../globalStyle";
 
-const ContactSection = () => {
+const ContactForm = () => {
     const {language} = useContext(LangContext);
     
     return(
@@ -48,4 +48,4 @@ const ContactSection = () => {
     );
 }
 
-export default ContactSection;
+export default ContactForm;

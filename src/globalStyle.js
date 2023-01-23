@@ -78,13 +78,12 @@ export const BaseContainer = styled.section`
 // `;
 
 // Section Titles
-export const Title = styled.h1`
-    width: 80%;
-    margin: 60px 0 60px 0;
+export const SectionTitle = styled.h1`
+    width: 100%;
+    margin-bottom: 60px;
     text-transform: uppercase;
     font-size: ${ftSizes.M_ftSizeL};
-    background-color: lightgreen;
-    
+
     @media only screen and (max-width: 1024px) {
         font-size: ${ftSizes.S_ftSizeL};
     }

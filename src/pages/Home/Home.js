@@ -1,5 +1,5 @@
 import React from "react";
-import {Title} from "../../globalStyle";
+import { SectionTitle } from "../../globalStyle";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import InfoSection from "../../components/InfoSection/InfoSection";
 import ReviewSection from "../../components/ReviewSection/ReviewSection";
@@ -47,7 +47,7 @@ const Home = () => {
             <C2ASection transitionTime={600} />
             <ContactSection winHeight={windowSize.innerHeight}>
                 <FormContainer>
-                    <Title>Contact</Title>
+                    <SectionTitle>Contact</SectionTitle>
                     <ContactForm />
                 </FormContainer>
             </ContactSection>
