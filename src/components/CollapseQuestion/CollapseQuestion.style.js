@@ -8,10 +8,9 @@ const QuestionHeight = 70;
 export const CollapseContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 75%;
+    width: 100%;
     ${DEBUG ? "background-color: pink;" : ""}
 `;
-
 
 export const Question= styled.p`
     display: flex;

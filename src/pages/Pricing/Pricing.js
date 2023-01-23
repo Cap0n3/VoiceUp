@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { PricingSection, TableSection, FaqSection } from './Pricing.style';
+import React, { useEffect, useRef } from 'react';
+import { PricingSection, TableSection, FaqSection, FaqContainer } from './Pricing.style';
 import PriceCard from '../../components/PriceCard/PriceCard';
 import { WeeklyAdult, BiAdult, OnDemand, ComparisonTable, pricingHeaderData, QuestionsAnswers } from './data/Pricing.data';
 import Header from "../../components/Header/Header";
@@ -25,10 +25,12 @@ const Prices = () => {
                 <CompTable isActive={isTableVisible ? "active" : ""} tableData={ComparisonTable} iconColors={["#1B173", "#896FBC", "#D9A47D"]}/>
             </TableSection>
             <FaqSection>
-                {
-                    QuestionsAnswers.map((data, index) =>
-                        <CollapseQuestion key={index} question={data.questionFR} answer={data.answerFR} />
-                )}
+                <FaqContainer>
+                    {
+                        QuestionsAnswers.map((data, index) =>
+                            <CollapseQuestion key={index} question={data.questionFR} answer={data.answerFR} />
+                    )}
+                </FaqContainer>
             </FaqSection>
             <Footer />
         </>

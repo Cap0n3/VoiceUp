@@ -40,12 +40,27 @@ export const TableSection = styled.section`
 
 export const FaqSection = styled.section`
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* flex-direction: column;
+    align-items: center; */
+    justify-content: center;
     width: 100%;
     min-height: ${elementHeights.sectionHeight}px;
     padding: 60px 0 60px 0;
     overflow: hidden;
     background-color: ${VoiceUpColors.white};
-    ${DEBUG ? "background-color: lightgreen;" : ""}
+    ${DEBUG ? "background-color: CornflowerBlue;" : ""}
+`;
+
+export const FaqContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    transition: margin-top 1s ease;
+
+    ${DEBUG ? "border: 1px solid red;" : ""}
+
+    &.active {
+        /* margin-top: 0; */
+    }
 `;
