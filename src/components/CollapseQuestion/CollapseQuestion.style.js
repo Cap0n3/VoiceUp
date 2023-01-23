@@ -12,9 +12,6 @@ export const CollapseContainer = styled.div`
     ${DEBUG ? "background-color: pink;" : ""}
 `;
 
-export const QuestionAnswerWrapper = styled.div`
-    border-bottom: 0.3px solid ${VoiceUpColors.grey};
-`;
 
 export const Question= styled.p`
     display: flex;
@@ -43,29 +40,17 @@ export const Question= styled.p`
     }
 `;
 
-/*
-    First, do not indicate a height to calculate natural <QuestionAnswerWrapper> height.
-    Wrapper will be created with Question + Answer and total <QuestionAnswerWrapper> height will be calculated.
-    Then, when height was calculated, set height to 0 to make answer invisible.
-    Finally, simply get previously set state containing calculated height to open answer at the right size.
+export const AnswerWrapper = styled.div`
+    height: ${({height}) => (height ? height : 0)}px;
+    overflow: hidden;
+    transition: height .4s ease;
+    border-bottom: 0.3px solid ${VoiceUpColors.grey};
+`;
 
-    Note : it's a weird technique to avoid a ton a headaches with transition effect and autosizing answer ...
-*/
 export const Answer = styled.p`
     display: flex;
     align-items: center;
-    overflow: hidden;
-    ${({wrapperHeight}) => (wrapperHeight ? "height: 0;" : "")}
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    opacity: 0;
-    transition: all .4s ease-in-out;
+    padding: 0 20px 20px 20px;
     ${DEBUG ? "background-color: lightgreen;" : ""}
-
-    &.isOpen {
-        opacity: 1;
-        height : ${({wrapperHeight}) => (wrapperHeight - QuestionHeight + 20)}px;
-        padding-bottom: 20px;
-    }
 `;
