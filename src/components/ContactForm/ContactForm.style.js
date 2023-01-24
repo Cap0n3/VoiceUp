@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import { ftSizes, elementHeights } from "../../globalVars";
+import { BiErrorCircle } from "react-icons/bi";
 
 const DEBUG = false;
 
@@ -69,4 +70,29 @@ export const Input = styled.input`
     font-size: ${ftSizes.M_ftSizeSM};
     outline: 0;
     padding: 10px;
+`;
+
+export const InputError = styled.p`
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ffecec;
+    border:1px solid #f5aca6;
+    font-size: ${ftSizes.XS_ftSizeMD};
+    color: #555;
+
+    & > span {
+        margin-right: 5px;
+        font-weight:bold;
+        text-transform:uppercase;
+    }
+`;
+
+export const ErrorIcon = styled(BiErrorCircle)`
+    fill: red;
+    font-size: 1.3em;
+    margin-right: 5px;
+    padding: 0;
 `;

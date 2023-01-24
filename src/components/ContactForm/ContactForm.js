@@ -1,28 +1,47 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import {
     Form, 
     InputContainer, 
     InputsWrapper,
     Label,
-    Input, 
+    Input,
+    InputError,
+    ErrorIcon,
     Textarea 
 } from "./ContactForm.style";
 import { LangContext } from "../../App";
 import { FilledBtn } from "../../globalStyle";
+import { useForm } from "react-hook-form";
+import { BiErrorCircle } from "react-icons/bi";
 
 const ContactForm = () => {
     const {language} = useContext(LangContext);
-    
+    const formRef = useRef(null);
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = data => console.log(data);
+
     return(
-        <Form action="" method="get">
+        <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
             <InputContainer>
                 <InputsWrapper>
                     <Label htmlFor="fname">{(language === "FR") ? "Prénom" : "First Name"}</Label>
-                    <Input type="text" name="fname" />
+                    <Input type="text" name="fname" {...register("firstName", { 
+                        required: true, 
+                        minLength: 2, 
+                        maxLength: 25,
+                        pattern: /^[A-Za-z]+$/i
+                    })} />
+                    {errors.firstName && <InputError><ErrorIcon /><span>Erreur:</span>Vérifier l'entrée</InputError>}
                 </InputsWrapper>
                 <InputsWrapper>
                     <Label htmlFor="lname">{(language === "FR") ? "Nom" : "Last Name"}</Label>
-                    <Input type="text" name="lname" />
+                    <Input type="text" name="lname" {...register("lastName", { 
+                        required: true, 
+                        minLength: 2, 
+                        maxLength: 25,
+                        pattern: /^[A-Za-z]+$/i
+                    })}/>
+                    {errors.lastName && <InputError>Vérifier l'entrée</InputError>}
                 </InputsWrapper>             
             </InputContainer>
             <InputContainer>
