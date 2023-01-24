@@ -41,7 +41,7 @@ const ContactForm = () => {
                         maxLength: 25,
                         pattern: /^[A-Za-z]+$/i
                     })}/>
-                    {errors.lastName && <InputError>Vérifier l'entrée</InputError>}
+                    {errors.lastName && <InputError><ErrorIcon /><span>Erreur:</span>Vérifier l'entrée</InputError>}
                 </InputsWrapper>             
             </InputContainer>
             <InputContainer>
