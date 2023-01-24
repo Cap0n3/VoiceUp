@@ -65,7 +65,13 @@ export const Input = styled.input`
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     width: 100%;
-    border: 1px solid ${VoiceUpColors.grey};
+    border: 1px solid ${({status}) => 
+        (status === "required" && "#f2c779") ||
+        (status === "minLength" && "#f5aca6") ||
+        (status === "maxLength" && "#f5aca6") ||
+        (status === "pattern" && "#f5aca6") ||
+        VoiceUpColors.grey
+    };
     border-radius: 10px;
     font-size: ${ftSizes.M_ftSizeSM};
     outline: 0;

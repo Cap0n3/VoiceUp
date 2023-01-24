@@ -13,7 +13,6 @@ import {
 import { LangContext } from "../../App";
 import { FilledBtn } from "../../globalStyle";
 import { useForm } from "react-hook-form";
-import { BiErrorCircle } from "react-icons/bi";
 
 const ContactForm = () => {
     const {language} = useContext(LangContext);
@@ -53,7 +52,7 @@ const ContactForm = () => {
                         minLength: 2, 
                         maxLength: 25,
                         pattern: /^[A-Za-z]+$/i
-                    })} />
+                    })} status={errors.firstName ? errors.firstName.type : null} />
                     {errors.firstName && getErrorMsg(errors.firstName)}
                 </InputsWrapper>
                 <InputsWrapper>
@@ -63,8 +62,7 @@ const ContactForm = () => {
                         minLength: 2, 
                         maxLength: 25,
                         pattern: /^[A-Za-z]+$/i
-                    })}/>
-                    {/* {errors.lastName && <InputError><ErrorIcon /><span>Erreur:</span>Vérifier l'entrée</InputError>} */}
+                    })} status={errors.lastName ? errors.lastName.type : null} />
                     {errors.lastName && getErrorMsg(errors.lastName)}
                 </InputsWrapper>             
             </InputContainer>
