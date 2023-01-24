@@ -7,6 +7,7 @@ import {
     Input,
     InputError,
     ErrorIcon,
+    WarnIcon,
     Textarea 
 } from "./ContactForm.style";
 import { LangContext } from "../../App";
@@ -20,6 +21,28 @@ const ContactForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
 
+    const getErrorMsg = (errObj) => {
+        let msgFR="";
+
+        if(errObj.type === "required") {
+            msgFR="Champs requis"
+            return <InputError status="warn"><WarnIcon />{msgFR}</InputError>;
+        }
+        else if(errObj.type === "pattern") {
+            msgFR="Caractère(s) invalide(s)";
+        }
+        else if(errObj.type === "minLength") {
+            msgFR="Minimum 2 caractères !";
+        }
+        else if(errObj.type === "maxLength") {
+            msgFR="Nombre maximum de caractères atteint !";
+        }
+        else {
+            msgFR="Erreur inconnue ...";
+        }
+        return <InputError><ErrorIcon /><span>Erreur:</span>{msgFR}</InputError>;
+    }
+
     return(
         <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
             <InputContainer>
@@ -31,7 +54,7 @@ const ContactForm = () => {
                         maxLength: 25,
                         pattern: /^[A-Za-z]+$/i
                     })} />
-                    {errors.firstName && <InputError><ErrorIcon /><span>Erreur:</span>Vérifier l'entrée</InputError>}
+                    {errors.firstName && getErrorMsg(errors.firstName)}
                 </InputsWrapper>
                 <InputsWrapper>
                     <Label htmlFor="lname">{(language === "FR") ? "Nom" : "Last Name"}</Label>
@@ -41,7 +64,8 @@ const ContactForm = () => {
                         maxLength: 25,
                         pattern: /^[A-Za-z]+$/i
                     })}/>
-                    {errors.lastName && <InputError><ErrorIcon /><span>Erreur:</span>Vérifier l'entrée</InputError>}
+                    {/* {errors.lastName && <InputError><ErrorIcon /><span>Erreur:</span>Vérifier l'entrée</InputError>} */}
+                    {errors.lastName && getErrorMsg(errors.lastName)}
                 </InputsWrapper>             
             </InputContainer>
             <InputContainer>
