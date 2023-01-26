@@ -48,7 +48,13 @@ export const Textarea = styled.textarea`
     border-radius: 6px;
     resize: none;
     overflow-y: auto;
-    border: 1px solid ${VoiceUpColors.grey};
+    border: 1px solid ${({status}) => 
+        (status === "required" && "#f2c779") ||
+        (status === "minLength" && "#f5aca6") ||
+        (status === "maxLength" && "#f5aca6") ||
+        (status === "pattern" && "#f5aca6") ||
+        VoiceUpColors.grey
+    };
     border-radius: 10px;
     font-size: ${ftSizes.M_ftSizeSM};
     outline: 0;

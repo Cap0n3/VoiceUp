@@ -30,7 +30,7 @@ const ContactForm = () => {
             return <InputError status="warn"><WarnIcon />{msgFR}</InputError>;
         }
         else if(errObj.type === "pattern") {
-            msgFR="Caractère(s) invalide(s)";
+            msgFR="Format non valide";
         }
         else if(errObj.type === "minLength") {
             msgFR="Minimum 2 caractères !";
@@ -41,7 +41,7 @@ const ContactForm = () => {
         else {
             msgFR="Erreur inconnue ...";
         }
-        return <InputError><ErrorIcon /><span>Erreur:</span>{msgFR}</InputError>;
+        return <InputError><ErrorIcon />{msgFR}</InputError>;
     }
 
     return(
@@ -53,7 +53,7 @@ const ContactForm = () => {
                         required: true, 
                         minLength: 2, 
                         maxLength: 25,
-                        pattern: /^[A-Za-z]+$/i
+                        pattern: /^[A-Za-zàéèäöüçÀÉÈÇ'^`-\s]+$/i
                     })} status={errors.firstName ? errors.firstName.type : null} />
                     {errors.firstName && getErrorMsg(errors.firstName)}
                 </InputsWrapper>
@@ -63,7 +63,7 @@ const ContactForm = () => {
                         required: true, 
                         minLength: 2, 
                         maxLength: 25,
-                        pattern: /^[A-Za-z]+$/i
+                        pattern: /^[A-Za-za-zàéèäöüçÀÉÈÇ'^`-\s]+$/i
                     })} status={errors.lastName ? errors.lastName.type : null} />
                     {errors.lastName && getErrorMsg(errors.lastName)}
                 </InputsWrapper>             
@@ -75,7 +75,7 @@ const ContactForm = () => {
                         required: true, 
                         minLength: 2, 
                         maxLength: 25,
-                        pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+                        pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-\.]+$/
                     })} status={errors.email ? errors.email.type : null} />
                     {errors.email && getErrorMsg(errors.email)}
                 </InputsWrapper>
@@ -93,7 +93,13 @@ const ContactForm = () => {
             <InputContainer>
                 <InputsWrapper>
                     <Label htmlFor="Message">{(language === "FR") ? "Votre message" : "Message"}</Label>
-                    <Textarea name="message"></Textarea>
+                    <Textarea name="message" {...register("message", { 
+                        required: true, 
+                        minLength: 2, 
+                        maxLength: 1000,
+                        pattern: /^[a-zA-Z0-9àéèäöüç°ÀÉÈÇ.():;!#$%&'*+/=?^_`~-\s]+$/i
+                    })} status={errors.message ? errors.message.type : null}></Textarea>
+                    {errors.message && getErrorMsg(errors.message)}
                 </InputsWrapper>
             </InputContainer>
             <InputContainer style={{marginTop: "30px"}}>
