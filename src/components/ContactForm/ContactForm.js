@@ -22,7 +22,9 @@ const ContactForm = () => {
 
     const getErrorMsg = (errObj) => {
         let msgFR="";
-
+        
+        console.log(errObj)
+        
         if(errObj.type === "required") {
             msgFR="Champs requis"
             return <InputError status="warn"><WarnIcon />{msgFR}</InputError>;
@@ -69,11 +71,23 @@ const ContactForm = () => {
             <InputContainer>
                 <InputsWrapper>
                     <Label htmlFor="email">E-mail</Label>
-                    <Input type="email" name="email" />
+                    <Input type="email" name="email" {...register("email", { 
+                        required: true, 
+                        minLength: 2, 
+                        maxLength: 25,
+                        pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+                    })} status={errors.email ? errors.email.type : null} />
+                    {errors.email && getErrorMsg(errors.email)}
                 </InputsWrapper>
                 <InputsWrapper>
                     <Label htmlFor="phone">{(language === "FR") ? "Tél" : "Phone"}</Label>
-                    <Input type="tel" name="phone" />
+                    <Input type="tel" name="phone" {...register("phone", { 
+                        required: true, 
+                        minLength: 2, 
+                        maxLength: 25,
+                        pattern: /^(\+(41|33)|00\s?(41|33)|0\d{1,2})(\s?\(0\))?(\s)?(\d{1,2})(\s)?(\d{2,3})(\s)?(\d{2})(\s)?(\d{2})(\s)?(\d{2})?$/
+                    })} status={errors.phone ? errors.phone.type : null} />
+                    {errors.phone && getErrorMsg(errors.phone)}
                 </InputsWrapper> 
             </InputContainer>
             <InputContainer>
