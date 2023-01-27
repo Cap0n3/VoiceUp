@@ -13,12 +13,31 @@ import {
 import { LangContext } from "../../App";
 import { FilledBtn } from "../../globalStyle";
 import { useForm } from "react-hook-form";
+import emailjs from '@emailjs/browser';
+import Recaptcha from "react-google-recaptcha";
 
 const ContactForm = () => {
     const {language} = useContext(LangContext);
     const formRef = useRef(null);
+    const captchaRef = useRef(null);
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    
+    // SEND EMAIL
+    const onSubmit = (data) => {
+        console.log(data);
+        
+        const token = captchaRef.current.getValue();
+        captchaRef.current.reset();
+        console.log(token);
+
+        emailjs.sendForm('service_q8gv1tb', 'template_n3xc4fl', formRef.current, 'rGeZyDR1JuIAHpM0N')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    
+    };
 
     const getErrorMsg = (errObj) => {
         let msgFR="";
@@ -102,10 +121,11 @@ const ContactForm = () => {
                     {errors.message && getErrorMsg(errors.message)}
                 </InputsWrapper>
             </InputContainer>
+            <Recaptcha sitekey={process.env.REACT_APP_SITE_KEY} ref={captchaRef} />
             <InputContainer style={{marginTop: "30px"}}>
                 <FilledBtn>{(language === "FR") ? "Envoyer" : "Send"}</FilledBtn>
             </InputContainer>
-        </Form>
+        </Form>    
     );
 }
 
