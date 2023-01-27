@@ -21,7 +21,7 @@ const ContactForm = () => {
     const formRef = useRef(null);
     const captchaRef = useRef(null);
     const { register, handleSubmit, formState: { errors } } = useForm();
-    
+
     // SEND EMAIL
     const onSubmit = (data) => {
         console.log(data);
