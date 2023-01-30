@@ -20,6 +20,10 @@ import emailjs from '@emailjs/browser';
 import Recaptcha from "react-google-recaptcha";
 import { useEffect } from "react";
 
+/**
+ * IMPORTANT ! Deactivate StrictMode To avoid issues with recaptcha v2 during development (captcha rendered just once).
+ * See issue here : https://github.com/dozoisch/react-google-recaptcha/issues/250
+ */
 const ContactForm = () => {
     const {language} = useContext(LangContext);
     const formRef = useRef(null);
