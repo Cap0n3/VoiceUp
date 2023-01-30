@@ -134,8 +134,9 @@ export const ConfirmMsgBox = styled.p`
     overflow: hidden;
     width: 100%;
     border-radius: 10px;
-    margin-bottom: 20px;;
-    border: ${({status}) => (status === "error" ? "1px solid #f2c779" : VoiceUpColors.grey)};
+    margin-bottom: 20px;
+    font-size: ${ftSizes.M_ftSizeSM};
+    border: ${({status}) => (status === "error" ? "1px solid #f2c779" : `1px solid ${VoiceUpColors.grey}`)};
     background-color: ${({status}) =>
         (status === "success" && "#52BE80") ||
         (status === "warn" && "#fff8c4") ||
@@ -145,7 +146,7 @@ export const ConfirmMsgBox = styled.p`
     transition: opacity, height 800ms ease;
 
     &.show {
-        height: 30px;
+        height: 40px;
         opacity: 1;
     }   
 `;
