@@ -82,6 +82,15 @@ export const Input = styled.input`
     font-size: ${ftSizes.M_ftSizeSM};
     outline: 0;
     padding: 10px;
+
+    // Remove autofill background color
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active  {
+        -webkit-box-shadow: 0 0 0 30px ${VoiceUpColors.white} inset !important;
+        box-shadow: 0 0 0 30px ${VoiceUpColors.white} inset !important;
+    }
 `;
 
 export const InputError = styled.p`
@@ -114,4 +123,29 @@ export const WarnIcon = styled(BiError)`
     font-size: 1.3em;
     margin-right: 5px;
     padding: 0;
+`;
+
+export const ConfirmMsgBox = styled.p`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;;
+    border: ${({status}) => (status === "error" ? "1px solid #f2c779" : VoiceUpColors.grey)};
+    background-color: ${({status}) =>
+        (status === "success" && "#52BE80") ||
+        (status === "warn" && "#fff8c4") ||
+        (status === "error" && "#ffecec") ||
+        "white"
+    };
+    transition: opacity, height 800ms ease;
+
+    &.show {
+        height: 30px;
+        opacity: 1;
+    }   
 `;
