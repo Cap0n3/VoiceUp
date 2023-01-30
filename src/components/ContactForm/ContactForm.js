@@ -9,7 +9,9 @@ import {
     ErrorIcon,
     WarnIcon,
     Textarea,
-    ConfirmMsgBox 
+    ConfirmMsgBox ,
+    InscriptionNote,
+    InfoIcon
 } from "./ContactForm.style";
 import { LangContext } from "../../App";
 import { FilledBtn } from "../../globalStyle";
@@ -27,7 +29,7 @@ const ContactForm = () => {
 
     // SEND EMAIL
     const sendEmail = () => {
-        emailjs.sendForm('service_q8gv1tb', 'emplate_n3xc4fl', formRef.current, 'rGeZyDR1JuIAHpM0N')
+        emailjs.sendForm('service_q8gv1tb', 'template_n3xc4fl', formRef.current, 'rGeZyDR1JuIAHpM0N')
             .then((result) => {
                 console.log(result);
                 setMsgStatus({status : "success", msg: "Message envoyé !", responseObject: result});
@@ -84,6 +86,7 @@ const ContactForm = () => {
 
     return(
         <>
+            <InscriptionNote><InfoIcon />Pour les inscriptions, merci de remplir le formulaire ici.</InscriptionNote>
             <ConfirmMsgBox className={msgStatus ? "show" : ""} status={msgStatus && msgStatus.status}>{msgStatus && msgStatus.msg}</ConfirmMsgBox>
             <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                 <InputContainer>

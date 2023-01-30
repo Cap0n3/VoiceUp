@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import { ftSizes, elementHeights } from "../../globalVars";
+import { ftSizes } from "../../globalVars";
 import { BiErrorCircle, BiError } from "react-icons/bi";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 
 const DEBUG = false;
 
@@ -149,4 +150,29 @@ export const ConfirmMsgBox = styled.p`
         height: 40px;
         opacity: 1;
     }   
+`;
+
+export const InscriptionNote = styled.p`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid ${VoiceUpColors.darkGrey};
+    font-size: ${ftSizes.M_ftSizeSM};
+    color: ${VoiceUpColors.darkGrey};
+    padding: 15px 0 15px 0;
+
+    @media only screen and (max-width: 1024px) {
+        font-size: ${ftSizes.S_ftSizeSM};
+    }
+`;
+
+export const InfoIcon = styled(AiOutlineInfoCircle)`
+    fill: ${VoiceUpColors.darkGrey};
+    font-size: 1.3em;
+    min-width: 30px;
+    margin-right: 5px;
 `;
