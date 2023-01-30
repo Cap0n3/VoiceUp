@@ -125,7 +125,7 @@ const ContactForm = () => {
                             required: true, 
                             minLength: 2, 
                             maxLength: 25,
-                            pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-\.]+$/
+                            pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
                         })} status={errors.email ? errors.email.type : null} />
                         {errors.email && getInputErrMsg(errors.email)}
                     </InputsWrapper>
