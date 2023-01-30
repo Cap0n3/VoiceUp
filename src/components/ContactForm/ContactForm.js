@@ -21,7 +21,7 @@ import Recaptcha from "react-google-recaptcha";
 import { useEffect } from "react";
 
 /**
- * IMPORTANT ! Deactivate StrictMode To avoid issues with recaptcha v2 during development (captcha rendered just once).
+ * IMPORTANT ! Deactivate StrictMode to avoid issues with recaptcha V2 during development stage (captcha rendered just once).
  * See issue here : https://github.com/dozoisch/react-google-recaptcha/issues/250
  */
 const ContactForm = () => {
@@ -32,7 +32,7 @@ const ContactForm = () => {
     const [msgStatus, setMsgStatus] = useState(null);
 
     const sendEmail = () => {
-        emailjs.sendForm('service_q8gv1tb', 'emplate_n3xc4fl', formRef.current, 'rGeZyDR1JuIAHpM0N')
+        emailjs.sendForm('service_q8gv1tb', 'template_n3xc4fl', formRef.current, 'rGeZyDR1JuIAHpM0N')
             .then((result) => {
                 setMsgStatus({status : "success", msg: language === "FR" ? "Message envoyé !" : "Message sent !", responseObject: result});
                 reset();
