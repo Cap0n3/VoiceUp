@@ -33,6 +33,9 @@ export const ContactSection = styled.section`
 export const FormContainer = styled.div`
     width: 75%;
     padding-right: 30%;
+    opacity: ${({isVisible}) => (isVisible ?  1 : 0)};
+    transform: ${({isVisible}) => (isVisible ?  "translateY(0)" : "translateX(120%)")};
+    transition: transform .6s ease, opacity 2s ease;
     ${DEBUG ? "border: 1px solid orange;" : ""}
 
     @media only screen and (max-width: 1024px) {
