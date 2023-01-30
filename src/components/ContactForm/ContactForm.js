@@ -9,7 +9,7 @@ import {
     ErrorIcon,
     WarnIcon,
     Textarea,
-    ConfirmMsgBox ,
+    MessageStatusBox ,
     InscriptionNote,
     InfoIcon
 } from "./ContactForm.style";
@@ -24,18 +24,17 @@ const ContactForm = () => {
     const {language} = useContext(LangContext);
     const formRef = useRef(null);
     const captchaRef = useRef(null);
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [msgStatus, setMsgStatus] = useState(null);
 
-    // SEND EMAIL
     const sendEmail = () => {
-        emailjs.sendForm('service_q8gv1tb', 'template_n3xc4fl', formRef.current, 'rGeZyDR1JuIAHpM0N')
+        emailjs.sendForm('service_q8gv1tb', 'emplate_n3xc4fl', formRef.current, 'rGeZyDR1JuIAHpM0N')
             .then((result) => {
-                console.log(result);
-                setMsgStatus({status : "success", msg: "Message envoyé !", responseObject: result});
+                setMsgStatus({status : "success", msg: language === "FR" ? "Message envoyé !" : "Message sent !", responseObject: result});
+                reset();
             }, (error) => {
                 console.log(error);
-                setMsgStatus({status : "error", msg: "Une erreur est survenue, merci de contacter le webmaster", responseObject: error});
+                setMsgStatus({status : "error", msg: language === "FR" ? "Une erreur est survenue, le serveur n'est pas joignable !" : "An error occured, server unreachable !", responseObject: error});
             });
     }
 
@@ -47,32 +46,36 @@ const ContactForm = () => {
             captchaRef.current.reset();
         }
         else {
-            setMsgStatus({status : "warn", msg: "Le captcha n'a pas été rempli"});
+            setMsgStatus({status : "warn", msg: language === "FR" ? "Merci de remplir le captcha" : "Please fill out the captcha"});
         }
     };
 
     const getInputErrMsg = (errObj) => {
         let msgFR="";
-        
-        console.log(errObj)
-        
+        let msgEN="";
+
         if(errObj.type === "required") {
             msgFR="Champs requis"
-            return <InputError status="warn"><WarnIcon />{msgFR}</InputError>;
+            msgEN="Required"
+            return <InputError status="warn"><WarnIcon />{language === "FR" ? msgFR : msgEN}</InputError>;
         }
         else if(errObj.type === "pattern") {
             msgFR="Format non valide";
+            msgEN="Not valid"
         }
         else if(errObj.type === "minLength") {
             msgFR="Minimum 2 caractères !";
+            msgEN="At least 2 characters !"
         }
         else if(errObj.type === "maxLength") {
             msgFR="Nombre maximum de caractères atteint !";
+            msgEN="Maximum length reached !";
         }
         else {
-            msgFR="Erreur inconnue ...";
+            msgFR="Une erreur est survenue !";
+            msgEN="An error occured !";
         }
-        return <InputError><ErrorIcon />{msgFR}</InputError>;
+        return <InputError><ErrorIcon />{language === "FR" ? msgFR : msgEN}</InputError>;
     }
 
     useEffect(() => {
@@ -86,8 +89,8 @@ const ContactForm = () => {
 
     return(
         <>
-            <InscriptionNote><InfoIcon />Pour les inscriptions, merci de remplir le formulaire ici.</InscriptionNote>
-            <ConfirmMsgBox className={msgStatus ? "show" : ""} status={msgStatus && msgStatus.status}>{msgStatus && msgStatus.msg}</ConfirmMsgBox>
+            <InscriptionNote><InfoIcon />{language === "FR" ? "Pour les inscriptions, merci de remplir le formulaire ici." : "To enroll, please fill out form here."}</InscriptionNote>
+            <MessageStatusBox className={msgStatus ? "show" : ""} status={msgStatus && msgStatus.status}>{msgStatus && msgStatus.msg}</MessageStatusBox>
             <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                 <InputContainer>
                     <InputsWrapper>
