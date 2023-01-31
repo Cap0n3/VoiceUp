@@ -62,21 +62,6 @@ export const BaseContainer = styled.section`
     min-height: 300px;
 `;
 
-// export const Container = styled.div`
-//     z-index: 1;
-//     width: 100%;
-//     max-width: 1300px;
-//     margin-right: auto;
-//     margin-left: auto;
-//     padding-right: 30px;
-//     padding-left: 30px;
-
-//     ${'' /* @media only screen and (max-width: 991px) {
-//         padding-right: 30px;
-//         padding-left: 30px;
-//     } */}
-// `;
-
 // Section Titles
 export const SectionTitle = styled.h1`
     width: 100%;
