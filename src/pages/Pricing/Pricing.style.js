@@ -56,6 +56,6 @@ export const FaqContainer = styled.div`
     transition: margin-top 1s ease;
     opacity: ${({isVisible}) => (isVisible ?  1 : 0)};
     transform: ${({isVisible}) => (isVisible ?  "translateY(0)" : "translateY(120%)")};
-    transition: transform .6s ease, opacity 2s ease;
+    transition: transform .6s ease, opacity 1.5s ease;
     ${DEBUG ? "border: 1px solid red;" : ""}
 `;

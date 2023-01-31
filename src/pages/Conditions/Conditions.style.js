@@ -3,12 +3,21 @@ import { ftSizes } from "../../globalVars";
 
 const DEBUG = false;
 
-export const ConditionWrapper = styled.section`
+export const ConditionContainer = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 60px;
+    overflow: hidden;
     ${DEBUG ? "border: 1px solid red;" : ""}
+`;
+
+export const BlockWrapper = styled.div`
+    width: 100%;
+    opacity: ${({isVisible}) => (isVisible ?  1 : 0)};
+    transform: ${({isVisible}) => (isVisible ?  "translateY(0)" : "translateY(120%)")};
+    transition: transform .6s ease, opacity 1.5s ease;
+    ${DEBUG ? "border: 1px solid yellow;" : ""}
 `;
 
 export const ConditionTitle = styled.h1`
