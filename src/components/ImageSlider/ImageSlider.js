@@ -9,7 +9,7 @@ const ImageSlider = ({slides, transitionTime}) => {
     const windowSize = useWindowSize();
     const {language} = useContext(LangContext);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isActive, setIsActive] = useState(true);
+    const [isActive, setIsActive] = useState(null);
     const [isHovered, setIsHovered] = useState(false);
     
     // === Slide change functions === //
@@ -45,6 +45,13 @@ const ImageSlider = ({slides, transitionTime}) => {
     const goToSlide = (slideIndex) => {
         changeAndFadeOpacity(slideIndex);
     };
+
+    /**
+     * On first render, activate FX for first slide.
+     */
+    useEffect(() => {
+        setIsActive(true);
+    }, [])
 
     /**
      * Here to make slide reappear by changing back class to active.
