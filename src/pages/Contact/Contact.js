@@ -10,7 +10,7 @@ import useAppear from '../../hooks/useAppear';
 const Contact = () => {
     const windowSize = useWindowSize();
     const contactSectionRef = useRef(null);
-    const isContactVisible = useAppear(contactSectionRef, 380);
+    const isContactVisible = useAppear(contactSectionRef, 280);
 
     return(
         <>
