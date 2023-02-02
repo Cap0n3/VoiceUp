@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { CardContainer, PCard, CardHeader, CardBodyWrapper, InnerCircle, IconWrapper, PriceTag, ListWrapper, List, ListItem, Sub } from "./PriceCard.style";
-import { OutlineBtn } from "../../globalStyle";
+import { OutlineBtn } from "../../globalStyles/globalCompStyles";
 import {AiOutlineCheckCircle} from "react-icons/ai";
 import Rocket from "../../assets/icons/myIcons/rocket_icon";
 import Turtle from "../../assets/icons/myIcons/turtle_icon";

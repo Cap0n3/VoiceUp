@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { SectionTitle } from "../../globalStyle";
+import { SectionTitle } from "../../globalStyles/globalCompStyles";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import InfoSection from "../../components/InfoSection/InfoSection";
 import ReviewSection from "../../components/ReviewSection/ReviewSection";

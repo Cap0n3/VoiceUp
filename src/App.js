@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useState, useEffect, createContext } from "react";
-import GlobalStyle from "./globalStyle";
+import GlobalStyle from "./globalStyles/globalStyle";
 import ScrollTop from "./components/ScrollTop/ScrollTop";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
@@ -9,6 +9,7 @@ import Teacher from "./pages/Teacher/Teacher";
 import Conditions from "./pages/Conditions/Conditions";
 import Prices from "./pages/Pricing/Pricing";
 import Contact from "./pages/Contact/Contact";
+import Enroll from "./pages/Enroll/Enroll";
 
 // Define contexts
 export const LangContext = createContext();
@@ -38,6 +39,7 @@ function App() {
 						<Route path="/conditions" element={<Conditions />} />
 						<Route path="/tarifs" element={<Prices />} />
 						<Route path="/contact" element={<Contact />} />
+						<Route path="/inscription" element={<Enroll />} />
 					</Routes>
 				</div>
 			</LangContext.Provider>

@@ -14,7 +14,7 @@ import {
     InfoIcon
 } from "./ContactForm.style";
 import { LangContext } from "../../App";
-import { FilledBtn } from "../../globalStyle";
+import { FilledBtn } from "../../globalStyles/globalCompStyles";
 import { useForm } from "react-hook-form";
 import emailjs from '@emailjs/browser';
 import Recaptcha from "react-google-recaptcha";

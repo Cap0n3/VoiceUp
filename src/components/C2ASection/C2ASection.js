@@ -2,7 +2,7 @@ import React, { useContext, useRef} from "react";
 import useWindowSize from "../../hooks/useWindowSize";
 import { LangContext } from '../../App';
 import { C2AContainer, ImgDiv, BoxWrapper, TextBox } from "./C2ASection.style";
-import { OutlineBtn } from "../../globalStyle";
+import { OutlineBtn } from "../../globalStyles/globalCompStyles";
 import useParallax from "../../hooks/useParallax";
 import useAppear from "../../hooks/useAppear";
 import { C2AData } from "../../pages/Home/data/C2ASec.data";

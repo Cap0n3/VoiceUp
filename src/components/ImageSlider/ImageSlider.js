@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import useWindowSize from "../../hooks/useWindowSize";
 import { SliderWrapper, Slide, SlideOverlay, BoxWrapper, TextBox } from "./ImageSlider.style";
 import { BackwardArrow, ForwardArrow, DotWrapper, Dot } from "./ImageSlider.style";
-import { OutlineBtn } from "../../globalStyle";
+import { OutlineBtn } from "../../globalStyles/globalCompStyles";
 import { LangContext } from '../../App';
 
 const ImageSlider = ({slides, transitionTime}) => {
