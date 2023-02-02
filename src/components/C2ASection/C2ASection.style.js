@@ -46,10 +46,10 @@ export const ImgDiv = styled.div`
 
 export const BoxWrapper = styled.div`
     width: 45%;
-    ${DEBUG ? "border: 1px solid pink;" : ""}
-    
     margin-left: -145%;
     transition: margin-left ${({transitionTime}) => transitionTime}ms ease; 
+    z-index: 900;
+    ${DEBUG ? "border: 1px solid pink;" : ""}
 
     &.active {
         margin-left: 0;
@@ -61,8 +61,6 @@ export const BoxWrapper = styled.div`
 `;
 
 export const TextBox = styled.div`
-    position: relative;
-    z-index: 999;
     display: flex;
     flex-direction: column;
     width: 100%;
