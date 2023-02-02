@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { VoiceUpColors } from "../colors";
 import { ftSizes, elementHeights } from '../globalVars';
@@ -28,16 +29,23 @@ export const SectionTitle = styled.h1`
     }
 `;
 
-
+// BUTTONS
 // For more cool button FX : https://alvarotrigo.com/blog/best-css-button-hover-effects/
-export const OutlineBtn = styled.button`
-    white-space: nowrap;
-    padding: 12px 60px;
+export const OutlineBtn = styled(NavLink)`
+    position: relative;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; 
+    height: 44px;
     max-width: 250px;
+    min-width: 200px;
     color: ${VoiceUpColors.white};
     font-size: ${ftSizes.M_ftSizeMD};
     outline: none;
     background: none;
+    text-decoration: none;
     border: 2px solid ${VoiceUpColors.white};
     cursor: pointer;
     transition: 0.25s;
@@ -54,7 +62,7 @@ export const OutlineBtn = styled.button`
     }
 `;
 
-export const FilledBtn =  styled.button`
+export const FilledBtn = styled.button`
     white-space: nowrap;
     padding: 12px 60px;
     color: ${VoiceUpColors.white};
@@ -71,6 +79,7 @@ export const FilledBtn =  styled.button`
     }
 `;
 
+// SCROLL TOP BOX
 export const ScrollTop = styled.div`
     position: fixed;
     bottom: 60px;

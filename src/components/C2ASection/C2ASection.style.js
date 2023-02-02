@@ -13,8 +13,10 @@ export const C2AContainer = styled.section`
     align-items: center;
     width: 100%;
     height: ${sectionHeight- 200}px;
-    transform-style: preserve-3d;
-    z-index: -1;
+    /* transform-style: preserve-3d; */
+    overflow: hidden;
+    background-color: black;
+    /* z-index: -1; */
     ${DEBUG ? "border: 1px solid blue;" : ""}
 
     @media only screen and (max-width: 1024px) {
@@ -25,14 +27,17 @@ export const C2AContainer = styled.section`
 export const ImgDiv = styled.div`
     position: absolute;
     height: ${sectionHeight}px;
-    width: 100%;
+    width: ${({width}) => (width ? `${width}px` : "100%")};
     background-image: ${`url(${Tania2})`};
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    transform: translate3d(0%, ${({paralOffset}) => paralOffset}px, 0px);
-    background-color: black;
-    z-index: -1;
+    transform: translateY(${({paralOffset}) => {
+        console.log(paralOffset)
+        return`${paralOffset}px`
+    }});
+    
+    /* z-index: -1; */
 
     @media only screen and (max-width: 1024px) {
         height: ${sectionHeight + 100}px;
@@ -42,7 +47,7 @@ export const ImgDiv = styled.div`
 export const BoxWrapper = styled.div`
     width: 45%;
     ${DEBUG ? "border: 1px solid pink;" : ""}
-    z-index: 900;
+    
     margin-left: -145%;
     transition: margin-left ${({transitionTime}) => transitionTime}ms ease; 
 
@@ -56,6 +61,8 @@ export const BoxWrapper = styled.div`
 `;
 
 export const TextBox = styled.div`
+    position: relative;
+    z-index: 999;
     display: flex;
     flex-direction: column;
     width: 100%;

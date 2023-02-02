@@ -16,13 +16,13 @@ const C2ASection = ({transitionTime}) => {
 
     return(
         <C2AContainer ref={containerRef}>
-            <ImgDiv paralOffset={parallaxOffset} title="Tania"></ImgDiv>
+            <ImgDiv paralOffset={parallaxOffset} width={windowSize.innerWidth} title="Tania" />
             <BoxWrapper className={isVisible ? "active" : ""} transitionTime={transitionTime}>
                 <TextBox>
                     <h1>{(language === "FR") ? C2AData.titleFR : C2AData.titleEN}</h1>
                     <h2>{(language === "FR") ? C2AData.subTitleFR : C2AData.subTitleEN}</h2>
                     <p style={{marginBottom: "40px"}}>{(language === "FR") ? C2AData.descriptionFR : C2AData.descriptionEN}</p>
-                    <OutlineBtn style={{marginLeft: "auto", marginRight: "auto"}}>{(language === "FR") ? C2AData.buttonFR : C2AData.buttonEN}</OutlineBtn>
+                    <OutlineBtn to="/inscription" style={{marginLeft: "auto", marginRight: "auto"}}>{(language === "FR") ? C2AData.buttonFR : C2AData.buttonEN}</OutlineBtn>
                 </TextBox>
             </BoxWrapper>
         </C2AContainer>
