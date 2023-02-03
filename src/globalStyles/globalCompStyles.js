@@ -183,6 +183,22 @@ export const Input = styled.input`
     }
 `;
 
+export const Select = styled.select`
+    width: 100%;
+    border: 1px solid ${({status}) => 
+        (status === "required" && "#f2c779") ||
+        (status === "minLength" && "#f5aca6") ||
+        (status === "maxLength" && "#f5aca6") ||
+        (status === "pattern" && "#f5aca6") ||
+        VoiceUpColors.grey
+    };
+    border-radius: 10px;
+    font-size: ${ftSizes.M_ftSizeSM};
+    background-color: ${VoiceUpColors.white};
+    outline: 0;
+    padding: 10px;
+`;
+
 export const InputError = styled.p`
     display: flex;
     align-items: center;

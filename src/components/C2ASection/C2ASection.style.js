@@ -31,8 +31,8 @@ export const ImgDiv = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     transform: translateY(${({paralOffset}) => {
-        console.log(paralOffset)
-        return`${paralOffset}px`
+        // console.log(paralOffset);
+        return `${paralOffset}px`
     }});
     
     /* z-index: -1; */
