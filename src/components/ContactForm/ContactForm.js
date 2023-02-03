@@ -12,13 +12,14 @@ import {
     MessageStatusBox ,
     InscriptionNote,
     InfoIcon
-} from "./ContactForm.style";
+} from "../../globalStyles/globalCompStyles";
 import { LangContext } from "../../App";
 import { FilledBtn } from "../../globalStyles/globalCompStyles";
 import { useForm } from "react-hook-form";
 import emailjs from '@emailjs/browser';
 import Recaptcha from "react-google-recaptcha";
 import { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 /**
  * IMPORTANT ! Deactivate StrictMode to avoid issues with recaptcha V2 during development stage (captcha rendered just once).
@@ -93,7 +94,7 @@ const ContactForm = () => {
 
     return(
         <>
-            <InscriptionNote><InfoIcon />{language === "FR" ? "Pour les inscriptions, merci de remplir le formulaire ici." : "To enroll, please fill out form here."}</InscriptionNote>
+            <InscriptionNote><InfoIcon />{language === "FR" ? <span>Pour les inscriptions, merci de remplir <NavLink className="inlineLink">le formulaire ici.</NavLink></span> : "To enroll, please fill out form here."}</InscriptionNote>
             <MessageStatusBox className={msgStatus ? "show" : ""} status={msgStatus && msgStatus.status}>{msgStatus && msgStatus.msg}</MessageStatusBox>
             <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                 <InputContainer>

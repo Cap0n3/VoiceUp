@@ -1,6 +1,6 @@
-import styled, { createGlobalStyle, keyframes } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import { VoiceUpColors } from "../colors";
-import { ftSizes, elementHeights } from '../globalVars';
+import { elementHeights } from '../globalVars';
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -44,6 +44,19 @@ const GlobalStyle = createGlobalStyle`
     @media only screen and (max-width: 1024px) {
         &.main {
             padding-top: ${elementHeights.mobileNavbarHeight}px;
+        }
+    }
+
+    &.inlineLink {
+        text-decoration: none;
+        color: ${VoiceUpColors.purple};
+
+        &:visited {
+            color: ${VoiceUpColors.purple};
+        }
+
+        &:hover {
+            color: ${VoiceUpColors.gold};
         }
     }
 `;

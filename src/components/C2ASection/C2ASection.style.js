@@ -13,10 +13,8 @@ export const C2AContainer = styled.section`
     align-items: center;
     width: 100%;
     height: ${sectionHeight- 200}px;
-    /* transform-style: preserve-3d; */
     overflow: hidden;
     background-color: black;
-    /* z-index: -1; */
     ${DEBUG ? "border: 1px solid blue;" : ""}
 
     @media only screen and (max-width: 1024px) {
