@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import { ftSizes } from "../../globalVars";
+import { FONT_SIZES } from "../../globalVars";
 
 const DEBUG = false;
 
@@ -47,11 +47,11 @@ export const HeadCell = styled.th`
 
     & > h2 {
         margin-top: 30px;
-        font-size: ${ftSizes.M_ftSizeL_alt};
+        font-size: ${FONT_SIZES.M_ftSizeL_alt};
         text-transform: uppercase;
 
         @media only screen and (max-width: 1024px) and (min-width: 691px) {
-            font-size: ${ftSizes.M_ftSizeMD};
+            font-size: ${FONT_SIZES.M_ftSizeMD};
         }
 
         @media only screen and (max-width: 690px) {
@@ -62,11 +62,11 @@ export const HeadCell = styled.th`
     & > span {
         font-weight: 500;
         @media only screen and (max-width: 1024px) and (min-width: 691px) {
-            font-size: ${ftSizes.M_ftSizeMD};
+            font-size: ${FONT_SIZES.M_ftSizeMD};
         }
 
         @media only screen and (max-width: 690px) {
-            font-size: ${ftSizes.XS_ftSizeMD};
+            font-size: ${FONT_SIZES.XS_ftSizeMD};
         }
     }
 `;

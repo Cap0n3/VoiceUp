@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { VoiceUpColors } from "../colors";
-import { elementHeights } from '../globalVars';
+import { ELEMENT_HEIGHTS } from '../globalVars';
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     &.main {
-        padding-top: ${elementHeights.navbarHeight}px;
+        padding-top: ${ELEMENT_HEIGHTS.navbarHeight}px;
         overflow-x: hidden;
         overflow-y: auto;
         z-index: 1;
@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
 
     @media only screen and (max-width: 1024px) {
         &.main {
-            padding-top: ${elementHeights.mobileNavbarHeight}px;
+            padding-top: ${ELEMENT_HEIGHTS.mobileNavbarHeight}px;
         }
     }
 

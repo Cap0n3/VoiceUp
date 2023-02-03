@@ -20,6 +20,7 @@ import emailjs from '@emailjs/browser';
 import Recaptcha from "react-google-recaptcha";
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { FORM_REGEX } from "../../globalVars";
 
 /**
  * IMPORTANT ! Deactivate StrictMode to avoid issues with recaptcha V2 during development stage (captcha rendered just once).
@@ -85,7 +86,7 @@ const ContactForm = () => {
 
     useEffect(() => {
         if(msgStatus) {
-            // Make message disappear
+            // Make info, warn and error messages disappear
             setTimeout(() => {
                 setMsgStatus(null);
             }, 4000);
@@ -104,7 +105,7 @@ const ContactForm = () => {
                             required: true, 
                             minLength: 2, 
                             maxLength: 25,
-                            pattern: /^[A-Za-zàéèäöüçÀÉÈÇ'^`-\s]+$/i
+                            pattern: FORM_REGEX.nameRgx
                         })} status={errors.firstName ? errors.firstName.type : null} />
                         {errors.firstName && getInputErrMsg(errors.firstName)}
                     </InputWrapper>
@@ -114,7 +115,7 @@ const ContactForm = () => {
                             required: true, 
                             minLength: 2, 
                             maxLength: 25,
-                            pattern: /^[A-Za-za-zàéèäöüçÀÉÈÇ'^`-\s]+$/i
+                            pattern: FORM_REGEX.nameRgx
                         })} status={errors.lastName ? errors.lastName.type : null} />
                         {errors.lastName && getInputErrMsg(errors.lastName)}
                     </InputWrapper>             
@@ -126,7 +127,7 @@ const ContactForm = () => {
                             required: true, 
                             minLength: 2, 
                             maxLength: 25,
-                            pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+                            pattern: FORM_REGEX.emailRgx
                         })} status={errors.email ? errors.email.type : null} />
                         {errors.email && getInputErrMsg(errors.email)}
                     </InputWrapper>
@@ -136,7 +137,7 @@ const ContactForm = () => {
                             required: true, 
                             minLength: 2, 
                             maxLength: 25,
-                            pattern: /^(\+(41|33)|00\s?(41|33)|0\d{1,2})(\s?\(0\))?(\s)?(\d{1,2})(\s)?(\d{2,3})(\s)?(\d{2})(\s)?(\d{2})(\s)?(\d{2})?$/
+                            pattern: FORM_REGEX.phoneRgx
                         })} status={errors.phone ? errors.phone.type : null} />
                         {errors.phone && getInputErrMsg(errors.phone)}
                     </InputWrapper> 
@@ -148,7 +149,7 @@ const ContactForm = () => {
                             required: true, 
                             minLength: 2, 
                             maxLength: 1000,
-                            pattern: /^[a-zA-Z0-9àéèäöüç°ÀÉÈÇ.():;!#$%&'*+/=?^_`~-\s]+$/i
+                            pattern: FORM_REGEX.messageRgx
                         })} status={errors.message ? errors.message.type : null} />
                         {errors.message && getInputErrMsg(errors.message)}
                     </InputWrapper>

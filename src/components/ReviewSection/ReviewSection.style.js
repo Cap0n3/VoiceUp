@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { ftSizes } from "../../globalVars";
+import { FONT_SIZES } from "../../globalVars";
 
 const debug = false;
 const sectionHeight = 600;
@@ -60,7 +60,7 @@ export const ReviewBox = styled.div`
     & > blockquote {
         display: block;
         font-style: italic;
-        font-size: ${ftSizes.M_ftSizeSM};
+        font-size: ${FONT_SIZES.M_FONT_SIZESM};
         font-weight: 300;
         height: ${sectionHeight - 350}px;
         margin-bottom: 10px;
@@ -72,7 +72,7 @@ export const ReviewBox = styled.div`
     & > p {
         display: block;
         font-weight: 700;
-        font-size: ${ftSizes.M_ftSizeSM};
+        font-size: ${FONT_SIZES.M_FONT_SIZESM};
         text-align: center;
         font-style: bold;
         ${debug ? "border: 1px solid purple;" : ""}

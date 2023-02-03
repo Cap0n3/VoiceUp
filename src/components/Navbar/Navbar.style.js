@@ -1,7 +1,7 @@
 import { VoiceUpColors } from "../../colors";
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
-import { ftSizes, elementHeights } from "../../globalVars";
+import { FONT_SIZES, ELEMENT_HEIGHTS } from "../../globalVars";
 
 // To see all borders (design debug)
 var DEBUG = false;
@@ -14,7 +14,7 @@ export const Nav = styled.nav `
     position: fixed;
     top: 0px;
     width: 100%;
-    height: ${elementHeights.navbarHeight}px;
+    height: ${ELEMENT_HEIGHTS.navbarHeight}px;
     z-index: 999;
     background: ${VoiceUpColors.white};
 
@@ -26,7 +26,7 @@ export const Nav = styled.nav `
 
     /* Small screen */
     @media only screen and (max-width: 1024px) {
-        height: ${elementHeights.mobileNavbarHeight}px;
+        height: ${ELEMENT_HEIGHTS.mobileNavbarHeight}px;
     }  
 `;
 
@@ -102,8 +102,8 @@ export const NavMenu = styled.ul`
         gap: 0px;
         position: absolute;
         width: 100%;
-        height: calc(100vh - ${elementHeights.mobileNavbarHeight}px);
-        top: ${elementHeights.mobileNavbarHeight}px;
+        height: calc(100vh - ${ELEMENT_HEIGHTS.mobileNavbarHeight}px);
+        top: ${ELEMENT_HEIGHTS.mobileNavbarHeight}px;
         ${'' /* Cannot go right otherwise it extend screen */}
         left: ${({click}) => (click ? 0 : "-100%")};
         opacity: 1;
@@ -116,14 +116,14 @@ export const NavItem = styled.li`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: ${elementHeights.navbarHeight}px;
+    height: ${ELEMENT_HEIGHTS.navbarHeight}px;
     width: 120px;
     border-bottom: 3px solid transparent;
     cursor: pointer;
     ${(DEBUG) ? "background: pink;" : ""}
     
     &:hover {
-        height: ${elementHeights.navbarHeight}px;
+        height: ${ELEMENT_HEIGHTS.navbarHeight}px;
         border-bottom: 3px solid ${VoiceUpColors.gold};
     };
 
@@ -144,10 +144,10 @@ export const NavLinks = styled(NavLink)`
     justify-content: center;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: ${ftSizes.M_ftSizeSM};
+    font-size: ${FONT_SIZES.M_FONT_SIZESM};
     font-weight: 400;
     width: 100px;
-    height: ${elementHeights.navbarHeight - 15}px;
+    height: ${ELEMENT_HEIGHTS.navbarHeight - 15}px;
     ${'' /* padding: 0.5rem 1rem; */}
     ${(DEBUG) ? "background: brown;" : ""}
 
@@ -157,16 +157,16 @@ export const NavLinks = styled(NavLink)`
 
     /* 13" screen */
     @media only screen and (min-width: 1025px) and (max-width: 1248px) {
-        font-size: ${ftSizes.S_ftSizeSM};;
+        font-size: ${FONT_SIZES.S_FONT_SIZESM};;
     } 
 `;
 
 export const LangSwitch = styled.li`
     display: flex;
     align-items: center;
-    height: ${elementHeights.navbarHeight}px;
+    height: ${ELEMENT_HEIGHTS.navbarHeight}px;
     cursor: pointer;
-    font-size: ${ftSizes.XS_ftSizeMD};
+    font-size: ${FONT_SIZES.XS_ftSizeMD};
     color: ${VoiceUpColors.grey};
     ${(DEBUG) ? "background: pink;" : ""}
     margin-left: auto;
@@ -178,7 +178,7 @@ export const LangSwitch = styled.li`
         padding: 0.5rem .4rem;
         margin-left: 1%;
         margin-right: 1%;
-        font-size: ${ftSizes.XS_ftSizeSM};
+        font-size: ${FONT_SIZES.XS_FONT_SIZESM};
     }
 
     /* Small screen */

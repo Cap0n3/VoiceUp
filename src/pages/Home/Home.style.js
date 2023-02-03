@@ -1,17 +1,17 @@
 import styled from "styled-components";
-import { elementHeights } from "../../globalVars";
+import { ELEMENT_HEIGHTS } from "../../globalVars";
 import { VoiceUpColors } from "../../colors";
 
 const DEBUG = false;
 
 export const SliderContainer = styled.div`
     width: 100%;
-    height: ${({winHeight}) => (winHeight ? (winHeight - elementHeights.navbarHeight) : elementHeights.sectionHeight)}px;
+    height: ${({winHeight}) => (winHeight ? (winHeight - ELEMENT_HEIGHTS.navbarHeight) : ELEMENT_HEIGHTS.sectionHeight)}px;
     max-height: 1280px;
     min-height: 300px;
 
     @media only screen and (max-width: 1024px) {
-        height: ${({winHeight}) => (winHeight ? (winHeight - elementHeights.mobileNavbarHeight) : elementHeights.sectionHeight)}px;
+        height: ${({winHeight}) => (winHeight ? (winHeight - ELEMENT_HEIGHTS.mobileNavbarHeight) : ELEMENT_HEIGHTS.sectionHeight)}px;
     }
 `;
 
@@ -20,7 +20,7 @@ export const ContactSection = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: ${({winHeight}) => (winHeight ? (winHeight - elementHeights.navbarHeight) : elementHeights.sectionHeight)}px;
+    min-height: ${({winHeight}) => (winHeight ? (winHeight - ELEMENT_HEIGHTS.navbarHeight) : ELEMENT_HEIGHTS.sectionHeight)}px;
     /* max-height: 1280px; */
     padding: 60px 0 60px 0;
     /* min-height: 800px; */

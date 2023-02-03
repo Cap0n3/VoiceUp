@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { VoiceUpColors } from "../colors";
-import { ftSizes, elementHeights } from '../globalVars';
+import { FONT_SIZES, ELEMENT_HEIGHTS } from '../globalVars';
 import { BiErrorCircle, BiError } from "react-icons/bi";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 
@@ -16,7 +16,7 @@ const pulse = keyframes`
 // TODO - Not used yet
 export const BaseContainer = styled.section`
     width: 100%;
-    height: ${({height}) => (height ? height : elementHeights.sectionHeight)}px;
+    height: ${({height}) => (height ? height : ELEMENT_HEIGHTS.sectionHeight)}px;
     max-height: 1280px;
     min-height: 300px;
 `;
@@ -26,10 +26,10 @@ export const SectionTitle = styled.h1`
     width: 100%;
     margin-bottom: 60px;
     text-transform: uppercase;
-    font-size: ${ftSizes.M_ftSizeL};
+    font-size: ${FONT_SIZES.M_ftSizeL};
 
     @media only screen and (max-width: 1024px) {
-        font-size: ${ftSizes.S_ftSizeL};
+        font-size: ${FONT_SIZES.S_ftSizeL};
     }
 `;
 
@@ -46,7 +46,7 @@ export const OutlineBtn = styled(NavLink)`
     max-width: 250px;
     min-width: 200px;
     color: ${VoiceUpColors.white};
-    font-size: ${ftSizes.M_ftSizeMD};
+    font-size: ${FONT_SIZES.M_ftSizeMD};
     outline: none;
     background: none;
     text-decoration: none;
@@ -72,7 +72,7 @@ export const FilledBtn = styled.button`
     color: ${VoiceUpColors.white};
     background: ${VoiceUpColors.gold};
     border: none;
-    font-size: ${ftSizes.M_ftSizeMD};
+    font-size: ${FONT_SIZES.M_ftSizeMD};
     cursor: pointer;
     transition: 0.25s;
 
@@ -146,7 +146,7 @@ export const Textarea = styled.textarea`
         VoiceUpColors.grey
     };
     border-radius: 10px;
-    font-size: ${ftSizes.M_ftSizeSM};
+    font-size: ${FONT_SIZES.M_FONT_SIZESM};
     outline: 0;
     padding: 10px;
 `;
@@ -169,7 +169,7 @@ export const Input = styled.input`
         VoiceUpColors.grey
     };
     border-radius: 10px;
-    font-size: ${ftSizes.M_ftSizeSM};
+    font-size: ${FONT_SIZES.M_FONT_SIZESM};
     outline: 0;
     padding: 10px;
 
@@ -193,7 +193,7 @@ export const Select = styled.select`
         VoiceUpColors.grey
     };
     border-radius: 10px;
-    font-size: ${ftSizes.M_ftSizeSM};
+    font-size: ${FONT_SIZES.M_FONT_SIZESM};
     background-color: ${VoiceUpColors.white};
     outline: 0;
     padding: 10px;
@@ -207,7 +207,7 @@ export const InputError = styled.p`
     border-radius: 10px;
     background-color: ${({status}) => (status === "warn" ? "#fff8c4" : "#ffecec")};
     border: ${({status}) => (status === "warn" ? "1px solid #f2c779" : "1px solid #f5aca6")};
-    font-size: ${ftSizes.XS_ftSizeMD};
+    font-size: ${FONT_SIZES.XS_ftSizeMD};
     color: #555;
 
     & > span {
@@ -242,7 +242,7 @@ export const MessageStatusBox = styled.p`
     border-radius: 10px;
     margin-bottom: 20px;
     padding: 10px;
-    font-size: ${ftSizes.M_ftSizeSM};
+    font-size: ${FONT_SIZES.M_FONT_SIZESM};
     border: ${({status}) => (status === "error" ? "1px solid #f2c779" : `1px solid ${VoiceUpColors.grey}`)};
     background-color: ${({status}) =>
         (status === "success" && "#52BE80") ||
@@ -258,7 +258,7 @@ export const MessageStatusBox = styled.p`
     }
 
     @media only screen and (max-width: 1024px) {
-        font-size: ${ftSizes.S_ftSizeSM};
+        font-size: ${FONT_SIZES.S_FONT_SIZESM};
     }
 `;
 
@@ -271,12 +271,12 @@ export const InscriptionNote = styled.p`
     border-radius: 10px;
     margin-bottom: 20px;
     border: 1px solid ${VoiceUpColors.darkGrey};
-    font-size: ${ftSizes.M_ftSizeSM};
+    font-size: ${FONT_SIZES.M_FONT_SIZESM};
     color: ${VoiceUpColors.darkGrey};
     padding: 10px;
 
     @media only screen and (max-width: 1024px) {
-        font-size: ${ftSizes.S_ftSizeSM};
+        font-size: ${FONT_SIZES.S_FONT_SIZESM};
     }
 `;
 

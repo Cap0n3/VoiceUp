@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../../colors";
-import { ftSizes } from "../../../globalVars";
+import { FONT_SIZES } from "../../../globalVars";
 import { IoCloseCircleOutline } from "react-icons/io5";
 
 const DEBUG = false;
@@ -37,7 +37,7 @@ export const Overlay = styled.div`
 
 // export const VidTitle = styled.h2`
 //     color: ${VoiceUpColors.white};
-//     font-size: ${ftSizes.M_ftSizeL};
+//     font-size: ${FONT_SIZES.M_ftSizeL};
 //     margin-bottom: 40px;
 //     ${DEBUG ? "background-color: lightgreen;" : ""}
 // `;
@@ -45,7 +45,7 @@ export const Overlay = styled.div`
 export const VidDescription = styled.p`
     margin-top: 40px;
     color: ${VoiceUpColors.white};
-    font-size: ${ftSizes.M_ftSizeSM};
+    font-size: ${FONT_SIZES.M_FONT_SIZESM};
     max-height: 100px;
     overflow-y: auto;
     ${DEBUG ? "background-color: lightblue;" : ""}

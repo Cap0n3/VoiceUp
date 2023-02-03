@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import { ftSizes, elementHeights } from "../../globalVars";
+import { FONT_SIZES, ELEMENT_HEIGHTS } from "../../globalVars";
 
 const DEBUG = false;
 
@@ -12,11 +12,11 @@ export const SectionWrapper = styled.div`
         "row"
     };
     width: 100%;
-    height: ${elementHeights.sectionHeight}px;
+    height: ${ELEMENT_HEIGHTS.sectionHeight}px;
     ${DEBUG ? "border: 1px solid red;" : ""}
 
     @media only screen and (max-width: 1024px) {
-        height: ${elementHeights.sectionHeight * 2}px;
+        height: ${ELEMENT_HEIGHTS.sectionHeight * 2}px;
         flex-direction: column-reverse;
     }
 `;
@@ -27,7 +27,7 @@ export const ImgContainer = styled.div`
     ${DEBUG ? "background-color: lightblue;" : ""}
 
     @media only screen and (max-width: 1024px) {
-        height: ${elementHeights.sectionHeight}px;
+        height: ${ELEMENT_HEIGHTS.sectionHeight}px;
     }
 `;
 
@@ -37,7 +37,7 @@ export const CardContainer = styled.div`
     ${DEBUG ? "background-color: coral;" : ""}
 
     @media only screen and (max-width: 1024px) {
-        height: ${elementHeights.sectionHeight}px;
+        height: ${ELEMENT_HEIGHTS.sectionHeight}px;
     }
 `;
 
@@ -97,7 +97,7 @@ export const TextDiv = styled.div`
     & > h1 {
         text-align: center;
         margin-bottom: 30px;
-        font-size: ${ftSizes.M_ftSizeL};
+        font-size: ${FONT_SIZES.M_ftSizeL};
         text-transform: uppercase;
         ${DEBUG ? "background-color: lightgreen;" : ""}
     }
@@ -105,7 +105,7 @@ export const TextDiv = styled.div`
     & > p {
         text-align: center;
         font-weight: 300;
-        font-size: ${ftSizes.M_ftSizeMD};
+        font-size: ${FONT_SIZES.M_ftSizeMD};
         margin-bottom: 30px;
         ${DEBUG ? "background-color: lightblue;" : ""}
         /* padding-left: 20%;
@@ -118,11 +118,11 @@ export const TextDiv = styled.div`
         }
 
         & > h1 {
-            font-size: ${ftSizes.S_ftSizeL};
+            font-size: ${FONT_SIZES.S_ftSizeL};
         }
 
         & > p {
-            font-size: ${ftSizes.S_ftSizeMD};
+            font-size: ${FONT_SIZES.S_ftSizeMD};
             margin-bottom: 30px;
             padding-left: 0;
             padding-right: 0;

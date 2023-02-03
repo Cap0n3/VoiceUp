@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import { elementHeights } from "../../globalVars";
+import { ELEMENT_HEIGHTS } from "../../globalVars";
 
 const DEBUG = false;
 
@@ -10,7 +10,7 @@ export const PricingSection = styled.section`
     justify-content: center;
     gap: 25px;
     width: 100%;
-    min-height: ${elementHeights.sectionHeight + 100}px;
+    min-height: ${ELEMENT_HEIGHTS.sectionHeight + 100}px;
     padding: 60px 0 60px 0;
     overflow: hidden;
     ${DEBUG ? "background-color: lightblue;" : ""}
@@ -30,7 +30,7 @@ export const TableSection = styled.section`
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: ${elementHeights.sectionHeight}px;
+    min-height: ${ELEMENT_HEIGHTS.sectionHeight}px;
     padding: 60px 0 60px 0;
     overflow: hidden;
     background-color: ${VoiceUpColors.lightGrey};
@@ -41,7 +41,7 @@ export const FaqSection = styled.section`
     display: flex;
     justify-content: center;
     width: 100%;
-    min-height: ${elementHeights.sectionHeight}px;
+    min-height: ${ELEMENT_HEIGHTS.sectionHeight}px;
     padding: 60px 0 60px 0;
     overflow: hidden;
     background-color: ${VoiceUpColors.white};

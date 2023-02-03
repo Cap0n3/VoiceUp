@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import { ftSizes } from "../../globalVars";
+import { FONT_SIZES } from "../../globalVars";
 
 // === Card size === //
 const cardWidth = 380;
@@ -153,7 +153,7 @@ export const PriceTag = styled.div`
 
     & > h2 {
         color: ${VoiceUpColors.white};
-        font-size: ${ftSizes.M_ftSizeL};
+        font-size: ${FONT_SIZES.M_ftSizeL};
         text-transform: uppercase;
         text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
     }
@@ -183,13 +183,13 @@ export const ListItem = styled.li`
     align-items: center;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 300;
-    font-size: ${ftSizes.S_ftSizeMD};
+    font-size: ${FONT_SIZES.S_ftSizeMD};
     ${DEBUG ? "background-color: purple;" : ""}
 `;
 
 export const Sub = styled.span`
     color: rgba(255, 255, 255, 0.64);;
     font-weight: 300;
-    font-size: ${ftSizes.S_ftSizeSM};
+    font-size: ${FONT_SIZES.S_FONT_SIZESM};
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
 `;

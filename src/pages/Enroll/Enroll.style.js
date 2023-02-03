@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import { elementHeights } from "../../globalVars";
+import { ELEMENT_HEIGHTS } from "../../globalVars";
 
 const DEBUG = false;
 
@@ -9,7 +9,7 @@ export const EnrollSection = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: ${({winHeight}) => (winHeight ? (winHeight - elementHeights.navbarHeight) : elementHeights.sectionHeight)}px;
+    min-height: ${({winHeight}) => (winHeight ? (winHeight - ELEMENT_HEIGHTS.navbarHeight) : ELEMENT_HEIGHTS.sectionHeight)}px;
     padding: 60px 0 60px 0;
     width: 100%;
     background-color: ${VoiceUpColors.lightGrey};
