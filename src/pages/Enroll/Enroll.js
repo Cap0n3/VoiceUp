@@ -1,8 +1,11 @@
+import { useRef, useContext } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import { LangContext } from "../../App";
 import { enrollHeaderData } from "./data/Enroll.data";
 import { EnrollSection, EnrollFormContainer } from "./Enroll.style";
-import { Form, InputContainer, InputsWrapper, Label, Input, Select } from "../../globalStyles/globalCompStyles";
+import { Form, InputsContainer, InputWrapper, Label, Input, Select, Textarea, FilledBtn } from "../../globalStyles/globalCompStyles";
+import Recaptcha from "react-google-recaptcha";
 
 const levelOptions = [
     {value:"beginner", choiceFR:"Débutant", choiceEN: "Beginner"},
@@ -35,6 +38,8 @@ const hourOptions = [
 
 
 const Enroll = () => {
+    const {language} = useContext(LangContext);
+    const captchaRef = useRef(null);
 
     return(
         <>
@@ -42,57 +47,107 @@ const Enroll = () => {
             <EnrollSection>
                 <EnrollFormContainer>
                     <Form>
-                        <InputContainer>
-                            <InputsWrapper>
-                                <Label htmlFor="fname">Prénom</Label>
+                        <InputsContainer>
+                            <InputWrapper>
+                                <Label htmlFor="fname">{(language === "FR") ? "Prénom *" : "First Name *"}</Label>
                                 <Input type="text" name="fname" />
-                            </InputsWrapper>
-                            <InputsWrapper>
-                                <Label htmlFor="lname">Nom</Label>
+                            </InputWrapper>
+                            <InputWrapper>
+                                <Label htmlFor="lname">{(language === "FR") ? "Nom *" : "Last Name *"}</Label>
                                 <Input type="text" name="lname" />
-                            </InputsWrapper>
-                        </InputContainer>
-                        <InputContainer>
-                            <InputsWrapper>
-                                <Label htmlFor="email">E-mail</Label>
+                            </InputWrapper>
+                        </InputsContainer>
+                        <InputsContainer>
+                            <InputWrapper>
+                                <Label htmlFor="email">E-mail *</Label>
                                 <Input type="email" name="email" />
-                            </InputsWrapper>
-                            <InputsWrapper>
-                                <Label htmlFor="phone">Tél</Label>
+                            </InputWrapper>
+                            <InputWrapper>
+                                <Label htmlFor="phone">{(language === "FR") ? "Tél *" : "Phone *"}</Label>
                                 <Input type="tel" name="phone" />
-                            </InputsWrapper>
-                        </InputContainer>
-                        <InputContainer>
-                            <InputsWrapper>
-                                <Label htmlFor="level">Niveau de chant</Label>
+                            </InputWrapper>
+                        </InputsContainer>
+                        <InputsContainer>
+                            <InputWrapper>
+                                <Label htmlFor="level">{(language === "FR") ? "Niveau de chant *" : "Singing level *"}</Label>
                                 <Select defaultValue={"default"} name="level">
                                     <option value="default">-</option>
                                     {levelOptions.map((obj, index) => (
-                                        <option key={index} value={obj.value}>{obj.choiceFR}</option>
+                                        <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
                                     ))};
                                 </Select>
-                            </InputsWrapper>
-                        </InputContainer>
-                        <InputContainer>
-                            <InputsWrapper>
-                                <Label htmlFor="dayOption1">Jour - Option 1</Label>
+                            </InputWrapper>
+                        </InputsContainer>
+                        <InputsContainer>
+                            <InputWrapper>
+                                <Label htmlFor="dayOption1">{(language === "FR") ? "Jour - Option 1 *" : "Day - Option 1 *"}</Label>
                                 <Select defaultValue={"default"} name="dayOption1">
                                     <option value="default">-</option>
                                     {dayOptions.map((obj, index) => (
-                                        <option key={index} value={obj.value}>{obj.choiceFR}</option>
+                                        <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
                                     ))};
                                 </Select>
-                            </InputsWrapper>
-                            <InputsWrapper>
-                            <Label htmlFor="hourOption1">Heure - Option 1</Label>
+                            </InputWrapper>
+                            <InputWrapper>
+                            <Label htmlFor="hourOption1">{(language === "FR") ? "Heure - Option 1 *" : "Time - Option 1 *"}</Label>
                                 <Select defaultValue={"default"} name="hourOption1">
                                     <option value="default">-</option>
                                     {hourOptions.map((obj, index) => (
-                                        <option key={index} value={obj.value}>{obj.choiceFR}</option>
+                                        <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
                                     ))};
                                 </Select>
-                            </InputsWrapper>
-                        </InputContainer>
+                            </InputWrapper>
+                        </InputsContainer>
+                        <InputsContainer>
+                            <InputWrapper>
+                                    <Label htmlFor="dayOption2">{(language === "FR") ? "Jour - Option 2 *" : "Day - Option 2 *"}</Label>
+                                    <Select defaultValue={"default"} name="dayOption2">
+                                        <option value="default">-</option>
+                                        {dayOptions.map((obj, index) => (
+                                            <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
+                                        ))};
+                                    </Select>
+                            </InputWrapper>
+                            <InputWrapper>
+                            <Label htmlFor="hourOption2">{(language === "FR") ? "Heure - Option 2 *" : "Time - Option 2 *"}</Label>
+                                <Select defaultValue={"default"} name="hourOption2">
+                                    <option value="default">-</option>
+                                    {hourOptions.map((obj, index) => (
+                                        <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
+                                    ))};
+                                </Select>
+                            </InputWrapper>
+                        </InputsContainer>
+                        <InputsContainer>
+                            <InputWrapper>
+                                    <Label htmlFor="dayOption3">{(language === "FR") ? "Jour - Option 3 *" : "Day - Option 3 *"}</Label>
+                                    <Select defaultValue={"default"} name="dayOption3">
+                                        <option value="default">-</option>
+                                        {dayOptions.map((obj, index) => (
+                                            <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
+                                        ))};
+                                    </Select>
+                            </InputWrapper>
+                            <InputWrapper>
+                            <Label htmlFor="hourOption3">{(language === "FR") ? "Heure - Option 3 *" : "Time - Option 3 *"}</Label>
+                                <Select defaultValue={"default"} name="hourOption3">
+                                    <option value="default">-</option>
+                                    {hourOptions.map((obj, index) => (
+                                        <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
+                                    ))};
+                                </Select>
+                            </InputWrapper>
+                        </InputsContainer>
+                        <InputsContainer>
+                            <InputWrapper>
+                                <Label htmlFor="message">Message</Label>
+                                <Textarea name="message" />
+                            </InputWrapper>
+                        </InputsContainer>
+                        <Recaptcha sitekey={process.env.REACT_APP_SITE_KEY} ref={captchaRef} />
+                        <InputsContainer style={{marginTop: "30px"}}>
+                            <FilledBtn>{(language === "FR") ? "Envoyer" : "Send"}</FilledBtn>
+                        </InputsContainer>
                     </Form>
                 </EnrollFormContainer>
             </EnrollSection>

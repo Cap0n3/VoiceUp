@@ -1,8 +1,8 @@
 import { useContext, useState, useRef } from "react";
 import {
     Form, 
-    InputContainer, 
-    InputsWrapper,
+    InputsContainer, 
+    InputWrapper,
     Label,
     Input,
     InputError,
@@ -97,8 +97,8 @@ const ContactForm = () => {
             <InscriptionNote><InfoIcon />{language === "FR" ? <span>Pour les inscriptions, merci de remplir <NavLink className="inlineLink" to="/inscription">le formulaire ici.</NavLink></span> : <span>To enroll, please <NavLink className="inlineLink" to="/inscription">fill out form here.</NavLink></span>}</InscriptionNote>
             <MessageStatusBox className={msgStatus ? "show" : ""} status={msgStatus && msgStatus.status}>{msgStatus && msgStatus.msg}</MessageStatusBox>
             <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
-                <InputContainer>
-                    <InputsWrapper>
+                <InputsContainer>
+                    <InputWrapper>
                         <Label htmlFor="fname">{(language === "FR") ? "Prénom" : "First Name"}</Label>
                         <Input type="text" name="fname" {...register("firstName", { 
                             required: true, 
@@ -107,8 +107,8 @@ const ContactForm = () => {
                             pattern: /^[A-Za-zàéèäöüçÀÉÈÇ'^`-\s]+$/i
                         })} status={errors.firstName ? errors.firstName.type : null} />
                         {errors.firstName && getInputErrMsg(errors.firstName)}
-                    </InputsWrapper>
-                    <InputsWrapper>
+                    </InputWrapper>
+                    <InputWrapper>
                         <Label htmlFor="lname">{(language === "FR") ? "Nom" : "Last Name"}</Label>
                         <Input type="text" name="lname" {...register("lastName", { 
                             required: true, 
@@ -117,10 +117,10 @@ const ContactForm = () => {
                             pattern: /^[A-Za-za-zàéèäöüçÀÉÈÇ'^`-\s]+$/i
                         })} status={errors.lastName ? errors.lastName.type : null} />
                         {errors.lastName && getInputErrMsg(errors.lastName)}
-                    </InputsWrapper>             
-                </InputContainer>
-                <InputContainer>
-                    <InputsWrapper>
+                    </InputWrapper>             
+                </InputsContainer>
+                <InputsContainer>
+                    <InputWrapper>
                         <Label htmlFor="email">E-mail</Label>
                         <Input type="email" name="email" {...register("email", { 
                             required: true, 
@@ -129,8 +129,8 @@ const ContactForm = () => {
                             pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
                         })} status={errors.email ? errors.email.type : null} />
                         {errors.email && getInputErrMsg(errors.email)}
-                    </InputsWrapper>
-                    <InputsWrapper>
+                    </InputWrapper>
+                    <InputWrapper>
                         <Label htmlFor="phone">{(language === "FR") ? "Tél" : "Phone"}</Label>
                         <Input type="tel" name="phone" {...register("phone", { 
                             required: true, 
@@ -139,24 +139,24 @@ const ContactForm = () => {
                             pattern: /^(\+(41|33)|00\s?(41|33)|0\d{1,2})(\s?\(0\))?(\s)?(\d{1,2})(\s)?(\d{2,3})(\s)?(\d{2})(\s)?(\d{2})(\s)?(\d{2})?$/
                         })} status={errors.phone ? errors.phone.type : null} />
                         {errors.phone && getInputErrMsg(errors.phone)}
-                    </InputsWrapper> 
-                </InputContainer>
-                <InputContainer>
-                    <InputsWrapper>
-                        <Label htmlFor="Message">{(language === "FR") ? "Votre message" : "Message"}</Label>
+                    </InputWrapper> 
+                </InputsContainer>
+                <InputsContainer>
+                    <InputWrapper>
+                        <Label htmlFor="message">{(language === "FR") ? "Votre message" : "Message"}</Label>
                         <Textarea name="message" {...register("message", { 
                             required: true, 
                             minLength: 2, 
                             maxLength: 1000,
                             pattern: /^[a-zA-Z0-9àéèäöüç°ÀÉÈÇ.():;!#$%&'*+/=?^_`~-\s]+$/i
-                        })} status={errors.message ? errors.message.type : null}></Textarea>
+                        })} status={errors.message ? errors.message.type : null} />
                         {errors.message && getInputErrMsg(errors.message)}
-                    </InputsWrapper>
-                </InputContainer>
+                    </InputWrapper>
+                </InputsContainer>
                 <Recaptcha sitekey={process.env.REACT_APP_SITE_KEY} ref={captchaRef} />
-                <InputContainer style={{marginTop: "30px"}}>
+                <InputsContainer style={{marginTop: "30px"}}>
                     <FilledBtn>{(language === "FR") ? "Envoyer" : "Send"}</FilledBtn>
-                </InputContainer>
+                </InputsContainer>
             </Form>
         </> 
     );

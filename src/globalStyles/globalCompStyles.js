@@ -104,7 +104,7 @@ export const Form = styled.form`
     }
 `;
 
-export const InputContainer = styled.div`
+export const InputsContainer = styled.div`
     display: flex;
     gap: 40px;
     width: 100%;
@@ -117,7 +117,7 @@ export const InputContainer = styled.div`
     }
 `;
 
-export const InputsWrapper = styled.div`
+export const InputWrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
