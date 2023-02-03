@@ -21,6 +21,7 @@ import Recaptcha from "react-google-recaptcha";
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { FORM_REGEX } from "../../globalVars";
+import { getInputErrMsg } from "../../helpers/inputsError";
 
 /**
  * IMPORTANT ! Deactivate StrictMode to avoid issues with recaptcha V2 during development stage (captcha rendered just once).
@@ -46,7 +47,6 @@ const ContactForm = () => {
 
     const onSubmit = (data) => {
         const token = captchaRef.current.getValue();
-        console.log(token);
         if(token){
             sendEmail();
             captchaRef.current.reset();
@@ -55,34 +55,6 @@ const ContactForm = () => {
             setMsgStatus({status : "warn", msg: language === "FR" ? "Merci de remplir le captcha" : "Please fill out the captcha"});
         }
     };
-
-    const getInputErrMsg = (errObj) => {
-        let msgFR="";
-        let msgEN="";
-
-        if(errObj.type === "required") {
-            msgFR="Champs requis"
-            msgEN="Required"
-            return <InputError status="warn"><WarnIcon />{language === "FR" ? msgFR : msgEN}</InputError>;
-        }
-        else if(errObj.type === "pattern") {
-            msgFR="Format non valide";
-            msgEN="Not valid"
-        }
-        else if(errObj.type === "minLength") {
-            msgFR="Minimum 2 caractères !";
-            msgEN="At least 2 characters !"
-        }
-        else if(errObj.type === "maxLength") {
-            msgFR="Nombre maximum de caractères atteint !";
-            msgEN="Maximum length reached !";
-        }
-        else {
-            msgFR="Une erreur est survenue !";
-            msgEN="An error occured !";
-        }
-        return <InputError><ErrorIcon />{language === "FR" ? msgFR : msgEN}</InputError>;
-    }
 
     useEffect(() => {
         if(msgStatus) {
@@ -107,7 +79,7 @@ const ContactForm = () => {
                             maxLength: 25,
                             pattern: FORM_REGEX.nameRgx
                         })} status={errors.firstName ? errors.firstName.type : null} />
-                        {errors.firstName && getInputErrMsg(errors.firstName)}
+                        {errors.firstName && getInputErrMsg(errors.firstName, language)}
                     </InputWrapper>
                     <InputWrapper>
                         <Label htmlFor="lname">{(language === "FR") ? "Nom" : "Last Name"}</Label>
@@ -117,7 +89,7 @@ const ContactForm = () => {
                             maxLength: 25,
                             pattern: FORM_REGEX.nameRgx
                         })} status={errors.lastName ? errors.lastName.type : null} />
-                        {errors.lastName && getInputErrMsg(errors.lastName)}
+                        {errors.lastName && getInputErrMsg(errors.lastName, language)}
                     </InputWrapper>             
                 </InputsContainer>
                 <InputsContainer>
@@ -126,10 +98,10 @@ const ContactForm = () => {
                         <Input type="email" name="email" {...register("email", { 
                             required: true, 
                             minLength: 2, 
-                            maxLength: 25,
+                            maxLength: 50,
                             pattern: FORM_REGEX.emailRgx
                         })} status={errors.email ? errors.email.type : null} />
-                        {errors.email && getInputErrMsg(errors.email)}
+                        {errors.email && getInputErrMsg(errors.email, language)}
                     </InputWrapper>
                     <InputWrapper>
                         <Label htmlFor="phone">{(language === "FR") ? "Tél" : "Phone"}</Label>
@@ -139,7 +111,7 @@ const ContactForm = () => {
                             maxLength: 25,
                             pattern: FORM_REGEX.phoneRgx
                         })} status={errors.phone ? errors.phone.type : null} />
-                        {errors.phone && getInputErrMsg(errors.phone)}
+                        {errors.phone && getInputErrMsg(errors.phone, language)}
                     </InputWrapper> 
                 </InputsContainer>
                 <InputsContainer>
@@ -151,7 +123,7 @@ const ContactForm = () => {
                             maxLength: 1000,
                             pattern: FORM_REGEX.messageRgx
                         })} status={errors.message ? errors.message.type : null} />
-                        {errors.message && getInputErrMsg(errors.message)}
+                        {errors.message && getInputErrMsg(errors.message, language)}
                     </InputWrapper>
                 </InputsContainer>
                 <Recaptcha sitekey={process.env.REACT_APP_SITE_KEY} ref={captchaRef} />

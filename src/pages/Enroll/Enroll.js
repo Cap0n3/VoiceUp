@@ -1,4 +1,4 @@
-import { useRef, useContext } from "react";
+import { useRef, useContext, useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { LangContext } from "../../App";
@@ -6,9 +6,10 @@ import { useForm } from "react-hook-form";
 import emailjs from '@emailjs/browser';
 import { enrollHeaderData } from "./data/Enroll.data";
 import { EnrollSection, EnrollFormContainer } from "./Enroll.style";
-import { Form, InputsContainer, InputWrapper, Label, Input, Select, Textarea, FilledBtn } from "../../globalStyles/globalCompStyles";
+import { Form, InputsContainer, InputWrapper, Label, Input, Select, Textarea, MessageStatusBox, FilledBtn } from "../../globalStyles/globalCompStyles";
 import Recaptcha from "react-google-recaptcha";
 import { FORM_REGEX } from "../../globalVars";
+import { getInputErrMsg } from "../../helpers/inputsError";
 
 const levelOptions = [
     {value:"beginner", choiceFR:"Débutant", choiceEN: "Beginner"},
@@ -43,25 +44,47 @@ const Enroll = () => {
     const formRef = useRef(null);
     const captchaRef = useRef(null);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const [msgStatus, setMsgStatus] = useState(null);
+
+    const sendEmail = () => {
+        emailjs.sendForm('service_q8gv1tb', 'template_n3xc4fl', formRef.current, 'rGeZyDR1JuIAHpM0N')
+            .then((result) => {
+                setMsgStatus({status : "success", msg: language === "FR" ? "Message envoyé !" : "Message sent !", responseObject: result});
+                reset();
+            }, (error) => {
+                console.log(error);
+                setMsgStatus({status : "error", msg: language === "FR" ? "Une erreur est survenue, le serveur n'est pas joignable !" : "An error occured, server unreachable !", responseObject: error});
+            });
+    }
 
     const onSubmit = (data) => {
-        // const token = captchaRef.current.getValue();
-        // console.log(token);
-        // if(token){
-        //     sendEmail();
-        //     captchaRef.current.reset();
-        // }
-        // else {
-        //     setMsgStatus({status : "warn", msg: language === "FR" ? "Merci de remplir le captcha" : "Please fill out the captcha"});
-        // }
+        const token = captchaRef.current.getValue();
+        //console.log(token);
         console.log(data);
+        if(token){
+            sendEmail();
+            captchaRef.current.reset();
+        }
+        else {
+            setMsgStatus({status : "warn", msg: language === "FR" ? "Merci de remplir le captcha" : "Please fill out the captcha"});
+        }
     };
+
+    useEffect(() => {
+        if(msgStatus) {
+            // Make info, warn and error messages disappear
+            setTimeout(() => {
+                setMsgStatus(null);
+            }, 4000);
+        }
+    }, [msgStatus]);
 
     return(
         <>
             <Header data={enrollHeaderData} position={{posX: 0, posY: 50}} />
             <EnrollSection>
                 <EnrollFormContainer>
+                    <MessageStatusBox className={msgStatus ? "show" : ""} status={msgStatus && msgStatus.status}>{msgStatus && msgStatus.msg}</MessageStatusBox>
                     <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                         <InputsContainer>
                             <InputWrapper>
@@ -72,6 +95,7 @@ const Enroll = () => {
                                     maxLength: 25,
                                     pattern: FORM_REGEX.nameRgx
                                 })} status={errors.firstName ? errors.firstName.type : null}/>
+                                {errors.firstName && getInputErrMsg(errors.firstName, language)}
                             </InputWrapper>
                             <InputWrapper>
                                 <Label htmlFor="lname">{(language === "FR") ? "Nom *" : "Last Name *"}</Label>
@@ -81,6 +105,7 @@ const Enroll = () => {
                                     maxLength: 25,
                                     pattern: FORM_REGEX.nameRgx
                                 })} status={errors.lastName ? errors.lastName.type : null}/>
+                                {errors.lastName && getInputErrMsg(errors.lastName, language)}
                             </InputWrapper>
                         </InputsContainer>
                         <InputsContainer>
@@ -89,9 +114,10 @@ const Enroll = () => {
                                 <Input type="email" name="email" {...register("email", { 
                                     required: true, 
                                     minLength: 2, 
-                                    maxLength: 25,
+                                    maxLength: 50,
                                     pattern: FORM_REGEX.emailRgx
                                 })} status={errors.email ? errors.email.type : null}/>
+                                {errors.email && getInputErrMsg(errors.email, language)}
                             </InputWrapper>
                             <InputWrapper>
                                 <Label htmlFor="phone">{(language === "FR") ? "Tél *" : "Phone *"}</Label>
@@ -101,6 +127,7 @@ const Enroll = () => {
                                     maxLength: 25,
                                     pattern: FORM_REGEX.phoneRgx
                                 })} status={errors.phone ? errors.phone.type : null}/>
+                                {errors.phone && getInputErrMsg(errors.phone, language)}
                             </InputWrapper>
                         </InputsContainer>
                         <InputsContainer>
@@ -183,6 +210,7 @@ const Enroll = () => {
                                     maxLength: 1000,
                                     pattern: FORM_REGEX.messageRgx
                                 })} status={errors.message ? errors.message.type : null} />
+                                {errors.message && getInputErrMsg(errors.message, language)}
                             </InputWrapper>
                         </InputsContainer>
                         <Recaptcha sitekey={process.env.REACT_APP_SITE_KEY} ref={captchaRef} />
