@@ -48,7 +48,7 @@ const PriceCard = ({data}) => {
 						)}
 					</List>
 				</ListWrapper>
-				<OutlineBtn style={{marginTop: "10px"}}>S'inscrire</OutlineBtn>
+				<OutlineBtn to="/inscription" style={{marginTop: "10px"}}>S'inscrire</OutlineBtn>
 			</CardBodyWrapper>
 		</PCard>
 	</CardContainer>

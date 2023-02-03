@@ -49,14 +49,16 @@ const GlobalStyle = createGlobalStyle`
 
     &.inlineLink {
         text-decoration: none;
-        color: ${VoiceUpColors.purple};
+        color: ${VoiceUpColors.gold};
+        font-weight: 500;
 
-        &:visited {
+        ${'' /* &:visited {
             color: ${VoiceUpColors.purple};
-        }
+        } */}
 
         &:hover {
-            color: ${VoiceUpColors.gold};
+            text-decoration: underline;
+            color: ${VoiceUpColors.purple};
         }
     }
 `;

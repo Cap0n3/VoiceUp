@@ -94,7 +94,7 @@ const ContactForm = () => {
 
     return(
         <>
-            <InscriptionNote><InfoIcon />{language === "FR" ? <span>Pour les inscriptions, merci de remplir <NavLink className="inlineLink">le formulaire ici.</NavLink></span> : "To enroll, please fill out form here."}</InscriptionNote>
+            <InscriptionNote><InfoIcon />{language === "FR" ? <span>Pour les inscriptions, merci de remplir <NavLink className="inlineLink" to="/inscription">le formulaire ici.</NavLink></span> : <span>To enroll, please <NavLink className="inlineLink" to="/inscription">fill out form here.</NavLink></span>}</InscriptionNote>
             <MessageStatusBox className={msgStatus ? "show" : ""} status={msgStatus && msgStatus.status}>{msgStatus && msgStatus.msg}</MessageStatusBox>
             <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                 <InputContainer>
