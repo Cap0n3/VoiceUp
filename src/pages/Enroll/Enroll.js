@@ -21,7 +21,7 @@ const levelOptions = [
 
 const dayOptions = [
     {value:"monday", choiceFR:"Lundi", choiceEN: "Monday"},
-    {value:"tuesday", choiceFR:"Intermédiaire", choiceEN: "Tuesday"},
+    {value:"tuesday", choiceFR:"Mardi", choiceEN: "Tuesday"},
     {value:"wednesday", choiceFR:"Mercredi", choiceEN: "Wednesday"},
     {value:"thursday", choiceFR:"Jeudi", choiceEN: "thursday"},
     {value:"friday", choiceFR:"Vendredi", choiceEN: "Friday"}
@@ -57,12 +57,16 @@ const Enroll = () => {
             });
     }
 
+    const validateSelect = (value) => {
+        return value !== "default";
+    }
+
     const onSubmit = (data) => {
         const token = captchaRef.current.getValue();
         //console.log(token);
-        console.log(data);
         if(token){
-            sendEmail();
+            //sendEmail();
+            console.log(data);
             captchaRef.current.reset();
         }
         else {
@@ -133,32 +137,44 @@ const Enroll = () => {
                         <InputsContainer>
                             <InputWrapper>
                                 <Label htmlFor="level">{(language === "FR") ? "Niveau de chant *" : "Singing level *"}</Label>
-                                <Select defaultValue={"default"} name="level">
+                                <Select defaultValue={"default"} name="level" {...register("level", {
+                                    required: true,
+                                    validate: validateSelect
+                                })}>
                                     <option value="default">-</option>
                                     {levelOptions.map((obj, index) => (
                                         <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
                                     ))};
                                 </Select>
+                                {errors.level && getInputErrMsg(errors.level, language)}
                             </InputWrapper>
                         </InputsContainer>
                         <InputsContainer>
                             <InputWrapper>
                                 <Label htmlFor="dayOption1">{(language === "FR") ? "Jour - Option 1 *" : "Day - Option 1 *"}</Label>
-                                <Select defaultValue={"default"} name="dayOption1">
+                                <Select defaultValue={"default"} name="dayOption1" {...register("dayOption1", {
+                                    required: true,
+                                    validate: validateSelect
+                                })}>
                                     <option value="default">-</option>
                                     {dayOptions.map((obj, index) => (
                                         <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
                                     ))};
                                 </Select>
+                                {errors.dayOption1 && getInputErrMsg(errors.dayOption1, language)}
                             </InputWrapper>
                             <InputWrapper>
                             <Label htmlFor="hourOption1">{(language === "FR") ? "Heure - Option 1 *" : "Time - Option 1 *"}</Label>
-                                <Select defaultValue={"default"} name="hourOption1">
+                                <Select defaultValue={"default"} name="hourOption1" {...register("hourOption1", {
+                                    required: true,
+                                    validate: validateSelect
+                                })}>
                                     <option value="default">-</option>
                                     {hourOptions.map((obj, index) => (
                                         <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
                                     ))};
                                 </Select>
+                                {errors.hourOption1 && getInputErrMsg(errors.hourOption1, language)}
                             </InputWrapper>
                         </InputsContainer>
                         <InputsContainer>
