@@ -20,7 +20,7 @@ import emailjs from '@emailjs/browser';
 import Recaptcha from "react-google-recaptcha";
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { FORM_REGEX } from "../../globalVars";
+import { FORM_REGEX, EMAILJS_IDS } from "../../globalVars";
 import { getInputErrMsg } from "../../helpers/inputsError";
 
 /**
@@ -35,7 +35,7 @@ const ContactForm = () => {
     const [msgStatus, setMsgStatus] = useState(null);
 
     const sendEmail = () => {
-        emailjs.sendForm('service_q8gv1tb', 'template_n3xc4fl', formRef.current, 'rGeZyDR1JuIAHpM0N')
+        emailjs.sendForm(EMAILJS_IDS.serviceID_contact, EMAILJS_IDS.templateID_contact, formRef.current, EMAILJS_IDS.publicKey_emailjs)
             .then((result) => {
                 setMsgStatus({status : "success", msg: language === "FR" ? "Message envoyé !" : "Message sent !", responseObject: result});
                 reset();

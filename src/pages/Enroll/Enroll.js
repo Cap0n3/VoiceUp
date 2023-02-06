@@ -8,7 +8,7 @@ import { enrollHeaderData } from "./data/Enroll.data";
 import { EnrollSection, EnrollFormContainer } from "./Enroll.style";
 import { Form, InputsContainer, InputWrapper, Label, Input, Select, Textarea, MessageStatusBox, FilledBtn } from "../../globalStyles/globalCompStyles";
 import Recaptcha from "react-google-recaptcha";
-import { FORM_REGEX } from "../../globalVars";
+import { FORM_REGEX, EMAILJS_IDS } from "../../globalVars";
 import { getInputErrMsg } from "../../helpers/inputsError";
 
 const levelOptions = [
@@ -47,7 +47,7 @@ const Enroll = () => {
     const [msgStatus, setMsgStatus] = useState(null);
 
     const sendEmail = () => {
-        emailjs.sendForm('service_q8gv1tb', 'template_n3xc4fl', formRef.current, 'rGeZyDR1JuIAHpM0N')
+        emailjs.sendForm(EMAILJS_IDS.serviceID_enroll, EMAILJS_IDS.templateID_enroll, formRef.current, EMAILJS_IDS.publicKey_emailjs)
             .then((result) => {
                 setMsgStatus({status : "success", msg: language === "FR" ? "Message envoyé !" : "Message sent !", responseObject: result});
                 reset();
@@ -65,7 +65,7 @@ const Enroll = () => {
         const token = captchaRef.current.getValue();
         //console.log(token);
         if(token){
-            //sendEmail();
+            sendEmail();
             console.log(data);
             captchaRef.current.reset();
         }

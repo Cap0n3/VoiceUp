@@ -37,3 +37,13 @@ export const FORM_REGEX = {
     phoneRgx: /^(\+(41|33)|00\s?(41|33)|0\d{1,2})(\s?\(0\))?(\s)?(\d{1,2})(\s)?(\d{2,3})(\s)?(\d{2})(\s)?(\d{2})(\s)?(\d{2})?$/,
     messageRgx: /^[a-zA-Z0-9àéèäöüç°ÀÉÈÇ.():;!#$%&'*+/=?^_`~-\s]+$/i
 }
+
+// === EMAILJS IDS === //
+
+export const EMAILJS_IDS = {
+    serviceID_contact: "service_l7sqp28", 
+    templateID_contact: "template_dilna6i",
+    serviceID_enroll: "service_l7sqp28", 
+    templateID_enroll: "template_sl3f9x1",
+    publicKey_emailjs: "rGeZyDR1JuIAHpM0N"
+}
