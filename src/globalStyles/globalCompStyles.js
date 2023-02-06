@@ -186,10 +186,7 @@ export const Input = styled.input`
 export const Select = styled.select`
     width: 100%;
     border: 1px solid ${({status}) => 
-        (status === "required" && "#f2c779") ||
-        (status === "minLength" && "#f5aca6") ||
-        (status === "maxLength" && "#f5aca6") ||
-        (status === "pattern" && "#f5aca6") ||
+        (status === "validate" && "#f2c779") ||
         VoiceUpColors.grey
     };
     border-radius: 10px;

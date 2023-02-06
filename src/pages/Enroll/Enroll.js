@@ -12,31 +12,31 @@ import { FORM_REGEX } from "../../globalVars";
 import { getInputErrMsg } from "../../helpers/inputsError";
 
 const levelOptions = [
-    {value:"beginner", choiceFR:"Débutant", choiceEN: "Beginner"},
-    {value:"intermediary", choiceFR:"Intermédiaire", choiceEN: "Intermediary"},
-    {value:"advanced", choiceFR:"Avancé", choiceEN: "Advanced"},
-    {value:"semiPro", choiceFR:"Semi-pro", choiceEN: "Semi-pro"},
-    {value:"pro", choiceFR:"Professionnel", choiceEN: "Professionnal"}
+    {value:"débutant", choiceFR:"Débutant", choiceEN: "Beginner"},
+    {value:"intermédiaire", choiceFR:"Intermédiaire", choiceEN: "Intermediary"},
+    {value:"avancé", choiceFR:"Avancé", choiceEN: "Advanced"},
+    {value:"semi-pro", choiceFR:"Semi-pro", choiceEN: "Semi-pro"},
+    {value:"professionnel", choiceFR:"Professionnel", choiceEN: "Professionnal"}
 ];
 
 const dayOptions = [
-    {value:"monday", choiceFR:"Lundi", choiceEN: "Monday"},
-    {value:"tuesday", choiceFR:"Mardi", choiceEN: "Tuesday"},
-    {value:"wednesday", choiceFR:"Mercredi", choiceEN: "Wednesday"},
-    {value:"thursday", choiceFR:"Jeudi", choiceEN: "thursday"},
-    {value:"friday", choiceFR:"Vendredi", choiceEN: "Friday"}
+    {value:"lundi", choiceFR:"Lundi", choiceEN: "Monday"},
+    {value:"mardi", choiceFR:"Mardi", choiceEN: "Tuesday"},
+    {value:"mercredi", choiceFR:"Mercredi", choiceEN: "Wednesday"},
+    {value:"jeudi", choiceFR:"Jeudi", choiceEN: "thursday"},
+    {value:"vendredi", choiceFR:"Vendredi", choiceEN: "Friday"}
 ];
 
 const hourOptions = [
-    {value:"11am", choiceFR:"11:00", choiceEN: "11AM"},
-    {value:"noon", choiceFR:"12:00", choiceEN: "Noon"},
-    {value:"1pm", choiceFR:"13:00", choiceEN: "1PM"},
-    {value:"2pm", choiceFR:"14:00", choiceEN: "2PM"},
-    {value:"3pm", choiceFR:"15:00", choiceEN: "3PM"},
-    {value:"4pm", choiceFR:"16:00", choiceEN: "4PM"},
-    {value:"5pm", choiceFR:"17:00", choiceEN: "5PM"},
-    {value:"6pm", choiceFR:"18:00", choiceEN: "6PM"},
-    {value:"7pm", choiceFR:"19:00", choiceEN: "7PM"},
+    {value:"11:00", choiceFR:"11:00", choiceEN: "11AM"},
+    {value:"12:00", choiceFR:"12:00", choiceEN: "12AM"},
+    {value:"13:00", choiceFR:"13:00", choiceEN: "1PM"},
+    {value:"14:00", choiceFR:"14:00", choiceEN: "2PM"},
+    {value:"15:00", choiceFR:"15:00", choiceEN: "3PM"},
+    {value:"16:00", choiceFR:"16:00", choiceEN: "4PM"},
+    {value:"17:00", choiceFR:"17:00", choiceEN: "5PM"},
+    {value:"18:00", choiceFR:"18:00", choiceEN: "6PM"},
+    {value:"19:00", choiceFR:"19:00", choiceEN: "7PM"},
 ];
 
 const Enroll = () => {
@@ -98,7 +98,7 @@ const Enroll = () => {
                                     minLength: 2, 
                                     maxLength: 25,
                                     pattern: FORM_REGEX.nameRgx
-                                })} status={errors.firstName ? errors.firstName.type : null}/>
+                                })} status={errors.firstName ? errors.firstName.type : null} />
                                 {errors.firstName && getInputErrMsg(errors.firstName, language)}
                             </InputWrapper>
                             <InputWrapper>
@@ -108,7 +108,7 @@ const Enroll = () => {
                                     minLength: 2, 
                                     maxLength: 25,
                                     pattern: FORM_REGEX.nameRgx
-                                })} status={errors.lastName ? errors.lastName.type : null}/>
+                                })} status={errors.lastName ? errors.lastName.type : null} />
                                 {errors.lastName && getInputErrMsg(errors.lastName, language)}
                             </InputWrapper>
                         </InputsContainer>
@@ -120,7 +120,7 @@ const Enroll = () => {
                                     minLength: 2, 
                                     maxLength: 50,
                                     pattern: FORM_REGEX.emailRgx
-                                })} status={errors.email ? errors.email.type : null}/>
+                                })} status={errors.email ? errors.email.type : null} />
                                 {errors.email && getInputErrMsg(errors.email, language)}
                             </InputWrapper>
                             <InputWrapper>
@@ -130,17 +130,18 @@ const Enroll = () => {
                                     minLength: 2, 
                                     maxLength: 25,
                                     pattern: FORM_REGEX.phoneRgx
-                                })} status={errors.phone ? errors.phone.type : null}/>
+                                })} status={errors.phone ? errors.phone.type : null} />
                                 {errors.phone && getInputErrMsg(errors.phone, language)}
                             </InputWrapper>
                         </InputsContainer>
                         <InputsContainer>
+                            {/* SELECT BOX - LEVEL */}
                             <InputWrapper>
                                 <Label htmlFor="level">{(language === "FR") ? "Niveau de chant *" : "Singing level *"}</Label>
                                 <Select defaultValue={"default"} name="level" {...register("level", {
-                                    required: true,
-                                    validate: validateSelect
-                                })}>
+                                        required: true,
+                                        validate: validateSelect
+                                    })} status={errors.level ? errors.level.type : null}>
                                     <option value="default">-</option>
                                     {levelOptions.map((obj, index) => (
                                         <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
@@ -151,11 +152,12 @@ const Enroll = () => {
                         </InputsContainer>
                         <InputsContainer>
                             <InputWrapper>
+                                {/* SELECT BOX - DAY OPTION 1 */}
                                 <Label htmlFor="dayOption1">{(language === "FR") ? "Jour - Option 1 *" : "Day - Option 1 *"}</Label>
                                 <Select defaultValue={"default"} name="dayOption1" {...register("dayOption1", {
-                                    required: true,
-                                    validate: validateSelect
-                                })}>
+                                        required: true,
+                                        validate: validateSelect
+                                    })} status={errors.dayOption1 ? errors.dayOption1.type : null}>
                                     <option value="default">-</option>
                                     {dayOptions.map((obj, index) => (
                                         <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
@@ -166,9 +168,9 @@ const Enroll = () => {
                             <InputWrapper>
                             <Label htmlFor="hourOption1">{(language === "FR") ? "Heure - Option 1 *" : "Time - Option 1 *"}</Label>
                                 <Select defaultValue={"default"} name="hourOption1" {...register("hourOption1", {
-                                    required: true,
-                                    validate: validateSelect
-                                })}>
+                                        required: true,
+                                        validate: validateSelect
+                                    })} status={errors.hourOption1 ? errors.hourOption1.type : null}>
                                     <option value="default">-</option>
                                     {hourOptions.map((obj, index) => (
                                         <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
@@ -178,46 +180,65 @@ const Enroll = () => {
                             </InputWrapper>
                         </InputsContainer>
                         <InputsContainer>
+                            {/* SELECT BOX - DAY OPTION 2 */}
                             <InputWrapper>
                                     <Label htmlFor="dayOption2">{(language === "FR") ? "Jour - Option 2 *" : "Day - Option 2 *"}</Label>
-                                    <Select defaultValue={"default"} name="dayOption2">
+                                    <Select defaultValue={"default"} name="dayOption2" {...register("dayOption2", {
+                                            required: true,
+                                            validate: validateSelect
+                                        })} status={errors.dayOption2 ? errors.dayOption2.type : null}>
                                         <option value="default">-</option>
                                         {dayOptions.map((obj, index) => (
                                             <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
                                         ))};
                                     </Select>
+                                    {errors.dayOption2 && getInputErrMsg(errors.dayOption2, language)}
                             </InputWrapper>
                             <InputWrapper>
                             <Label htmlFor="hourOption2">{(language === "FR") ? "Heure - Option 2 *" : "Time - Option 2 *"}</Label>
-                                <Select defaultValue={"default"} name="hourOption2">
+                                <Select defaultValue={"default"} name="hourOption2" {...register("hourOption2", {
+                                    required: true,
+                                    validate: validateSelect
+                                })} status={errors.hourOption2 ? errors.hourOption2.type : null}>
                                     <option value="default">-</option>
                                     {hourOptions.map((obj, index) => (
                                         <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
                                     ))};
                                 </Select>
+                                {errors.hourOption2 && getInputErrMsg(errors.hourOption2, language)}
                             </InputWrapper>
                         </InputsContainer>
                         <InputsContainer>
+                            {/* SELECT BOX - DAY OPTION 3*/}
                             <InputWrapper>
                                     <Label htmlFor="dayOption3">{(language === "FR") ? "Jour - Option 3 *" : "Day - Option 3 *"}</Label>
-                                    <Select defaultValue={"default"} name="dayOption3">
+                                    <Select defaultValue={"default"} name="dayOption3" {...register("dayOption3", {
+                                            required: true,
+                                            validate: validateSelect
+                                        })} status={errors.dayOption3 ? errors.dayOption3.type : null}>
                                         <option value="default">-</option>
                                         {dayOptions.map((obj, index) => (
                                             <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
                                         ))};
                                     </Select>
+                                    {errors.dayOption3 && getInputErrMsg(errors.dayOption3, language)}
                             </InputWrapper>
                             <InputWrapper>
                             <Label htmlFor="hourOption3">{(language === "FR") ? "Heure - Option 3 *" : "Time - Option 3 *"}</Label>
-                                <Select defaultValue={"default"} name="hourOption3">
+                                <Select defaultValue={"default"} name="hourOption3" {...register("hourOption3", {
+                                        required: true,
+                                        validate: validateSelect
+                                    })} status={errors.hourOption3 ? errors.hourOption3.type : null}>
                                     <option value="default">-</option>
                                     {hourOptions.map((obj, index) => (
                                         <option key={index} value={obj.value}>{language === "FR" ? obj.choiceFR : obj.choiceEN}</option>
                                     ))};
                                 </Select>
+                                {errors.hourOption3 && getInputErrMsg(errors.hourOption3, language)}
                             </InputWrapper>
                         </InputsContainer>
                         <InputsContainer>
+                            {/* TEXT BOX */}
                             <InputWrapper>
                                 <Label htmlFor="message">Message *</Label>
                                 <Textarea name="message" {...register("message", { 
