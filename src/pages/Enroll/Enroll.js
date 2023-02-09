@@ -6,7 +6,17 @@ import { useForm } from "react-hook-form";
 import emailjs from '@emailjs/browser';
 import { enrollHeaderData } from "./data/Enroll.data";
 import { EnrollSection, EnrollFormContainer } from "./Enroll.style";
-import { Form, InputsContainer, InputWrapper, Label, Input, Select, Textarea, MessageStatusBox, FilledBtn } from "../../globalStyles/globalCompStyles";
+import { 
+    Form, 
+    InputsContainer, 
+    InputWrapper, 
+    Label, 
+    Input, 
+    Select, 
+    Textarea, 
+    MessageStatusBox, 
+    FilledBtn 
+} from "../../globalStyles/globalCompStyles";
 import Recaptcha from "react-google-recaptcha";
 import { FORM_REGEX, EMAILJS_IDS } from "../../globalVars";
 import { getInputErrMsg } from "../../helpers/inputsError";
@@ -45,15 +55,24 @@ const Enroll = () => {
     const captchaRef = useRef(null);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [msgStatus, setMsgStatus] = useState(null);
+    const [showWaitRespMsg, setShowWaitRespMsg] = useState(false);
+    const [isStatusBoxVisible, setIsStatusBoxVisible] = useState(false);
 
-    const sendEmail = () => {
+    const sendEmail = (e) => {
+        e.preventDefault();
         emailjs.sendForm(EMAILJS_IDS.serviceID_enroll, EMAILJS_IDS.templateID_enroll, formRef.current, EMAILJS_IDS.publicKey_emailjs)
             .then((result) => {
+                // Hide wait message
+                setShowWaitRespMsg(false);
+                // Show success to user
                 setMsgStatus({status : "success", msg: language === "FR" ? "Message envoyé !" : "Message sent !", responseObject: result});
+                setIsStatusBoxVisible(true);
                 reset();
             }, (error) => {
                 console.log(error);
+                // Display error message for user
                 setMsgStatus({status : "error", msg: language === "FR" ? "Une erreur est survenue, le serveur n'est pas joignable !" : "An error occured, server unreachable !", responseObject: error});
+                setIsStatusBoxVisible(true);
             });
     }
 
@@ -61,24 +80,38 @@ const Enroll = () => {
         return value !== "default";
     }
 
-    const onSubmit = (data) => {
+    const mockSendTest = () => {
+        setTimeout(() => {
+            setShowWaitRespMsg(false);
+            setIsStatusBoxVisible(true);
+            setMsgStatus({status : "success", msg: language === "FR" ? "Message envoyé !" : "Message sent !", responseObject: ""});
+        }, 1000);
+    }
+
+    const onSubmit = (data, e) => {
         const token = captchaRef.current.getValue();
-        //console.log(token);
+
         if(token){
-            sendEmail();
-            console.log(data);
+            setShowWaitRespMsg(true); // Show wait message to user
+            //sendEmail(e);
+            mockSendTest();
             captchaRef.current.reset();
         }
         else {
+            // Captcha was not filled
+            setIsStatusBoxVisible(true);
             setMsgStatus({status : "warn", msg: language === "FR" ? "Merci de remplir le captcha" : "Please fill out the captcha"});
         }
     };
 
+    /**
+     * If there's a status message, set a timer to make it disappear after X seconds
+     */
     useEffect(() => {
         if(msgStatus) {
             // Make info, warn and error messages disappear
             setTimeout(() => {
-                setMsgStatus(null);
+                setIsStatusBoxVisible(false);
             }, 4000);
         }
     }, [msgStatus]);
@@ -88,7 +121,6 @@ const Enroll = () => {
             <Header data={enrollHeaderData} position={{posX: 0, posY: 50}} />
             <EnrollSection>
                 <EnrollFormContainer>
-                    <MessageStatusBox className={msgStatus ? "show" : ""} status={msgStatus && msgStatus.status}>{msgStatus && msgStatus.msg}</MessageStatusBox>
                     <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                         <InputsContainer>
                             <InputWrapper>
@@ -252,15 +284,19 @@ const Enroll = () => {
                         </InputsContainer>
                         <Recaptcha sitekey={process.env.REACT_APP_SITE_KEY} ref={captchaRef} />
                         <InputsContainer style={{marginTop: "30px"}}>
-                            <FilledBtn>{(language === "FR") ? "Envoyer" : "Send"}</FilledBtn>
+                            <FilledBtn>{
+                                showWaitRespMsg ? 
+                                (language === "FR") ? "En cours d'envoi ..." : "Sending message ..." : 
+                                (language === "FR") ? "Envoyer" : "Send"
+                            }</FilledBtn>
                         </InputsContainer>
                     </Form>
+                    <MessageStatusBox className={isStatusBoxVisible ? "show" : ""} status={msgStatus && msgStatus.status}>{msgStatus && msgStatus.msg}</MessageStatusBox>
                 </EnrollFormContainer>
             </EnrollSection>
             <Footer />
         </>
     );
-
 }
 
 export default Enroll;

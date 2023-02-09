@@ -232,26 +232,28 @@ export const MessageStatusBox = styled.p`
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    height: 0;
     overflow: hidden;
     width: 100%;
+    height: 0;
+    opacity: 0;
     border-radius: 10px;
     margin-bottom: 20px;
-    padding: 10px;
+    
     font-size: ${FONT_SIZES.M_FONT_SIZESM};
-    border: ${({status}) => (status === "error" ? "1px solid #f2c779" : `1px solid ${VoiceUpColors.grey}`)};
     background-color: ${({status}) =>
         (status === "success" && "#52BE80") ||
         (status === "warn" && "#fff8c4") ||
-        (status === "error" && "#ffecec") ||
+        (status === "error" && "#FFCCCC") ||
         "white"
     };
-    transition: opacity, height 800ms ease;
+    transition: opacity 2s ease, height 2s ease;
 
     &.show {
         height: 40px;
+        padding: 10px;
         opacity: 1;
+        border: ${({status}) => (status === "error" ? "1px solid #f2c779" : `1px solid ${VoiceUpColors.grey}`)};
+        transition: opacity 1s ease, height 1s ease;
     }
 
     @media only screen and (max-width: 1024px) {
