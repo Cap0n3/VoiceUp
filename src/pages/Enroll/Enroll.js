@@ -1,11 +1,12 @@
 import { useRef, useContext, useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import LoadIcon from "../../components/LoadIcon/LoadIcon";
 import { LangContext } from "../../App";
 import { useForm } from "react-hook-form";
 import emailjs from '@emailjs/browser';
 import { enrollHeaderData } from "./data/Enroll.data";
-import { EnrollSection, EnrollFormContainer } from "./Enroll.style";
+import { EnrollSection, EnrollFormContainer, LoadIconWrapper } from "./Enroll.style";
 import { 
     Form, 
     InputsContainer, 
@@ -15,7 +16,8 @@ import {
     Select, 
     Textarea, 
     MessageStatusBox, 
-    FilledBtn 
+    FilledBtn,
+    LoadingIcon
 } from "../../globalStyles/globalCompStyles";
 import Recaptcha from "react-google-recaptcha";
 import { FORM_REGEX, EMAILJS_IDS } from "../../globalVars";
@@ -55,7 +57,7 @@ const Enroll = () => {
     const captchaRef = useRef(null);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [msgStatus, setMsgStatus] = useState(null);
-    const [showWaitRespMsg, setShowWaitRespMsg] = useState(false);
+    const [showLoadIcon, setShowLoadIcon] = useState(false);
     const [isStatusBoxVisible, setIsStatusBoxVisible] = useState(false);
 
     const sendEmail = (e) => {
@@ -63,7 +65,7 @@ const Enroll = () => {
         emailjs.sendForm(EMAILJS_IDS.serviceID_enroll, EMAILJS_IDS.templateID_enroll, formRef.current, EMAILJS_IDS.publicKey_emailjs)
             .then((result) => {
                 // Hide wait message
-                setShowWaitRespMsg(false);
+                setShowLoadIcon(false);
                 // Show success to user
                 setMsgStatus({status : "success", msg: language === "FR" ? "Message envoyé !" : "Message sent !", responseObject: result});
                 setIsStatusBoxVisible(true);
@@ -80,21 +82,28 @@ const Enroll = () => {
         return value !== "default";
     }
 
-    const mockSendTest = () => {
+    const mockSendTest = (status) => {
         setTimeout(() => {
-            setShowWaitRespMsg(false);
-            setIsStatusBoxVisible(true);
-            setMsgStatus({status : "success", msg: language === "FR" ? "Message envoyé !" : "Message sent !", responseObject: ""});
+            if(status === "success"){
+                setShowLoadIcon(false);
+                setIsStatusBoxVisible(true);
+                setMsgStatus({status : "success", msg: language === "FR" ? "Message envoyé !" : "Message sent !", responseObject: ""});
+            }
+            else if(status === "error") {
+                setShowLoadIcon(false);
+                setIsStatusBoxVisible(true);
+                setMsgStatus({status : "error", msg: language === "FR" ? "Une erreur est survenue !" : "An error occured !", responseObject: ""});
+            }    
         }, 1000);
     }
 
     const onSubmit = (data, e) => {
-        const token = captchaRef.current.getValue();
-
+        //const token = captchaRef.current.getValue();
+        const token = true;
         if(token){
-            setShowWaitRespMsg(true); // Show wait message to user
+            setShowLoadIcon(true); // Show wait message to user
             //sendEmail(e);
-            mockSendTest();
+            mockSendTest("error");
             captchaRef.current.reset();
         }
         else {
@@ -284,11 +293,12 @@ const Enroll = () => {
                         </InputsContainer>
                         <Recaptcha sitekey={process.env.REACT_APP_SITE_KEY} ref={captchaRef} />
                         <InputsContainer style={{marginTop: "30px"}}>
-                            <FilledBtn>{
-                                showWaitRespMsg ? 
-                                (language === "FR") ? "En cours d'envoi ..." : "Sending message ..." : 
-                                (language === "FR") ? "Envoyer" : "Send"
-                            }</FilledBtn>
+                            <InputWrapper>
+                                <FilledBtn>{(language === "FR") ? "Envoyer" : "Send"}</FilledBtn>   
+                            </InputWrapper>
+                            <InputWrapper>
+                                { showLoadIcon && <LoadIcon /> }
+                            </InputWrapper>
                         </InputsContainer>
                     </Form>
                     <MessageStatusBox className={isStatusBoxVisible ? "show" : ""} status={msgStatus && msgStatus.status}>{msgStatus && msgStatus.msg}</MessageStatusBox>

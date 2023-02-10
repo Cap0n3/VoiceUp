@@ -3,10 +3,11 @@ import styled, { keyframes } from 'styled-components';
 import { VoiceUpColors } from "../colors";
 import { FONT_SIZES, ELEMENT_HEIGHTS } from '../globalVars';
 import { BiErrorCircle, BiError } from "react-icons/bi";
-import { AiOutlineInfoCircle } from "react-icons/ai";
+import { AiOutlineInfoCircle, AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const DEBUG = false;
 
+// Animations
 const pulse = keyframes`
     from {
         box-shadow: 0 0 0 0 #D9B47D;
@@ -157,9 +158,6 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-    box-sizing: border-box; 
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     width: 100%;
     border: 1px solid ${({status}) => 
         (status === "required" && "#f2c779") ||
