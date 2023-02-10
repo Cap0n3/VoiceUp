@@ -236,22 +236,16 @@ export const MessageStatusBox = styled.p`
     opacity: 0;
     border-radius: 10px;
     margin-bottom: 20px;
-    
     font-size: ${FONT_SIZES.M_FONT_SIZESM};
-    background-color: ${({status}) =>
-        (status === "success" && "#52BE80") ||
-        (status === "warn" && "#fff8c4") ||
-        (status === "error" && "#FFCCCC") ||
-        "white"
-    };
-    transition: opacity 2s ease, height 2s ease;
+    background-color: ${({isSuccess}) => (isSuccess ?  "#52BE80" : "#FFCCCC")};
+    transition: opacity 2s ease, height 1s ease;
 
     &.show {
         height: 40px;
         padding: 10px;
         opacity: 1;
-        border: ${({status}) => (status === "error" ? "1px solid #f2c779" : `1px solid ${VoiceUpColors.grey}`)};
-        transition: opacity 1s ease, height 1s ease;
+        border: ${({isSuccess}) => (isSuccess ? `1px solid ${VoiceUpColors.darkGrey}` : "1px solid #FF0000")};
+        transition: opacity 2s ease, height 1s ease;
     }
 
     @media only screen and (max-width: 1024px) {

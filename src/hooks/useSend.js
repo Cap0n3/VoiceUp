@@ -1,42 +1,67 @@
 import { useEffect, useState } from "react"
 import emailjs from '@emailjs/browser';
 
-const useSend = (serviceID, templateID, publicKey, formRef, successMsg="Message successfully sent", errorMsg="An error occured !") => {
+
+/**
+ * @typedef {Object} returnedData
+ * @property {Object} serverResponse - Object containing server response and custom messages. {status : <"success"/"error">, msg: <message>, responseObject: <response_object>}
+ * @property {bool} isWaitingServerResp - Are we waiting for server to respond ?
+ * @property {bool} isSendSuccess - Was email sending a success ?
+ * @property {function} sendEmail - Function to send email with emailJS.
+ * @property {function} mockSend - Test function that simulates email sending and server response time delay.
+ */
+
+/**
+ * Custom hook to send email with emailJS and handle related states.
+ * > External dependency : emailjs
+ * 
+ * 
+ * @param {string} serviceID - Service ID for emailJS.
+ * @param {string} templateID - Template ID for emailJS.
+ * @param {string} publicKey - Public key of emailJS user account.
+ * @param {Object} formRef - Form reference.
+ * @param {string} successMsg - Custom message for success. Default: "Message successfully sent".
+ * @param {string} errorMsg - Custom messsage for error. Default: "An error occured !".
+ * @param {int} resetTime - serverResponse state reset time (in ms) to origin values (useful to make notification box dissapear). Default=4000.
+ * @returns {returnedData} 
+ */
+const useSend = (serviceID, templateID, publicKey, formRef, successMsg="Message successfully sent", errorMsg="An error occured !", resetTime=4000) => {
     const [serverResponse, setServerResponse] = useState(null);
     const [isWaitingServerResp, setIsWaitingServerResp] = useState(false);
-    const [isSendSuccess, setIsSendSuccess] = useState(false);
+    const [isSendSuccess, setIsSendSuccess] = useState(null);
     
     /**
-     * Send email to emailJS
-     * @param {Object} formEvent 
+     * Send email with emailJS.
+     * 
+     * @param {Object} formEvent - Form event object.
      */
     const sendEmail = (formEvent) => {
         formEvent.preventDefault();
+        setIsWaitingServerResp(true); // Waiting for response
+        
         emailjs.sendForm(serviceID, templateID, formRef.current, publicKey)
             .then((result) => {
                 // === SUCCESS === //
                 setIsWaitingServerResp(false);
-                // Show success to user
-                setServerResponse({status : "success", msg: successMsg, responseObject: result});
                 setIsSendSuccess(true);
+                setServerResponse({status : "success", msg: successMsg, responseObject: result});
             }, (error) => {
                 // === ERROR === //
                 console.log(error);
                 setIsWaitingServerResp(false);
-                // Display error message for user
+                setIsSendSuccess(false);
                 setServerResponse({status : "error", msg: errorMsg, responseObject: error});
-                setIsSendSuccess(true);
             });
     }
 
     /**
-     * Simulate sending email to server.
+     * Function that simulates sending an email to server (with response time delay).
      * 
      * @param {String} status - Stutus needed for test, can be "success" or "error".
      * @param {int} waitingMs - Simulated server response delay in ms.
      */
     const mockSend = (status, waitingMs) => {
-        setIsWaitingServerResp(true);
+        setIsWaitingServerResp(true); // Waiting for response
         setTimeout(() => {
             if(status === "success"){
                 setIsWaitingServerResp(false);
@@ -45,26 +70,25 @@ const useSend = (serviceID, templateID, publicKey, formRef, successMsg="Message 
             }
             else if(status === "error") {
                 setIsWaitingServerResp(false);
-                setIsSendSuccess(true);
+                setIsSendSuccess(false);
                 setServerResponse({status : "error", msg: errorMsg, responseObject: ""});
             }    
         }, waitingMs);
     }
 
     /**
-     * If there's a status message, set a timer to make it disappear after X seconds
+     * Reset response state after n milliseconds.
      */
     useEffect(() => {
         if(serverResponse) {
             // Make info, warn and error messages disappear
             setTimeout(() => {
-                setIsSendSuccess(false);
                 setServerResponse(null);
-            }, 4000);
+            }, resetTime);
         }
     }, [serverResponse]);
 
-    const returnData = {
+    const returnedData = {
         serverResponse: serverResponse,
         isWaitingServerResp: isWaitingServerResp,
         isSendSuccess: isSendSuccess,
@@ -72,7 +96,7 @@ const useSend = (serviceID, templateID, publicKey, formRef, successMsg="Message 
         mockSend: mockSend
     }
 
-    return [returnData]
+    return [returnedData];
 }
 
 export default useSend;

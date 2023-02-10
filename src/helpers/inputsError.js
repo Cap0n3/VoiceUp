@@ -4,8 +4,8 @@ export const getInputErrMsg = (errObj, language) => {
     let msgFR="";
     let msgEN="";
 
-    if(errObj.type === "required" || errObj.type === "validate"){
-        // === It's a warning === //
+    if(errObj.type === "required" || errObj.type === "validate" || errObj.type === "captcha"){
+        // === It's a WARNING === //
         if(errObj.type === "required") {
             msgFR="Champs requis"
             msgEN="Required"
@@ -15,10 +15,15 @@ export const getInputErrMsg = (errObj, language) => {
             msgFR="Sélectionner une option !";
             msgEN="Please select an option !";
         }
+        else if(errObj.type === "captcha") {
+            msgFR="Merci de remplir le captcha.";
+            msgEN="Please fill out captcha.";
+        }
+
         return <InputError status="warn"><WarnIcon />{language === "FR" ? msgFR : msgEN}</InputError>;
     }
     else {
-        // === It's an error === //
+        // === It's an ERROR === //
         if(errObj.type === "pattern") {
             msgFR="Format non valide";
             msgEN="Not valid"
@@ -31,7 +36,6 @@ export const getInputErrMsg = (errObj, language) => {
             msgFR="Nombre maximum de caractères atteint !";
             msgEN="Maximum length reached !";
         }
-        
         else {
             msgFR="Une erreur est survenue !";
             msgEN="An error occured !";

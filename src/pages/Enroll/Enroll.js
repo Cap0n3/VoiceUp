@@ -4,7 +4,6 @@ import Footer from "../../components/Footer/Footer";
 import LoadIcon from "../../components/LoadIcon/LoadIcon";
 import { LangContext } from "../../App";
 import { useForm } from "react-hook-form";
-import emailjs from '@emailjs/browser';
 import { enrollHeaderData } from "./data/Enroll.data";
 import { EnrollSection, EnrollFormContainer, LoadIconWrapper } from "./Enroll.style";
 import { 
@@ -63,6 +62,7 @@ const Enroll = () => {
     const {language} = useContext(LangContext);
     const formRef = useRef(null);
     const captchaRef = useRef(null);
+    const [captchaFilled, setCaptchaFilled] = useState(true);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [send] = useSend(
         EMAILJS_IDS.serviceID_enroll,
@@ -78,17 +78,18 @@ const Enroll = () => {
     }
 
     const onSubmit = (data, e) => {
-        //const token = captchaRef.current.getValue();
-        const token = true;
+        const token = captchaRef.current.getValue();
+        
         if(token){
-            //sendEmail(e);
-            send.mockSend("success", 2000);
+            send.sendEmail(e);
+            //send.mockSend("success", 2000); // For testing
+            // Reset captcha
+            setCaptchaFilled(true);
             captchaRef.current.reset();
         }
         else {
             // Captcha was not filled
-            //setIsStatusBoxVisible(true);
-            //setMsgStatus({status : "warn", msg: language === "FR" ? "Merci de remplir le captcha" : "Please fill out the captcha"});
+            setCaptchaFilled(false);
         }
     };
 
@@ -259,6 +260,7 @@ const Enroll = () => {
                             </InputWrapper>
                         </InputsContainer>
                         <Recaptcha sitekey={process.env.REACT_APP_SITE_KEY} ref={captchaRef} />
+                        {!captchaFilled && getInputErrMsg({type: "captcha"}, language)}
                         <InputsContainer style={{marginTop: "30px"}}>
                             <InputWrapper>
                                 <FilledBtn>{(language === "FR") ? "Envoyer" : "Send"}</FilledBtn>   
@@ -268,7 +270,7 @@ const Enroll = () => {
                             </InputWrapper>
                         </InputsContainer>
                     </Form>
-                    <MessageStatusBox className={send.serverResponse ? "show" : ""} status={send.serverResponse && send.serverResponse.status}>{send.serverResponse && send.serverResponse.msg}</MessageStatusBox>
+                    <MessageStatusBox className={send.serverResponse ? "show" : ""} isSuccess={send.isSendSuccess}>{send.serverResponse && send.serverResponse.msg}</MessageStatusBox>
                 </EnrollFormContainer>
             </EnrollSection>
             <Footer />
