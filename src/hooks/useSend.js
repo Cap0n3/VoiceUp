@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import emailjs from '@emailjs/browser';
 
-
 /**
  * @typedef {Object} returnedData
  * @property {Object} serverResponse - Object containing server response and custom messages. {status : <"success"/"error">, msg: <message>, responseObject: <response_object>}
@@ -13,8 +12,10 @@ import emailjs from '@emailjs/browser';
 
 /**
  * Custom hook to send email with emailJS and handle related states.
- * > External dependency : emailjs
  * 
+ * > **External dependencies :** emailjs, react-hook-form (useForm)
+ * 
+ * > **Note :** This hook cannot clear forms, it should be cleared in component itself with a useEffect on `serverResponse` dependency.
  * 
  * @param {string} serviceID - Service ID for emailJS.
  * @param {string} templateID - Template ID for emailJS.
@@ -36,9 +37,10 @@ const useSend = (serviceID, templateID, publicKey, formRef, successMsg="Message 
      * @param {Object} formEvent - Form event object.
      */
     const sendEmail = (formEvent) => {
+        // Init
         formEvent.preventDefault();
         setIsWaitingServerResp(true); // Waiting for response
-        
+        // Send
         emailjs.sendForm(serviceID, templateID, formRef.current, publicKey)
             .then((result) => {
                 // === SUCCESS === //
@@ -59,9 +61,13 @@ const useSend = (serviceID, templateID, publicKey, formRef, successMsg="Message 
      * 
      * @param {String} status - Stutus needed for test, can be "success" or "error".
      * @param {int} waitingMs - Simulated server response delay in ms.
+     * @param {Object} formEvent - Form event object.
      */
-    const mockSend = (status, waitingMs) => {
+    const mockSend = (status, waitingMs, formEvent) => {
+        // Init
+        formEvent.preventDefault();
         setIsWaitingServerResp(true); // Waiting for response
+        // Mock send
         setTimeout(() => {
             if(status === "success"){
                 setIsWaitingServerResp(false);

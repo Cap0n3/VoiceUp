@@ -1,4 +1,4 @@
-import { useContext, useState, useRef } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import {
     Form, 
     InputsContainer, 
@@ -15,10 +15,18 @@ import { FilledBtn } from "../../globalStyles/globalCompStyles";
 import { useForm } from "react-hook-form";
 import emailjs from '@emailjs/browser';
 import Recaptcha from "react-google-recaptcha";
-import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { FORM_REGEX, EMAILJS_IDS } from "../../globalVars";
 import { getInputErrMsg } from "../../helpers/inputsError";
+import useSend from "../../hooks/useSend";
+import LoadIcon from "../LoadIcon/LoadIcon";
+
+const formMessages = {
+    successFR: "Votre message a bien été envoyé !",
+    successEN: "Message successfully sent !",
+    errorFR: "Le serveur ne répond pas ! Réessayer dans quelques minutes ...",
+    errorEN: "Server is not responding ! Try again in a couple of minutes."
+}
 
 /**
  * IMPORTANT ! Deactivate StrictMode to avoid issues with recaptcha V2 during development stage (captcha rendered just once).
@@ -28,44 +36,47 @@ const ContactForm = () => {
     const {language} = useContext(LangContext);
     const formRef = useRef(null);
     const captchaRef = useRef(null);
+    const [captchaFilled, setCaptchaFilled] = useState(true);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const [msgStatus, setMsgStatus] = useState(null);
-
-    const sendEmail = () => {
-        emailjs.sendForm(EMAILJS_IDS.serviceID_contact, EMAILJS_IDS.templateID_contact, formRef.current, EMAILJS_IDS.publicKey_emailjs)
-            .then((result) => {
-                setMsgStatus({status : "success", msg: language === "FR" ? "Message envoyé !" : "Message sent !", responseObject: result});
-                reset();
-            }, (error) => {
-                console.log(error);
-                setMsgStatus({status : "error", msg: language === "FR" ? "Une erreur est survenue, le serveur n'est pas joignable !" : "An error occured, server unreachable !", responseObject: error});
-            });
-    }
-
-    const onSubmit = (data) => {
+    const [send] = useSend(
+        EMAILJS_IDS.serviceID_contact,
+        EMAILJS_IDS.templateID_contact,
+        EMAILJS_IDS.publicKey_emailjs,
+        formRef,
+        (language === "FR") ? formMessages.successFR : formMessages.successEN,
+        (language === "FR") ? formMessages.errorFR : formMessages.errorEN
+    )
+    
+    const onSubmit = (data, e) => {
         const token = captchaRef.current.getValue();
+        
         if(token){
-            sendEmail();
+            send.sendEmail(e);
+            //send.mockSend("success", 2000, e); // For testing
+            // Reset captcha & form
+            setCaptchaFilled(true);
             captchaRef.current.reset();
         }
         else {
-            setMsgStatus({status : "warn", msg: language === "FR" ? "Merci de remplir le captcha" : "Please fill out the captcha"});
+            // Captcha was not filled
+            setCaptchaFilled(false);
         }
     };
 
+    /**
+     * Clear form if sending was a success.
+     */
     useEffect(() => {
-        if(msgStatus) {
-            // Make info, warn and error messages disappear
-            setTimeout(() => {
-                setMsgStatus(null);
-            }, 4000);
-        }
-    }, [msgStatus]);
+        if(send.serverResponse) {
+            if(send.serverResponse.status === "success") {
+                reset();
+            }
+        }    
+    }, [send.serverResponse])
 
     return(
         <>
             <InscriptionNote><InfoIcon />{language === "FR" ? <span>Pour les inscriptions, merci de remplir <NavLink className="inlineLink" to="/inscription">le formulaire ici.</NavLink></span> : <span>To enroll, please <NavLink className="inlineLink" to="/inscription">fill out form here.</NavLink></span>}</InscriptionNote>
-            <MessageStatusBox className={msgStatus ? "show" : ""} status={msgStatus && msgStatus.status}>{msgStatus && msgStatus.msg}</MessageStatusBox>
             <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                 <InputsContainer>
                     <InputWrapper>
@@ -124,10 +135,17 @@ const ContactForm = () => {
                     </InputWrapper>
                 </InputsContainer>
                 <Recaptcha sitekey={process.env.REACT_APP_SITE_KEY} ref={captchaRef} />
+                {!captchaFilled && getInputErrMsg({type: "captcha"}, language)}
                 <InputsContainer style={{marginTop: "30px"}}>
-                    <FilledBtn>{(language === "FR") ? "Envoyer" : "Send"}</FilledBtn>
+                    <InputWrapper>
+                        <FilledBtn>{(language === "FR") ? "Envoyer" : "Send"}</FilledBtn>   
+                    </InputWrapper>
+                    <InputWrapper>
+                        {send.isWaitingServerResp && <LoadIcon />}
+                    </InputWrapper>
                 </InputsContainer>
             </Form>
+            <MessageStatusBox className={send.serverResponse ? "show" : ""} isSuccess={send.isSendSuccess}>{send.serverResponse && send.serverResponse.msg}</MessageStatusBox>
         </> 
     );
 }

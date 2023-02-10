@@ -22,7 +22,6 @@ import { FORM_REGEX, EMAILJS_IDS } from "../../globalVars";
 import { getInputErrMsg } from "../../helpers/inputsError";
 import useSend from "../../hooks/useSend";
 
-
 const levelOptions = [
     {value:"débutant", choiceFR:"Débutant", choiceEN: "Beginner"},
     {value:"intermédiaire", choiceFR:"Intermédiaire", choiceEN: "Intermediary"},
@@ -52,8 +51,8 @@ const hourOptions = [
 ];
 
 const formMessages = {
-    successFR: "Votre inscription a bien été envoyée !",
-    successEN: "Successfully sent !",
+    successFR: "Votre demande d'inscription a bien été envoyée !",
+    successEN: "Enrollment inquiry successfully sent !",
     errorFR: "Le serveur ne répond pas ! Réessayer dans quelques minutes ...",
     errorEN: "Server is not responding ! Try again in a couple of minutes."
 }
@@ -82,8 +81,8 @@ const Enroll = () => {
         
         if(token){
             send.sendEmail(e);
-            //send.mockSend("success", 2000); // For testing
-            // Reset captcha
+            //send.mockSend("success", 2000, e); // For testing
+            // Reset captcha & form
             setCaptchaFilled(true);
             captchaRef.current.reset();
         }
@@ -92,6 +91,18 @@ const Enroll = () => {
             setCaptchaFilled(false);
         }
     };
+
+    /**
+     * Clear form if sending was a success.
+     */
+    useEffect(() => {
+        if(send.serverResponse) {
+            if(send.serverResponse.status === "success") {
+                reset();
+            }
+        }    
+    }, [send.serverResponse])
+
 
     return(
         <>
