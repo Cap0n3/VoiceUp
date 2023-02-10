@@ -21,6 +21,8 @@ import {
 import Recaptcha from "react-google-recaptcha";
 import { FORM_REGEX, EMAILJS_IDS } from "../../globalVars";
 import { getInputErrMsg } from "../../helpers/inputsError";
+import useSend from "../../hooks/useSend";
+
 
 const levelOptions = [
     {value:"débutant", choiceFR:"Débutant", choiceEN: "Beginner"},
@@ -50,79 +52,45 @@ const hourOptions = [
     {value:"19:00", choiceFR:"19:00", choiceEN: "7PM"},
 ];
 
+const formMessages = {
+    successFR: "Votre inscription a bien été envoyée !",
+    successEN: "Successfully sent !",
+    errorFR: "Le serveur ne répond pas ! Réessayer dans quelques minutes ...",
+    errorEN: "Server is not responding ! Try again in a couple of minutes."
+}
+
 const Enroll = () => {
     const {language} = useContext(LangContext);
     const formRef = useRef(null);
     const captchaRef = useRef(null);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const [msgStatus, setMsgStatus] = useState(null);
-    const [showLoadIcon, setShowLoadIcon] = useState(false);
-    const [isStatusBoxVisible, setIsStatusBoxVisible] = useState(false);
-
-    const sendEmail = (e) => {
-        e.preventDefault();
-        emailjs.sendForm(EMAILJS_IDS.serviceID_enroll, EMAILJS_IDS.templateID_enroll, formRef.current, EMAILJS_IDS.publicKey_emailjs)
-            .then((result) => {
-                // Hide wait message
-                setShowLoadIcon(false);
-                // Show success to user
-                setMsgStatus({status : "success", msg: language === "FR" ? "Message envoyé !" : "Message sent !", responseObject: result});
-                setIsStatusBoxVisible(true);
-                reset();
-            }, (error) => {
-                console.log(error);
-                // Display error message for user
-                setMsgStatus({status : "error", msg: language === "FR" ? "Une erreur est survenue, le serveur n'est pas joignable !" : "An error occured, server unreachable !", responseObject: error});
-                setIsStatusBoxVisible(true);
-            });
-    }
+    const [send] = useSend(
+        EMAILJS_IDS.serviceID_enroll,
+        EMAILJS_IDS.templateID_enroll,
+        EMAILJS_IDS.publicKey_emailjs,
+        formRef,
+        (language === "FR") ? formMessages.successFR : formMessages.successEN,
+        (language === "FR") ? formMessages.errorFR : formMessages.errorEN
+    )
 
     const validateSelect = (value) => {
         return value !== "default";
-    }
-
-    const mockSendTest = (status) => {
-        setTimeout(() => {
-            if(status === "success"){
-                setShowLoadIcon(false);
-                setIsStatusBoxVisible(true);
-                setMsgStatus({status : "success", msg: language === "FR" ? "Message envoyé !" : "Message sent !", responseObject: ""});
-            }
-            else if(status === "error") {
-                setShowLoadIcon(false);
-                setIsStatusBoxVisible(true);
-                setMsgStatus({status : "error", msg: language === "FR" ? "Une erreur est survenue !" : "An error occured !", responseObject: ""});
-            }    
-        }, 1000);
     }
 
     const onSubmit = (data, e) => {
         //const token = captchaRef.current.getValue();
         const token = true;
         if(token){
-            setShowLoadIcon(true); // Show wait message to user
             //sendEmail(e);
-            mockSendTest("error");
+            send.mockSend("success", 2000);
             captchaRef.current.reset();
         }
         else {
             // Captcha was not filled
-            setIsStatusBoxVisible(true);
-            setMsgStatus({status : "warn", msg: language === "FR" ? "Merci de remplir le captcha" : "Please fill out the captcha"});
+            //setIsStatusBoxVisible(true);
+            //setMsgStatus({status : "warn", msg: language === "FR" ? "Merci de remplir le captcha" : "Please fill out the captcha"});
         }
     };
-
-    /**
-     * If there's a status message, set a timer to make it disappear after X seconds
-     */
-    useEffect(() => {
-        if(msgStatus) {
-            // Make info, warn and error messages disappear
-            setTimeout(() => {
-                setIsStatusBoxVisible(false);
-            }, 4000);
-        }
-    }, [msgStatus]);
 
     return(
         <>
@@ -296,11 +264,11 @@ const Enroll = () => {
                                 <FilledBtn>{(language === "FR") ? "Envoyer" : "Send"}</FilledBtn>   
                             </InputWrapper>
                             <InputWrapper>
-                                { showLoadIcon && <LoadIcon /> }
+                                { send.isWaitingServerResp && <LoadIcon /> }
                             </InputWrapper>
                         </InputsContainer>
                     </Form>
-                    <MessageStatusBox className={isStatusBoxVisible ? "show" : ""} status={msgStatus && msgStatus.status}>{msgStatus && msgStatus.msg}</MessageStatusBox>
+                    <MessageStatusBox className={send.serverResponse ? "show" : ""} status={send.serverResponse && send.serverResponse.status}>{send.serverResponse && send.serverResponse.msg}</MessageStatusBox>
                 </EnrollFormContainer>
             </EnrollSection>
             <Footer />
