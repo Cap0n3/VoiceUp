@@ -16,8 +16,7 @@ import {
     Select, 
     Textarea, 
     MessageStatusBox, 
-    FilledBtn,
-    LoadingIcon
+    FilledBtn
 } from "../../globalStyles/globalCompStyles";
 import Recaptcha from "react-google-recaptcha";
 import { FORM_REGEX, EMAILJS_IDS } from "../../globalVars";

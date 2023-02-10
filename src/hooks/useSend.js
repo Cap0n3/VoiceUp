@@ -3,10 +3,24 @@ import emailjs from '@emailjs/browser';
 import { useForm } from "react-hook-form";
 
 /**
- * Hook used to send email to emailjs.
- * > **Dependencies :** emailjs
+ * @typedef {Object} Data
+ * @property {number} x - The X Coordinate
+ * @property {number} y - The Y Coordinate
  */
-const useSend = (formEvent, test={active: false, status: "success", serverWaitMs: 2000}) => {
+
+/**
+ * Hook used to send email to emailjs.
+ * 
+ * > **Dependencies :** emailjs
+ * 
+ * @param   {String}    serviceID   Service ID for EmailJS.
+ * @param   {String}    templateID  Template ID for EmailJS.
+ * @param   {string}    publicKey   Email JS account public key.
+ * @param   {Object}    formEvent   Event object of form.
+ * @param   {Object}    test 
+ * @returns {Data}
+ */
+const useSend = (serviceID, templateID, publicKey, formEvent, test={active: false, status: "success", serverWaitMs: 2000}) => {
     const [msgStatus, setMsgStatus] = useState(null);
     const [showLoadIcon, setShowLoadIcon] = useState(false);
     const [isStatusBoxVisible, setIsStatusBoxVisible] = useState(false);
@@ -51,11 +65,24 @@ const useSend = (formEvent, test={active: false, status: "success", serverWaitMs
         }, waitingMs);
     }
 
+    /**
+     * If there's a status message, set a timer to make it disappear after X seconds
+     */
+    useEffect(() => {
+        if(msgStatus) {
+            // Make info, warn and error messages disappear
+            setTimeout(() => {
+                setIsStatusBoxVisible(false);
+            }, 4000);
+        }
+    }, [msgStatus]);
+
     if(test.active) {
         mockSend(test.status, test.serverWaitMs);
     } else {
         sendEmail(formEvent);
     }
+
 
     return [msgStatus, showLoadIcon, isStatusBoxVisible]
 }
