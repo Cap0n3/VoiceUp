@@ -28,7 +28,7 @@ const Conditions = () => {
                     )}
                 </BlockWrapper>
                 <BlockWrapper ref={wrapperTwoRef} isVisible={isWrapperTwoVisible}>
-                    <ConditionTitle>Annulation, Vacances, Rattrapage, Résiliation</ConditionTitle>
+                    <ConditionTitle>{(language === "FR") ? "Annulation, Vacances, Rattrapage, Résiliation" : "Cancellation, Holidays, Catching-up, Termination"}</ConditionTitle>
                     {holidayText.map((data, index) => 
                         <ConditionBlock key={index}>
                             <h2>{(language === "FR") ? data.titleFR : data.titleEN}</h2>
