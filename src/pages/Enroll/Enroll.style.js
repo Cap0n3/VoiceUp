@@ -28,3 +28,17 @@ export const EnrollFormContainer = styled.div`
         padding-right: 0;
     }
 `;
+
+export const TextContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    width: 70%;
+    margin-bottom: 60px;
+    ${DEBUG ? "border: 1px solid pink;" : ""}
+
+    & > p {
+        font-weight: 300;
+    }
+`;

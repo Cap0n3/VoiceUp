@@ -4,8 +4,16 @@ import Footer from "../../components/Footer/Footer";
 import LoadIcon from "../../components/LoadIcon/LoadIcon";
 import { LangContext } from "../../App";
 import { useForm } from "react-hook-form";
-import { enrollHeaderData } from "./data/Enroll.data";
-import { EnrollSection, EnrollFormContainer, LoadIconWrapper } from "./Enroll.style";
+import { 
+    enrollHeaderData,
+    enrollParagraphsFR,
+    enrollParagraphsEN,
+    levelOptions,
+    dayOptions,
+    hourOptions,
+    formMessages
+} from "./data/Enroll.data";
+import { EnrollSection, EnrollFormContainer, TextContainer } from "./Enroll.style";
 import { 
     Form, 
     InputsContainer, 
@@ -21,41 +29,6 @@ import Recaptcha from "react-google-recaptcha";
 import { FORM_REGEX, EMAILJS_IDS } from "../../globalVars";
 import { getInputErrMsg } from "../../helpers/inputsError";
 import useSend from "../../hooks/useSend";
-
-const levelOptions = [
-    {value:"débutant", choiceFR:"Débutant", choiceEN: "Beginner"},
-    {value:"intermédiaire", choiceFR:"Intermédiaire", choiceEN: "Intermediary"},
-    {value:"avancé", choiceFR:"Avancé", choiceEN: "Advanced"},
-    {value:"semi-pro", choiceFR:"Semi-pro", choiceEN: "Semi-pro"},
-    {value:"professionnel", choiceFR:"Professionnel", choiceEN: "Professionnal"}
-];
-
-const dayOptions = [
-    {value:"lundi", choiceFR:"Lundi", choiceEN: "Monday"},
-    {value:"mardi", choiceFR:"Mardi", choiceEN: "Tuesday"},
-    {value:"mercredi", choiceFR:"Mercredi", choiceEN: "Wednesday"},
-    {value:"jeudi", choiceFR:"Jeudi", choiceEN: "thursday"},
-    {value:"vendredi", choiceFR:"Vendredi", choiceEN: "Friday"}
-];
-
-const hourOptions = [
-    {value:"11:00", choiceFR:"11:00", choiceEN: "11AM"},
-    {value:"12:00", choiceFR:"12:00", choiceEN: "12AM"},
-    {value:"13:00", choiceFR:"13:00", choiceEN: "1PM"},
-    {value:"14:00", choiceFR:"14:00", choiceEN: "2PM"},
-    {value:"15:00", choiceFR:"15:00", choiceEN: "3PM"},
-    {value:"16:00", choiceFR:"16:00", choiceEN: "4PM"},
-    {value:"17:00", choiceFR:"17:00", choiceEN: "5PM"},
-    {value:"18:00", choiceFR:"18:00", choiceEN: "6PM"},
-    {value:"19:00", choiceFR:"19:00", choiceEN: "7PM"},
-];
-
-const formMessages = {
-    successFR: "Votre demande d'inscription a bien été envoyée !",
-    successEN: "Enrollment inquiry successfully sent !",
-    errorFR: "Le serveur ne répond pas ! Réessayer dans quelques minutes ...",
-    errorEN: "Server is not responding ! Try again in a couple of minutes."
-}
 
 const Enroll = () => {
     const {language} = useContext(LangContext);
@@ -108,6 +81,12 @@ const Enroll = () => {
         <>
             <Header data={enrollHeaderData} position={{posX: 0, posY: 50}} />
             <EnrollSection>
+                <TextContainer>
+                    {(language === "FR") ? 
+                        enrollParagraphsFR.map((txt, index) => <p key={index}>{txt}</p>) :
+                        enrollParagraphsEN.map((txt, index) => <p key={index}>{txt}</p>)
+                    } 
+                </TextContainer>
                 <EnrollFormContainer>
                     <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                         <InputsContainer>
