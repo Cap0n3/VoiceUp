@@ -18,6 +18,10 @@ export const BlockWrapper = styled.div`
     transform: ${({isVisible}) => (isVisible ?  "translateY(0)" : "translateY(120%)")};
     transition: transform .6s ease, opacity 1.5s ease;
     ${DEBUG ? "border: 1px solid yellow;" : ""}
+
+    & > :last-child {
+        margin-bottom: 0;
+    }
 `;
 
 export const ConditionTitle = styled.h1`
@@ -47,14 +51,6 @@ export const ConditionBlock = styled.div`
     & > p {
         font-weight: 300;
         font-size: ${FONT_SIZES.M_ftSizeMD};
-        
-        &.deepBottom {
-            margin-bottom: 15px;
-        }
-    }
-
-    &.noBottom {
-       margin-bottom: 0; 
     }
     
     @media only screen and (max-width: 1024px) {
