@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { CardContainer, PCard, CardHeader, CardBodyWrapper, InnerCircle, IconWrapper, PriceTag, ListWrapper, List, ListItem, Sub } from "./PriceCard.style";
 import { OutlineBtn } from "../../globalStyles/globalCompStyles";
 import {AiOutlineCheckCircle} from "react-icons/ai";
@@ -6,8 +6,10 @@ import Rocket from "../../assets/icons/myIcons/rocket_icon";
 import Turtle from "../../assets/icons/myIcons/turtle_icon";
 import Gear from "../../assets/icons/misc/gear_icon";
 import useAppear from "../../hooks/useAppear";
+import { LangContext } from "../../App";
 
 const PriceCard = ({data}) => {
+	const {language} = useContext(LangContext);
 	const [isHovered, setIsHovered] = useState(false);
 	const cardRef = useRef(null);
 	const isVisible = useAppear(cardRef, 250);
@@ -27,6 +29,15 @@ const PriceCard = ({data}) => {
 		}
 	}
 
+	/**
+	 * Small function to return appropriate JSX depending on language setting.
+	 * @param {object} contentList - List of text
+	 * @returns 
+	 */
+	const setContentLang = (contentList) => {
+		return contentList.map((info, index) => <ListItem key={index}><AiOutlineCheckCircle fill="white" style={{marginRight: "10px"}} />{info}</ListItem>)
+	}
+
 	return (
 	<CardContainer ref={cardRef}>
 		<PCard onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} colors={data.bckColors} className={isVisible ? "active" : ""}>
@@ -38,17 +49,17 @@ const PriceCard = ({data}) => {
 			</InnerCircle>
 			<CardBodyWrapper>
 				<PriceTag>
-					<h3>{data.cardNameFR}</h3>
-					<h2>{data.priceTag} Chf <Sub>/ {data.perFR}</Sub></h2>
+					<h3>{(language === "FR") ? data.cardNameFR : data.cardNameEN}</h3>
+					<h2>{data.priceTag} Chf <Sub>/ {(language === "FR") ? data.perFR : data.perEN}</Sub></h2>
 				</PriceTag>
 				<ListWrapper>
 					<List>
-						{data.bulletsFR.map((info, index) => 
-							<ListItem key={index}><AiOutlineCheckCircle fill="white" style={{marginRight: "10px"}} />{info}</ListItem>
-						)}
+						{
+							setContentLang((language === "FR") ? data.bulletsFR : data.bulletsEN)
+						}
 					</List>
 				</ListWrapper>
-				<OutlineBtn to="/inscription" style={{marginTop: "10px"}}>S'inscrire</OutlineBtn>
+				<OutlineBtn to="/inscription" style={{marginTop: "10px"}}>{(language === "FR") ? "S'inscrire" : "Enroll now"}</OutlineBtn>
 			</CardBodyWrapper>
 		</PCard>
 	</CardContainer>

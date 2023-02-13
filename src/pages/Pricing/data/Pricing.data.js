@@ -19,9 +19,11 @@ export const WeeklyAdult = {
     cardNameFR: "Hebdomadaire",
     cardNameEN: "Adult Weekly",
     priceTag: 360,
-    perFR: "Mois", 
+    perFR: "Mois",
+    perEN: "Month", 
     // Max 6 bullets
-    bulletsFR: ["Idéal pour avancer vite", "1h de cours toutes les semaines", "Niveau débutant, moyen et avancé", "4 rattrapages dans l’année", "Cours en Juillet"]
+    bulletsFR: ["Idéal pour avancer vite", "1h de cours toutes les semaines", "Niveau débutant, moyen et avancé", "4 rattrapages dans l’année", "Cours en Juillet"],
+    bulletsEN: ["Perfect to learn fast", "1 hours every week", "For beginner, intermediate & avanced", "4 catching-ups per year", "Lessons in july"]
 }
 
 export const BiAdult = {
@@ -32,8 +34,10 @@ export const BiAdult = {
     cardNameEN: "Adult Bimonthly",
     priceTag: 200,
     perFR: "Mois",
+    perEN: "Month", 
     // Max 6 bullets
-    bulletsFR: ["Pour les personnes disciplinées", "1h de cours toute les deux semaines", "Niveau moyen et avancé", "4 rattrapages dans l’année", "Cours en Juillet"]
+    bulletsFR: ["Pour les personnes disciplinées", "1h de cours toute les deux semaines", "Niveau moyen et avancé", "4 rattrapages dans l’année", "Cours en Juillet"],
+    bulletsEN: ["For students with a strong self-discipline", "1h every two weeks", "Level intermediate & advanced", "4 catching-up per year", "Lessons in july"]
 }
 
 export const OnDemand = {
@@ -44,8 +48,10 @@ export const OnDemand = {
     cardNameEN: "On demand",
     priceTag: 100,
     perFR: "Heure",
+    perEN: "Hour", 
     // Max 6 bullets
-    bulletsFR: ["Cours d’essai", "Idéal pour un petit projet", "100% Flexible", "Créez votre planning de cours"]
+    bulletsFR: ["Cours d’essai", "Idéal pour un petit projet", "100% Flexible", "Créez votre planning de cours"],
+    bulletsEN: ["Trial class", "Ideal for small project", "100% Flexible", "Create your own lesson planning"]
 }
 
 // === Comparison Table === //
