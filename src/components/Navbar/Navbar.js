@@ -88,7 +88,7 @@ const Navbar = () => {
                             <NavItem><NavLinks to="/methode">{(language === "FR") ? "Méthode" : "Method"}</NavLinks></NavItem>
                             <NavItem><NavLinks to="/tania">{(language === "FR") ? "À propos" : "About"}</NavLinks></NavItem>
                             <NavItem><NavLinks to="/conditions">Conditions</NavLinks></NavItem>
-                            <NavItem><NavLinks to="/tarifs">{(language === "FR") ? "Tarifs" : "princing"}</NavLinks></NavItem>
+                            <NavItem><NavLinks to="/tarifs">{(language === "FR") ? "Tarifs" : "Pricing"}</NavLinks></NavItem>
                             <NavItem><NavLinks to="/contact">Contact</NavLinks></NavItem>
                             <LangSwitch>
                                 <FRSwitch onClick={() => setLanguage("FR")} lang={language}>FR</FRSwitch>/

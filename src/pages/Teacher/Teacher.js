@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import useWindowSize from "../../hooks/useWindowSize";
@@ -7,8 +7,10 @@ import VideoModal from "../../components/VideoModal/VideoModal";
 import { teacherHeaderData, descrParagraphs, vidsInfos } from "./data/teacher.data";
 import { AboutSection, AboutImage, DescriptionWrapper, VideoSection } from "./Teacher.style";
 import TaniaAbout from "../../assets/images/Tania/TaniaAbout.jpg";
+import { LangContext } from "../../App";
 
 const Teacher = () => {
+    const {language} = useContext(LangContext);
     const screenSize = useWindowSize();
     const AboutRef = useRef(null);
     const isVisible = useAppear(AboutRef, 300);
@@ -39,6 +41,15 @@ const Teacher = () => {
         setBlockSize(1.5);
     }, [screenSize.innerWidth])
 
+    /**
+	 * Small function to return appropriate JSX depending on language setting.
+	 * @param {object} contentList - List of text
+	 * @returns 
+	 */
+	const setContentLang = (contentList) => {
+		return contentList.map((para, index) => <p key={index}>{para}</p>)
+	}
+
     return(
         <>
             <Header data={teacherHeaderData} position={{posX: 0, posY: 40}} />
@@ -46,10 +57,8 @@ const Teacher = () => {
                 <AboutImage src={TaniaAbout} className={isVisible ? "active" : ""} width={blockDimensions.compWidth} height={blockDimensions.compHeight} scrWidth={screenSize.innerWidth} />
                 <DescriptionWrapper className={isVisible ? "active" : ""} width={blockDimensions.compWidth} height={blockDimensions.compHeight} scrWidth={screenSize.innerWidth}>
                     <h2>Tania Guillin</h2>
-                    <sub>Chanteuse professionelle</sub>
-                    {descrParagraphs.map((para, index) => 
-                        <p key={index}>{para}</p>
-                    )}
+                    <sub>{(language === "FR") ? "Chanteuse professionelle" : "Professional singer"}</sub>
+                    {setContentLang((language === "FR") ? descrParagraphs.descriptionFR : descrParagraphs.descriptionEN)}
                 </DescriptionWrapper>
             </AboutSection>
             <VideoSection>
