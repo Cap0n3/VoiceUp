@@ -88,7 +88,7 @@ export const ComparisonTable = [
     },
     {
         titleFR: "Cours en ligne",
-        titleEN: "Lorum ipsum",
+        titleEN: "Online lessons",
         descriptionFR: "Cours par Zoom blabla",
         descriptionEN: "Online lessons on Zoom and blabla",
         tooltipSize: {width: 200, height: 200},
@@ -98,7 +98,7 @@ export const ComparisonTable = [
     },
     {
         titleFR: "Progrès rapide",
-        titleEN: "Lorum ipsum",
+        titleEN: "Fast progress",
         descriptionFR: "Avec un cours par semaine blabla",
         descriptionEN: "With one lesson a week, blabla",
         tooltipSize: {width: 200, height: 200},
@@ -118,7 +118,7 @@ export const ComparisonTable = [
     },
     {
         titleFR: "Rattrapages",
-        titleEN: "Lorum ipsum",
+        titleEN: "Catching-ups",
         descriptionFR: "Maximum 4 rattrapages par année de cours",
         descriptionEN: "Maximum 4 blablabla",
         tooltipSize: {width: 200, height: 200},

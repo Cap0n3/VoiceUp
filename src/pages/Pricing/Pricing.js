@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import { PricingSection, TableSection, FaqSection, FaqContainer } from './Pricing.style';
 import PriceCard from '../../components/PriceCard/PriceCard';
 import { WeeklyAdult, BiAdult, OnDemand, ComparisonTable, pricingHeaderData, QuestionsAnswers } from './data/Pricing.data';
@@ -7,8 +7,10 @@ import Footer from '../../components/Footer/Footer';
 import CompTable from '../../components/CompTable/CompTable';
 import CollapseQuestion from '../../components/CollapseQuestion/CollapseQuestion';
 import useAppear from '../../hooks/useAppear';
+import { LangContext } from '../../App';
 
 const Prices = () => {
+    const {language} = useContext(LangContext);
     const priceSectionRef = useRef(null);
     const tableSectionRef = useRef(null);
     const faqSectionRef = useRef(null);
@@ -30,7 +32,7 @@ const Prices = () => {
                 <FaqContainer isVisible={isFaqVisible}>
                     {
                         QuestionsAnswers.map((data, index) =>
-                            <CollapseQuestion key={index} question={data.questionFR} answer={data.answerFR} />
+                            <CollapseQuestion key={index} question={(language === "FR") ? data.questionFR : data.questionEN} answer={(language === "FR") ? data.answerFR : data.answerEN} />
                     )}
                 </FaqContainer>
             </FaqSection>

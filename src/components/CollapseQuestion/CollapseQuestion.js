@@ -1,6 +1,5 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { CollapseContainer, Question, AnswerWrapper, Answer } from "./CollapseQuestion.style";
-
 
 const CollapseQuestion = ({question, answer}) => {
     const [isOpen, setIsOpen] = useState(false);

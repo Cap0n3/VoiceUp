@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import {
     TableWrapper,
     Table,
@@ -17,8 +17,10 @@ import {BiHelpCircle} from "react-icons/bi";
 import { AiOutlineCheckCircle, AiOutlineMinus } from "react-icons/ai";
 import Tooltip from "../Tooltip/Tooltip";
 import { VoiceUpColors } from "../../colors";
+import { LangContext } from "../../App";
 
 const CompTable = ({isActive, tableData, iconColors}) => {
+    const {language} = useContext(LangContext);
     const [tableHeight, setTableHeight] = useState(0);
     const tableRef = useRef(null);
     
@@ -38,19 +40,19 @@ const CompTable = ({isActive, tableData, iconColors}) => {
                                 <IconWrapper>
                                     <Turtle fill={iconColors[0]} size="32"/>
                                 </IconWrapper>
-                                <h2>Bimensuel</h2>
+                                <h2>{(language === "FR") ? "Bimensuel" : "Bimonthly"}</h2>
                             </HeadCell>
                             <HeadCell cellBorder="true">
                                 <IconWrapper>
                                     <Rocket fill={iconColors[1]} size="24" />
                                 </IconWrapper>
-                                <h2>Hebdomadaire</h2>
+                                <h2>{(language === "FR") ? "Hebdomadaire" : "Weekly"}</h2>
                             </HeadCell>
                             <HeadCell>
                                 <IconWrapper>
                                     <Gear fill={iconColors[2]} size="26" />
                                 </IconWrapper>
-                                <h2>à la carte</h2>
+                                <h2>{(language === "FR") ? "à la carte" : "On demand"}</h2>
                             </HeadCell>
                         </Row>
                     </Thead>
@@ -59,8 +61,8 @@ const CompTable = ({isActive, tableData, iconColors}) => {
                             <Row key={index} alt={(index % 2 !== 0) ? "true" : ""}>
                                 <HeadCell textAlign="left" style={{paddingLeft: "10px"}}>
                                     <InfoWrapper>
-                                        <span>{data.titleFR}</span>
-                                        <Tooltip content={data.descriptionFR} place="right" size={data.tooltipSize} boxStyle={{fontColor: "white", bgColor: "#666"}}>
+                                        <span>{(language === "FR") ? data.titleFR : data.titleEN}</span>
+                                        <Tooltip content={(language === "FR") ? data.descriptionFR : data.descriptionEN} place="right" size={data.tooltipSize} boxStyle={{fontColor: "white", bgColor: "#666"}}>
                                             <BiHelpCircle fill={VoiceUpColors.grey} style={{marginTop: "3px"}} />
                                         </Tooltip>
                                     </InfoWrapper>
