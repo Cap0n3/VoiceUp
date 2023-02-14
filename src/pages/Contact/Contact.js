@@ -1,27 +1,15 @@
 import React, {useRef} from 'react';
-import { ContactSection, FormContainer } from "./Contact.style";
+import { ContactSection, FormContainer, MapsSection, MapsContainer } from "./Contact.style";
 import ContactForm from '../../components/ContactForm/ContactForm';
 import useWindowSize from '../../hooks/useWindowSize';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import Maps from "../../components/Maps/Maps";
 import { contactHeaderData } from './data/Contact.data';
 import useAppear from '../../hooks/useAppear';
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
-
-const containerStyle = {
-    width: '600px',
-    height: '600px'
-};
-
-const center = {
-    lat: 46.17629295000025,
-    lng: 6.113382306933318
-};
 
 const Contact = () => {
-    const { isLoaded } = useLoadScript({
-        googleMapsApiKey: "AIzaSyAm8s7tSJrPGJPTTs5f5zRrDtP2QXCgxOM",
-    });
+    
     const windowSize = useWindowSize();
     const contactSectionRef = useRef(null);
     const isContactVisible = useAppear(contactSectionRef, 280);
@@ -34,10 +22,11 @@ const Contact = () => {
                     <ContactForm />
                 </FormContainer>
             </ContactSection>
-            {!isLoaded ? <p>LOADING ...</p> : 
-            <GoogleMap zoom={15} center={center} mapContainerStyle={containerStyle}>
-                <Marker position={center} />
-            </GoogleMap>}
+            <MapsSection>
+                <MapsContainer width="500" height="500">
+                    <Maps />
+                </MapsContainer>
+            </MapsSection>
             <Footer />
         </>
     )

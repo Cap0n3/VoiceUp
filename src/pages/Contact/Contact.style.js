@@ -29,3 +29,16 @@ export const FormContainer = styled.div`
         padding-right: 0;
     }
 `;
+
+export const MapsSection = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: ${({winHeight}) => (winHeight ? (winHeight - ELEMENT_HEIGHTS.navbarHeight) : ELEMENT_HEIGHTS.sectionHeight)}px;
+`;
+
+export const MapsContainer = styled.div`
+    width: ${({width}) => (width ? `${width}px` : "400px")};
+    height: ${({height}) => (height ? `${height}px` : "400px")};
+`;
