@@ -13,7 +13,6 @@ import {
 import { LangContext } from "../../App";
 import { FilledBtn } from "../../globalStyles/globalCompStyles";
 import { useForm } from "react-hook-form";
-import emailjs from '@emailjs/browser';
 import Recaptcha from "react-google-recaptcha";
 import { NavLink } from "react-router-dom";
 import { FORM_REGEX, EMAILJS_IDS } from "../../globalVars";
