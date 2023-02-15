@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import { ELEMENT_HEIGHTS } from "../../globalVars";
 
-const DEBUG = false;
+const DEBUG = true;
+const mapsBlockSize = 550;
+const mobileMapsBlockSize = "460px";
 
 export const ContactSection = styled.section`
     display: flex;
@@ -40,37 +42,57 @@ export const MapsSection = styled.section`
     @media only screen and (max-width: 1024px) {
         flex-direction: column;
         gap: 30px;
-        padding: 30px 0 30px 0;
+        padding: 50px 0 50px 0;
+    }
+`;
+
+export const MapsContainer = styled.div`
+    width: ${mapsBlockSize}px;
+    height: ${mapsBlockSize}px;
+
+    @media only screen and (max-width: 1300px) and (min-width: 1024px) {
+        width: ${mapsBlockSize - 80}px;
+        height: ${mapsBlockSize - 80}px;
     }
 `;
 
 export const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    width: 500px;
-    height: 500px;
+    justify-content: space-between;
+    width: ${mapsBlockSize}px;
+    height: ${mapsBlockSize}px;
     ${DEBUG ? "border: 1px solid orange;" : ""}
+
+    & > h2 {
+        ${DEBUG ? "border: 1px solid brown;" : ""}
+    }
     
-    & > ol {
-        font-weight: 300;
-    }
-
-    & > p {
-        font-weight: 300;
-    }
-
-    @media only screen and (min-width: 1024px) and (max-width: 1150px) {
-        width: 400px;
+    @media only screen and (max-width: 1300px) and (min-width: 1024px) {
+        width: ${mapsBlockSize - 80}px;
+        height: ${mapsBlockSize - 80}px;
     }
 `;
 
-export const MapsContainer = styled.div`
-    width: 500px;
-    height: 500px;
+export const SubTitle = styled.h4`
+    ${DEBUG ? "border: 1px solid green;" : ""}
+`;
+
+export const DirectionWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    ${DEBUG ? "border: 1px solid red;" : ""}
 `;
 
 export const DirectionList = styled.ol`
     padding: 10px 30px;
     background-color: ${VoiceUpColors.lightGrey};
+`;
+
+export const ParkingWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    ${DEBUG ? "border: 1px solid cyan;" : ""}
 `;

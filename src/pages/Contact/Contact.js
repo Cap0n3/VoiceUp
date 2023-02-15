@@ -4,8 +4,11 @@ import {
     FormContainer, 
     MapsSection, 
     MapsContainer, 
-    TextContainer, 
-    DirectionList 
+    TextContainer,
+    SubTitle,
+    DirectionWrapper,
+    DirectionList,
+    ParkingWrapper
 } from "./Contact.style";
 import ContactForm from '../../components/ContactForm/ContactForm';
 import useWindowSize from '../../hooks/useWindowSize';
@@ -28,28 +31,32 @@ const Contact = () => {
                     <ContactForm />
                 </FormContainer>
             </ContactSection>
-            <MapsSection>
+            <MapsSection winHeight={windowSize.innerHeight}>
                 <TextContainer>
                     <h2>Comment venir ?</h2>
-                    <h4>Transports en commun</h4>
-                    <DirectionList>
-                        <li>CEVA arrêt Lancy – Bachet Gare</li>
-                        <li>Prendre bus 42 arrêt Curé-Baud</li>
-                        <li>Marcher 5 minutes</li>
-                    </DirectionList>
-                    <p>ou</p>
-                    <DirectionList>
-                        <li>Tram 12 ou 15 - Arrêt Palette</li>
-                        <li>Marcher 10 minutes</li>
-                    </DirectionList>
-                    <p>ou</p>
-                    <DirectionList>
-                        <li>Bus 22 ou 42 arrêt Curé-Baud</li>
-                        <li>Marcher 5 minutes</li>
-                    </DirectionList>
-                    <h4>En voiture</h4>
-                    <p>La maison est à 5 minutes de la sortie « Lancy/Carouge » de l’autoroute de contournement.</p>
-                    <p>Facilité de parking devant la maison.</p>
+                    <DirectionWrapper>
+                        <SubTitle>Transports en commun</SubTitle>
+                        <DirectionList>
+                            <li>CEVA arrêt Lancy – Bachet Gare</li>
+                            <li>Prendre bus 42 arrêt Curé-Baud</li>
+                            <li>Marcher 5 minutes</li>
+                        </DirectionList>
+                        <p>ou</p>
+                        <DirectionList>
+                            <li>Tram 12 ou 15 - Arrêt Palette</li>
+                            <li>Marcher 10 minutes</li>
+                        </DirectionList>
+                        <p>ou</p>
+                        <DirectionList>
+                            <li>Bus 22 ou 42 arrêt Curé-Baud</li>
+                            <li>Marcher 5 minutes</li>
+                        </DirectionList>
+                    </DirectionWrapper>
+                    <ParkingWrapper>
+                        <SubTitle>En voiture</SubTitle>
+                        <p>La maison est à 5 minutes de la sortie « Lancy/Carouge » de l’autoroute de contournement.
+                        Facilité de parking devant la maison.</p>
+                    </ParkingWrapper>
                 </TextContainer>
                 <MapsContainer>
                     <Maps />
