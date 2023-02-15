@@ -32,13 +32,45 @@ export const FormContainer = styled.div`
 
 export const MapsSection = styled.section`
     display: flex;
-    flex-direction: column;
+    gap: 4%;
     align-items: center;
     justify-content: center;
     min-height: ${({winHeight}) => (winHeight ? (winHeight - ELEMENT_HEIGHTS.navbarHeight) : ELEMENT_HEIGHTS.sectionHeight)}px;
+
+    @media only screen and (max-width: 1024px) {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 0 30px 0;
+    }
+`;
+
+export const TextContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 500px;
+    height: 500px;
+    ${DEBUG ? "border: 1px solid orange;" : ""}
+    
+    & > ol {
+        font-weight: 300;
+    }
+
+    & > p {
+        font-weight: 300;
+    }
+
+    @media only screen and (min-width: 1024px) and (max-width: 1150px) {
+        width: 400px;
+    }
 `;
 
 export const MapsContainer = styled.div`
-    width: ${({width}) => (width ? `${width}px` : "400px")};
-    height: ${({height}) => (height ? `${height}px` : "400px")};
+    width: 500px;
+    height: 500px;
+`;
+
+export const DirectionList = styled.ol`
+    padding: 10px 30px;
+    background-color: ${VoiceUpColors.lightGrey};
 `;
