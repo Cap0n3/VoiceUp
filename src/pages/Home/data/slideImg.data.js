@@ -9,11 +9,12 @@ export const slides = [
         url: Tania1, 
         imgTitle:"Tania", 
         titleFR:<>Cours <span className="cursiveSpan">de</span> chant</>,
-        titleEN:<>Private <span className="cursiveSpan">Singing</span> Lessons</>,
-        descriptionFR: "Tu chantes mal ? Pas de soucis, viens dépenser ton argent chez moi ! Regarde, en plus j'ai la classe !",
-        descriptionEN: "private singing lessons can speed up your progress, make practice more enjoyable, and improve your chances of gaining any real success in the music industry.", 
+        titleEN:<>Voice <span className="cursiveSpan">Lessons</span></>,
+        descriptionFR: "Vous aimez chanter et vous désirez améliorer votre puissance vocale, élargir votre registre, tenir de longues notes et ne plus être enroué·e·x. Vous aspirez simplement à avoir un moment à vous pour chanter et découvrir votre voix.",
+        descriptionEN: "You love to sing and want to improve your vocal power, expand your range, hold long notes, and no longer have voice issues or you simply aspire to have a moment to yourself to sing and discover your voice.", 
         buttonFR: "S'inscrire",
-        buttonEN: "Book a lesson"
+        buttonEN: "Book a lesson",
+        buttonURL: "/inscription"
     },
     {
         url: ShowerDude, 
@@ -23,7 +24,8 @@ export const slides = [
         descriptionFR: "Hé bah prend une douche, you smelly cat !",
         descriptionEN: "It feels so good to take a good shower !", 
         buttonFR: "Plus d'infos",
-        buttonEN: "More info"
+        buttonEN: "More info",
+        buttonURL: "/inscription"
     },
     {
         url: GoldMic, imgTitle:"Gold Mic", 
@@ -32,6 +34,7 @@ export const slides = [
         descriptionFR: "Viens t'inscrire à l'école du micro d'or !",
         descriptionEN: "The fundamentals of singing have never been this fun and easy completely step-by-step so you know exactly what to do everytime you practice !", 
         buttonFR: "Découvrir",
-        buttonEN: "Discover"
+        buttonEN: "Discover",
+        buttonURL: "/inscription"
     }
 ]

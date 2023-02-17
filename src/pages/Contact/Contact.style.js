@@ -4,7 +4,7 @@ import { ELEMENT_HEIGHTS } from "../../globalVars";
 
 const DEBUG = true;
 const mapsBlockSize = 550;
-const mobileMapsBlockSize = "460px";
+const mobileMapsBlockSize = 350;
 
 export const ContactSection = styled.section`
     display: flex;
@@ -38,7 +38,7 @@ export const MapsSection = styled.section`
     align-items: center;
     justify-content: center;
     min-height: ${({winHeight}) => (winHeight ? (winHeight - ELEMENT_HEIGHTS.navbarHeight) : ELEMENT_HEIGHTS.sectionHeight)}px;
-
+    
     @media only screen and (max-width: 1024px) {
         flex-direction: column;
         gap: 30px;
@@ -49,10 +49,22 @@ export const MapsSection = styled.section`
 export const MapsContainer = styled.div`
     width: ${mapsBlockSize}px;
     height: ${mapsBlockSize}px;
+    ${DEBUG ? "border: 1px solid purple;" : ""}
 
     @media only screen and (max-width: 1300px) and (min-width: 1024px) {
         width: ${mapsBlockSize - 80}px;
         height: ${mapsBlockSize - 80}px;
+    }
+
+    @media only screen and (max-width: 1024px) and (min-width: 400px) {
+        width: ${mobileMapsBlockSize}px;
+        height: ${mobileMapsBlockSize}px;
+    }
+
+    /* Narrow screen (Galaxy fold) */
+    @media only screen and (max-width: 400px) {
+        width: ${mobileMapsBlockSize - 50}px;
+        height: ${mobileMapsBlockSize - 50}px;
     }
 `;
 
@@ -72,6 +84,16 @@ export const TextContainer = styled.div`
         width: ${mapsBlockSize - 80}px;
         height: ${mapsBlockSize - 80}px;
     }
+
+    @media only screen and (max-width: 1024px) and (min-width: 400px) {
+        width: ${mobileMapsBlockSize}px;
+        height: ${mobileMapsBlockSize + 150}px;
+    }
+
+    /* Narrow screen (Galaxy fold) */
+    @media only screen and (max-width: 400px) {
+        width: ${mobileMapsBlockSize- 50}px;
+    }
 `;
 
 export const SubTitle = styled.h4`
@@ -83,6 +105,10 @@ export const DirectionWrapper = styled.div`
     flex-direction: column;
     gap: 20px;
     ${DEBUG ? "border: 1px solid red;" : ""}
+
+    @media screen and (max-width: 1300px) {
+        gap: 10px; 
+    }
 `;
 
 export const DirectionList = styled.ol`
@@ -95,4 +121,8 @@ export const ParkingWrapper = styled.div`
     flex-direction: column;
     gap: 20px;
     ${DEBUG ? "border: 1px solid cyan;" : ""}
+
+    @media only screen and (max-width: 1300px) {
+        gap: 10px;
+    }
 `;

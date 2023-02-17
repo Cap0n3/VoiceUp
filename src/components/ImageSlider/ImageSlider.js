@@ -87,7 +87,7 @@ const ImageSlider = ({slides, transitionTime}) => {
                 <TextBox>
                     <h1>{(language === "FR") ? slides[currentIndex].titleFR : slides[currentIndex].titleEN}</h1>
                     <p style={{marginBottom: "40px"}}>{(language === "FR") ? slides[currentIndex].descriptionFR : slides[currentIndex].descriptionEN}</p>
-                    <OutlineBtn>{(language === "FR") ? slides[currentIndex].buttonFR : slides[currentIndex].buttonEN}</OutlineBtn>
+                    <OutlineBtn to={slides[currentIndex].buttonURL}>{(language === "FR") ? slides[currentIndex].buttonFR : slides[currentIndex].buttonEN}</OutlineBtn>
                 </TextBox>
             </BoxWrapper>
             <DotWrapper>

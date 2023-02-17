@@ -55,7 +55,7 @@ const Contact = () => {
                     <ParkingWrapper>
                         <SubTitle>En voiture</SubTitle>
                         <p>La maison est à 5 minutes de la sortie « Lancy/Carouge » de l’autoroute de contournement.
-                        Facilité de parking devant la maison.</p>
+                        Facilité de parking autour de la maison.</p>
                     </ParkingWrapper>
                 </TextContainer>
                 <MapsContainer>
