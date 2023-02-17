@@ -20,7 +20,16 @@ function App() {
 	const langValue = { language, setLanguage };
 	const location = useLocation();
 
+	/**
+	 * Quick and dirty solution to restore scrolling when path change. 
+	 * If an anchor is set on link, don't restore scrolling to avoid some problems
+	 * when calling anchor from destination page.
+	 * 
+	 */
 	useEffect(() => {
+		if(location.state) {
+			if(location.state.anchor) return;
+		}
 		// Scroll top on route change
 		window.scrollTo(0, 0);
 	}, [location]);

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import { ELEMENT_HEIGHTS } from "../../globalVars";
 
-const DEBUG = true;
+const DEBUG = false;
 const mapsBlockSize = 550;
 const mobileMapsBlockSize = 350;
 

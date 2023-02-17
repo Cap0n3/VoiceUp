@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, { useRef, useEffect } from 'react';
 import { 
     ContactSection, 
     FormContainer, 
@@ -17,11 +17,18 @@ import Footer from '../../components/Footer/Footer';
 import Maps from "../../components/Maps/Maps";
 import { contactHeaderData } from './data/Contact.data';
 import useAppear from '../../hooks/useAppear';
+import { useLocation } from 'react-router-dom';
 
-const Contact = () => {   
+import useAnchor from '../../hooks/useAnchor';
+
+const Contact = () => {
+
     const windowSize = useWindowSize();
     const contactSectionRef = useRef(null);
     const isContactVisible = useAppear(contactSectionRef, 280);
+    const sectionRef = useRef(null); // For anchor
+    let location = useLocation(null); // For anchor
+    useAnchor(sectionRef, location, "#map"); // For anchor
 
     return(
         <>
@@ -31,7 +38,7 @@ const Contact = () => {
                     <ContactForm />
                 </FormContainer>
             </ContactSection>
-            <MapsSection winHeight={windowSize.innerHeight}>
+            <MapsSection ref={sectionRef} winHeight={windowSize.innerHeight}>
                 <TextContainer>
                     <h2>Comment venir ?</h2>
                     <DirectionWrapper>
@@ -67,4 +74,4 @@ const Contact = () => {
     )
 }
 
-export default Contact
+export default Contact;
