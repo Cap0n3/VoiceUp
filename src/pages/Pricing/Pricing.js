@@ -3,11 +3,14 @@ import { PricingSection, TableSection, FaqSection, FaqContainer } from './Pricin
 import PriceCard from '../../components/PriceCard/PriceCard';
 import { WeeklyAdult, BiAdult, OnDemand, ComparisonTable, pricingHeaderData, QuestionsAnswers } from './data/Pricing.data';
 import Header from "../../components/Header/Header";
-import Footer from '../../components/Footer/Footer';
-import CompTable from '../../components/CompTable/CompTable';
-import CollapseQuestion from '../../components/CollapseQuestion/CollapseQuestion';
-import useAppear from '../../hooks/useAppear';
-import { LangContext } from '../../App';
+import Footer from "../../components/Footer/Footer";
+import CompTable from "../../components/CompTable/CompTable";
+import CollapseQuestion from "../../components/CollapseQuestion/CollapseQuestion";
+import useAppear from "../../hooks/useAppear";
+import { LangContext } from "../../App";
+import useAnchor from "../../hooks/useAnchor";
+import { useLocation } from "react-router-dom";
+import { ELEMENT_HEIGHTS } from '../../globalVars';
 
 const Prices = () => {
     const {language} = useContext(LangContext);
@@ -16,6 +19,8 @@ const Prices = () => {
     const faqSectionRef = useRef(null);
     const isTableVisible = useAppear(tableSectionRef, 380);
     const isFaqVisible = useAppear(faqSectionRef, 380);
+    const location = useLocation(null);
+    useAnchor(faqSectionRef, location, "#faq", ELEMENT_HEIGHTS.navbarHeight);
 
     return(
         <>

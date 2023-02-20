@@ -3,8 +3,6 @@ import {useEffect} from "react";
 /**
  * Custom hook to create anchors links.
  * 
- * It'll use state of
- * 
  * ## Usage
  * 
  * Here's the link, it uses state property of react router links :
@@ -21,26 +19,33 @@ import {useEffect} from "react";
  * useAnchor(sectionRef, location, "#map"); // Create anchor with name "#map"
  * ```
  * 
+ * If a navbar needs to be taken into consideration when positionning anchored section simply specify an offset.
+ * 
+ *  ```js
+ * const sectionRef = useRef(null); // Create ref
+ * let location = useLocation(null); // Get location object
+ * useAnchor(sectionRef, location, "#map", 200); // Create anchor with name "#map"
+ * ```
+ * 
  * @param {object} sectionRef - Reference of anchored section.
  * @param {object} location - Location object (of useLocation).
  * @param {string} anchorName - Name of the anchor.
+ * @param {} offset - Offset of section scoll if any (default=0).
  */
-const useAnchor = (sectionRef, location, anchorName) => {
+const useAnchor = (sectionRef, location, anchorName, offset=0) => {
     useEffect(() => {
-        const fooFunc = (offset) => {
+        const fooFunc = (totalOffset) => {
             window.scroll({
-                top: offset,
+                top: totalOffset,
                 behavior: "smooth"
             });
         }
 
         if(!location.state) return;
         if(location.state.anchor === anchorName){
-            fooFunc(sectionRef.current.offsetTop);
+            fooFunc(sectionRef.current.offsetTop - offset);
         }
-    }, [sectionRef.current, location.state])
-
-    
+    }, [sectionRef.current, location.state])    
 }
 
 export default useAnchor;

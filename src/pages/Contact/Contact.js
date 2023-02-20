@@ -10,16 +10,16 @@ import {
     DirectionList,
     ParkingWrapper
 } from "./Contact.style";
-import ContactForm from '../../components/ContactForm/ContactForm';
-import useWindowSize from '../../hooks/useWindowSize';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import ContactForm from "../../components/ContactForm/ContactForm";
+import useWindowSize from "../../hooks/useWindowSize";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import Maps from "../../components/Maps/Maps";
-import { contactHeaderData } from './data/Contact.data';
-import useAppear from '../../hooks/useAppear';
-import { useLocation } from 'react-router-dom';
-
-import useAnchor from '../../hooks/useAnchor';
+import { contactHeaderData } from "./data/Contact.data";
+import useAppear from "../../hooks/useAppear";
+import { useLocation } from "react-router-dom";
+import useAnchor from "../../hooks/useAnchor";
+import { ELEMENT_HEIGHTS } from "../../globalVars";
 
 const Contact = () => {
 
@@ -28,7 +28,7 @@ const Contact = () => {
     const isContactVisible = useAppear(contactSectionRef, 280);
     const sectionRef = useRef(null); // For anchor
     let location = useLocation(null); // For anchor
-    useAnchor(sectionRef, location, "#map"); // For anchor
+    useAnchor(sectionRef, location, "#map", ELEMENT_HEIGHTS.navbarHeight); // For anchor
 
     return(
         <>
