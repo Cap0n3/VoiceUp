@@ -13,15 +13,13 @@ export const enrollHeaderData = {
 export const enrollParagraphsFR = [
     "Si vous désirez me contacter par téléphone, envoyez-moi plutôt un message car si je ne suis pas en train de donner un cours, je suis sûrement en train de répéter. Nous pourrons ainsi convenir d’un rdv téléphonique au cas où vous désirez me parler de vive voix.",
     "Avant de vous lancer dans cette merveilleuse aventure avec moi, vous avez la possibilité de prendre un ou deux cours d’essai afin que vous puissiez voir si ma méthode d’enseignement vous convient.",
-    "Le formulaire ci-dessous ne vous engage en rien c’est simplement une demande pour un premier cours.",
-    "* Veuillez remplir tous les champs du formulaire."
+    "Le formulaire ci-dessous ne vous engage en rien c’est simplement une demande pour un premier cours. Merci de remplir tout les champs du formulaire (*).",
 ]
 
 export const enrollParagraphsEN = [
-    "Was justice improve age article between. No projection as up preference reasonably delightful celebrated. Preserved and abilities assurance tolerably breakfast use saw. And painted letters forming far village elderly compact. Her rest west each spot his and you knew. Estate gay wooded depart six far her. Of we be have it lose gate bred. Do separate removing or expenses in. Had covered but evident chapter matters anxious.",
-    "Or neglected agreeable of discovery concluded oh it sportsman. Week to time in john. Son elegance use weddings separate. Ask too matter formed county wicket oppose talent. He immediate sometimes or to dependent in.",
-    "Everything few frequently discretion surrounded did simplicity decisively. Less he year do with no sure loud.",
-    "* Small are his chief offer happy had."
+    "If you wish to contact me by phone, please send me a message instead, because if I am not giving a lesson, I am probably rehearsing. We can then arrange a phone appointment if you wish to speak to me in person.",
+    "Before embarking on this wonderful adventure with me, you have the option of taking one or two trial lessons so that you can see if my teaching method is suitable for you.",
+    "Le formulaire ci-dessous ne vous engage en rien c’est simplement une demande pour un premier cours. Please fill out all fields in the form (*).",
 ]
 
 // FORM SELECT BOX choices

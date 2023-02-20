@@ -51,7 +51,7 @@ const Footer = () => {
                     <SiteLogo src={LogoWH} />
                 </LogoWrapper>
                 <CopyrightWrapper>
-                    <p>© Copyright 2023 My Voice Up ! | Website by Alexandre Guillin | All Rights Reserved</p>
+                    <p>© Copyright 2023 My Voice Up ! | Coded with love by Alexandre Guillin | All Rights Reserved</p>
                 </CopyrightWrapper>
             </FooterWrapper>
         </FooterContainer>
