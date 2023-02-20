@@ -41,9 +41,9 @@ const Footer = () => {
                 </FtNavWrapper>
                 <SocialWrapper>
                     {/* Fine tune icon width (some icons seems bigger due to svg design or canva)  */}
-                    <YTIcon width={37} />
-                    <InstaIcon width={35} />
-                    <FBIconAlt width={29} />
+                    <YTIcon width={37} linkURL="https://www.youtube.com/channel/UCG5hqAKbF5OxzGVx0jgoPGA" />
+                    <InstaIcon width={35} linkURL="https://www.instagram.com/killing_volts/" />
+                    <FBIconAlt width={29} linkURL="https://www.facebook.com/myvoiceup/" />
                     {/* <TwitIcon width={39} /> */}
                 </SocialWrapper>
                 <hr />

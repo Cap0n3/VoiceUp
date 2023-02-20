@@ -101,9 +101,9 @@ const Navbar = () => {
                     </MenuContainer>
                     <SocialContainer>
                         {/* Fine tune icon width (some icons seems bigger due to svg design or canva)  */}
-                        <YTIcon width={isMedium ? 34 : 37} />
-                        <InstaIcon width={isMedium ? 31 : 35} />
-                        <FBIconAlt width={isMedium ? 26 : 29} />
+                        <YTIcon width={isMedium ? 34 : 37} linkURL="https://www.youtube.com/channel/UCG5hqAKbF5OxzGVx0jgoPGA" />
+                        <InstaIcon width={isMedium ? 31 : 35} linkURL="https://www.instagram.com/killing_volts/" />
+                        <FBIconAlt width={isMedium ? 26 : 29} linkURL="https://www.facebook.com/myvoiceup/" />
                         {/* <TwitIcon width={isMedium ? 35 : 39} /> */}
                     </SocialContainer>
                 </NavbarWrapper>

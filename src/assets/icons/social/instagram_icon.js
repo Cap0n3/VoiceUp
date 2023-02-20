@@ -6,9 +6,17 @@
  * 
  * > Note : <g> tag is used to group path elements.
  */
-const InstaIcon = ({width}) => {
+const InstaIcon = ({width, linkURL}) => {
+	/**
+     * Go to specified URL.
+     */
+    const handleClick = () => {
+        if(!linkURL) return;
+        window.open(linkURL, "_blank", "noreferrer");
+    }
+
 	return(
-		<svg width={width} className="socialIcons" id="InstaIcon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 56.7 56.7" xmlSpace="preserve">
+		<svg onClick={handleClick} width={width} className="socialIcons" id="InstaIcon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 56.7 56.7" xmlSpace="preserve">
 			<g>
 				<path d="M28.2,16.7c-7,0-12.8,5.7-12.8,12.8s5.7,12.8,12.8,12.8S41,36.5,41,29.5S35.2,16.7,28.2,16.7z M28.2,37.7c-4.5,0-8.2-3.7-8.2-8.2s3.7-8.2,8.2-8.2s8.2,3.7,8.2,8.2S32.7,37.7,28.2,37.7z"/>
 				<circle cx="41.5" cy="16.4" r="2.9"/>
