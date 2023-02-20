@@ -18,12 +18,12 @@ export const WeeklyAdult = {
     bckColors: ["#896FBC", "#BDAFDA"],
     cardNameFR: "Hebdomadaire",
     cardNameEN: "Adult Weekly",
-    priceTag: 360,
+    priceTag: 320,
     perFR: "Mois",
     perEN: "Month", 
     // Max 6 bullets
-    bulletsFR: ["Idéal pour avancer vite", "1h de cours toutes les semaines", "Niveau débutant, moyen et avancé", "4 rattrapages dans l’année", "Cours en Juillet"],
-    bulletsEN: ["Perfect to learn fast", "1 hours every week", "For beginner, intermediate & avanced", "4 catching-ups per year", "Lessons in july"]
+    bulletsFR: ["Idéal pour avancer vite", "1h de cours toutes les semaines", "Niveau débutant, moyen et avancé", "Cours en Juillet", "Cours présentiels ou online"],
+    bulletsEN: ["Perfect to learn fast", "1 hours every week", "For beginner, intermediate & avanced", "Lessons in july", "In-person or online lessons"]
 }
 
 export const BiAdult = {
@@ -32,12 +32,12 @@ export const BiAdult = {
     bckColors: ["#1B1734", "#896FBC"],
     cardNameFR: "Bimensuel",
     cardNameEN: "Adult Bimonthly",
-    priceTag: 200,
+    priceTag: 170,
     perFR: "Mois",
     perEN: "Month", 
     // Max 6 bullets
-    bulletsFR: ["Pour les personnes disciplinées", "1h de cours toute les deux semaines", "Niveau moyen et avancé", "4 rattrapages dans l’année", "Cours en Juillet"],
-    bulletsEN: ["For students with a strong self-discipline", "1h every two weeks", "Level intermediate & advanced", "4 catching-up per year", "Lessons in july"]
+    bulletsFR: ["Pour les personnes disciplinées", "1h de cours toute les deux semaines", "Niveau moyen et avancé", "Cours en Juillet", "Cours présentiels ou online"],
+    bulletsEN: ["For students with a strong self-discipline", "1h every two weeks", "Level intermediate & advanced", "Lessons in july", "In-person or online lessons"]
 }
 
 export const OnDemand = {
@@ -46,32 +46,32 @@ export const OnDemand = {
     bckColors: ["#D9A47D", "#D39264"],
     cardNameFR: "Cours à la carte",
     cardNameEN: "On demand",
-    priceTag: 100,
+    priceTag: 90,
     perFR: "Heure",
     perEN: "Hour", 
     // Max 6 bullets
-    bulletsFR: ["Cours d’essai", "Idéal pour un petit projet", "100% Flexible", "Créez votre planning de cours"],
-    bulletsEN: ["Trial class", "Ideal for small project", "100% Flexible", "Create your own lesson planning"]
+    bulletsFR: ["Idéal pour un petit projet", "100% Flexible", "Créez votre planning de cours", "Carte cadeau", "Cours présentiels ou online"],
+    bulletsEN: ["Ideal for small project", "100% Flexible", "Create your own lesson planning", "Gift card", "In-person or online lessons"]
 }
 
 // === Comparison Table === //
 export const ComparisonTable = [
     {
-        titleFR: "Débutant",
+        titleFR: "Débutants",
         titleEN: "Beginner",
-        descriptionFR: "Niveau débutants et faux-débutant blabla",
-        descriptionEN: "Beginner and such",
-        tooltipSize: {width: 200, height: 200},
+        descriptionFR: "Vous êtes un débutant, vous avez peu ou pas d’expérience du chant et de la voix.",
+        descriptionEN: "You are a beginner, you have little or no experience in singing and voice.",
+        tooltipSize: {width: 200, height: 100},
         biAdult: false,
         weeklyAdult: true,
-        onDemand: true,
+        onDemand: false,
     },
     {
         titleFR: "Intermédiaire",
         titleEN: "Intermediate",
-        descriptionFR: "Niveau intermédiaire blabla",
-        descriptionEN: "Intermediary and such blabla",
-        tooltipSize: {width: 200, height: 200},
+        descriptionFR: "Vous chantez déjà depuis plusieurs années mais vous manquez de pratique et de technique.",
+        descriptionEN: "You have been singing for several years already but you lack practice and technique.",
+        tooltipSize: {width: 200, height: 100},
         biAdult: true,
         weeklyAdult: true,
         onDemand: true,
@@ -79,9 +79,9 @@ export const ComparisonTable = [
     {
         titleFR: "Avancés",
         titleEN: "Advanced",
-        descriptionFR: "Niveau avancés et blabla",
-        descriptionEN: "Advanced level blabla",
-        tooltipSize: {width: 200, height: 200},
+        descriptionFR: "Vous chantez depuis plusieurs années et vous possédez une bonne base technique. Vous avez participé à plusieurs projets, concerts, pièces, enregistrement, etc...",
+        descriptionEN: "You have been singing for several years and have a good technical foundation. You have participated in several projects, concerts, plays, recordings, etc…",
+        tooltipSize: {width: 200, height: 180},
         biAdult: true,
         weeklyAdult: true,
         onDemand: true,
@@ -89,9 +89,9 @@ export const ComparisonTable = [
     {
         titleFR: "Cours en ligne",
         titleEN: "Online lessons",
-        descriptionFR: "Cours par Zoom blabla",
-        descriptionEN: "Online lessons on Zoom and blabla",
-        tooltipSize: {width: 200, height: 200},
+        descriptionFR: "Des cours donnés en ligne grâce à l’application Zoom.",
+        descriptionEN: "Online lessons with Zoom app.",
+        tooltipSize: {width: 200, height: 100},
         biAdult: true,
         weeklyAdult: true,
         onDemand: true,
@@ -99,28 +99,28 @@ export const ComparisonTable = [
     {
         titleFR: "Progrès rapide",
         titleEN: "Fast progress",
-        descriptionFR: "Avec un cours par semaine blabla",
-        descriptionEN: "With one lesson a week, blabla",
-        tooltipSize: {width: 200, height: 200},
+        descriptionFR: "Des progrès rapides sont garantis si l’élève travaille régulièrement en dehors des leçons.",
+        descriptionEN: "Rapid progress is guaranteed if the student works regularly at home.",
+        tooltipSize: {width: 200, height: 100},
         biAdult: false,
         weeklyAdult: true,
         onDemand: false,
     },
     {
-        titleFR: "Audition",
-        titleEN: "Audition",
-        descriptionFR: "Concert de fin d'année, blabla",
-        descriptionEN: "End of the year concert blabla",
-        tooltipSize: {width: 200, height: 200},
+        titleFR: "Concert",
+        titleEN: "Concert",
+        descriptionFR: "Si vous le souhaitez, vous pourrez participer à un concert de fin d’année devant un public !",
+        descriptionEN: "If you wish, you will be able to participate in an end-of-year concert in front of an audience !",
+        tooltipSize: {width: 200, height: 100},
         biAdult: true,
         weeklyAdult: true,
         onDemand: false,
     },
     {
         titleFR: "Rattrapages",
-        titleEN: "Catching-ups",
-        descriptionFR: "Maximum 4 rattrapages par année de cours",
-        descriptionEN: "Maximum 4 blablabla",
+        titleEN: "Make-up classes",
+        descriptionFR: "Vous aurez jusqu’à 4 rattrapages par année si vous manquez des cours.",
+        descriptionEN: "You will have up to 4 make-up classes per year if you miss any lessons.",
         tooltipSize: {width: 200, height: 200},
         biAdult: true,
         weeklyAdult: true,

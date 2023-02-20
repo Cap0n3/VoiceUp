@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FONT_SIZES } from "../../globalVars";
 
 export const TooltipWrapper = styled.div`
     position: relative;
@@ -14,6 +15,8 @@ export const TooltipBox = styled.div`
     padding: 15px;
     width: ${({toolTipSize}) => (toolTipSize.width)}px;
     border-radius: 10px;
+    font-weight: 300;
+    font-size: ${FONT_SIZES.S_ftSizeMD};
     color: ${({boxStyle}) => (boxStyle.fontColor ? boxStyle.fontColor : "white")};
     /* Tooltip placement */
     /*

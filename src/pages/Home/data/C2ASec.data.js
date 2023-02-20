@@ -6,7 +6,7 @@ export const C2AData = {
     titleEN: "Improve",
     subTitleEN: <><span className="cursiveSpan" style={{textTransform: "uppercase"}}>at your own</span> pace</>,
     descriptionFR: "Des cours adaptés aux besoins de chacuns, donnés par Tania, une professeures de chant certifiée avec plus de 30 ans d’expérience vocale.",
-    descriptionEN: "Lessons adapted to everyone's needs, given by Tania, a certified teacher with more than 30 years of vocal experience.",
+    descriptionEN: "Classes tailored to individual needs, taught by Tania, a certified vocal coach with over 30 years of vocal experience.",
     buttonFR: "Réservez un cours",
     buttonEN: "Book a lesson"
 }

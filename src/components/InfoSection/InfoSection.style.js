@@ -108,8 +108,11 @@ export const TextDiv = styled.div`
         font-size: ${FONT_SIZES.M_ftSizeMD};
         margin-bottom: 30px;
         ${DEBUG ? "background-color: lightblue;" : ""}
-        /* padding-left: 20%;
-        padding-right: 20%; */
+    }
+    
+    & > :last-child {
+        margin-bottom: 0;
+        ${DEBUG ? "background-color: red;" : ""}
     }
     
     @media only screen and (max-width: 950px) {

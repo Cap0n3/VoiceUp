@@ -12,7 +12,7 @@ export const lessonHeaderData = {
     titleFR: "La méthode",
     titleEN: "Method",
     descriptionFR: <>« Les meilleurs professeurs sont ceux qui savent se transformer en ponts, qui invitent leurs étudiants à les franchir et qui, après avoir facilité leur passage, disparaissent avec joie en les encourageant à bâtir leurs propres ponts. » <br /><br />Nikos Kazantzakis</>,
-    descriptionEN: <>« The best teachers are those who know how to act as a bridge and invite their students to cross it. After that, they joyfully disappear and encourage them to build their own bridges. »<br /><br />Nikos Kazantzakis</>
+    descriptionEN: <>« The best teachers are those who can turn themselves into bridges and invite their students to cross over. After facilitating their passage, they joyfully disappear, encouraging them to build their own bridges. »<br /><br />Nikos Kazantzakis</>
 }
 
 // INFO SECTION DATA
@@ -24,11 +24,15 @@ export const infoPhiloData = {
     titleFR : "Philosophie d'enseignement",
     titleEN : "Teaching philosophy",
     descriptionFR : [
-        "Passionnée de musique depuis mon plus jeune âge, j’ai pu approcher et expérimenter plusieurs styles de musique comme le classique, le jazz, la comédie musicale, la soul, la funk, la pop et le rock-punk.", 
-        "Ouverte d’esprit, j’enseigne le chant sans aucun jugement face aux goûts musicaux de chacun et notamment face à la manière de chanter de chacun. J’accompagne et soutiens les buts des élèves à leur rythme et j’apprécie de travailler dans une ambiance de confiance et de liberté qui sont pour moi les fondements du développement artistique d’un(e) chanteur(euse).",
-        "Je valorise par dessus tout l’enseignement d’une technique de chant saine et efficace tout en restant à l’écoute des vœux de chacun. Je saurai donc personnaliser les exercices afin que vous puissiez trouver votre propre voix. Je peux faire aussi bien du coaching vocal pour la scène, que pour le studio (par ex : préparation et suivi lors de l’enregistrement d’un album)."
+        "Passionnée de musique depuis mon plus jeune âge, j’ai pu expérimenter et pratiquer plusieurs styles de musiques comme le classique, le jazz, la comédie musicale, la soul, la funk, la pop et le rock.", 
+        "Ouverte d’esprit, j’enseigne le chant sans aucuns jugements face aux goûts musicaux et à la manière de chanter de chacun. J’accompagne et soutiens les buts de l’élève et j’apprécie de travailler dans une ambiance de confiance et de liberté qui sont pour moi les fondements du développement artistique d’un·e chanteur·euse·x.",
+        "Je valorise par-dessus tout l’enseignement d’une technique de chant saine et efficace tout en restant à l’écoute des vœux de chacun. Je saurai donc personnaliser les exercices afin que l’élève puisse trouver sa propre voix tout en progressant techniquement."
     ],
-    descriptionEN : ["Hello, it's me Mario !", "A lovable character from a video game from the 80's"]
+    descriptionEN : [
+        "Passionate about music since a young age, I have been able to experiment and practice various music styles such as classical, jazz, musical theater, soul, funk, pop, and rock.",
+        "Open-minded, I teach singing without judgment towards each individual's musical tastes and singing style. I support and encourage the goals of my students and enjoy working in an atmosphere of trust and freedom, which I believe are the foundations of an artist's development.",
+        "Above all, I prioritize teaching a healthy and effective singing technique while also listening to the wishes of each individual. I will personalize the exercises so that the student can find their own voice while making technical progress."
+    ]
 }
 
 export const infoLearningPathData = {
@@ -38,10 +42,13 @@ export const infoLearningPathData = {
     titleFR : "Programme",
     titleEN : "Learning path",
     descriptionFR : [
-        "Le travail du chanteur débutant ou de l’orateur se concentre essentiellement sur l’apprentissage de la coordination du souffle et du son. En effet, pour chanter, une bonne maîtrise du souffle et du support de ce dernier se révèlent essentiels. Par des exercices et par la pratique, le chanteur apprend comment soutenir le son afin d’avoir une voix stable, puissante et souple (grande tessiture). Ainsi il évite les cassures vocales involontaires et les extinctions de voix.",
-        "Pour les élèves plus avancés, une approche en profondeur des différents modes (voix de tête, voix de corps), permet au chanteur d’acquérir une plus grande palette d’expressions, afin de pourvoir chanter comme il l’entend. Du son doux et clair au son fort et rauque, tout lui sera possible. L’accent est aussi porter sur l’interprétation que nous étudierons plus en détail.",
+        "Le travail du chanteur·euse·x débutant·e·x ou de l’orateur·trice·x se concentre essentiellement sur l’apprentissage de la coordination du souffle et du son. Par des exercices et par la pratique, le·la·lo vocaliste apprend comment soutenir le son afin d’avoir une voix stable, puissante et souple (grande tessiture) et ainsi à éviter les cassures vocales involontaires et les extinctions de voix.",
+        "Pour les chanteur·euses·x plus avancé·es·x, une approche en profondeur des différents modes (voix de tête, voix mixtes, voix de corps) leur permet d’acquérir une plus grande palette d’expressions afin de pourvoir chanter librement et en connections à leur émotions. L’apprentissage des effets vocaux comme la distortion, le grunt, le growl, etc.. peuvent être abordés au même titre que l’interprétation et la prestance scénique et vocale.",
     ],
-    descriptionEN : ["Hello, it's me Mario !", "A lovable character from a video game from the 80's"]
+    descriptionEN : [
+        "The work of a beginner singer or speaker mainly focuses on learning the coordination of breath and sound. Through exercises and practice, the vocalist learns how to support the sound in order to have a stable, powerful, and flexible voice (wide vocal range), and to avoid involuntary vocal breaks and voice loss.", 
+        "For more advanced singers, a deeper approach to the different vocal modes (head voice, mixed voice, chest voice) allows them to acquire a greater range of expressions, enabling them to sing freely and connect with their emotions. Interpretation and stage presence will also be addressed, and if the student desires, vocal effects such as distortion, grunt, growl, etc. can also be studied."
+    ]
 }
 
 export const infoTechniqueData = {
@@ -51,11 +58,15 @@ export const infoTechniqueData = {
     titleFR : "Technique de chant CVT",
     titleEN : "CVT Vocal Technique",
     descriptionFR : [
-        "Cathrine Sadolin créa la CVT (Complete Vocal Technique) en 2005 à Copenhague. Ayant suivit une formation de chant classique, elle se trouva dans l’embarras lorsqu’elle voulu chanter dans un groupe de rock. Cet événement l’a poussée à faire des recherches, notamment avec des médecins spécialistes (O.R.L.), pour développer une technique de chant universelle qui puisse aussi bien aider des chanteurs classiques que country, rock, pop, jazz, world etc…",
-        "La CVT est une technique de chant efficace et saine pour les cordes vocales, qui une fois comprise dans son ensemble, vous permettra d’être indépendant avec votre travail vocal. Elle vous permet de maîtriser votre voix et d’en comprendre son fonctionnement.",
-        "Technique vocale : Respiration, Support, Twang, Prononciation (voyelles), Placements vocaux, Volume, Couleur de voix, Modes Vocaux (par ex: voix de tête, voix de poitrine, etc…) ainsi que la Transition entre eux et les Effets Vocaux. Technique musicale : Improvisation et Interprétation. Technique de scène : Utilisation du Micro et Prestance."
+        "La Technique Vocale Complète est une méthode pionnière et novatrice, extrêmement utile à toute personne s’intéressant à la voix. Elle s’adresse autant au professionnel·le·x qu’aux débutant·e·x et s’applique à tous les styles de chant.",
+        "Cathrine Sadolin est une des chefs de file mondiaux en matière de recherche sur la voix. Ses 35 années de recherche à travers tous les styles de chant, en plus de son expérience en tant que chanteuse professionnelle, ont inspiré une nouvelle façon d’aborder la voix. Elle s’est spécialisée dans la résolution des problèmes vocaux, le réhabilitation des voix éraillées et l’enseignement de technique vocales avancées dans tous les style musicaux.",
+        "La CVT est une technique de chant efficace et saine pour les cordes vocales, qui une fois comprise dans son ensemble, vous permettra d’être indépendant avec votre travail vocal. Elle vous permet de maîtriser votre voix et d’en comprendre son fonctionnement."
     ],
-    descriptionEN : ["Hello, it's me Mario !", "A lovable character from a video game from the 80's"]
+    descriptionEN : [
+        "The Complete Vocal Technique is a pioneering and innovative method that is extremely useful for anyone interested in singing. It is suitable for both professionals and beginners, and can be applied to all styles of singing.", 
+        "Cathrine Sadolin is one of the world's leading voices in vocal research. Her 35 years of research across all styles of singing, in addition to her experience as a professional singer, have inspired a new way of approaching singing. She specializes in solving vocal problems, rehabilitating hoarse voices, and teaching advanced vocal techniques in all musical styles.",
+        "CVT is an effective and healthy vocal technique for the vocal cords, which, once understood in its entirety, will allow you to be independent with your vocal work. It enables you to master your voice and understand how it works."
+    ]
 }
 
 export const infoLessonsData = {
@@ -65,11 +76,13 @@ export const infoLessonsData = {
     titleFR : "Les cours",
     titleEN : "Lessons",
     descriptionFR : [
-        "EN PRÉSENTIEL : Je donne les cours chez moi dans un studio spécialement construit et aménagé pour le chant. Vous avez la possibilité de chanter sur une sono si vous le souhaitez.",
-        "EN LIGNE : Je donne les cours en ligne aussi. La qualité du cours dépendra beaucoup de votre connexion internet (rapide) et de votre configuration. Pour faire simple, je vous demanderais d’utiliser un appareil autre que votre ordinateur pour passer la musique ou l’instrumental afin que je puisse bien entendre votre voix. J’utilise Zoom pour les cours en ligne.",
-        "Avec le temps et l’expérience, je trouve que les cours en ligne marche tout aussi bien que les cours en présentiel. Vous avez aussi la possibilité de faire une alternance entre les cours en ligne et les cours en présentiel."
+        "Les séances abordent tous les aspects du chant et de la voix (technique vocale, pose de la voix, interprétation, improvisation, prestance scénique et technique du micro). Aucune connaissance musicale n’est requise. Les cours individuels sont ouverts dès 15 ans aussi bien aux élèves débutants que professionnels. À partir de 12 ans vous pouvez également suivre des cours d’initiation au chant. Les inscriptions sont ouvertes durant toute l'année.",
+        "Technique vocale : Respiration, Soutien, Twang, Prononciation (voyelles), Volume, Couleur de voix (timbre), Modes Vocaux (par ex: voix de tête, voix de poitrine, etc…) ainsi que la Transition entre eux et les Effets Vocaux. Technique musicale : Improvisation. Interprétation . Technique de scène : Utilisation du Micro et Prestance.",
     ],
-    descriptionEN : ["Hello, it's me Mario !", "A lovable character from a video game from the 80's"]
+    descriptionEN : [
+        "My lessons cover all aspects of singing and voice, including vocal technique, vocal placement, interpretation, improvisation, stage presence and microphone technique. No musical knowledge is required, individual lessons are available to beginners and professionals alike from the age of 15. Introduction to singing courses are also available from the age of 12. Enrollment is open throughout the year.", 
+        "Vocal Technique : Breathing, Support, Twang, Pronunciation (vowels), Volume, Voice Color (timbre), Vocal Modes (e.g., head voice, chest voice, etc.), as well as the Transition between them and Vocal Effects. Musical Technique : Improvisation. Interpretation. Stage Technique: Microphone Use and Presence."
+    ]
 }
 
 export const infoAuditionData = {
@@ -79,8 +92,11 @@ export const infoAuditionData = {
     titleFR : "Auditions",
     titleEN : "Auditions",
     descriptionFR : [
-        "Depuis plusieurs années déjà, Voice Up collabore avec des professeurs de batterie, guitare et basse afin d’organiser un Concert/Audition en juin, à la julienne (Plan-les-Ouates). Un répertoire entre 13 et 15 chansons, selon un thème qui varie chaque année, est choisi et préparé. C’est un beau moment de partage entre les élèves et les professeurs, car ces derniers font aussi partie du concert.",
-        "Les auditions sont des moments importants pour les élèves, car c’est une occasion unique de chanter avec des musiciens, ainsi que de mettre en pratique l’enseignement de l’année devant un publique bienveillant. Plus on pratique la scène, moins elle devient effrayante. Elle permet à l’élève de voir ses points forts, afin de construire sa confiance en soi et de travailler sur les plus faibles, pour être plus à l’aise la prochaine fois. Bien évidemment les auditions ne sont pas obligatoires mais fortement recommandées :)."
+        "À la fin de chaque année, un concert est organisé à la Julienne (Plans-Les-Ouates) en collaboration avec d’autres professeurs de musique. Les chanteur·euses·x sont alors accompagnés d’élèves musiciens et ont la possibilité de découvrir le monde de la scène en face d’un public bienveillant.",
+        "Les auditions sont des moments importants pour les élèves car c’est une occasion unique de chanter avec des musiciens et de mettre en pratique l’enseignement de l’année. Cette opportunité permettra à l’élève de trouver ses points forts, de construire sa confiance en soi et de prendre conscience de ses points faibles. Bien évidemment les auditions ne sont pas obligatoires mais fortement recommandées !"
     ],
-    descriptionEN : ["Hello, it's me Mario !", "A lovable character from a video game from the 80's"]
+    descriptionEN : [
+        "At the end of each year, a concert is organized at La Julienne (in Plans-Les-Ouates) in collaboration with other music teachers. Singers are then accompanied by student musicians and have the opportunity to discover the performing art world in front of a supportive audience.",
+        "Auditions are important moments for students because it’s a unique opportunity to sing with musicians and put into practice the teachings of the year. This opportunity will allow the student to find their strengths, build their confidence and become aware of their weaknesses. Of course, auditions are not mandatory but strongly recommended !"
+    ]
 }
