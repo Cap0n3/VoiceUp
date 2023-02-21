@@ -42,9 +42,9 @@ export const DescriptionWrapper = styled.div`
     /* Resize block with computed values (should be both with same size) */
     width: ${({width}) => (width ? `${width}px` : "33%")};
     height: ${({height}) => (height ? `${height}px` : "")};
-    padding: 2%;
+    padding: 30px;
     /* box-shadow: 0px 17px 46px -10px #777777; */
-    overflow-y: hidden;
+    overflow-y: scroll;
     transition: margin-right 600ms ease;
     background-image: linear-gradient(45deg, #F8F6F6 0%, ${VoiceUpColors.lightGrey} 100%);
     /* background-color: ${DEBUG ? "lightgreen" : VoiceUpColors.lightGrey}; */
@@ -83,7 +83,7 @@ export const DescriptionWrapper = styled.div`
         padding: 7%;
 
         & > h2 {
-            font-size: 3.5vw;
+            font-size: ${FONT_SIZES.mobileBody};
             margin-bottom: 0px;
         }
 
@@ -93,7 +93,7 @@ export const DescriptionWrapper = styled.div`
         }
 
         & > p {
-            font-size: 2.2vw;
+            font-size: ${FONT_SIZES.mobileBody};
         }
     }
 `;
