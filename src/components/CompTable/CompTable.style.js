@@ -4,6 +4,8 @@ import { FONT_SIZES } from "../../globalVars";
 
 const DEBUG = false;
 
+const mobileFontSize = "0.65em"
+
 export const TableWrapper = styled.div`
     display: flex;
     align-content: center;
@@ -55,12 +57,14 @@ export const HeadCell = styled.th`
         }
 
         @media only screen and (max-width: 690px) {
-            font-size: 0.7em;
+            font-size: ${mobileFontSize};
+            padding: 10px;
         }
     }
 
     & > span {
         font-weight: 500;
+
         @media only screen and (max-width: 1024px) and (min-width: 691px) {
             font-size: ${FONT_SIZES.M_ftSizeMD};
         }
@@ -91,4 +95,13 @@ export const InfoWrapper = styled.div`
     height: 40px;
     gap: 15px;
     ${DEBUG ? "border: 1px solid pink;" : ""}
+
+
+    @media screen and (max-width: 691px) {
+        gap: 5px;
+        
+        & > span {
+            font-size: ${mobileFontSize};
+        }
+    }
 `;
