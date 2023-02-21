@@ -4,13 +4,15 @@ import { FONT_SIZES } from "../../globalVars";
 
 // === Card size === //
 const cardWidth = 380;
+const cardMediumWidth = 330;
+const cardSmallWidth = 300;
 const cardHeight = 600;
 const cardHeadHeight = cardHeight / 3;
 const circleSize = 100;
 const circleIconHeight = 30;
 
 // DEBUG
-const DEBUG = false;
+const DEBUG = true;
 
 // === Animations === //
 const launch = keyframes`
@@ -40,7 +42,10 @@ export const CardContainer = styled.div`
     ${DEBUG ? "border: 1px solid green;" : ""}
 
     @media only screen and (max-width: 1280px) and (min-width: 1024px) {
-        width: ${cardWidth - 50}px;
+        width: ${cardMediumWidth}px;
+    }
+    @media only screen and (max-width: 1024px) {
+        width: ${cardSmallWidth}px;
     }
 `;
 
@@ -66,7 +71,11 @@ export const PCard = styled.div`
     }
 
     @media only screen and (max-width: 1280px) and (min-width: 1024px) {
-        width: ${cardWidth - 50}px;
+        width: ${cardMediumWidth}px;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        width: ${cardSmallWidth}px;
     }
 `;
 
@@ -100,7 +109,11 @@ export const InnerCircle = styled.div`
     z-index: 10;
 
     @media only screen and (max-width: 1280px) and (min-width: 1024px) {
-        left: ${(cardWidth - circleSize- 50) / 2}px; /* Center circle */
+        left: ${(cardMediumWidth - circleSize) / 2}px; /* Center circle */
+    }
+
+    @media only screen and (max-width: 1024px) {
+        left: ${(cardSmallWidth - circleSize) / 2}px; /* Center circle */
     }
 `;
 

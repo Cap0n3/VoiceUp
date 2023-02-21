@@ -19,7 +19,8 @@ export const PricingSection = styled.section`
         gap: 10px;
     }
 
-    @media only screen and (max-width: 1024px) {
+    /* To keep cards in line as long as possible */
+    @media only screen and (max-width: 945px) {
         flex-direction: column;
         gap: 30px;
     }
