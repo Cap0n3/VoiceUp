@@ -38,7 +38,7 @@ export const Overlay = styled.div`
 export const VidDescription = styled.p`
     margin-top: 40px;
     color: ${VoiceUpColors.white};
-    font-size: ${FONT_SIZES.desktopBody};
+    font-size: ${FONT_SIZES.mobileBody};
     max-height: 100px;
     overflow-y: auto;
     ${DEBUG ? "background-color: lightblue;" : ""}

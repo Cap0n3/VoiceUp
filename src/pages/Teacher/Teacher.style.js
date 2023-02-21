@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
+import { FONT_SIZES, FONT_WEIGHTS } from "../../globalVars";
 
 const DEBUG = false;
 const sectionPadding = 100;
@@ -41,7 +42,7 @@ export const DescriptionWrapper = styled.div`
     /* Resize block with computed values (should be both with same size) */
     width: ${({width}) => (width ? `${width}px` : "33%")};
     height: ${({height}) => (height ? `${height}px` : "")};
-    padding: 3%;
+    padding: 2%;
     /* box-shadow: 0px 17px 46px -10px #777777; */
     overflow-y: hidden;
     transition: margin-right 600ms ease;
@@ -49,7 +50,8 @@ export const DescriptionWrapper = styled.div`
     /* background-color: ${DEBUG ? "lightgreen" : VoiceUpColors.lightGrey}; */
 
     & > h2 {
-        font-size: 1.8vw;
+        font-size: ${FONT_SIZES.desktopBody};
+        font-weight: ${FONT_WEIGHTS.headingsWeight};
         margin-bottom: -5px;
         text-transform: uppercase;
         ${DEBUG ? "background-color: cyan;" : ""};
@@ -64,7 +66,7 @@ export const DescriptionWrapper = styled.div`
     }
 
     & > p {
-        font-size: 1.1vw;
+        font-size: ${FONT_SIZES.desktopBody};
         font-weight: 300;
         margin-bottom: 20px;
     }
