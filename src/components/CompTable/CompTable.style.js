@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import { FONT_SIZES } from "../../globalVars";
 
-const DEBUG = false;
+const DEBUG = true;
 
 const mobileFontSize = "0.65em"
 
@@ -73,6 +73,16 @@ export const HeadCell = styled.th`
             font-size: ${FONT_SIZES.XS_ftSizeMD};
         }
     }
+
+    @media screen and (max-width: 1024px) {
+        width: 33%;
+    }
+`;
+
+export const EmptyCell = styled.td`
+    @media screen and (max-width: 1024px) {
+        display: none;
+    }
 `;
 
 export const IconWrapper = styled.div`
@@ -87,6 +97,34 @@ export const Cell = styled.td`
     border-right: ${({cellBorder}) => (cellBorder ? `1px solid ${VoiceUpColors.altGrey}` :  "none")};
     text-align: center;
     vertical-align: center;
+
+    @media screen and (max-width: 1024px) {
+        display: none;
+    }
+`;
+
+export const DivCellsWrapper = styled.div`
+    display: none;
+
+    @media screen and (max-width: 1024px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        height: 80px;
+        width: 100%;
+        ${DEBUG ? "border: 1px solid cyan;" : ""}
+    }
+`;
+
+export const MobileDivCell =styled.div`
+    display: none;
+
+    @media screen and (max-width: 1024px) {
+        display: flex;
+        ${DEBUG ? "border: 1px solid white;" : ""}
+
+    }
 `;
 
 export const InfoWrapper = styled.div`

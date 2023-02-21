@@ -8,6 +8,9 @@ import {
     HeadCell,
     IconWrapper,
     Cell,
+    EmptyCell,
+    DivCellsWrapper,
+    MobileDivCell,
     InfoWrapper
  } from "./CompTable.style";
 import Turtle from "../../assets/icons/myIcons/turtle_icon";
@@ -18,11 +21,13 @@ import { AiOutlineCheckCircle, AiOutlineMinus } from "react-icons/ai";
 import Tooltip from "../Tooltip/Tooltip";
 import { VoiceUpColors } from "../../colors";
 import { LangContext } from "../../App";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const CompTable = ({isActive, tableData, iconColors}) => {
     const {language} = useContext(LangContext);
     const [tableHeight, setTableHeight] = useState(0);
     const tableRef = useRef(null);
+    const windowSize = useWindowSize();
     
     useEffect(() => {
         if(tableRef.current != null) {
@@ -35,7 +40,7 @@ const CompTable = ({isActive, tableData, iconColors}) => {
             <Table className={isActive} ref={tableRef}>
                     <Thead>
                         <Row rowHeight="180px">
-                            <td className="empty"></td>
+                            <EmptyCell />
                             <HeadCell>
                                 <IconWrapper>
                                     <Turtle fill={iconColors[0]} size="32"/>
@@ -59,13 +64,18 @@ const CompTable = ({isActive, tableData, iconColors}) => {
                     <Tbody>
                         {tableData.map((data, index) => 
                             <Row key={index} alt={(index % 2 !== 0) ? "true" : ""}>
-                                <HeadCell textAlign="left" style={{paddingLeft: "10px"}}>
+                                <HeadCell textAlign="left" style={windowSize.innerWidth <=1024 ? {paddingLeft: "0px"} : {paddingLeft: "10px"}} colSpan={windowSize.innerWidth <=1024 ? "4" : ""}>
                                     <InfoWrapper>
                                         <span>{(language === "FR") ? data.titleFR : data.titleEN}</span>
                                         <Tooltip content={(language === "FR") ? data.descriptionFR : data.descriptionEN} place="right" size={data.tooltipSize} boxStyle={{fontColor: "white", bgColor: "#666"}}>
                                             <BiHelpCircle fill={VoiceUpColors.grey} style={{marginTop: "3px"}} />
                                         </Tooltip>
                                     </InfoWrapper>
+                                    <DivCellsWrapper style={{ display: "flex", justifyContent: "center", gap: "33%"}}>
+                                        <MobileDivCell>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</MobileDivCell>
+                                        <MobileDivCell>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</MobileDivCell>
+                                        <MobileDivCell>{data.onDemand ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</MobileDivCell>
+                                    </DivCellsWrapper>
                                 </HeadCell>
                                 <Cell>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</Cell>
                                 <Cell cellBorder="true">{data.weeklyAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</Cell>
@@ -73,6 +83,25 @@ const CompTable = ({isActive, tableData, iconColors}) => {
                             </Row>
                         )}
                     </Tbody>
+                    {/* <Tbody>
+                        {tableData.map((data, index) => 
+                                <Row key={index} alt={(index % 2 !== 0) ? "true" : ""}>
+                                    <HeadCell textAlign="left" style={{paddingLeft: "10px"}} colSpan="4">
+                                        <InfoWrapper>
+                                            <span>{(language === "FR") ? data.titleFR : data.titleEN}</span>
+                                            <Tooltip content={(language === "FR") ? data.descriptionFR : data.descriptionEN} place="right" size={data.tooltipSize} boxStyle={{fontColor: "white", bgColor: "#666"}}>
+                                                <BiHelpCircle fill={VoiceUpColors.grey} style={{marginTop: "3px"}} />
+                                            </Tooltip>
+                                        </InfoWrapper>
+                                        <div style={{ display: "flex", justifyContent: "center", gap: "33%"}}>
+                                            <div>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</div>
+                                            <div>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</div>
+                                            <div><Cell>{data.onDemand ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</Cell></div>
+                                        </div>
+                                    </HeadCell>
+                                </Row>
+                        )}
+                    </Tbody> */}
                 </Table>
         </TableWrapper>
     );
