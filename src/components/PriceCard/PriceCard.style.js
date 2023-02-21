@@ -3,7 +3,8 @@ import { VoiceUpColors } from "../../colors";
 import { FONT_SIZES } from "../../globalVars";
 
 // === Card size === //
-const cardWidth = 380;
+const cardWidthPercent = 26;
+const cardWidthMobilePercent = 60;
 const cardMediumWidth = 330;
 const cardSmallWidth = 300;
 const cardHeight = 600;
@@ -12,7 +13,7 @@ const circleSize = 100;
 const circleIconHeight = 30;
 
 // DEBUG
-const DEBUG = true;
+const DEBUG = false;
 
 // === Animations === //
 const launch = keyframes`
@@ -36,16 +37,14 @@ const spin = keyframes`
 
 // === Card Styles === //
 export const CardContainer = styled.div`
-    width: ${cardWidth}px;
+    width: ${cardWidthPercent}%;
+    min-width: 320px;
     height: ${cardHeight}px;
     overflow: hidden;
     ${DEBUG ? "border: 1px solid green;" : ""}
 
-    @media only screen and (max-width: 1280px) and (min-width: 1024px) {
-        width: ${cardMediumWidth}px;
-    }
-    @media only screen and (max-width: 1024px) {
-        width: ${cardSmallWidth}px;
+    @media screen and (max-width: 1024px) {
+        width: ${cardWidthMobilePercent}%;
     }
 `;
 
@@ -54,7 +53,7 @@ export const PCard = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 100%;
-    width: ${cardWidth}px;
+    width: 100%;
     height: ${cardHeight}px;
     border-radius: 5px;
     box-shadow: 0px 17px 46px -10px #777777;
@@ -68,14 +67,6 @@ export const PCard = styled.div`
     &.active {
         opacity: 1;
         margin-top: 0;
-    }
-
-    @media only screen and (max-width: 1280px) and (min-width: 1024px) {
-        width: ${cardMediumWidth}px;
-    }
-
-    @media only screen and (max-width: 1024px) {
-        width: ${cardSmallWidth}px;
     }
 `;
 
@@ -99,7 +90,10 @@ export const CardHeader = styled.div`
 export const InnerCircle = styled.div`
     position: absolute;
     top: ${cardHeadHeight - (circleSize + 5)}px;
-    left: ${(cardWidth - circleSize) / 2}px; /* Center circle */
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
     border: 5px solid white;
     width: ${circleSize}px;
     height: ${circleSize}px;
@@ -107,14 +101,6 @@ export const InnerCircle = styled.div`
     background-color: ${VoiceUpColors.lightGrey};
     overflow: hidden;
     z-index: 10;
-
-    @media only screen and (max-width: 1280px) and (min-width: 1024px) {
-        left: ${(cardMediumWidth - circleSize) / 2}px; /* Center circle */
-    }
-
-    @media only screen and (max-width: 1024px) {
-        left: ${(cardSmallWidth - circleSize) / 2}px; /* Center circle */
-    }
 `;
 
 export const IconWrapper = styled.div`

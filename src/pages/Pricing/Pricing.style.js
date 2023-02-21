@@ -15,14 +15,9 @@ export const PricingSection = styled.section`
     overflow: hidden;
     ${DEBUG ? "background-color: lightblue;" : ""}
 
-    @media only screen and (max-width: 1280px) {
-        gap: 10px;
-    }
-
-    /* To keep cards in line as long as possible */
-    @media only screen and (max-width: 945px) {
+    @media only screen and (max-width: 1024px) {
         flex-direction: column;
-        gap: 30px;
+        gap: 10px;
     }
 `;
 
