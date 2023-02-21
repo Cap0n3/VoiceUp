@@ -18,12 +18,6 @@ export const Nav = styled.nav `
     z-index: 999;
     background: ${VoiceUpColors.white};
 
-    /* &.sticky {
-        position: fixed;
-        top: 0px;
-        width: 100%;
-    } */
-
     /* Small screen */
     @media only screen and (max-width: 1024px) {
         height: ${ELEMENT_HEIGHTS.mobileNavbarHeight}px;
@@ -144,7 +138,7 @@ export const NavLinks = styled(NavLink)`
     justify-content: center;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: ${FONT_SIZES.M_FONT_SIZESM};
+    font-size: ${FONT_SIZES.desktopNavbar};
     font-weight: 400;
     width: 100px;
     height: ${ELEMENT_HEIGHTS.navbarHeight - 15}px;
@@ -157,7 +151,7 @@ export const NavLinks = styled(NavLink)`
 
     /* 13" screen */
     @media only screen and (min-width: 1025px) and (max-width: 1248px) {
-        font-size: ${FONT_SIZES.S_FONT_SIZESM};;
+        font-size: ${FONT_SIZES.mobileNavbar};
     } 
 `;
 
@@ -166,7 +160,7 @@ export const LangSwitch = styled.li`
     align-items: center;
     height: ${ELEMENT_HEIGHTS.navbarHeight}px;
     cursor: pointer;
-    font-size: ${FONT_SIZES.XS_ftSizeMD};
+    font-size: ${FONT_SIZES.desktopLangSwitch};
     color: ${VoiceUpColors.grey};
     ${(DEBUG) ? "background: pink;" : ""}
     margin-left: auto;
@@ -178,7 +172,7 @@ export const LangSwitch = styled.li`
         padding: 0.5rem .4rem;
         margin-left: 1%;
         margin-right: 1%;
-        font-size: ${FONT_SIZES.XS_FONT_SIZESM};
+        font-size: ${FONT_SIZES.mobileNavbar};
     }
 
     /* Small screen */

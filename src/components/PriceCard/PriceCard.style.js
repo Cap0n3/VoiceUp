@@ -4,9 +4,7 @@ import { FONT_SIZES } from "../../globalVars";
 
 // === Card size === //
 const cardWidthPercent = 26;
-const cardWidthMobilePercent = 60;
-const cardMediumWidth = 330;
-const cardSmallWidth = 300;
+const cardWidthMobilePercent = 65;
 const cardHeight = 600;
 const cardHeadHeight = cardHeight / 3;
 const circleSize = 100;
@@ -38,13 +36,17 @@ const spin = keyframes`
 // === Card Styles === //
 export const CardContainer = styled.div`
     width: ${cardWidthPercent}%;
-    min-width: 320px;
+    min-width: 300px;
     height: ${cardHeight}px;
     overflow: hidden;
     ${DEBUG ? "border: 1px solid green;" : ""}
 
     @media screen and (max-width: 1024px) {
         width: ${cardWidthMobilePercent}%;
+    }
+
+    @media screen and (max-width: 691px) {
+        width: 90%;
     }
 `;
 
@@ -145,14 +147,14 @@ export const PriceTag = styled.div`
 
     & > h3 {
         color: rgba(255, 255, 255, 0.64);
-        font-size: 1.3rem;
+        font-size: ${FONT_SIZES.desktopBody};
         text-transform: uppercase;
         margin-bottom: 10px;
     }
 
     & > h2 {
         color: ${VoiceUpColors.white};
-        font-size: ${FONT_SIZES.M_ftSizeL};
+        font-size: ${FONT_SIZES.desktopSubheadings};
         text-transform: uppercase;
         text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
     }
@@ -182,13 +184,13 @@ export const ListItem = styled.li`
     align-items: center;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 300;
-    font-size: ${FONT_SIZES.S_ftSizeMD};
+    font-size: ${FONT_SIZES.priceCardList};
     ${DEBUG ? "background-color: purple;" : ""}
 `;
 
 export const Sub = styled.span`
     color: rgba(255, 255, 255, 0.64);;
     font-weight: 300;
-    font-size: ${FONT_SIZES.S_FONT_SIZESM};
+    font-size: ${FONT_SIZES.mobileBody};
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
 `;

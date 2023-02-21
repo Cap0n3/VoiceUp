@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import { ELEMENT_HEIGHTS } from "../../globalVars";
+import { ELEMENT_HEIGHTS, FONT_SIZES, FONT_WEIGHTS } from "../../globalVars";
 
 const DEBUG = false;
 const mapsBlockSize = 550;
@@ -77,6 +77,8 @@ export const TextContainer = styled.div`
     ${DEBUG ? "border: 1px solid orange;" : ""}
 
     & > h2 {
+        font-size: ${FONT_SIZES.desktopSubheadings};
+        font-weight: ${FONT_WEIGHTS.headingsWeight};
         ${DEBUG ? "border: 1px solid brown;" : ""}
     }
     
@@ -97,6 +99,8 @@ export const TextContainer = styled.div`
 `;
 
 export const SubTitle = styled.h4`
+    font-size: ${FONT_SIZES.mobileBody};
+    font-weight: ${FONT_WEIGHTS.headingsWeight};
     ${DEBUG ? "border: 1px solid green;" : ""}
 `;
 
@@ -114,12 +118,19 @@ export const DirectionWrapper = styled.div`
 export const DirectionList = styled.ol`
     padding: 10px 30px;
     background-color: ${VoiceUpColors.lightGrey};
+
+    & > li {
+        font-weight: ${FONT_WEIGHTS.bodyWeight};
+        font-size: ${FONT_SIZES.mobileBody};
+    }
 `;
 
 export const ParkingWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+    font-size: ${FONT_SIZES.mobileBody};
+    font-weight: ${FONT_WEIGHTS.bodyWeight};
     ${DEBUG ? "border: 1px solid cyan;" : ""}
 
     @media only screen and (max-width: 1300px) {

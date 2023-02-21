@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import { FONT_SIZES } from "../../globalVars";
+import { FONT_SIZES, FONT_WEIGHTS } from "../../globalVars";
 
 const DEBUG = false;
 
@@ -49,26 +49,27 @@ export const HeadCell = styled.th`
 
     & > h2 {
         margin-top: 30px;
-        font-size: ${FONT_SIZES.M_ftSizeL_alt};
+        font-size: ${FONT_SIZES.desktopBody};
+        font-weight: ${FONT_WEIGHTS.headingsWeight};
         text-transform: uppercase;
 
         @media only screen and (max-width: 1024px) and (min-width: 691px) {
-            font-size: ${FONT_SIZES.M_ftSizeMD};
+            font-size: ${FONT_SIZES.mobileBody};
         }
 
         @media only screen and (max-width: 690px) {
-            font-size: ${mobileFontSize};
+            font-size: ${FONT_SIZES.sm_mobileTableHeadings};
             padding: 10px;
         }
     }
 
-    & > span {
+    /* & > span {
         font-weight: 500;
 
         @media only screen and (max-width: 1024px) and (min-width: 691px) {
             font-size: ${FONT_SIZES.M_ftSizeMD};
         }
-    }
+    } */
 
     @media screen and (max-width: 1024px) {
         width: 33%;
@@ -118,14 +119,13 @@ export const InfoWrapper = styled.div`
     align-items: center;
     height: 40px;
     gap: 15px;
+    font-size: ${FONT_SIZES.desktopBody};
+    font-weight: ${FONT_WEIGHTS.headingsWeight};
     ${DEBUG ? "border: 1px solid pink;" : ""}
 
 
     @media screen and (max-width: 691px) {
         gap: 5px;
-        
-        & > span {
-            font-size: ${mobileFontSize};
-        }
+        font-size: ${FONT_SIZES.sm_mobileTableHeadings};
     }
 `;

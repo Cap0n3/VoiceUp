@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import { FONT_SIZES } from "../../globalVars";
+import { FONT_SIZES, FONT_WEIGHTS } from "../../globalVars";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 // Show borders/background for debugging css
@@ -102,15 +102,16 @@ export const TextBox = styled.div`
     
     & > h1 {
         color: ${VoiceUpColors.white};
-        font-size: ${FONT_SIZES.M_ftSizeXL};
+        font-size: ${FONT_SIZES.desktopHeadings};
         text-transform: uppercase;
-        font-weight: normal;
+        font-weight: ${FONT_WEIGHTS.headingsWeight};
         margin-bottom: 30px;
         ${DEBUG ? "background: lightgreen;" : ""}
     }
 
     & > p {
-        font-size: ${FONT_SIZES.M_ftSizeMD};
+        font-size: ${FONT_SIZES.desktopBody};
+        font-weight: ${FONT_WEIGHTS.subheadingsWeight};
         color: ${VoiceUpColors.white};
         ${DEBUG ? "background: cyan;" : ""}
     }
@@ -120,11 +121,11 @@ export const TextBox = styled.div`
 
         & > h1 {
             text-align: center;
-            font-size: ${FONT_SIZES.S_ftSizeXL};
+            font-size: ${FONT_SIZES.mobileHeadings};
         }
         
         & > p {
-            font-size: ${FONT_SIZES.S_ftSizeMD};
+            font-size: ${FONT_SIZES.mobileBody};
             text-align: center;
         }
     }

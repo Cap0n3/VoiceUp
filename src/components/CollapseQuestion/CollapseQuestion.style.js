@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { VoiceUpColors } from "../../colors";
+import { FONT_SIZES, FONT_WEIGHTS } from "../../globalVars";
 
 const DEBUG = false;
 
@@ -19,7 +20,8 @@ export const Question= styled.p`
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
-    font-weight: 600;
+    font-size: ${FONT_SIZES.desktopBody};
+    font-weight: ${FONT_WEIGHTS.headingsWeight};
     background-color: ${DEBUG ? "lightblue" : `${VoiceUpColors.white}`};
     ${DEBUG ? "background-color: lightblue;" : ""}
 
@@ -40,6 +42,7 @@ export const Question= styled.p`
 
     @media screen and (max-width: 1024px) {
         height: 90px;
+        font-size: ${FONT_SIZES.mobileQuestionCollapse};
     }
 `;
 
@@ -54,6 +57,12 @@ export const Answer = styled.p`
     display: flex;
     align-items: center;
     width: 100%;
+    font-size: ${FONT_SIZES.desktopBody};
+    font-weight: ${FONT_WEIGHTS.bodyWeight};
     padding: 0 20px 20px 20px;
     ${DEBUG ? "background-color: lightgreen;" : ""}
+
+    @media screen and (max-width: 1024px) {
+        font-size: ${FONT_SIZES.mobileQuestionCollapse};
+    }
 `;

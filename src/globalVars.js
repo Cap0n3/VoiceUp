@@ -11,22 +11,54 @@ export const ELEMENT_HEIGHTS = {
 }
 
 // === FONT SIZES === //
+// export const FONT_SIZES = {
+//     // Medium screen
+//     M_ftSizeXL : "4.5rem",
+//     M_ftSizeL : "2.2rem",
+//     M_ftSizeL_alt: "1.3rem",
+//     M_ftSizeMD : "1rem",
+//     M_FONT_SIZESM : "0.9rem",
+//     // Small screen
+//     S_ftSizeXL : "3.6rem",
+//     S_ftSizeL : "2rem",
+//     S_ftSizeMD : "0.9rem",
+//     S_FONT_SIZESM : "0.8rem",
+//     // Extra small screen
+//     XS_ftSizeXL : "3rem",
+//     XS_ftSizeMD : "0.8rem",
+//     XS_FONT_SIZESM : "0.6rem"
+// }
+
 export const FONT_SIZES = {
-    // Medium screen
-    M_ftSizeXL : "4.5rem",
-    M_ftSizeL : "2.2rem",
-    M_ftSizeL_alt: "1.3rem",
-    M_ftSizeMD : "1rem",
-    M_FONT_SIZESM : "0.9rem",
-    // Small screen
-    S_ftSizeXL : "3.6rem",
-    S_ftSizeL : "2rem",
-    S_ftSizeMD : "0.9rem",
-    S_FONT_SIZESM : "0.8rem",
-    // Extra small screen
-    XS_ftSizeXL : "3rem",
-    XS_ftSizeMD : "0.8rem",
-    XS_FONT_SIZESM : "0.6rem"
+    // Desktop
+    desktopHeadings : "3.6rem",
+    desktopSubheadings : "1.9rem",
+    desktopBody : "1.1rem",
+    desktopButton : "1rem",
+    // Mobile
+    mobileHeadings : "2.8rem",
+    mobileSubheadings : "1.2rem",
+    mobileBody : "1rem",
+    mobileButton :  "0.9rem",
+    // Special
+    desktopNavbar : "0.9rem",
+    mobileNavbar : "1rem",
+    desktopLangSwitch : "0.8rem",
+    desktopFooterLinks : "0.95rem",
+    mobileFooterLinks : "0.8rem",
+    desktop_copyright : "0.8rem",
+    mobile_copyright : "0.6rem",
+    priceCardList : "0.92rem",
+    mobileTableHeadings : "0.75rem",
+    sm_mobileTableHeadings : "0.7rem",
+    mobileQuestionCollapse : "0.8rem",
+    mobileVideoDescr : "0.7rem"
+}
+
+export const FONT_WEIGHTS = {
+    headingsWeight : 500,
+    subheadingsWeight : 400,
+    bodyWeight : 300,
 }
 
 // === FORM REGEX === //

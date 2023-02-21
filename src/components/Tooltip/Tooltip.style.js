@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FONT_SIZES } from "../../globalVars";
+import { FONT_SIZES, FONT_WEIGHTS } from "../../globalVars";
 
 export const TooltipWrapper = styled.div`
     position: relative;
@@ -15,8 +15,8 @@ export const TooltipBox = styled.div`
     padding: 15px;
     width: ${({toolTipSize}) => (toolTipSize.width)}px;
     border-radius: 10px;
-    font-weight: 300;
-    font-size: ${FONT_SIZES.S_ftSizeMD};
+    font-weight: ${FONT_WEIGHTS.bodyWeight};
+    font-size: ${FONT_SIZES.mobileBody};
     color: ${({boxStyle}) => (boxStyle.fontColor ? boxStyle.fontColor : "white")};
     /* Tooltip placement */
     /*
@@ -100,5 +100,9 @@ export const TooltipBox = styled.div`
             `) ||
             "0"
         }
+    }
+
+    @media screen and (max-width: 300px) {
+        width: ${({toolTipSize}) => (toolTipSize.width - 20)}px;
     }
 `

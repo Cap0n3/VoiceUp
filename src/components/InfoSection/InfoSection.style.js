@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import { FONT_SIZES, ELEMENT_HEIGHTS } from "../../globalVars";
+import { FONT_SIZES, ELEMENT_HEIGHTS, FONT_WEIGHTS } from "../../globalVars";
 
 const DEBUG = false;
 
@@ -97,15 +97,16 @@ export const TextDiv = styled.div`
     & > h1 {
         text-align: center;
         margin-bottom: 30px;
-        font-size: ${FONT_SIZES.M_ftSizeL};
+        font-size: ${FONT_SIZES.desktopSubheadings};
+        font-weight: ${FONT_WEIGHTS.subheadingsWeight};
         text-transform: uppercase;
         ${DEBUG ? "background-color: lightgreen;" : ""}
     }
 
     & > p {
         text-align: center;
-        font-weight: 300;
-        font-size: ${FONT_SIZES.M_ftSizeMD};
+        font-weight: ${FONT_WEIGHTS.bodyWeight};
+        font-size: ${FONT_SIZES.desktopBody};
         margin-bottom: 30px;
         ${DEBUG ? "background-color: lightblue;" : ""}
     }
@@ -121,11 +122,11 @@ export const TextDiv = styled.div`
         }
 
         & > h1 {
-            font-size: ${FONT_SIZES.S_ftSizeL};
+            font-size: ${FONT_SIZES.mobileSubheadings};
         }
 
         & > p {
-            font-size: ${FONT_SIZES.S_ftSizeMD};
+            font-size: ${FONT_SIZES.mobileBody};
             margin-bottom: 30px;
             padding-left: 0;
             padding-right: 0;

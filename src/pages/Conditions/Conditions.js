@@ -3,8 +3,9 @@ import { LangContext } from '../../App';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { conditionsHeaderData, conditionText, holidayText } from './data/conditions.data';
-import { ConditionContainer, BlockWrapper, ConditionBlock, ConditionTitle } from './Conditions.style';
+import { ConditionContainer, BlockWrapper, ConditionBlock } from './Conditions.style';
 import useAppear from '../../hooks/useAppear';
+import { SectionTitle } from '../../globalStyles/globalCompStyles';
 
 const Conditions = () => {
     const {language} = useContext(LangContext);
@@ -18,7 +19,7 @@ const Conditions = () => {
             <Header data={conditionsHeaderData} position={{posX: 0, posY: 50}} />
             <ConditionContainer>
                 <BlockWrapper ref={wrapperOneRef} isVisible={isWrapperOneVisible}>
-                    <ConditionTitle style={{marginTop: "0"}}>Conditions</ConditionTitle>
+                    <SectionTitle>Conditions</SectionTitle>
                     {conditionText.map((data, index) => 
                         <ConditionBlock key={index}>
                             <h2>{(language === "FR") ? data.titleFR : data.titleEN}</h2>
@@ -28,7 +29,7 @@ const Conditions = () => {
                     )}
                 </BlockWrapper>
                 <BlockWrapper ref={wrapperTwoRef} isVisible={isWrapperTwoVisible}>
-                    <ConditionTitle>{(language === "FR") ? "Annulation, Vacances, Rattrapage, Résiliation" : "Cancellation, Holidays, Catching-up, Termination"}</ConditionTitle>
+                    <SectionTitle style={{marginTop: "60px"}}>{(language === "FR") ? "Annulation, Vacances, Rattrapage, Résiliation" : "Cancellation, Holidays, Catching-up, Termination"}</SectionTitle>
                     {holidayText.map((data, index) => 
                         <ConditionBlock key={index}>
                             <h2>{(language === "FR") ? data.titleFR : data.titleEN}</h2>

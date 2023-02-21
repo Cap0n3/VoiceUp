@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Tania2 from "../../assets/images/Tania/Tania2_medium_header_over.jpg";
 import { VoiceUpColors } from "../../colors";
-import { FONT_SIZES } from "../../globalVars";
+import { FONT_SIZES, FONT_WEIGHTS } from "../../globalVars";
 
 const DEBUG = false;
 const sectionHeight = 700;
@@ -74,27 +74,33 @@ export const TextBox = styled.div`
     }
 
     & > h1 {
-            font-size: ${FONT_SIZES.M_ftSizeXL};
+            font-size: ${FONT_SIZES.desktopHeadings};
+            font-weight: ${FONT_WEIGHTS.subheadingsWeight};
             margin-bottom: 5px;
 
             @media only screen and (max-width: 1024px) {
-                font-size: ${FONT_SIZES.S_ftSizeXL};
+                font-size: ${FONT_SIZES.mobileHeadings};
             }
         }
 
     & > h2 {
-        font-size: ${FONT_SIZES.M_ftSizeL};
+        font-size: ${FONT_SIZES.desktopSubheadings};
         margin-bottom: 30px;
 
         @media only screen and (max-width: 1024px) {
-            font-size: ${FONT_SIZES.S_ftSizeL};
+            font-size: ${FONT_SIZES.mobileSubheadings};
         }
     }
 
     & > p {
         text-align: center;
-        font-size: ${FONT_SIZES.M_ftSizeMD};
+        font-size: ${FONT_SIZES.desktopBody};
+        font-weight: ${FONT_WEIGHTS.bodyWeight};
         color: ${VoiceUpColors.white};
         ${DEBUG ? "border: 1px solid purple;" : ""}
+
+        @media only screen and (max-width: 1024px) {
+            font-size: ${FONT_SIZES.mobileBody};
+        }
     }
 `;

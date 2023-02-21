@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import { ELEMENT_HEIGHTS } from "../../globalVars";
+import { ELEMENT_HEIGHTS, FONT_SIZES, FONT_WEIGHTS } from "../../globalVars";
 
 const DEBUG = false;
 
@@ -19,9 +19,6 @@ export const EnrollSection = styled.section`
 
 export const EnrollFormContainer = styled.div`
     width: 70%;
-    /* opacity: ${({isVisible}) => (isVisible ?  1 : 0)};
-    transform: ${({isVisible}) => (isVisible ?  "translateY(0)" : "translateY(120%)")};
-    transition: transform .6s ease, opacity 1.5s ease; */
     ${DEBUG ? "border: 1px solid orange;" : ""}
 
     @media only screen and (max-width: 1024px) {
@@ -39,6 +36,11 @@ export const TextContainer = styled.div`
     ${DEBUG ? "border: 1px solid pink;" : ""}
 
     & > p {
-        font-weight: 300;
+        font-weight: ${FONT_WEIGHTS.bodyWeight};
+        font-size: ${FONT_SIZES.desktopBody};
+
+        @media only screen and (max-width: 1024px) {
+            font-size: ${FONT_SIZES.mobileBody};
+        }
     }
 `;

@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { VoiceUpColors } from "../colors";
-import { FONT_SIZES, ELEMENT_HEIGHTS } from '../globalVars';
+import { FONT_SIZES, ELEMENT_HEIGHTS, FONT_WEIGHTS } from '../globalVars';
 import { BiErrorCircle, BiError } from "react-icons/bi";
 import { AiOutlineInfoCircle, AiOutlineLoading3Quarters } from "react-icons/ai";
 
@@ -27,10 +27,11 @@ export const SectionTitle = styled.h1`
     width: 100%;
     margin-bottom: 60px;
     text-transform: uppercase;
-    font-size: ${FONT_SIZES.M_ftSizeL};
+    font-size: ${FONT_SIZES.desktopSubheadings};
+    font-weight: ${FONT_WEIGHTS.subheadingsWeight};
 
     @media only screen and (max-width: 1024px) {
-        font-size: ${FONT_SIZES.S_ftSizeL};
+        font-size: ${FONT_SIZES.mobileSubheadings};
     }
 `;
 
@@ -47,7 +48,8 @@ export const OutlineBtn = styled(NavLink)`
     max-width: 250px;
     min-width: 200px;
     color: ${VoiceUpColors.white};
-    font-size: ${FONT_SIZES.M_ftSizeMD};
+    font-size: ${FONT_SIZES.desktopButton};
+    font-weight: ${FONT_WEIGHTS.headingsWeight};
     outline: none;
     background: none;
     text-decoration: none;
@@ -64,6 +66,7 @@ export const OutlineBtn = styled(NavLink)`
     @media only screen and (max-width: 1024px) {
         width: 100%;
         padding: 12px 30px;
+        font-size: ${FONT_SIZES.mobileButton};
     }
 `;
 
@@ -73,7 +76,8 @@ export const FilledBtn = styled.button`
     color: ${VoiceUpColors.white};
     background: ${VoiceUpColors.gold};
     border: none;
-    font-size: ${FONT_SIZES.M_ftSizeMD};
+    font-size: ${FONT_SIZES.desktopButton};
+    font-weight: ${FONT_WEIGHTS.headingsWeight};
     cursor: pointer;
     transition: 0.25s;
 
@@ -81,6 +85,10 @@ export const FilledBtn = styled.button`
         background: #d19162;
         box-shadow: 0 0.5em 0.5em -0.4em ${VoiceUpColors.black};
         transform: translateY(-0.25em);
+    }
+
+    @media only screen and (max-width: 1024px) {
+        font-size: ${FONT_SIZES.mobileButton};
     }
 `;
 
@@ -147,14 +155,26 @@ export const Textarea = styled.textarea`
         VoiceUpColors.grey
     };
     border-radius: 10px;
-    font-size: ${FONT_SIZES.M_FONT_SIZESM};
+    font-size: ${FONT_SIZES.desktopBody};
+    font-weight: ${FONT_WEIGHTS.bodyWeight};
     outline: 0;
     padding: 10px;
+
+    @media only screen and (max-width: 1024px) {
+        font-size: ${FONT_SIZES.mobileBody};
+    }
+    
 `;
 
 export const Label = styled.label`
     color: ${VoiceUpColors.grey};
     margin-bottom: 10px;
+    font-size: ${FONT_SIZES.desktopBody};
+    font-weight: ${FONT_WEIGHTS.bodyWeight};
+
+    @media only screen and (max-width: 1024px) {
+        font-size: ${FONT_SIZES.mobileBody};
+    }
 `;
 
 export const Input = styled.input`
@@ -167,7 +187,8 @@ export const Input = styled.input`
         VoiceUpColors.grey
     };
     border-radius: 10px;
-    font-size: ${FONT_SIZES.M_FONT_SIZESM};
+    font-size: ${FONT_SIZES.desktopBody};
+    font-weight: ${FONT_WEIGHTS.bodyWeight};
     outline: 0;
     padding: 10px;
 
@@ -179,6 +200,10 @@ export const Input = styled.input`
         -webkit-box-shadow: 0 0 0 30px ${VoiceUpColors.white} inset !important;
         box-shadow: 0 0 0 30px ${VoiceUpColors.white} inset !important;
     }
+
+    @media only screen and (max-width: 1024px) {
+        font-size: ${FONT_SIZES.mobileBody};
+    }
 `;
 
 export const Select = styled.select`
@@ -188,10 +213,15 @@ export const Select = styled.select`
         VoiceUpColors.grey
     };
     border-radius: 10px;
-    font-size: ${FONT_SIZES.M_FONT_SIZESM};
+    font-size: ${FONT_SIZES.desktopBody};
+    font-weight: ${FONT_WEIGHTS.bodyWeight};
     background-color: ${VoiceUpColors.white};
     outline: 0;
     padding: 10px;
+
+    @media only screen and (max-width: 1024px) {
+        font-size: ${FONT_SIZES.mobileBody};
+    }
 `;
 
 export const InputError = styled.p`
@@ -202,7 +232,7 @@ export const InputError = styled.p`
     border-radius: 10px;
     background-color: ${({status}) => (status === "warn" ? "#fff8c4" : "#ffecec")};
     border: ${({status}) => (status === "warn" ? "1px solid #f2c779" : "1px solid #f5aca6")};
-    font-size: ${FONT_SIZES.XS_ftSizeMD};
+    font-size: ${FONT_SIZES.mobileBody};
     color: #555;
 
     & > span {
@@ -236,7 +266,8 @@ export const MessageStatusBox = styled.p`
     opacity: 0;
     border-radius: 10px;
     margin-bottom: 20px;
-    font-size: ${FONT_SIZES.M_FONT_SIZESM};
+    font-size: ${FONT_SIZES.desktopBody};
+    font-weight: ${FONT_WEIGHTS.subheadingsWeight};
     background-color: ${({isSuccess}) => (isSuccess ?  "#52BE80" : "#FFCCCC")};
     transition: opacity 2s ease, height 1s ease;
 
@@ -249,7 +280,7 @@ export const MessageStatusBox = styled.p`
     }
 
     @media only screen and (max-width: 1024px) {
-        font-size: ${FONT_SIZES.S_FONT_SIZESM};
+        font-size: ${FONT_SIZES.mobileBody};
     }
 `;
 
@@ -262,12 +293,13 @@ export const InscriptionNote = styled.p`
     border-radius: 10px;
     margin-bottom: 20px;
     border: 1px solid ${VoiceUpColors.darkGrey};
-    font-size: ${FONT_SIZES.M_FONT_SIZESM};
+    font-size: ${FONT_SIZES.mobileBody};
+    font-weight: ${FONT_WEIGHTS.subheadingsWeight};
     color: ${VoiceUpColors.darkGrey};
     padding: 10px;
 
     @media only screen and (max-width: 1024px) {
-        font-size: ${FONT_SIZES.S_FONT_SIZESM};
+        font-size: ${FONT_SIZES.mobileBody};
     }
 `;
 

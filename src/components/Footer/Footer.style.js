@@ -41,10 +41,10 @@ export const FtNavList = styled.ul`
     justify-content: center;
     gap: 150px;
     list-style-type: none;
-    font-size: ${FONT_SIZES.M_FONT_SIZESM};
+    font-size: ${FONT_SIZES.desktopFooterLinks};
 
     @media only screen and (max-width: 1024px) {
-        font-size: ${FONT_SIZES.S_ftSizeMD};
+        font-size: ${FONT_SIZES.mobileFooterLinks};
         gap: 25px;
     }
 `;
@@ -86,12 +86,12 @@ export const CopyrightWrapper = styled.div`
     ${DEBUG ? "border: 1px solid pink;" : ""}
 
     & > p {
-        font-size: ${FONT_SIZES.S_FONT_SIZESM};
+        font-size: ${FONT_SIZES.desktop_copyright};
         font-weight: 300;
         color: ${VoiceUpColors.white};
 
         @media only screen and (max-width: 1024px) {
-            font-size: ${FONT_SIZES.XS_FONT_SIZESM};
+            font-size: ${FONT_SIZES.mobile_copyright};
         }
     }
 `;

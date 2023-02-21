@@ -19,7 +19,7 @@ export const ModalBox = styled.div`
     z-index: 1000;
 
     @media only screen and (max-width: 1024px) {
-        padding: 80px;
+        padding: 15px;
         width: 90%;
     }
 `;
@@ -35,20 +35,18 @@ export const Overlay = styled.div`
     overflow-y: auto;
 `;
 
-// export const VidTitle = styled.h2`
-//     color: ${VoiceUpColors.white};
-//     font-size: ${FONT_SIZES.M_ftSizeL};
-//     margin-bottom: 40px;
-//     ${DEBUG ? "background-color: lightgreen;" : ""}
-// `;
-
 export const VidDescription = styled.p`
     margin-top: 40px;
     color: ${VoiceUpColors.white};
-    font-size: ${FONT_SIZES.M_FONT_SIZESM};
+    font-size: ${FONT_SIZES.desktopBody};
     max-height: 100px;
     overflow-y: auto;
     ${DEBUG ? "background-color: lightblue;" : ""}
+
+    @media only screen and (max-width: 1024px) {
+        font-size: ${FONT_SIZES.mobileBody};
+    }
+
 `;
 
 export const ExitButton = styled(IoCloseCircleOutline)`
