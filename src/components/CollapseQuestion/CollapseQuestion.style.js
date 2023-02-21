@@ -37,6 +37,10 @@ export const Question= styled.p`
         border-top: 8px solid ${({arrowDirection}) => (arrowDirection ? "#000" : "transparent")};
         border-bottom: 8px solid transparent;
     }
+
+    @media screen and (max-width: 1024px) {
+        height: 90px;
+    }
 `;
 
 export const AnswerWrapper = styled.div`
