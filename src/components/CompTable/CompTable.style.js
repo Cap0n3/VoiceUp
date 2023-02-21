@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
 import { FONT_SIZES } from "../../globalVars";
 
-const DEBUG = true;
+const DEBUG = false;
 
 const mobileFontSize = "0.65em"
 
@@ -68,10 +68,6 @@ export const HeadCell = styled.th`
         @media only screen and (max-width: 1024px) and (min-width: 691px) {
             font-size: ${FONT_SIZES.M_ftSizeMD};
         }
-
-        @media only screen and (max-width: 690px) {
-            font-size: ${FONT_SIZES.XS_ftSizeMD};
-        }
     }
 
     @media screen and (max-width: 1024px) {
@@ -97,34 +93,24 @@ export const Cell = styled.td`
     border-right: ${({cellBorder}) => (cellBorder ? `1px solid ${VoiceUpColors.altGrey}` :  "none")};
     text-align: center;
     vertical-align: center;
-
-    @media screen and (max-width: 1024px) {
-        display: none;
-    }
 `;
 
 export const DivCellsWrapper = styled.div`
-    display: none;
-
-    @media screen and (max-width: 1024px) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0;
-        height: 80px;
-        width: 100%;
-        ${DEBUG ? "border: 1px solid cyan;" : ""}
-    }
+    display: flex;
+    height: 80px;
+    ${DEBUG ? "border: 1px solid cyan;" : ""}
 `;
 
 export const MobileDivCell =styled.div`
-    display: none;
-
-    @media screen and (max-width: 1024px) {
-        display: flex;
-        ${DEBUG ? "border: 1px solid white;" : ""}
-
-    }
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: ${VoiceUpColors.white};
+    border-left: ${({middle}) => (middle ? `solid 1px ${VoiceUpColors.altGrey}` : "")};
+    border-right: ${({middle}) => (middle ? `solid 1px ${VoiceUpColors.altGrey}` : "")};
+    ${DEBUG ? "border: 1px solid white;" : ""}
 `;
 
 export const InfoWrapper = styled.div`

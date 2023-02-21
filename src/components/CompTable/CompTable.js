@@ -35,6 +35,10 @@ const CompTable = ({isActive, tableData, iconColors}) => {
         }
     }, [tableRef])
 
+    const alternateColor = (index) => {
+        return (index % 2 !== 0) ? "true" : "";
+    }
+
     return(
         <TableWrapper tableHeight={tableHeight}>
             <Table className={isActive} ref={tableRef}>
@@ -63,7 +67,7 @@ const CompTable = ({isActive, tableData, iconColors}) => {
                     </Thead>
                     <Tbody>
                         {tableData.map((data, index) => 
-                            <Row key={index} alt={(index % 2 !== 0) ? "true" : ""}>
+                            <Row key={index} alt={(windowSize.innerWidth <= 1024 ? "" : alternateColor(index))}>
                                 <HeadCell textAlign="left" style={windowSize.innerWidth <=1024 ? {paddingLeft: "0px"} : {paddingLeft: "10px"}} colSpan={windowSize.innerWidth <=1024 ? "4" : ""}>
                                     <InfoWrapper>
                                         <span>{(language === "FR") ? data.titleFR : data.titleEN}</span>
@@ -71,15 +75,21 @@ const CompTable = ({isActive, tableData, iconColors}) => {
                                             <BiHelpCircle fill={VoiceUpColors.grey} style={{marginTop: "3px"}} />
                                         </Tooltip>
                                     </InfoWrapper>
-                                    <DivCellsWrapper style={{ display: "flex", justifyContent: "center", gap: "33%"}}>
-                                        <MobileDivCell>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</MobileDivCell>
-                                        <MobileDivCell>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</MobileDivCell>
-                                        <MobileDivCell>{data.onDemand ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</MobileDivCell>
-                                    </DivCellsWrapper>
+                                    {(windowSize.innerWidth <= 1024) &&
+                                            <DivCellsWrapper>
+                                                <MobileDivCell>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</MobileDivCell>
+                                                <MobileDivCell middle="true">{data.weeklyAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</MobileDivCell>
+                                                <MobileDivCell>{data.onDemand ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</MobileDivCell>
+                                            </DivCellsWrapper>
+                                    }
                                 </HeadCell>
-                                <Cell>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</Cell>
-                                <Cell cellBorder="true">{data.weeklyAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</Cell>
-                                <Cell>{data.onDemand ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</Cell>
+                                {(windowSize.innerWidth >= 1024) &&
+                                    <>
+                                        <Cell>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</Cell>
+                                        <Cell cellBorder="true">{data.weeklyAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</Cell>
+                                        <Cell>{data.onDemand ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</Cell>
+                                    </>
+                                }
                             </Row>
                         )}
                     </Tbody>
