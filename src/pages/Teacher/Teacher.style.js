@@ -1,110 +1,63 @@
 import styled from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import { FONT_SIZES, FONT_WEIGHTS } from "../../globalVars";
+import { ELEMENT_HEIGHTS, FONT_SIZES, FONT_WEIGHTS } from "../../globalVars";
 
 const DEBUG = false;
-const sectionPadding = 100;
 
 export const AboutSection = styled.section`
-    position: relative;
+    display: flex;
+    justify-content: center;
     width: 100%;
-    height: ${({blocksHeight}) => (blocksHeight ? (blocksHeight + sectionPadding) : 5000)}px;
+    min-height: ${ELEMENT_HEIGHTS.sectionHeight}px;
     overflow: hidden;
+    padding: 60px 0 60px 0;
     ${DEBUG ? "background-color: lightblue;" : ""}
-
-    @media only screen and (max-width: 1024px){
-        /* Make big section to fit blocks + padding */
-        height: ${({blocksHeight}) => (blocksHeight ? ((blocksHeight * 2) + (sectionPadding * 1.5)) : 5000)}px;
-    }
 `;
 
-export const AboutImage = styled.img`
-    position: absolute;
-    top: ${sectionPadding / 2}px;
-    left: 8vw;
-    margin-left: -100%;
-    /* Resize block with computed values (should be both with same size) */
-    width: ${({width}) => (width ? `${width}px` : "33%")};
-    height: ${({height}) => (height ? `${height}px` : "")};
-    transition: margin-left 600ms ease;
-    /* box-shadow: 0px 17px 46px -10px #777777; */
-
-    &.active {
-        margin-left: 0;
-    }
+export const AboutContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    opacity: ${({isVisible}) => (isVisible ?  1 : 0)};
+    transform: ${({isVisible}) => (isVisible ?  "translateY(0)" : "translateY(120%)")};
+    transition: transform .6s ease, opacity 1.5s ease;
+    ${DEBUG ? "border: 1px solid red;" : ""}
 `;
 
 export const DescriptionWrapper = styled.div`
-    position: absolute;
-    top: ${sectionPadding / 2}px;
-    right: 8vw;
-    margin-right: -100%;
-    /* Resize block with computed values (should be both with same size) */
-    width: ${({width}) => (width ? `${width}px` : "33%")};
-    height: ${({height}) => (height ? `${height}px` : "")};
-    padding: 30px;
-    /* box-shadow: 0px 17px 46px -10px #777777; */
-    overflow-y: scroll;
-    transition: margin-right 600ms ease;
-    background-image: linear-gradient(45deg, #F8F6F6 0%, ${VoiceUpColors.lightGrey} 100%);
-    /* background-color: ${DEBUG ? "lightgreen" : VoiceUpColors.lightGrey}; */
-
-    & > h2 {
-        font-size: ${FONT_SIZES.desktopBody};
-        font-weight: ${FONT_WEIGHTS.headingsWeight};
-        margin-bottom: -5px;
-        text-transform: uppercase;
-        ${DEBUG ? "background-color: cyan;" : ""};
-    }
-
-    & > sub {
-        display: inline-block;
-        font-size: 1.1vw;
-        font-weight: 400;
-        margin-bottom: 2vw;
-        ${DEBUG ? "background-color: yellow;" : ""};
-    }
+    width: 100%;
+    ${DEBUG ? "border: 1px solid green;" : ""}
 
     & > p {
         font-size: ${FONT_SIZES.desktopBody};
-        font-weight: 300;
-        margin-bottom: 20px;
+        font-weight: ${FONT_WEIGHTS.bodyWeight};
+        margin-bottom: 15px;
+
+        @media only screen and (max-width: 1024px) {
+            font-size: ${FONT_SIZES.mobileBody};    
+        }
     }
+`;
 
-    &.active {
-        margin-right: 0;
-    }
+export const SubTitle = styled.h4`
+    font-size: 0.8rem;
+    font-weight: ${FONT_WEIGHTS.headingsWeight};
+    text-transform: uppercase;
+    margin-bottom: 60px;
 
-    @media only screen and (max-width: 1024px){
-        /* Put block below first one */
-        margin-top: ${({height}) => (height ? `${height + sectionPadding / 2}px` : "")};
-        /* Center element in section */
-        right: ${({width, scrWidth}) => (scrWidth - width) / 2}px;
-        padding: 7%;
-
-        & > h2 {
-            font-size: ${FONT_SIZES.mobileBody};
-            margin-bottom: 0px;
-        }
-
-        & > sub {
-            font-size: 2vw;
-            margin-bottom: 7vw;
-        }
-
-        & > p {
-            font-size: ${FONT_SIZES.mobileBody};
-        }
+    @media only screen and (max-width: 1024px) {
+        font-size: 0.6rem;    
     }
 `;
 
 export const VideoSection = styled.section`
     display: flex;
+    width: 100%;
     justify-content: center;
-    gap: 50px 50px;
-    flex-wrap: wrap;
-    padding: 50px 0 50px 0;
+    padding: 60px 0 60px 0;
+    min-height: ${ELEMENT_HEIGHTS.sectionHeight};
     background-color: ${VoiceUpColors.lightGrey};
+    overflow: hidden;
     ${DEBUG ? "border: 1px solid yellow;" : ""}
 
     @media only screen and (max-width: 1024px) {
@@ -112,4 +65,15 @@ export const VideoSection = styled.section`
         flex-direction: column;
         gap: 50px;
     }
+`;
+
+export const VideosWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 50px 50px;
+    flex-wrap: wrap;
+    ${DEBUG ? "border: 1px solid blue;" : ""}
+    opacity: ${({isVisible}) => (isVisible ?  1 : 0)};
+    transform: ${({isVisible}) => (isVisible ?  "translateY(0)" : "translateY(120%)")};
+    transition: transform .6s ease, opacity 1.5s ease;
 `;

@@ -5,15 +5,17 @@ import useWindowSize from "../../hooks/useWindowSize";
 import useAppear from "../../hooks/useAppear";
 import VideoModal from "../../components/VideoModal/VideoModal";
 import { teacherHeaderData, descrParagraphs, vidsInfos } from "./data/teacher.data";
-import { AboutSection, AboutImage, DescriptionWrapper, VideoSection } from "./Teacher.style";
-import TaniaAbout from "../../assets/images/Tania/TaniaAbout.jpg";
+import { AboutSection, AboutContainer, DescriptionWrapper, SubTitle, VideoSection, VideosWrapper } from "./Teacher.style";
 import { LangContext } from "../../App";
+import { SectionTitle } from "../../globalStyles/globalCompStyles";
 
 const Teacher = () => {
     const {language} = useContext(LangContext);
     const screenSize = useWindowSize();
     const AboutRef = useRef(null);
-    const isVisible = useAppear(AboutRef, 300);
+    const VideoRef = useRef(null);
+    const isAboutVisible = useAppear(AboutRef, 300);
+    const isVideoVisible = useAppear(VideoRef, 300)
     const [blockDimensions, setblockDimensions] = useState({});
     
     useEffect(() => {
@@ -53,22 +55,25 @@ const Teacher = () => {
     return(
         <>
             <Header data={teacherHeaderData} position={{posX: 0, posY: 40}} />
-            <AboutSection blocksHeight={blockDimensions.compHeight} ref={AboutRef}>
-                <AboutImage src={TaniaAbout} className={isVisible ? "active" : ""} width={blockDimensions.compWidth} height={blockDimensions.compHeight} scrWidth={screenSize.innerWidth} />
-                <DescriptionWrapper className={isVisible ? "active" : ""} width={blockDimensions.compWidth} height={blockDimensions.compHeight} scrWidth={screenSize.innerWidth}>
-                    <h2>Tania Guillin</h2>
-                    <sub>{(language === "FR") ? "Chanteuse professionelle" : "Professional singer"}</sub>
-                    {setContentLang((language === "FR") ? descrParagraphs.descriptionFR : descrParagraphs.descriptionEN)}
-                </DescriptionWrapper>
+            <AboutSection>
+                    <AboutContainer ref={AboutRef} isVisible={isAboutVisible}>
+                        <SectionTitle style={{marginBottom: "5px"}}>Tania Guillin</SectionTitle>
+                        <SubTitle>Chanteuse professionnelle</SubTitle>
+                        <DescriptionWrapper>
+                            {setContentLang((language === "FR") ? descrParagraphs.descriptionFR : descrParagraphs.descriptionEN)}
+                        </DescriptionWrapper>
+                    </AboutContainer>     
             </AboutSection>
             <VideoSection>
-                {
-                    vidsInfos.map((data, index) => (
-                        <div key={index}>
-                            <VideoModal thumbWidth={blockDimensions.compWidth} vidData={data} />
-                        </div>
-                    ))
-                }
+                <VideosWrapper ref={VideoRef} isVisible={isVideoVisible}>
+                    {
+                        vidsInfos.map((data, index) => (
+                            <div key={index}>
+                                <VideoModal thumbWidth={blockDimensions.compWidth} vidData={data} />
+                            </div>
+                        ))
+                    }
+                </VideosWrapper>
             </VideoSection>
             <Footer />
         </>

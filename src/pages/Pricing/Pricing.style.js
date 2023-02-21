@@ -17,7 +17,7 @@ export const PricingSection = styled.section`
 
     @media only screen and (max-width: 1024px) {
         flex-direction: column;
-        gap: 10px;
+        gap: 30px;
     }
 `;
 

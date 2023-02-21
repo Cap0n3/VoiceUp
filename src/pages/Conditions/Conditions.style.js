@@ -7,13 +7,13 @@ export const ConditionContainer = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px;
+    padding: 60px 0 60px 0;
     overflow: hidden;
     ${DEBUG ? "border: 1px solid red;" : ""}
 `;
 
 export const BlockWrapper = styled.div`
-    width: 100%;
+    width: 85%;
     opacity: ${({isVisible}) => (isVisible ?  1 : 0)};
     transform: ${({isVisible}) => (isVisible ?  "translateY(0)" : "translateY(120%)")};
     transition: transform .6s ease, opacity 1.5s ease;
@@ -25,7 +25,7 @@ export const BlockWrapper = styled.div`
 `;
 
 export const ConditionBlock = styled.div`
-    width: 80%;
+    width: 100%;
     margin-bottom:30px;
     ${DEBUG ? "background-color: lightblue;" : ""}
 

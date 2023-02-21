@@ -8,8 +8,8 @@ import MyName from "../../../assets/VidThumbnail/MyName.jpg";
 export const teacherHeaderData = {
     picURL: TaniaHeader,
     imgTitle: "Tania",
-    titleFR: "À propos",
-    titleEN: "About",
+    titleFR: "",
+    titleEN: "",
 }
 
 // Teacher description data
