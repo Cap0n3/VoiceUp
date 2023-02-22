@@ -33,6 +33,17 @@ export const TableSection = styled.section`
     ${DEBUG ? "background-color: lightgreen;" : ""}
 `;
 
+export const TableContainer = styled.div`
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 85%;
+    opacity: ${({isVisible}) => (isVisible ?  1 : 0)};
+    transform: ${({isVisible}) => (isVisible ?  "translateY(0)" : "translateY(120%)")};
+    transition: transform .6s ease, opacity 1.5s ease;
+    ${DEBUG ? "background-color: #7DCAD9;" : ""}
+`;
+
 export const FaqSection = styled.section`
     display: flex;
     justify-content: center;
@@ -48,7 +59,7 @@ export const FaqContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 75%;
+    width: 85%;
     transition: margin-top 1s ease;
     opacity: ${({isVisible}) => (isVisible ?  1 : 0)};
     transform: ${({isVisible}) => (isVisible ?  "translateY(0)" : "translateY(120%)")};

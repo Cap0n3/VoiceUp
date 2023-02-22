@@ -1,5 +1,5 @@
 import React, { useRef, useContext } from 'react';
-import { PricingSection, TableSection, FaqSection, FaqContainer } from './Pricing.style';
+import { PricingSection, TableSection, TableContainer, FaqSection, FaqContainer } from './Pricing.style';
 import PriceCard from '../../components/PriceCard/PriceCard';
 import { WeeklyAdult, BiAdult, OnDemand, ComparisonTable, pricingHeaderData, QuestionsAnswers } from './data/Pricing.data';
 import Header from "../../components/Header/Header";
@@ -31,7 +31,9 @@ const Prices = () => {
                 <PriceCard data={OnDemand} />
             </PricingSection>
             <TableSection ref={tableSectionRef}>
-                <CompTable isActive={isTableVisible ? "active" : ""} tableData={ComparisonTable} iconColors={["#1B173", "#896FBC", "#D9A47D"]}/>
+                <TableContainer isVisible={isTableVisible}>
+                    <CompTable tableData={ComparisonTable} iconColors={["#1B173", "#896FBC", "#D9A47D"]}/>
+                </TableContainer>
             </TableSection>
             <FaqSection ref={faqSectionRef}>
                 <FaqContainer isVisible={isFaqVisible}>

@@ -4,26 +4,9 @@ import { FONT_SIZES, FONT_WEIGHTS } from "../../globalVars";
 
 const DEBUG = false;
 
-export const TableWrapper = styled.div`
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-    height: ${({tableHeight}) => (tableHeight ? `${tableHeight}px` : "0px")}; // + padding
-    ${DEBUG ? "background-color: #7DCAD9;" : ""}
-`;
-
 export const Table = styled.table`
-    margin-top: 100%;
-    width: 80%;
+    width: 100%;
     border-collapse: collapse; // Remove borders
-    opacity: 0;
-    transition: margin-top 600ms ease, opacity 2000ms ease;
-    
-    &.active {
-        opacity: 1;
-        margin-top: 0;
-    }
 `;
 
 export const Thead = styled.thead`
