@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { VoiceUpColors } from "../colors";
 import { FONT_SIZES, ELEMENT_HEIGHTS, FONT_WEIGHTS } from '../globalVars';
 import { BiErrorCircle, BiError } from "react-icons/bi";
-import { AiOutlineInfoCircle, AiOutlineLoading3Quarters } from "react-icons/ai";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 
 const DEBUG = false;
 
