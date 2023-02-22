@@ -1,6 +1,5 @@
-import React, { seRef, useContext } from "react";
+import React, { useContext } from "react";
 import {
-    TableWrapper,
     Table,
     Thead,
     Tbody,
@@ -26,7 +25,7 @@ import useWindowSize from "../../hooks/useWindowSize";
 const CompTable = ({tableData, iconColors}) => {
     const {language} = useContext(LangContext);
     const windowSize = useWindowSize();
-    
+
     const alternateColor = (index) => {
         return (index % 2 !== 0) ? "true" : "";
     }
