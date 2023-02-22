@@ -76,7 +76,7 @@ export const CardHeader = styled.div`
     background-image: url(${({headerImg}) => headerImg});
     background-color: ${VoiceUpColors.black};
     background-repeat: no-repeat;
-    background-size: 150%;
+    background-size: 180%;
     background-position: 0% 0%;
     width: 100%;
     height: ${cardHeadHeight}px;

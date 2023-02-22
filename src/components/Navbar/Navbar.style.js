@@ -142,7 +142,6 @@ export const NavLinks = styled(NavLink)`
     font-weight: 400;
     width: 100px;
     height: ${ELEMENT_HEIGHTS.navbarHeight - 15}px;
-    ${'' /* padding: 0.5rem 1rem; */}
     ${(DEBUG) ? "background: brown;" : ""}
 
     &.active {
@@ -150,9 +149,9 @@ export const NavLinks = styled(NavLink)`
     }
 
     /* 13" screen */
-    @media only screen and (min-width: 1025px) and (max-width: 1248px) {
+    /* @media only screen and (min-width: 1025px) and (max-width: 1248px) {
         font-size: ${FONT_SIZES.mobileNavbar};
-    } 
+    }  */
 `;
 
 export const LangSwitch = styled.li`
@@ -172,7 +171,6 @@ export const LangSwitch = styled.li`
         padding: 0.5rem .4rem;
         margin-left: 1%;
         margin-right: 1%;
-        font-size: ${FONT_SIZES.mobileNavbar};
     }
 
     /* Small screen */
