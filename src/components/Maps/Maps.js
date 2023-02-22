@@ -17,7 +17,7 @@ const Maps = () => {
     return(
         <>
             {!isLoaded ? <p>LOADING ...</p> : 
-            <GoogleMap zoom={15} center={location} mapContainerStyle={containerStyle}>
+            <GoogleMap zoom={16} center={location} mapContainerStyle={containerStyle}>
                 <Marker position={location} />
             </GoogleMap>}
         </>

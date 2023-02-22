@@ -15,7 +15,7 @@ import { Nav,
 } from './Navbar.style';
 import { useState, useEffect, useContext } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import Logo from "../../assets/logos/VoiceUp_Logo_BLK.png";
+import Logo from "../../assets/logos/VoiceUp23_BLK.png";
 import YTIcon from "../../assets/icons/social/youtube_icon";
 import InstaIcon from "../../assets/icons/social/instagram_icon";
 import FBIconAlt from '../../assets/icons/social/facebook_icon_alt';

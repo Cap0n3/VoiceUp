@@ -28,7 +28,7 @@ const Contact = () => {
     const isContactVisible = useAppear(contactSectionRef, 280);
     const sectionRef = useRef(null); // For anchor
     let location = useLocation(null); // For anchor
-    useAnchor(sectionRef, location, "#map", ELEMENT_HEIGHTS.navbarHeight); // For anchor
+    useAnchor(sectionRef, location, "#map", (windowSize.innerWidth <= 1024 ? ELEMENT_HEIGHTS.mobileNavbarHeight : ELEMENT_HEIGHTS.navbarHeight)); // For anchor
 
     return(
         <>

@@ -11,16 +11,18 @@ import { LangContext } from "../../App";
 import useAnchor from "../../hooks/useAnchor";
 import { useLocation } from "react-router-dom";
 import { ELEMENT_HEIGHTS } from '../../globalVars';
+import useWindowSize from '../../hooks/useWindowSize';
 
 const Prices = () => {
     const {language} = useContext(LangContext);
+    const windowSize = useWindowSize();
     const priceSectionRef = useRef(null);
     const tableSectionRef = useRef(null);
     const faqSectionRef = useRef(null);
     const isTableVisible = useAppear(tableSectionRef, 380);
     const isFaqVisible = useAppear(faqSectionRef, 380);
     const location = useLocation(null);
-    useAnchor(faqSectionRef, location, "#faq", ELEMENT_HEIGHTS.navbarHeight);
+    useAnchor(faqSectionRef, location, "#faq", (windowSize.innerWidth <= 1024 ? ELEMENT_HEIGHTS.mobileNavbarHeight : ELEMENT_HEIGHTS.navbarHeight));
 
     return(
         <>
