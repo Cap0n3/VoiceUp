@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import React, { seRef, useContext } from "react";
 import {
     TableWrapper,
     Table,
@@ -25,9 +25,7 @@ import useWindowSize from "../../hooks/useWindowSize";
 
 const CompTable = ({tableData, iconColors}) => {
     const {language} = useContext(LangContext);
-    const tableRef = useRef(null);
     const windowSize = useWindowSize();
-    
     const alternateColor = (index) => {
         return (index % 2 !== 0) ? "true" : "";
     }
