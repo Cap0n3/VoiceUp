@@ -11,6 +11,8 @@ import { slides } from "./data/slideImg.data";
 import { SingSectionData, PlaySectionData, TalkSectionData } from "./data/infosSec.data";
 import useWindowSize from "../../hooks/useWindowSize";
 import useAppear from "../../hooks/useAppear";
+import { Helmet } from "react-helmet-async";
+import { websiteSEO } from "../../seo/seo.data";
 
 const Home = () => {
     const windowSize = useWindowSize();
@@ -40,6 +42,13 @@ const Home = () => {
 
     return(
         <>
+            <Helmet>
+                <title>{websiteSEO.home.title}</title>
+                <meta
+                    name="description"
+                    content={websiteSEO.home.description}
+                />;
+            </Helmet>
             <SliderContainer winHeight={windowSize.innerHeight}>
                 <ImageSlider slides={slides} transitionTime={300} />
             </SliderContainer>

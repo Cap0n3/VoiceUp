@@ -10,6 +10,7 @@ import Conditions from "./pages/Conditions/Conditions";
 import Prices from "./pages/Pricing/Pricing";
 import Contact from "./pages/Contact/Contact";
 import Enroll from "./pages/Enroll/Enroll";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 // Define contexts
 export const LangContext = createContext();
@@ -36,22 +37,24 @@ function App() {
 
 	return (
 		<>
-			<LangContext.Provider value={langValue}>
-				<ScrollTop />
-				<div className="main">
-					<GlobalStyle />
-					<Navbar />
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/methode" element={<Lessons />} />
-						<Route path="/tania" element={<Teacher />} />
-						<Route path="/conditions" element={<Conditions />} />
-						<Route path="/tarifs" element={<Prices />} />
-						<Route path="/contact" element={<Contact />} />
-						<Route path="/inscription" element={<Enroll />} />
-					</Routes>
-				</div>
-			</LangContext.Provider>
+			<HelmetProvider>
+				<LangContext.Provider value={langValue}>
+					<ScrollTop />
+					<div className="main">
+						<GlobalStyle />
+						<Navbar />
+						<Routes>
+							<Route path="/" element={<Home />} />
+							<Route path="/methode" element={<Lessons />} />
+							<Route path="/tania" element={<Teacher />} />
+							<Route path="/conditions" element={<Conditions />} />
+							<Route path="/tarifs" element={<Prices />} />
+							<Route path="/contact" element={<Contact />} />
+							<Route path="/inscription" element={<Enroll />} />
+						</Routes>
+					</div>
+				</LangContext.Provider>
+			</HelmetProvider>
 		</>
 		
 	);
