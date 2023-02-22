@@ -58,7 +58,7 @@ const Teacher = () => {
             <AboutSection>
                     <AboutContainer ref={AboutRef} isVisible={isAboutVisible}>
                         <SectionTitle style={{marginBottom: "5px"}}>Tania Guillin</SectionTitle>
-                        <SubTitle>Chanteuse professionnelle</SubTitle>
+                        <SubTitle>{(language === "FR") ? "Technicienne de la voix" : "Vocal coaching"}</SubTitle>
                         <DescriptionWrapper>
                             {setContentLang((language === "FR") ? descrParagraphs.descriptionFR : descrParagraphs.descriptionEN)}
                         </DescriptionWrapper>
