@@ -93,25 +93,6 @@ const CompTable = ({isActive, tableData, iconColors}) => {
                             </Row>
                         )}
                     </Tbody>
-                    {/* <Tbody>
-                        {tableData.map((data, index) => 
-                                <Row key={index} alt={(index % 2 !== 0) ? "true" : ""}>
-                                    <HeadCell textAlign="left" style={{paddingLeft: "10px"}} colSpan="4">
-                                        <InfoWrapper>
-                                            <span>{(language === "FR") ? data.titleFR : data.titleEN}</span>
-                                            <Tooltip content={(language === "FR") ? data.descriptionFR : data.descriptionEN} place="right" size={data.tooltipSize} boxStyle={{fontColor: "white", bgColor: "#666"}}>
-                                                <BiHelpCircle fill={VoiceUpColors.grey} style={{marginTop: "3px"}} />
-                                            </Tooltip>
-                                        </InfoWrapper>
-                                        <div style={{ display: "flex", justifyContent: "center", gap: "33%"}}>
-                                            <div>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</div>
-                                            <div>{data.biAdult ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</div>
-                                            <div><Cell>{data.onDemand ? <AiOutlineCheckCircle size="20" fill="green" /> : <AiOutlineMinus />}</Cell></div>
-                                        </div>
-                                    </HeadCell>
-                                </Row>
-                        )}
-                    </Tbody> */}
                 </Table>
         </TableWrapper>
     );

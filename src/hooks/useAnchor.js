@@ -45,7 +45,7 @@ const useAnchor = (sectionRef, location, anchorName, offset=0) => {
         if(location.state.anchor === anchorName){
             fooFunc(sectionRef.current.offsetTop - offset);
         }
-    }, [sectionRef.current, location.state])    
+    }, [sectionRef, location.state, anchorName, offset])    
 }
 
 export default useAnchor;

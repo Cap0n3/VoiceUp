@@ -54,7 +54,7 @@ export const BoxWrapper = styled.div`
     }
 
     @media only screen and (max-width: 1024px) {
-        width: 55%;
+        width: 75%;
     }
 `;
 
@@ -69,22 +69,22 @@ export const TextBox = styled.div`
         text-align: center;
         color: ${VoiceUpColors.white};
         text-transform: uppercase;
-        font-weight: normal;
         ${DEBUG ? "border: 1px solid red;" : ""}
     }
 
     & > h1 {
             font-size: ${FONT_SIZES.desktopHeadings};
-            font-weight: ${FONT_WEIGHTS.subheadingsWeight};
+            font-weight: ${FONT_WEIGHTS.headingsWeight};
             margin-bottom: 5px;
 
             @media only screen and (max-width: 1024px) {
-                font-size: ${FONT_SIZES.mobileHeadings};
+                font-size: ${FONT_SIZES.mobileC2AHeading};
             }
         }
 
     & > h2 {
         font-size: ${FONT_SIZES.desktopSubheadings};
+        font-weight: ${FONT_WEIGHTS.subheadingsWeight};
         margin-bottom: 30px;
 
         @media only screen and (max-width: 1024px) {

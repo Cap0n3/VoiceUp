@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { VoiceUpColors } from "../colors";
-import { ELEMENT_HEIGHTS } from '../globalVars';
+import { ELEMENT_HEIGHTS, FONT_SIZES } from '../globalVars';
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -8,7 +8,6 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: 'Roboto', sans-serif;
-        font-style: normal;
         color: ${VoiceUpColors.black};
     }
 
@@ -27,6 +26,11 @@ const GlobalStyle = createGlobalStyle`
         color: ${VoiceUpColors.altGrey};
         font-family: 'Yellowtail', cursive;
         text-transform: lowercase;
+        font-size: ${FONT_SIZES.desktopHeadings};
+
+        @media screen and (max-width: 1024px) {
+            font-size: ${FONT_SIZES.mobileHeadings};
+        }
     }
 
     &.socialIcons {

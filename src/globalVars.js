@@ -11,24 +11,6 @@ export const ELEMENT_HEIGHTS = {
 }
 
 // === FONT SIZES === //
-// export const FONT_SIZES = {
-//     // Medium screen
-//     M_ftSizeXL : "4.5rem",
-//     M_ftSizeL : "2.2rem",
-//     M_ftSizeL_alt: "1.3rem",
-//     M_ftSizeMD : "1rem",
-//     M_FONT_SIZESM : "0.9rem",
-//     // Small screen
-//     S_ftSizeXL : "3.6rem",
-//     S_ftSizeL : "2rem",
-//     S_ftSizeMD : "0.9rem",
-//     S_FONT_SIZESM : "0.8rem",
-//     // Extra small screen
-//     XS_ftSizeXL : "3rem",
-//     XS_ftSizeMD : "0.8rem",
-//     XS_FONT_SIZESM : "0.6rem"
-// }
-
 export const FONT_SIZES = {
     // Desktop
     desktopHeadings : "3.6rem",
@@ -48,6 +30,7 @@ export const FONT_SIZES = {
     mobileFooterLinks : "0.8rem",
     desktop_copyright : "0.8rem",
     mobile_copyright : "0.6rem",
+    mobileC2AHeading : "2.3rem",
     priceCardList : "0.92rem",
     mobileTableHeadings : "0.75rem",
     sm_mobileTableHeadings : "0.7rem",

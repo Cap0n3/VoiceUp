@@ -17,7 +17,7 @@ export const AboutSection = styled.section`
 export const AboutContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 85%;
+    width: 75%;
     opacity: ${({isVisible}) => (isVisible ?  1 : 0)};
     transform: ${({isVisible}) => (isVisible ?  "translateY(0)" : "translateY(120%)")};
     transition: transform .6s ease, opacity 1.5s ease;

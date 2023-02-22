@@ -4,8 +4,6 @@ import { FONT_SIZES, FONT_WEIGHTS } from "../../globalVars";
 
 const DEBUG = false;
 
-const mobileFontSize = "0.65em"
-
 export const TableWrapper = styled.div`
     display: flex;
     align-content: center;
@@ -62,14 +60,6 @@ export const HeadCell = styled.th`
             padding: 10px;
         }
     }
-
-    /* & > span {
-        font-weight: 500;
-
-        @media only screen and (max-width: 1024px) and (min-width: 691px) {
-            font-size: ${FONT_SIZES.M_ftSizeMD};
-        }
-    } */
 
     @media screen and (max-width: 1024px) {
         width: 33%;
