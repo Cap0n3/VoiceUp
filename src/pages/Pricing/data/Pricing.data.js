@@ -156,9 +156,9 @@ export const QuestionsAnswers = [
     },
     {
         questionFR: "Est-ce que les vacances sont comprises dans le forfait ?",
-        questionEN: "Are holidays included in the package ?",
+        questionEN: "Are holidays included in the plan ?",
         answerFR: "Oui les vacances de d’octobre, de Noël et de Pâques sont comprises dans le forfait. Les cours débutent en même temps que les écoles à la fin du mois d’août afin de compenser les cours qui n’ont pas lieu durant les vacances. Les mois facturés vont de septembre à juillet  pour les adultes et de septembre à juin pour les jeunes en formation.",
-        answerEN: "The October, Christmas, and Easter holidays are included in the package. The courses start at the same time as schools do at the end of August to make up for the lessons that are missed during the holidays. The months billed are from September to July for adults and from September to June for the youth in training."
+        answerEN: "The October, Christmas, and Easter holidays are included in the plan. The courses start at the same time as schools do at the end of August to make up for the lessons that are missed during the holidays. The months billed are from September to July for adults and from September to June for the youth in training."
     },
     {
         questionFR: "Si je manque un cours comment ça se passe ?",

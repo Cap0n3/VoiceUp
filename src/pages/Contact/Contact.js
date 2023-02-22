@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import { 
     ContactSection, 
     FormContainer, 
@@ -15,14 +15,15 @@ import useWindowSize from "../../hooks/useWindowSize";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Maps from "../../components/Maps/Maps";
-import { contactHeaderData } from "./data/Contact.data";
+import { contactHeaderData, howToCome } from "./data/Contact.data";
 import useAppear from "../../hooks/useAppear";
 import { useLocation } from "react-router-dom";
 import useAnchor from "../../hooks/useAnchor";
 import { ELEMENT_HEIGHTS } from "../../globalVars";
+import { LangContext } from '../../App';
 
 const Contact = () => {
-
+    const {language} = useContext(LangContext);
     const windowSize = useWindowSize();
     const contactSectionRef = useRef(null);
     const isContactVisible = useAppear(contactSectionRef, 280);
@@ -40,29 +41,28 @@ const Contact = () => {
             </ContactSection>
             <MapsSection ref={sectionRef} winHeight={windowSize.innerHeight}>
                 <TextContainer>
-                    <h2>Comment venir ?</h2>
+                    <h2>{(language === "FR") ? howToCome.titleFR : howToCome.titleEN}</h2>
                     <DirectionWrapper>
-                        <SubTitle>Transports en commun</SubTitle>
+                        <SubTitle>{(language === "FR") ? howToCome.subTitle1FR: howToCome.subTitle1EN}</SubTitle>
                         <DirectionList>
                             <li>CEVA arrêt Lancy – Bachet Gare</li>
                             <li>Prendre bus 42 arrêt Curé-Baud</li>
                             <li>Marcher 5 minutes</li>
                         </DirectionList>
-                        <p>ou</p>
+                        <p>{(language === "FR") ? "ou": "or"}</p>
                         <DirectionList>
                             <li>Tram 12 ou 15 - Arrêt Palette</li>
                             <li>Marcher 10 minutes</li>
                         </DirectionList>
-                        <p>ou</p>
+                        <p>{(language === "FR") ? "ou": "or"}</p>
                         <DirectionList>
                             <li>Bus 22 ou 42 arrêt Curé-Baud</li>
                             <li>Marcher 5 minutes</li>
                         </DirectionList>
                     </DirectionWrapper>
                     <ParkingWrapper>
-                        <SubTitle>En voiture</SubTitle>
-                        <p>La maison est à 5 minutes de la sortie « Lancy/Carouge » de l’autoroute de contournement.
-                        Facilité de parking autour de la maison.</p>
+                        <SubTitle>{(language === "FR") ? howToCome.subTitle2FR: howToCome.subTitle2EN}</SubTitle>
+                        <p>{(language === "FR") ? howToCome.parkParaFR: howToCome.parkParaEN}</p>
                     </ParkingWrapper>
                 </TextContainer>
                 <MapsContainer>
