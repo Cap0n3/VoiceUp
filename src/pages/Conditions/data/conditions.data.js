@@ -12,16 +12,10 @@ export const conditionsHeaderData = {
 
 export const conditionText = [
     {
-        titleFR: "Formule mensuelle ou bimensuelle adulte",
+        titleFR: "Formule mensuelle ou bimensuelle",
         titleEN: "Monthly subscription",
-        paraFR: "L’élève s’engage pour un minimum de trois mois de cours. Par la suite, un délai d’un mois est demandé pour résilier le contrat. Les cours sont dispensés depuis la rentrée scolaire (dernière semaine d’août) jusqu’à la fin du mois de juillet de l’année suivante. Vous pouvez commencer ou arrêter les cours n’importe quand durant l’année scolaire en cours. Les vacances scolaires de Noël et de Pâques ainsi que les congés officiels sont inclus dans le forfait, aucun cours ne sera donné durant ces périodes et le montant mensuel de la formule concerné est dû dans son entièreté. Les tarifs sont fixes pas de remboursement afin de solder rattrapage/absence/vacances.",
+        paraFR: "L’élève s’engage pour un minimum de trois mois de cours. Par la suite, un délai d’un mois est demandé pour résilier le contrat. Les cours sont dispensés depuis la rentrée scolaire (dernière semaine d’août) jusqu’à la fin du mois de juillet de l’année suivante. Vous pouvez commencer ou arrêter les cours n’importe quand durant l’année scolaire en cours. Les vacances scolaires d'octobre, de Noël et de Pâques ainsi que les congés officiels sont inclus dans le forfait, aucun cours ne sera donné durant ces périodes et le montant mensuel de la formule concerné est dû dans son entièreté. Les tarifs sont fixes pas de remboursement afin de solder rattrapage/absence/vacances.",
         paraEN: "Greatest properly off ham exercise all. Unsatiable invitation its possession nor off. All difficulty estimating unreserved increasing the solicitude. Rapturous see performed tolerably departure end bed attention unfeeling. On unpleasing principles alteration of. Be at performed preferred determine collected."
-    },
-    {
-        titleFR: "Formule mensuelle ado et jeunes",
-        titleEN: "Monthly subscription for youngsters",
-        paraFR: "L’élève s’engage pour un minimum de trois mois de cours. Par la suite, un délai d’un mois est demandé pour résilier le contrat. Les cours sont dispensés depuis la rentrée scolaire (dernière semaine d’août) jusqu’à la fin du mois de juin. Vous pouvez commencer ou arrêter les cours n’importe quand durant l’année scolaire en cours. Pour la formule Jeune vous pouvez continuer les cours au mois de juillet. Toutes les vacances scolaires sont incluses dans le forfait ainsi que les congés officiels, aucun cours ne sera donné durant ces périodes et le montant mensuel de la formule concerné est dû dans son entièreté. Les tarifs sont fixes pas de remboursement afin de solder rattrapage/absence/vacances.",
-        paraEN: "Lose john poor same it case do year we. Full how way even the sigh. Extremely nor furniture fat questions now provision incommode preserved. Our side fail find like now. Discovered travelling for insensible partiality unpleasing impossible she. Sudden up my excuse to suffer ladies though or."
     },
     {
         titleFR: "Paiement",

@@ -131,22 +131,34 @@ export const ComparisonTable = [
 // === FAQ section === //
 export const QuestionsAnswers = [
     {
-        questionFR: "Est-ce que je dois connaitre le solfège ou la théorie musicale pour suivre les cours de chant ?",
-        questionEN: "Do I need to know music theory or solfeggio to take singing lessons ?",
-        answerFR: "Non, il n’est pas nécessaire d’avoir fait du solfège ou de la théorie musicale avant de faire des cours de chant. Nous travaillerons avec les paroles et développerons votre capacité à relever les morceaux par l’écoute. Si nécessaire nous travaillerons sur le placement rythmique et les sensation des sous-divisions du temps dans le corps durant les sessions.",
-        answerEN: "No, it is not necessary to have prior knowledge of music theory or solfeggio to take singing lessons. We’ll work with lyrics and develop your ability to learn songs by ear. If needed, we work on rhythm placement and the sensation of subdivisions of time in the body during sessions."
+        questionFR: "Quels sont les avantages de prendre des cours de chant ?",
+        questionEN: "What are the benefits of taking singing lessons ?",
+        answerFR: "Les cours de chant aident à améliorer la technique vocale, à augmenter la confiance en soi, à développer l'expression artistique et à réduire le stress. Les cours de chant aident également à améliorer la qualité de la voix et à enseigner des compétences utiles pour la performance sur scène et en studio.",
+        answerEN: "Singing lessons help improve vocal technique, increase self-confidence, develop artistic expression, and reduce stress. Singing lessons also help improve the quality of the voice and teach useful skills for performance on stage and in the studio."
+    },
+    {
+        questionFR: "Ai-je besoin d'avoir de l'expérience en chant ou en solfège avant de prendre des cours ?",
+        questionEN: "Do I need to have experience in singing or music theory before taking lessons ?",
+        answerFR: "Non, il n'est pas nécessaire d'avoir de l'expérience ni en chant, ni en solfège, avant de prendre des cours. Les cours de chant peuvent être adaptés aux besoins et au niveau de chaque étudiant, qu'il s'agisse d'un·x·e débutant·e·x ou d'un·x·e chanteur·euse·x plus expérimenté.",
+        answerEN: "No, it is not necessary to have any experience in singing or music theory before taking lessons. Singing lessons can be tailored to the needs and level of each student, whether they are a beginner or a more experienced singer."
     },
     {
         questionFR: "Est-ce que je suis libre de choisir mon répertoire de chanson ?",
-        questionEN: "Am I free to choose my own song repertoire ?",
-        answerFR: "Tous les styles de musique actuelle sont les bienvenus (pop, rock, jazz, chanson française, variété, country, world music, métal, blues, americana, hip-hop, rap, etc…). Vous serez libre de choisir votre propre répertoire de chansons. Vous apporterez en cours ce que vous désirez travailler et je vous guiderai afin que vous puissiez développer votre voix selon vos goûts musicaux.",
-        answerEN: "All contemporary music styles are welcome (pop, rock, jazz, French chanson, variety, country, world music, metal, blues, Americana, hip-hop, rap, etc.). You’ll be free to choose your own song repertoire. You’ll simply bring what you want to work on, and I’ll guide you to develop your voice according to your musical tastes."
+        questionEN: "Are you free to choose your song repertoire when taking singing lessons ?",
+        answerFR: "Vous êtes libre de choisir votre répertoire de chansons lorsque vous prenez des cours de chant. Je peux vous recommander certaines chansons en fonction de votre niveau de compétence et de vos objectifs, mais de manière général vous apportez les chansons que vous souhaitez apprendre et travailler. Il est important de me communiquer vos préférences et vos objectifs pour que nous puissions travailler ensemble sur un répertoire qui convient à vos besoins et à votre style vocal. Tous les styles de musique actuelle sont les bienvenus, y compris la pop, le rock, le jazz, la chanson française, la variété, la country, la world music, le métal, le blues, l’americana, le rap, la comédie musicale, etc.",
+        answerEN: "Yes, you are free to choose your own song repertoire when taking singing lessons. I can recommend some songs based on your skill level and goals, but generally you bring in the songs you want to learn and work on. It's important for you to communicate your preferences and goals so that we can work together on a repertoire that suits your needs and vocal style. All genres of rhythmical music are welcome, including pop, rock, jazz, country, world music, metal, blues, americana, rap, musicals, and more."
+    },
+    {
+        questionFR: "En combien de temps puis-je apprendre à chanter ?",
+        questionEN: "How long does it take to learn how to sing ?",
+        answerFR: "Le temps nécessaire pour apprendre à chanter dépend de votre niveau de compétence actuel, de la fréquence de vos cours de chant, ainsi que des heures de pratique personnelle que vous pouvez consacrer à votre entraînement vocal. Les débutants peuvent s'attendre à consacrer plusieurs mois à développer une technique vocale de base, mais avec une pratique régulière et efficace comme «la pratique délibéré», des résultats significatifs peuvent être obtenus en quelques semaines. Il est important de noter que l'apprentissage du chant est un processus continu et que même les chanteurs les plus expérimentés continuent d'apprendre et de se perfectionner tout au long de leur vie.",
+        answerEN: "The time it takes to learn how to sing depends on your current level of skill, the frequency of your singing lessons, as well as the amount of personal practice you can dedicate to your vocal training. Beginners can expect to spend several months developing basic vocal technique, but with regular and effective practice such as «deliberate practice», significant results can be achieved in a few weeks. It is important to note that learning to sing is a continuous process and even the most experienced singers continue to learn and improve throughout their lives."
     },
     {
         questionFR: "Est-ce que les vacances sont comprises dans le forfait ?",
         questionEN: "Are holidays included in the package ?",
-        answerFR: "Oui les vacances de Noël et de Pâques sont comprises dans le forfait. Les cours débutent en même temps que les écoles à la fin du mois d’août afin de compenser les cours qui n’ont pas lieu durant les vacances. Les mois facturés vont de septembre à juillet (inclus) pour les adultes.",
-        answerEN: "Yes, Christmas and Easter holidays are included in the package. Lessons start at the end of August, along with the schools, to compensate for the lessons that do not take place during the holidays. The billing cycle goes from September to July (inclusive) for adults."
+        answerFR: "Oui les vacances de d’octobre, de Noël et de Pâques sont comprises dans le forfait. Les cours débutent en même temps que les écoles à la fin du mois d’août afin de compenser les cours qui n’ont pas lieu durant les vacances. Les mois facturés vont de septembre à juillet  pour les adultes et de septembre à juin pour les jeunes en formation.",
+        answerEN: "The October, Christmas, and Easter holidays are included in the package. The courses start at the same time as schools do at the end of August to make up for the lessons that are missed during the holidays. The months billed are from September to July for adults and from September to June for the youth in training."
     },
     {
         questionFR: "Si je manque un cours comment ça se passe ?",
@@ -161,15 +173,9 @@ export const QuestionsAnswers = [
         answerEN: "No, especially at the beginning of the illness to avoid transmitting germs to me and also for your vocal health. It is not advisable to sing when you have a fever, laryngitis, or any infections in the throat."
     },
     {
-        questionFR: "Comment puis-je avoir une place dans vos cours ?",
-        questionEN: "How can I get a spot in your classes ?",
-        answerFR: "Je suis souvent complète. Le meilleur moment pour avoir une place est en juin, n’attendez pas le mois d’août ou de septembre pour être sûr-e-x d’avoir une place pour la rentrée. J’ai un système de liste d’attente valable 6 mois. N’hésitez pas à me relancer, la persévérance et la motivation marche bien. Il y a des désistements durant l’année aussi donc n’hésitez pas à m’envoyer une demande.",
-        answerEN: "I am often fully booked. The best time to get a spot is in June; don't wait until August or September to be sure to have a spot for the start of the school year. I have a waiting list system valid for 6 months. Don't hesitate to follow up with me; perseverance and motivation work well. There are also cancellations during the year, so feel free to send me a request."
-    },
-    {
         questionFR: "Les inscriptions sont-elles ouvertes durant toute l'année ?",
         questionEN: "Are registrations open all year round ?",
-        answerFR: "Oui bien-sûr ! Vous pouvez vous inscrire à tout moment durant l’année. ",
+        answerFR: "Oui bien-sûr ! Vous pouvez vous inscrire à tout moment durant l’année.",
         answerEN: "Yes of course ! You can register at any time during the year."
     },
     {
@@ -177,11 +183,5 @@ export const QuestionsAnswers = [
         questionEN: "What am I committing to with the contract ?",
         answerFR: "Vous vous engagez pour un minimum de 3 mois et par la suite vous aura un mois de préavis si vous souhaitez arrêter les cours.",
         answerEN: "You commit to a minimum of 3 months, and after that, you’ll have one month's notice if you want to stop the lessons."
-    },
-    {
-        questionFR: "En combien de temps puis-je apprendre à chanter ?",
-        questionEN: "How long does it take to learn how to sing ?",
-        answerFR: "La fameuse règle des 10’000 heures de pratique est un bon indice. Il s’agit du nombre d’heures moyen nécessaire pour attendre une bonne maîtrise d’un instrument ou du chant (ou de n’importe quelle autre forme d’art). Ce n’est pas une règle exacte mais ces heures doivent être prises en compte. Pour faire simple, le temps que vous prendrez pour pratiquer en dehors des cours détermineras la rapidité de votre avancée.",
-        answerEN: "The famous 10,000 hours rule of practice is a good indicator. It represents the average number of hours needed to achieve a good mastery of an instrument, singing, or any other form of art. It is not an exact rule, but these hours should be taken into account. To put it simply, the time you spend practicing outside of lessons will determine the speed of your progress."
     },
 ]

@@ -76,11 +76,11 @@ export const infoLessonsData = {
     titleFR : "Les cours",
     titleEN : "Lessons",
     descriptionFR : [
-        "Les séances abordent tous les aspects du chant et de la voix (technique vocale, pose de la voix, interprétation, improvisation, prestance scénique et technique du micro). Aucune connaissance musicale n’est requise. Les cours individuels sont ouverts dès 15 ans aussi bien aux élèves débutants que professionnels. À partir de 12 ans vous pouvez également suivre des cours d’initiation au chant. Les inscriptions sont ouvertes durant toute l'année.",
+        "Les séances abordent tous les aspects du chant et de la voix (technique vocale, pose de la voix, interprétation, improvisation, prestance scénique et technique du micro). Aucune connaissance musicale n’est requise. Les cours individuels sont ouverts dès 13 ans aussi bien aux élèves débutants que professionnels. Les inscriptions sont ouvertes durant toute l'année.",
         "Technique vocale : Respiration, Soutien, Twang, Prononciation (voyelles), Volume, Couleur de voix (timbre), Modes Vocaux (par ex: voix de tête, voix de poitrine, etc…) ainsi que la Transition entre eux et les Effets Vocaux. Technique musicale : Improvisation. Interprétation . Technique de scène : Utilisation du Micro et Prestance.",
     ],
     descriptionEN : [
-        "My lessons cover all aspects of singing and voice, including vocal technique, vocal placement, interpretation, improvisation, stage presence and microphone technique. No musical knowledge is required, individual lessons are available to beginners and professionals alike from the age of 15. Introduction to singing courses are also available from the age of 12. Enrollment is open throughout the year.", 
+        "My lessons cover all aspects of singing and voice, including vocal technique, vocal placement, interpretation, improvisation, stage presence and microphone technique. No musical knowledge is required, individual lessons are available to beginners and professionals alike from the age of 13. Enrollment is open throughout the year.", 
         "Vocal Technique : Breathing, Support, Twang, Pronunciation (vowels), Volume, Voice Color (timbre), Vocal Modes (e.g., head voice, chest voice, etc.), as well as the Transition between them and Vocal Effects. Musical Technique : Improvisation. Interpretation. Stage Technique: Microphone Use and Presence."
     ]
 }
