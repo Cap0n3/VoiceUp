@@ -92,7 +92,7 @@ const useSend = (serviceID, templateID, publicKey, formRef, successMsg="Message 
                 setServerResponse(null);
             }, resetTime);
         }
-    }, [serverResponse]);
+    }, [serverResponse, resetTime]);
 
     const returnedData = {
         serverResponse: serverResponse,

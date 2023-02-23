@@ -63,7 +63,7 @@ const ImageSlider = ({slides, transitionTime}) => {
                 setIsActive(true);
             }, transitionTime);
         }
-    }, [isActive]);
+    }, [isActive, transitionTime]);
 
     /**
      * Timer for slides (auto change)

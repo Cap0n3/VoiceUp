@@ -1,4 +1,4 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef } from "react";
 import { CollapseContainer, Question, AnswerWrapper, Answer } from "./CollapseQuestion.style";
 
 const CollapseQuestion = ({question, answer}) => {

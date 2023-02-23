@@ -94,25 +94,25 @@ const useParallax = (componentRef, screenHeight) => {
     const [divider, setDivider] = useState(null);
     const scrollPosition = useScroll();
 
-    /**
-     * Utils function that returns a divider value depending on screen height
-     * to setup an optimal parallax effect for images. The divider will
-     * determine the amplitude of movement.
-     */
-     const getDividerVal = () => {
-        if(screenHeight < 869) {
-            setDivider(7);
-        }
-        else if(screenHeight < 1024 && screenHeight > 869) {
-            setDivider(9);
-        }
-        else if(screenHeight < 1280 && screenHeight > 1024) {
-            setDivider(6);
-        }
-    }
-
     // Determine when component is visible and when it's not anymore
-    useEffect(() => {    
+    useEffect(() => {  
+        /**
+         * Utils function that returns a divider value depending on screen height
+         * to setup an optimal parallax effect for images. The divider will
+         * determine the amplitude of movement.
+         */
+        const getDividerVal = () => {
+            if(screenHeight < 869) {
+                setDivider(7);
+            }
+            else if(screenHeight < 1024 && screenHeight > 869) {
+                setDivider(9);
+            }
+            else if(screenHeight < 1280 && screenHeight > 1024) {
+                setDivider(6);
+            }
+        }
+
         getDividerVal();
         if(elementPosition !== null) {
             const heightOfComponent = componentRef.current.clientHeight;
@@ -128,14 +128,14 @@ const useParallax = (componentRef, screenHeight) => {
                 // console.log("Element is not visible !")
             }
         }
-    }, [scrollPosition])
+    }, [scrollPosition, componentRef, divider, elementPosition, screenHeight])
 
     useEffect(() => {
         // Set raw position of component in page
         const rawElPosition = componentRef.current.offsetTop;
         // Determine exact start position of component 
         setElementPos(rawElPosition - screenHeight)
-    }, [screenHeight])
+    }, [screenHeight, componentRef])
 
     return parallaxOffset;
 }

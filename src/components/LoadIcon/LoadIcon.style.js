@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { VoiceUpColors } from "../../colors";
 
 const DEBUG = false;
 

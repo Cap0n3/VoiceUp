@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef } from "react";
 import { TooltipWrapper, TooltipBox } from "./Tooltip.style";
 
 /**
