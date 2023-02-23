@@ -8,7 +8,10 @@ import {
     SubTitle,
     DirectionWrapper,
     DirectionList,
-    ParkingWrapper
+    ParkingWrapper,
+    AddressSection,
+    InfoBlockWrapper,
+    InfoBlock
 } from "./Contact.style";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import useWindowSize from "../../hooks/useWindowSize";
@@ -23,6 +26,7 @@ import { ELEMENT_HEIGHTS } from "../../globalVars";
 import { LangContext } from "../../App";
 import SEOBlock from "../../components/SEOBlock/SeoBlock";
 import { websiteSEO } from "../../seo/seo.data";
+import { BlockWrapper } from '../Conditions/Conditions.style';
 
 const Contact = () => {
     const {language} = useContext(LangContext);
@@ -72,6 +76,18 @@ const Contact = () => {
                     <Maps />
                 </MapsContainer>
             </MapsSection>
+            <AddressSection>
+                <InfoBlockWrapper>
+                    <InfoBlock>
+                        <h4>{(language === "FR") ? howToCome.AddressTitleFR: howToCome.AddressTitleEN} :</h4>
+                        <p>{howToCome.Address}</p>
+                    </InfoBlock>
+                    <InfoBlock>
+                        <h4>{(language === "FR") ? howToCome.HoursTitleFR: howToCome.HoursTitleEN} :</h4>
+                        <p>{(language === "FR") ? howToCome.HoursFR: howToCome.HoursEN}</p>
+                    </InfoBlock>
+                </InfoBlockWrapper>
+            </AddressSection>
             <Footer />
         </>
     )

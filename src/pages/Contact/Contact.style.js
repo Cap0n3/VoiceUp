@@ -37,7 +37,7 @@ export const MapsSection = styled.section`
     gap: 4%;
     align-items: center;
     justify-content: center;
-    min-height: ${({winHeight}) => (winHeight ? (winHeight - ELEMENT_HEIGHTS.navbarHeight) : ELEMENT_HEIGHTS.sectionHeight)}px;
+    min-height: 700px;
     
     @media only screen and (max-width: 1024px) {
         flex-direction: column;
@@ -135,5 +135,70 @@ export const ParkingWrapper = styled.div`
 
     @media only screen and (max-width: 1300px) {
         gap: 10px;
+    }
+`;
+
+export const AddressSection = styled.section`
+    display: flex;
+    width: 100%;
+    min-height: 200px;
+    justify-content: center;
+    align-items: flex-start;
+    
+    ${DEBUG ? "background-color: lightgreen;" : ""}
+`;
+
+export const InfoBlockWrapper = styled.div`
+    display: flex;
+    width: 100%;
+    gap: 4%;
+    justify-content: center;
+    align-items: center;
+    ${DEBUG ? "border: 1px solid yellow;" : ""}
+
+    @media screen and (max-width: 1024px) {
+        flex-direction: column;
+        gap: 10px; 
+    }
+`;
+
+export const InfoBlock = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 80px;
+    background-color: ${VoiceUpColors.lightGrey};
+    font-size: ${FONT_SIZES.mobileBody};
+    width: ${mapsBlockSize}px;
+    overflow: hidden;
+
+    ${DEBUG ? "border: 1px solid brown;" : ""}
+
+    & > h4, p {
+      ${DEBUG ? "border: 1px solid green;" : ""}
+    }
+
+    & > h4 {
+        font-weight: ${FONT_WEIGHTS.subheadingsWeight};
+    }
+
+    & > p {
+        text-align: center;
+        font-weight: ${FONT_WEIGHTS.bodyWeight};
+    }
+
+    @media only screen and (max-width: 1300px) and (min-width: 1024px) {
+        width: ${mapsBlockSize - 80}px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        flex-direction: column;
+        width: ${mobileMapsBlockSize}px;
+    }
+
+    /* Narrow screen (Galaxy fold) */
+    @media only screen and (max-width: 400px) {
+        width: ${mobileMapsBlockSize- 50}px;
     }
 `;

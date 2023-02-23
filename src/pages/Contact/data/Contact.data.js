@@ -17,4 +17,12 @@ export const howToCome = {
     subTitle2EN: "By car",
     parkParaFR: "La maison est à 5 minutes de la sortie « Lancy/Carouge » de l’autoroute de contournement. Facilité de parking autour de la maison.",
     parkParaEN: "The house is 5 minutes away from the Lancy/Carouge exit of the bypass highway. Easy parking is available near the house.",
+    AddressTitleFR: "Adresse",
+    AddressTitleEN: "Address",
+    Address: "6 chemin des Fauvettes, 1212 Grand-Lancy",
+    HoursTitleFR : "Heures de cours",
+    HoursTitleEN : "Lesson hours",
+    HoursFR : "Du lundi à vendredi, de 10h30 à 20h",
+    HoursEN : "Monday to friday, 10h30 to 20h"
+
 }
