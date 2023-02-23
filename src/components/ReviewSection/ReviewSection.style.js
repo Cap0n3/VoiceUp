@@ -52,7 +52,6 @@ export const ReviewBox = styled.div`
     & > img {
         margin-left: auto;
         margin-right: auto;
-        width: 120px;
         margin-bottom: 20px;
         border-radius: 50%;
     }

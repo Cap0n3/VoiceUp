@@ -16,6 +16,7 @@ import { Nav,
 import { useState, useEffect, useContext } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import Logo from "../../assets/logos/VoiceUp23_BLK.png";
+import { ELEMENT_HEIGHTS } from '../../globalVars';
 import YTIcon from "../../assets/icons/social/youtube_icon";
 import InstaIcon from "../../assets/icons/social/instagram_icon";
 import FBIconAlt from '../../assets/icons/social/facebook_icon_alt';
@@ -64,7 +65,7 @@ const Navbar = () => {
     const SiteLogo = () => {
         return(
             <LogoLink to="/" onClick={closeMobileMenu}>
-                <NavIcon src={Logo} />
+                <NavIcon src={Logo} title="Voice Up" alt="Logo" width={ELEMENT_HEIGHTS.navLogoSize} height={ELEMENT_HEIGHTS.navLogoSize} />
             </LogoLink>
         );
     }

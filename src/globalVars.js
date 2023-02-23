@@ -5,9 +5,11 @@
 // === ELEMENTS SIZE === //
 export const ELEMENT_HEIGHTS = {
     navbarHeight : 80,
+    navLogoSize : 55,
     mobileNavbarHeight : 60,
     headerHeight : 600,
-    sectionHeight : 600 // Default section height
+    sectionHeight : 600, // Default section height
+    footerLogoSize : 100
 }
 
 // === FONT SIZES === //

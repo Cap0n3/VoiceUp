@@ -76,10 +76,6 @@ export const LogoWrapper = styled.div`
     ${DEBUG ? "border: 1px solid cyan;" : ""}
 `;
 
-export const SiteLogo = styled.img`
-    width: 100px;
-`; 
-
 export const CopyrightWrapper = styled.div`
     display: flex;
     justify-content: center;

@@ -12,7 +12,7 @@ const ReviewDisplayer = ({slide, class_name, transitionTime}) => {
         <ReviewSlide className={class_name} transitionTime={transitionTime}>
             {reviews.map((review, index) => (
                 <ReviewBox key={index}>
-                    <img src={review.studentPic} alt={review.picAlt}/>
+                    <img src={review.studentPic} title={review.picAlt} alt={review.picAlt} width="120" height="120" />
                     <blockquote>"{review.quote}"</blockquote>
                     <p>{review.studentName}</p>
                     <small>{review.roleFR}</small>
