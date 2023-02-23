@@ -75,7 +75,7 @@ const ContactForm = () => {
 
     return(
         <>
-            <InscriptionNote><InfoIcon />{language === "FR" ? <span>Pour les inscriptions, merci de remplir <NavLink className="inlineLink" to="/inscription">le formulaire ici.</NavLink></span> : <span>To enroll, please <NavLink className="inlineLink" to="/inscription">fill out form here.</NavLink></span>}</InscriptionNote>
+            <InscriptionNote><InfoIcon />{language === "FR" ? <span>Pour les inscriptions, merci de remplir <NavLink className="inlineLink" to="/inscription">le formulaire ici.</NavLink></span> : <span>To enroll, please <NavLink className="inlineLink" to="/inscription">fill out the form here.</NavLink></span>}</InscriptionNote>
             <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                 <InputsContainer>
                     <InputWrapper>

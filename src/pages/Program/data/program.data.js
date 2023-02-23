@@ -82,7 +82,7 @@ export const infoLessonsData = {
     ],
     descriptionEN : [
         "My lessons cover all aspects of singing and voice, including vocal technique, vocal placement, interpretation, improvisation, stage presence and microphone technique. No musical knowledge is required, individual lessons are available to beginners and professionals alike from the age of 13. Enrollment is open throughout the year.", 
-        "Vocal Technique : Breathing, Support, Twang, Pronunciation (vowels), Volume, Voice Color (timbre), Vocal Modes (e.g., head voice, chest voice, etc.), as well as the Transition between them and Vocal Effects. Musical Technique : Improvisation. Interpretation. Stage Technique: Microphone Use and Presence."
+        "Vocal Technique : Breathing, Support, Twang, Pronunciation (vowels), Volume, Voice Color (timbre), Vocal Modes (e.g., head voice, chest voice, etc.), as well as the Transition between them and Vocal Effects. Musical Technique : Improvisation. Interpretation. Stage Technique: Microphone Technique and Charisma."
     ]
 }
 
@@ -94,10 +94,10 @@ export const infoAuditionData = {
     titleEN : "Auditions",
     descriptionFR : [
         "À la fin de chaque année, un concert est organisé à la Julienne (Plans-Les-Ouates) en collaboration avec d’autres professeurs de musique. Les chanteur·euses·x sont alors accompagnés d’élèves musiciens et ont la possibilité de découvrir le monde de la scène en face d’un public bienveillant.",
-        "Les auditions sont des moments importants pour les élèves car c’est une occasion unique de chanter avec des musiciens et de mettre en pratique l’enseignement de l’année. Cette opportunité permettra à l’élève de trouver ses points forts, de construire sa confiance en soi et de prendre conscience de ses points faibles. Bien évidemment les auditions ne sont pas obligatoires mais fortement recommandées !"
+        "Les auditions sont des moments importants pour les élèves car c’est une occasion unique de chanter avec des musiciens et de mettre en pratique l’enseignement de l’année. Cette opportunité permettra à l’élève de trouver ses points forts, de construire sa confiance en soi et de prendre conscience de ce qui reste à améliorer. Bien évidemment les auditions ne sont pas obligatoires mais fortement recommandées !"
     ],
     descriptionEN : [
-        "At the end of each year, a concert is organized at La Julienne (in Plans-Les-Ouates) in collaboration with other music teachers. Singers are then accompanied by student musicians and have the opportunity to discover the performing art world in front of a supportive audience.",
-        "Auditions are important moments for students because it’s a unique opportunity to sing with musicians and put into practice the teachings of the year. This opportunity will allow the student to find their strengths, build their confidence and become aware of their weaknesses. Of course, auditions are not mandatory but strongly recommended !"
+        "At the end of each year, a concert is organized at La Julienne (in Plans-Les-Ouates) in collaboration with other music teachers. Singers are then accompanied by student musicians and have the opportunity to sing on a stage in front of a supportive audience.",
+        "Auditions are important moments for students because it’s a unique opportunity to sing with musicians and put into practice the teachings of the year. This opportunity will allow the student to find their strengths, build their confidence and become aware of what needs improving. Of course, auditions are not mandatory but strongly recommended !"
     ]
 }

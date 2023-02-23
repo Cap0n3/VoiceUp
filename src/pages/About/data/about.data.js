@@ -1,8 +1,8 @@
 import TaniaHeader from "../../../assets/headers/Header_Tania2.jpg";
 import BadShore from "../../../assets/VidThumbnail/BadShore.jpg";
 import SlideOver from "../../../assets/VidThumbnail/SlideOverMe.jpg";
-import LowTV from "../../../assets/VidThumbnail/LowTV.jpg";
-import MyName from "../../../assets/VidThumbnail/MyName.jpg";
+import Love from "../../../assets/VidThumbnail/LoveSailedLive.jpg";
+import NotASaint from "../../../assets/VidThumbnail/NotASaint.jpg";
 
 // HEADER DATA (pic + text)
 export const teacherHeaderData = {
@@ -48,31 +48,31 @@ export const vidsInfos = [
         title: "Bad Shore - Tania Silversen", // Not in modal (removed for now)
         /* Get embed link in youtube iframe */
         embed: "https://www.youtube.com/embed/X9YZBhwcUZ0",
-        descriptionFR: "Do tempor velit qui exercitation commodo amet proident ut Lorem.",
-        descriptionEN: "Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no rejoiced. End friendship sufficient assistance can prosperous met."
+        descriptionFR: "Extrait du premier album “Now I Know”, Tania Silversen, LB Records 2016.",
+        descriptionEN: "From the debut album “Now I Know”, Tania Silversen, LB Records 2016."
     },
     {
         thumbnail: SlideOver,
         title: "Slide Over Me (Live) - Tania Silversen",
         /* Get embed link in youtube iframe */
         embed: "https://www.youtube.com/embed/WuBVXnvzdzA",
-        descriptionFR: "Sunt incididunt mollit irure nulla ipsum laborum mollit. Duis elit in labore dolor exercitation sint officia enim ipsum. Adipisicing id adipisicing fugiat excepteur. Aliqua adipisicing velit anim excepteur aute officia elit Lorem sunt reprehenderit. Proident voluptate in elit consequat ullamco eiusmod aliqua voluptate quis qui.",
-        descriptionEN: "Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no rejoiced. End friendship sufficient assistance can prosperous met."
+        descriptionFR: "Tania Silversen live à l'Alhambra de Genève en juillet 2017.",
+        descriptionEN: "Tania Silversen live at Alhambra (Geneva) in july 2017."
     },
     {
-        thumbnail: LowTV,
-        title: "Low (Live TV) - Killing Volts",
+        thumbnail: Love,
+        title: "Love Sailed (Live TV) - Killing Volts",
         /* Get embed link in youtube iframe */
-        embed: "https://www.youtube.com/embed/qE5aqAhDoOU",
-        descriptionFR: "Ut in laborum eiusmod duis Lorem est excepteur excepteur veniam in officia. Nisi duis do id exercitation cillum magna sint labore adipisicing deserunt fugiat culpa dolore nostrud. Do sunt eiusmod occaecat aute aute ea dolor labore esse officia proident. Fugiat esse et ipsum ut fugiat ad amet excepteur non occaecat cillum Lorem reprehenderit mollit. Velit irure duis quis ut do. Eu officia pariatur ex non eu sint excepteur consequat dolor reprehenderit sint. Aute nostrud ipsum qui laborum in exercitation cillum sit do occaecat. Enim sint labore anim laborum est ullamco excepteur eiusmod laborum mollit consequat dolore. Magna amet ut consectetur aliqua deserunt deserunt eiusmod enim adipisicing proident consectetur magna esse. Ut et cupidatat laborum nostrud consectetur ullamco consectetur tempor tempor dolor. Culpa amet sint ad ut ut voluptate sunt exercitation ullamco eu veniam voluptate. Lorem qui quis est ipsum nisi id occaecat in dolore. Magna dolor minim amet aute mollit nostrud aliquip commodo aliquip ut. Occaecat et anim laborum minim nostrud dolore minim.",
-        descriptionEN: "Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no rejoiced. End friendship sufficient assistance can prosperous met."
+        embed: "https://www.youtube.com/embed/47q9FcRujgU",
+        descriptionFR: "Chanson de Killing Volts “Love Sailed” interprétée en live dans l'émission Mégaphone sur Léman Bleu.",
+        descriptionEN: "Killing Volts song “Love Sailed” performed live in Mégaphone (Léman Bleu)."
     },
     {
-        thumbnail: MyName,
-        title: "My Name - Solartones",
+        thumbnail: NotASaint,
+        title: "Not A Saint - Killing Volts",
         /* Get embed link in youtube iframe */
-        embed: "https://www.youtube.com/embed/gA_u0RBfmh8",
-        descriptionFR: "Veniam sint dolore cillum velit sint ipsum ea voluptate magna ad aliquip laborum consequat. Elit dolor dolor laboris consectetur voluptate qui occaecat commodo incididunt. Officia minim sunt incididunt aliquip eu velit sunt ad in eiusmod cillum.",
-        descriptionEN: "Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no rejoiced. End friendship sufficient assistance can prosperous met."
+        embed: "https://www.youtube.com/embed/tCGe_CVif2E",
+        descriptionFR: "Extrait du premier album de Killing Volts « Symptomatique Dilemma » (2021)",
+        descriptionEN: "Taken from Killing Volts First album “Symptomatic Dilemma” (2021)."
     }
 ]

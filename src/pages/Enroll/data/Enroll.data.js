@@ -17,7 +17,7 @@ export const enrollParagraphsFR = [
 
 export const enrollParagraphsEN = [
     "Before embarking on this wonderful adventure with me, you have the option of taking one or two trial lessons so that you can see if my teaching method is suitable for you.",
-    "Le formulaire ci-dessous ne vous engage en rien c’est simplement une demande pour un premier cours. Please fill out all fields in the form (*).",
+    "The form below does not commit you to anything, it is simply a request for a first class. Please fill in all the fields of the form (*).",
 ]
 
 // FORM SELECT BOX choices

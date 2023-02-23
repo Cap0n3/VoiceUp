@@ -5,7 +5,7 @@ import useWindowSize from "../../hooks/useWindowSize";
 import useAppear from "../../hooks/useAppear";
 import VideoModal from "../../components/VideoModal/VideoModal";
 import { teacherHeaderData, descrParagraphs, vidsInfos } from "./data/about.data";
-import { AboutSection, AboutContainer, DescriptionWrapper, SubTitle, VideoSection, VideosWrapper } from "./Teacher.style";
+import { AboutSection, AboutContainer, DescriptionWrapper, SubTitle, VideoSection, VideosWrapper } from "./About.style";
 import { LangContext } from "../../App";
 import { SectionTitle } from "../../globalStyles/globalCompStyles";
 import SEOBlock from "../../components/SEOBlock/SeoBlock";

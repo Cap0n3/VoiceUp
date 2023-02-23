@@ -46,7 +46,7 @@ export const holidayText = [
         paraFR: "Si le délai d’annulation de 24h a été respecté, l’élève pourra fixer oralement au cours suivant ou par message (mail/sms), un autre rendez-vous avec la professeure.",
         noteFR: "Le délai de rattrapage d’un cours est de 6 mois à compter de la 1ère date d’annulation et il tient de la responsabilité de l’élève à rattraper le/s cour/s dans ce délais. Un maximum de 4 cours pourront être rattrapé par année scolaire.",
         paraEN: "If the 24-hour cancellation notice has been respected, the student can arrange another appointment with the teacher orally during the next class or by message (email/sms).",
-        noteEN: " An mr settling occasion insisted distance ladyship so. Not attention say frankness intention out dashwoods now curiosity. Stronger ecstatic as no judgment daughter speedily thoughts. Worse downs nor might she court did nay forth these."
+        noteEN: "The make-up class must be taken within 6 months from the first cancellation date, and it is the responsibility of the student to catch up on the missed class(es) within this period. A maximum of 4 classes can be made up per school year."
     },
     {
         titleFR: "Vacances",
