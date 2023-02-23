@@ -26,7 +26,6 @@ import { ELEMENT_HEIGHTS } from "../../globalVars";
 import { LangContext } from "../../App";
 import SEOBlock from "../../components/SEOBlock/SeoBlock";
 import { websiteSEO } from "../../seo/seo.data";
-import { BlockWrapper } from '../Conditions/Conditions.style';
 
 const Contact = () => {
     const {language} = useContext(LangContext);

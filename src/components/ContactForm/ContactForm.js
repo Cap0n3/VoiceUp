@@ -71,7 +71,7 @@ const ContactForm = () => {
                 reset();
             }
         }    
-    }, [send.serverResponse])
+    }, [send.serverResponse, reset])
 
     return(
         <>

@@ -35,28 +35,6 @@ const Navbar = () => {
     const screenSize = useWindowSize();
 
     /**
-     * Define state to mobile when screen is small
-     */
-    const smScreenVisibility = () => {
-        if(screenSize.innerWidth <= 1024) {
-            // setMobileBtn(false);
-            setIsMobile(true);
-        } else {
-            // setMobileBtn(true);
-            setIsMobile(false);
-        }
-    }
-
-    const isMediumScreen = () => {
-        if(screenSize.innerWidth > 1025 && screenSize.innerWidth <= 1248) {      
-            setIsMedium(true);
-        }
-        else {
-            setIsMedium(false);
-        }
-    } 
-
-    /**
      * To completely remove logo from flow. This was a dirty solution
      * to avoid dealing with 'diplay: none' issues with width still present
      * in mobile view dispite element removed by css property 'display: none' ...
@@ -74,6 +52,28 @@ const Navbar = () => {
      * Evaluate screen size (small, medium) for icons size and mobile menu.
      */
     useEffect(() => {
+        /**
+         * Define state to mobile when screen is small
+         */
+        const smScreenVisibility = () => {
+            if(screenSize.innerWidth <= 1024) {
+                // setMobileBtn(false);
+                setIsMobile(true);
+            } else {
+                // setMobileBtn(true);
+                setIsMobile(false);
+            }
+        }
+
+        const isMediumScreen = () => {
+            if(screenSize.innerWidth > 1025 && screenSize.innerWidth <= 1248) {      
+                setIsMedium(true);
+            }
+            else {
+                setIsMedium(false);
+            }
+        } 
+
         smScreenVisibility();
         isMediumScreen();
     }, [screenSize.innerWidth]);

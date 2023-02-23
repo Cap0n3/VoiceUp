@@ -1,4 +1,3 @@
-import KimHeader from "../../../assets/headers/Header_Kim.jpg";
 import GuitarSinger from "../../../assets/headers/Header_Program.jpg";
 import TaniaLea from "../../../assets/images/Tania/Tania_Lea.jpg";
 import ShowerDude from "../../../assets/images/stock/showerDude_medium.jpg";

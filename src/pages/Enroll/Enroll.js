@@ -76,7 +76,7 @@ const Enroll = () => {
                 reset();
             }
         }    
-    }, [send.serverResponse])
+    }, [send.serverResponse, reset])
 
 
     return(
