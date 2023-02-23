@@ -35,7 +35,7 @@ const Footer = () => {
                             <FtNavLinks to="/tarifs">{(language === "FR") ? "Tarifs" : "Pricing"}</FtNavLinks>
                         </FtNavItem>
                         <FtNavItem>
-                            <FtNavLinks to="/contact" state={{ anchor: "#map" }}>{(language === "FR") ? "Localisation" : "Situation"}</FtNavLinks>
+                            <FtNavLinks to="/contact" state={{ anchor: "#map" }}>{(language === "FR") ? "Localisation" : "Location"}</FtNavLinks>
                         </FtNavItem>
                     </FtNavList>
                 </FtNavWrapper>
