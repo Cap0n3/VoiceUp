@@ -4,13 +4,13 @@ import GlobalStyle from "./globalStyles/globalStyle";
 import ScrollTop from "./components/ScrollTop/ScrollTop";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
-import Lessons from "./pages/Lessons/Lessons";
-import Teacher from "./pages/Teacher/Teacher";
+import Program from "./pages/Program/Program";
+import About from "./pages/About/About";
 import Conditions from "./pages/Conditions/Conditions";
 import Prices from "./pages/Pricing/Pricing";
 import Contact from "./pages/Contact/Contact";
 import Enroll from "./pages/Enroll/Enroll";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { HelmetProvider } from "react-helmet-async";
 
 // Define contexts
 export const LangContext = createContext();
@@ -45,8 +45,8 @@ function App() {
 						<Navbar />
 						<Routes>
 							<Route path="/" element={<Home />} />
-							<Route path="/methode" element={<Lessons />} />
-							<Route path="/tania" element={<Teacher />} />
+							<Route path="/methode" element={<Program />} />
+							<Route path="/tania" element={<About />} />
 							<Route path="/conditions" element={<Conditions />} />
 							<Route path="/tarifs" element={<Prices />} />
 							<Route path="/contact" element={<Contact />} />

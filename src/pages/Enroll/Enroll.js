@@ -29,6 +29,8 @@ import Recaptcha from "react-google-recaptcha";
 import { FORM_REGEX, EMAILJS_IDS } from "../../globalVars";
 import { getInputErrMsg } from "../../helpers/inputsError";
 import useSend from "../../hooks/useSend";
+import SEOBlock from "../../components/SEOBlock/SeoBlock";
+import { websiteSEO } from "../../seo/seo.data";
 
 const Enroll = () => {
     const {language} = useContext(LangContext);
@@ -79,6 +81,7 @@ const Enroll = () => {
 
     return(
         <>
+            <SEOBlock data={websiteSEO.enroll} />
             <Header data={enrollHeaderData} position={{posX: 0, posY: 50}} />
             <EnrollSection>
                 <TextContainer>

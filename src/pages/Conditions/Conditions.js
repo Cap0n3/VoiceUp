@@ -1,11 +1,13 @@
-import React, {useRef, useContext} from 'react';
-import { LangContext } from '../../App';
-import Header from '../../components/Header/Header';
+import React, {useRef, useContext} from "react";
+import { LangContext } from "../../App";
+import Header from "../../components/Header/Header";
 import Footer from '../../components/Footer/Footer';
-import { conditionsHeaderData, conditionText, holidayText } from './data/conditions.data';
-import { ConditionContainer, BlockWrapper, ConditionBlock } from './Conditions.style';
-import useAppear from '../../hooks/useAppear';
-import { SectionTitle } from '../../globalStyles/globalCompStyles';
+import { conditionsHeaderData, conditionText, holidayText } from "./data/conditions.data";
+import { ConditionContainer, BlockWrapper, ConditionBlock } from "./Conditions.style";
+import useAppear from "../../hooks/useAppear";
+import { SectionTitle } from "../../globalStyles/globalCompStyles";
+import SEOBlock from "../../components/SEOBlock/SeoBlock";
+import { websiteSEO } from "../../seo/seo.data";
 
 const Conditions = () => {
     const {language} = useContext(LangContext);
@@ -16,6 +18,7 @@ const Conditions = () => {
 
     return(
         <>
+            <SEOBlock data={websiteSEO.conditions} />
             <Header data={conditionsHeaderData} position={{posX: 0, posY: 50}} />
             <ConditionContainer>
                 <BlockWrapper ref={wrapperOneRef} isVisible={isWrapperOneVisible}>

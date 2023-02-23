@@ -10,8 +10,10 @@ import useAppear from "../../hooks/useAppear";
 import { LangContext } from "../../App";
 import useAnchor from "../../hooks/useAnchor";
 import { useLocation } from "react-router-dom";
-import { ELEMENT_HEIGHTS } from '../../globalVars';
-import useWindowSize from '../../hooks/useWindowSize';
+import { ELEMENT_HEIGHTS } from "../../globalVars";
+import useWindowSize from "../../hooks/useWindowSize";
+import SEOBlock from "../../components/SEOBlock/SeoBlock";
+import { websiteSEO } from "../../seo/seo.data";
 
 const Prices = () => {
     const {language} = useContext(LangContext);
@@ -26,6 +28,7 @@ const Prices = () => {
 
     return(
         <>
+            <SEOBlock data={websiteSEO.pricing} />
             <Header data={pricingHeaderData} position={{posX: 0, posY: 50}} />
             <PricingSection ref={priceSectionRef}>
                 <PriceCard data={BiAdult}  />

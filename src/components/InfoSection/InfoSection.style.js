@@ -94,7 +94,7 @@ export const TextDiv = styled.div`
         margin-bottom: 30px;
     }
 
-    & > h1 {
+    & > h2 {
         text-align: center;
         margin-bottom: 30px;
         font-size: ${FONT_SIZES.desktopSubheadings};

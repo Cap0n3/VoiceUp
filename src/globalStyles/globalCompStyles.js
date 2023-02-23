@@ -23,7 +23,7 @@ export const BaseContainer = styled.section`
 `;
 
 // === Section Titles === //
-export const SectionTitle = styled.h1`
+export const SectionTitle = styled.h2`
     width: 100%;
     margin-bottom: 60px;
     text-transform: uppercase;

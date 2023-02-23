@@ -19,8 +19,8 @@ const C2ASection = ({transitionTime}) => {
             <ImgDiv paralOffset={parallaxOffset} width={windowSize.innerWidth} title="Tania" />
             <BoxWrapper className={isVisible ? "active" : ""} transitionTime={transitionTime}>
                 <TextBox>
-                    <h1>{(language === "FR") ? C2AData.titleFR : C2AData.titleEN}</h1>
-                    <h2>{(language === "FR") ? C2AData.subTitleFR : C2AData.subTitleEN}</h2>
+                    <h2>{(language === "FR") ? C2AData.titleFR : C2AData.titleEN}</h2>
+                    <h3>{(language === "FR") ? C2AData.subTitleFR : C2AData.subTitleEN}</h3>
                     <p style={{marginBottom: "40px"}}>{(language === "FR") ? C2AData.descriptionFR : C2AData.descriptionEN}</p>
                     <OutlineBtn to="/inscription" style={{marginLeft: "auto", marginRight: "auto"}}>{(language === "FR") ? C2AData.buttonFR : C2AData.buttonEN}</OutlineBtn>
                 </TextBox>

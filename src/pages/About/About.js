@@ -4,12 +4,14 @@ import Footer from "../../components/Footer/Footer";
 import useWindowSize from "../../hooks/useWindowSize";
 import useAppear from "../../hooks/useAppear";
 import VideoModal from "../../components/VideoModal/VideoModal";
-import { teacherHeaderData, descrParagraphs, vidsInfos } from "./data/teacher.data";
+import { teacherHeaderData, descrParagraphs, vidsInfos } from "./data/about.data";
 import { AboutSection, AboutContainer, DescriptionWrapper, SubTitle, VideoSection, VideosWrapper } from "./Teacher.style";
 import { LangContext } from "../../App";
 import { SectionTitle } from "../../globalStyles/globalCompStyles";
+import SEOBlock from "../../components/SEOBlock/SeoBlock";
+import { websiteSEO } from "../../seo/seo.data";
 
-const Teacher = () => {
+const About = () => {
     const {language} = useContext(LangContext);
     const screenSize = useWindowSize();
     const AboutRef = useRef(null);
@@ -54,6 +56,7 @@ const Teacher = () => {
 
     return(
         <>
+            <SEOBlock data={websiteSEO.about} />
             <Header data={teacherHeaderData} position={{posX: 0, posY: 40}} />
             <AboutSection>
                     <AboutContainer ref={AboutRef} isVisible={isAboutVisible}>
@@ -80,4 +83,4 @@ const Teacher = () => {
     );
 }
 
-export default Teacher;
+export default About;

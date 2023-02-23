@@ -37,7 +37,7 @@ const InfoSection = (props) => {
                 <Card className={isVisible ? "active" : ""} direction={props.data.direction} transitionTime={props.transitionTime}>
                     <TextDiv fontSize={props.fontSize} >
                         {props.data.icon ? props.data.icon : ""}
-                        <h1>{(language === "FR") ? props.data.titleFR : props.data.titleEN}</h1>
+                        <h2>{(language === "FR") ? props.data.titleFR : props.data.titleEN}</h2>
                         {displayDescription(language)}
                     </TextDiv>
                 </Card>

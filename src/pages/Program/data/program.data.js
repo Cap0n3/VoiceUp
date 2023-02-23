@@ -1,4 +1,5 @@
 import KimHeader from "../../../assets/headers/Header_Kim.jpg";
+import GuitarSinger from "../../../assets/headers/Header_Program.jpg";
 import TaniaLea from "../../../assets/images/Tania/Tania_Lea.jpg";
 import ShowerDude from "../../../assets/images/stock/showerDude_medium.jpg";
 import Sadoline from "../../../assets/images/stock/CathrineSadolin.jpg";
@@ -7,8 +8,8 @@ import GregDanae from "../../../assets/images/students/student_Greg_Danae.jpg";
 
 // HEADER DATA (pic + text)
 export const lessonHeaderData = {
-    picURL: KimHeader,
-    imgTitle: "Kim",
+    picURL: GuitarSinger,
+    imgTitle: "Photo de Luke Thornton",
     titleFR: "La méthode",
     titleEN: "Method",
     descriptionFR: <>« Les meilleurs professeurs sont ceux qui savent se transformer en ponts, qui invitent leurs étudiants à les franchir et qui, après avoir facilité leur passage, disparaissent avec joie en les encourageant à bâtir leurs propres ponts. » <br /><br />Nikos Kazantzakis</>,

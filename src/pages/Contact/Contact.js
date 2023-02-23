@@ -20,7 +20,9 @@ import useAppear from "../../hooks/useAppear";
 import { useLocation } from "react-router-dom";
 import useAnchor from "../../hooks/useAnchor";
 import { ELEMENT_HEIGHTS } from "../../globalVars";
-import { LangContext } from '../../App';
+import { LangContext } from "../../App";
+import SEOBlock from "../../components/SEOBlock/SeoBlock";
+import { websiteSEO } from "../../seo/seo.data";
 
 const Contact = () => {
     const {language} = useContext(LangContext);
@@ -33,6 +35,7 @@ const Contact = () => {
 
     return(
         <>
+            <SEOBlock data={websiteSEO.contact} />
             <Header data={contactHeaderData} position={{posX: 0, posY: 50}} />
             <ContactSection winHeight={windowSize.innerHeight} ref={contactSectionRef}>
                 <FormContainer isVisible={isContactVisible}>

@@ -65,14 +65,14 @@ export const TextBox = styled.div`
     overflow-x: visible;
     overflow-wrap: break-word;
     
-    & > h1, h2 {
+    & > h2, h3 {
         text-align: center;
         color: ${VoiceUpColors.white};
         text-transform: uppercase;
         ${DEBUG ? "border: 1px solid red;" : ""}
     }
 
-    & > h1 {
+    & > h2 {
             font-size: ${FONT_SIZES.desktopHeadings};
             font-weight: ${FONT_WEIGHTS.headingsWeight};
             margin-bottom: 5px;
@@ -82,7 +82,7 @@ export const TextBox = styled.div`
             }
         }
 
-    & > h2 {
+    & > h3 {
         font-size: ${FONT_SIZES.desktopSubheadings};
         font-weight: ${FONT_WEIGHTS.subheadingsWeight};
         margin-bottom: 30px;
