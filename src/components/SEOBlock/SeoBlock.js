@@ -10,10 +10,8 @@ const SEOBlock = ({data}) => {
     return(
         <Helmet>
             <title>{data.title}</title>
-            <meta
-                name="description"
-                content={data.description}
-            />;
+            <meta name="description" content={data.description} />
+            <link rel="canonical" href={data.canonHREF} />
         </Helmet>
 );
 }
