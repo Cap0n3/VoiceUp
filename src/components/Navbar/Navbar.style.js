@@ -146,11 +146,6 @@ export const NavLinks = styled(NavLink)`
     &.active {
         color: ${VoiceUpColors.gold};
     }
-
-    /* 13" screen */
-    /* @media only screen and (min-width: 1025px) and (max-width: 1248px) {
-        font-size: ${FONT_SIZES.mobileNavbar};
-    }  */
 `;
 
 export const LangSwitch = styled.li`
@@ -174,7 +169,8 @@ export const LangSwitch = styled.li`
 
     /* Small screen */
     @media only screen and (max-width: 1024px) {
-        margin: auto 0 0 0;
+        /* margin: auto 0 0 0; */
+        margin: 0 auto 0 auto;
     }
 `;
 
