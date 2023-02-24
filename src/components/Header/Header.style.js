@@ -96,6 +96,7 @@ export const Title = styled.h1`
     text-transform: uppercase;
     font-weight: ${FONT_WEIGHTS.headingsWeight};
     margin-bottom: 30px;
+    text-align: center;
     ${DEBUG ? "background: lightgreen;" : ""}
 
     @media only screen and (max-width: 1024px) {
@@ -106,7 +107,7 @@ export const Title = styled.h1`
 export const Description = styled.p`
     text-align: center;
     font-size: ${FONT_SIZES.desktopBody};
-    font-weight: ${FONT_WEIGHTS.subheadingsWeight};
+    font-weight: ${FONT_WEIGHTS.bodyWeight};
     color: ${VoiceUpColors.white};
     ${DEBUG ? "background: cyan;" : ""}
 

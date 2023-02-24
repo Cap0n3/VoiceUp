@@ -19,7 +19,7 @@ export const FONT_SIZES = {
     desktopSubheadings : "1.9rem",
     desktopBody : "1.1rem",
     desktopButton : "1rem",
-    // Mobile
+    // Standard mobile
     mobileHeadings : "2.8rem",
     mobileSubheadings : "1.2rem",
     mobileBody : "1rem",
@@ -41,8 +41,8 @@ export const FONT_SIZES = {
 }
 
 export const FONT_WEIGHTS = {
-    headingsWeight : 500,
-    subheadingsWeight : 400,
+    headingsWeight : 600,
+    subheadingsWeight : 500,
     bodyWeight : 300,
 }
 

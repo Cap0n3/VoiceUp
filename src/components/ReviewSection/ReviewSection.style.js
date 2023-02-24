@@ -35,6 +35,7 @@ export const ReviewSlide = styled.div`
         opacity: 0;
         transition: ${({transitionTime}) => `opacity ${transitionTime}ms ease-in`};
     }
+    
     @media only screen and (max-width: 1024px) {
         flex-direction: column;
     }
@@ -82,6 +83,13 @@ export const ReviewBox = styled.div`
         font-style: italic;
         text-align: center;
         ${debug ? "border: 1px solid orange;" : ""}
+    }
+
+    /* Standard mobile & narrow */
+    @media only screen and (max-width: 450px) {
+        & > blockquote {
+            font-size: ${FONT_SIZES.mobileBody};
+        }
     }
 `;
 

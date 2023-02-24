@@ -31,7 +31,7 @@ export const HeadCell = styled.th`
     & > h2 {
         margin-top: 30px;
         font-size: ${FONT_SIZES.desktopBody};
-        font-weight: ${FONT_WEIGHTS.headingsWeight};
+        font-weight: ${FONT_WEIGHTS.subheadingsWeight};
         text-transform: uppercase;
 
         @media only screen and (max-width: 1024px) and (min-width: 691px) {
@@ -93,9 +93,8 @@ export const InfoWrapper = styled.div`
     height: 40px;
     gap: 15px;
     font-size: ${FONT_SIZES.desktopBody};
-    font-weight: ${FONT_WEIGHTS.headingsWeight};
+    font-weight: ${FONT_WEIGHTS.subheadingsWeight};
     ${DEBUG ? "border: 1px solid pink;" : ""}
-
 
     @media screen and (max-width: 691px) {
         gap: 5px;

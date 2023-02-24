@@ -111,7 +111,7 @@ export const TextBox = styled.div`
 
     & > p {
         font-size: ${FONT_SIZES.desktopBody};
-        font-weight: ${FONT_WEIGHTS.subheadingsWeight};
+        font-weight: ${FONT_WEIGHTS.bodyWeight};
         color: ${VoiceUpColors.white};
         ${DEBUG ? "background: cyan;" : ""}
     }

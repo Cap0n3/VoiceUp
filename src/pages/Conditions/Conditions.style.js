@@ -33,7 +33,7 @@ export const ConditionBlock = styled.div`
         margin-bottom: 10px;
         font-weight: 500;
         font-size: ${FONT_SIZES.desktopBody};
-        font-weight: ${FONT_WEIGHTS.headingsWeight};
+        font-weight: ${FONT_WEIGHTS.subheadingsWeight};
         text-transform: uppercase;
     }
 

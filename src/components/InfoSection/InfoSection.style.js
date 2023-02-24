@@ -116,20 +116,60 @@ export const TextDiv = styled.div`
         ${DEBUG ? "background-color: red;" : ""}
     }
     
-    @media only screen and (max-width: 950px) {
+    /* @media only screen and (max-width: 950px) {
         #sectionIcon {
             width: 80px;
         }
 
-        & > h1 {
+        & > h2 {
             font-size: ${FONT_SIZES.mobileSubheadings};
         }
 
         & > p {
             font-size: ${FONT_SIZES.mobileBody};
-            margin-bottom: 30px;
             padding-left: 0;
             padding-right: 0;
         }
+    } */
+
+    /* Tablet */
+    @media only screen and (max-width: 1024px) and (min-width: 450px) {    
+        & > p {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    /* Standard mobile */
+    @media only screen and (max-width: 450px) and (min-width: 300px) {
+        #sectionIcon {
+            width: 80px;
+        }
+
+        & > h2 {
+            font-size: ${FONT_SIZES.mobileSubheadings};
+        }
+
+        & > p {
+            font-size : ${FONT_SIZES.mobileBody};
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Narrow screen (like Galaxy Fold) */
+    @media only screen and (max-width: 300px) {
+        max-width: 90%;
+        
+        & > h2, p {
+            margin-bottom: 15px;
+        }
+
+        & > h2 {
+            font-size: ${FONT_SIZES.mobileSubheadings};
+        }
+
+        & > p {
+            font-size: ${FONT_SIZES.mobileBody};
+        }    
     }
 `;

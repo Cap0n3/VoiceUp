@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { VoiceUpColors } from "../../colors";
-import { FONT_SIZES } from "../../globalVars";
+import { FONT_SIZES, FONT_WEIGHTS } from "../../globalVars";
 
 // === Card size === //
 const cardWidthPercent = 26;
@@ -183,7 +183,7 @@ export const ListItem = styled.li`
     display: flex;
     align-items: center;
     color: rgba(255, 255, 255, 0.7);
-    font-weight: 300;
+    font-weight: ${FONT_WEIGHTS.bodyWeight};
     font-size: ${FONT_SIZES.priceCardList};
     ${DEBUG ? "background-color: purple;" : ""}
 `;

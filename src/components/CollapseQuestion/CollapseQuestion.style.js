@@ -40,8 +40,15 @@ export const Question= styled.p`
         border-bottom: 8px solid transparent;
     }
 
-    @media screen and (max-width: 1024px) {
-        height: 90px;
+    /* Tablet */
+    @media only screen and (max-width: 1024px) and (min-width: 450px) {    
+        /* CODE */
+        font-size: ${FONT_SIZES.mobileBody};
+    }
+
+    /* Standard mobile */
+    @media only screen and (max-width: 450px) {
+        /* height: 90px; */
         font-size: ${FONT_SIZES.mobileQuestionCollapse};
     }
 `;
@@ -62,7 +69,14 @@ export const Answer = styled.p`
     padding: 0 20px 20px 20px;
     ${DEBUG ? "background-color: lightgreen;" : ""}
 
-    @media screen and (max-width: 1024px) {
+    /* Tablet */
+    @media only screen and (max-width: 1024px) and (min-width: 450px) {    
+        /* CODE */
+        font-size: ${FONT_SIZES.mobileBody};
+    }
+
+    /* Standard mobile */
+    @media only screen and (max-width: 450px) {
         font-size: ${FONT_SIZES.mobileQuestionCollapse};
     }
 `;

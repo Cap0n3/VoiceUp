@@ -9,6 +9,8 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         font-family: 'Roboto', sans-serif;
         color: ${VoiceUpColors.black};
+        /* Avoid blue box when link are clicked on mobile*/
+        -webkit-tap-highlight-color: rgba(0,0,0,0); 
     }
 
     body {
