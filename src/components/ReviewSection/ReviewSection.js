@@ -96,7 +96,7 @@ const ReviewSection = ({transitionTime, nbOfReviews}) => {
                 setIsActive(true);
             }, transitionTime);
         }
-    }, [isActive]);
+    }, [isActive, transitionTime]);
 
     /**
      * Timer for slides (auto change)
