@@ -95,7 +95,8 @@ export const NavMenu = styled.ul`
         gap: 0px;
         position: absolute;
         width: 100%;
-        height: calc(100vh - ${ELEMENT_HEIGHTS.mobileNavbarHeight}px);
+        /* height: calc(100vh - ${ELEMENT_HEIGHTS.mobileNavbarHeight}px); */
+        height: 100vh;
         top: ${ELEMENT_HEIGHTS.mobileNavbarHeight}px;
         ${'' /* Cannot go right otherwise it extend screen */}
         left: ${({click}) => (click ? 0 : "-100%")};
