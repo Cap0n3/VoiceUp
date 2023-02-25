@@ -95,13 +95,15 @@ export const NavMenu = styled.ul`
         gap: 0px;
         position: absolute;
         width: 100%;
-        height: calc(100vh - ${ELEMENT_HEIGHTS.mobileNavbarHeight}px);
+        /* height: calc(100vh - ${ELEMENT_HEIGHTS.mobileNavbarHeight}px); */
+        height: 100vh;
         top: ${ELEMENT_HEIGHTS.mobileNavbarHeight}px;
         ${'' /* Cannot go right otherwise it extend screen */}
         left: ${({click}) => (click ? 0 : "-100%")};
         opacity: 1;
         transition: all 0.5s ease;
         background: ${VoiceUpColors.white};
+        z-index: 999;
     }
 `;
 

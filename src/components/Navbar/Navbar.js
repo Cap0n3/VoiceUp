@@ -22,17 +22,45 @@ import InstaIcon from "../../assets/icons/social/instagram_icon";
 import FBIconAlt from '../../assets/icons/social/facebook_icon_alt';
 import { LangContext } from '../../App';
 import useWindowSize from '../../hooks/useWindowSize';
+import useScroll from '../../hooks/useScroll';
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
     const [isMedium, setIsMedium] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
-
-    const handleClick = () => setClick(!click) // Toogle click
+    const scrollTopPos = useScroll();
+    //const handleClick = () => setClick(!click); // Toogle click
     const closeMobileMenu = () => setClick(false);
     // Get context for language selection
     const { language, setLanguage } = useContext(LangContext);
     const screenSize = useWindowSize();
+
+    // const [capturedScroll, setCapturedScroll] = useState(null);
+
+    // === HERE (TEST) === //
+    const handleClick = () => {
+        // Toogle click
+        setClick(!click);
+        // Capture scoll position
+        // setCapturedScroll(scrollTopPos);
+    }   
+
+    /**
+     * Disable scroll when mobile menu is open
+     */
+    // useEffect(() => {
+    //     if(click){
+    //         // DISABLE SCROLL
+    //         //console.log(scrollTopPos)
+    //         window.scroll(0,0);
+    //     }
+    //     else if(!click) {
+    //         if(capturedScroll) {
+    //             console.log("HERE")
+    //             window.scroll(0, capturedScroll);
+    //         }
+    //     }
+    // }, [click, scrollTopPos, capturedScroll])
 
     /**
      * To completely remove logo from flow. This was a dirty solution

@@ -9,7 +9,7 @@ const useScroll = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
 
     const handleScroll = () => {
-        const position = window.pageYOffset;
+        const position = window.pageYOffset || document.documentElement.scrollTop;;
         setScrollPosition(position);
     };
 
