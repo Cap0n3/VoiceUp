@@ -24,7 +24,7 @@ export const BaseContainer = styled.section`
 
 // HERE (TESTING SOLUTION
 export const MainContainer = styled.div`
-    position: ${({pos}) => (pos === "fixed") ? "fixed" : "static"};
+    position: ${({position}) => (position === "fixed") ? "fixed" : "static"};
     top: ${({scrollPos}) => (scrollPos ? `-${scrollPos - ELEMENT_HEIGHTS.mobileNavbarHeight}px` : "")};
 `;
 

@@ -24,40 +24,37 @@ import { LangContext } from '../../App';
 import useWindowSize from '../../hooks/useWindowSize';
 import useScroll from '../../hooks/useScroll';
 
-import { MobileContext } from '../../App';
+import { MobileMenuContext } from '../../App';
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
     const [isMedium, setIsMedium] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const scrollTopPos = useScroll();
-    //const handleClick = () => setClick(!click); // Toogle click
-    //const closeMobileMenu = () => setClick(false);
     // Get context for language selection
     const { language, setLanguage } = useContext(LangContext);
     const screenSize = useWindowSize();
+    const { mobileMenuState, setMobileMenuState } = useContext(MobileMenuContext);
 
-    const { isMobileContext, setIsMobileContext } = useContext(MobileContext);
-    // const [capturedScroll, setCapturedScroll] = useState(null);
-
-    // === HERE (TEST) === //
+    /**
+     * Handle mobile menu behaviour when clicked. 
+     */
     const handleClick = () => {
         // Toogle pane & menu logo
         setClick(!click);
-        // Check if pane is closing (if it was already open, then it's closing)
-        if(isMobileContext.isOpen) {
-            console.log("CLOSE")
-            setIsMobileContext({
+        // Check if pane is open (if it is already open, then it's closing)
+        if(mobileMenuState.isOpen) {
+            setMobileMenuState({
                 isOpen: false,
-                // Feed last know scroll position to scroll back to it
-                position: isMobileContext.position
+                // Feed back last known scroll position to scroll back to it
+                scrollPosition: mobileMenuState.scrollPosition
             });
             return
         }
         // Set state and capture scoll position
-        setIsMobileContext({
-            isOpen: !isMobileContext.isOpen, 
-            position: scrollTopPos
+        setMobileMenuState({
+            isOpen: !mobileMenuState.isOpen, 
+            scrollPosition: scrollTopPos
         });
     }
 

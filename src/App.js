@@ -14,14 +14,14 @@ import { HelmetProvider } from "react-helmet-async";
 
 // Define contexts
 export const LangContext = createContext();
-export const MobileContext = createContext();
+export const MobileMenuContext = createContext();
 
 function App() {
-	// Set contexts
+	// Set needed contexts
 	const [language, setLanguage] = useState("FR");
 	const langValue = { language, setLanguage };
-	const [isMobileContext, setIsMobileContext] = useState({isOpen: false, position: 0});
-	const mobileValue = { isMobileContext, setIsMobileContext };
+	const [mobileMenuState, setMobileMenuState] = useState({isOpen: false, scrollPosition: 0});
+	const mobileValue = { mobileMenuState, setMobileMenuState };
 	const location = useLocation();
 
 	/**
@@ -37,13 +37,13 @@ function App() {
 		// Scroll top on route change
 		window.scrollTo(0, 0);
 		// Reset value of mobile context (to avoid keeping scroll pos between page change)
-		setIsMobileContext({isOpen: false, position: 0})
+		setMobileMenuState({isOpen: false, scrollPosition: 0})
 	}, [location]);
 
 	return (
 		<>
 			<HelmetProvider>
-				<MobileContext.Provider value={mobileValue}>
+				<MobileMenuContext.Provider value={mobileValue}>
 					<LangContext.Provider value={langValue}>
 						<ScrollTop />
 						<div className="main">
@@ -60,7 +60,7 @@ function App() {
 							</Routes>
 						</div>
 					</LangContext.Provider>
-				</MobileContext.Provider>
+				</MobileMenuContext.Provider>
 			</HelmetProvider>
 		</>
 		
