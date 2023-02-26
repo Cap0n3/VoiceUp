@@ -1,5 +1,5 @@
-import React, { useRef, useContext, useEffect } from "react";
-import { MainContainer, SectionTitle } from "../../globalStyles/globalCompStyles";
+import React, { useRef } from "react";
+import { SectionTitle } from "../../globalStyles/globalCompStyles";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import InfoSection from "../../components/InfoSection/InfoSection";
 import ReviewSection from "../../components/ReviewSection/ReviewSection";
@@ -13,13 +13,11 @@ import useWindowSize from "../../hooks/useWindowSize";
 import useAppear from "../../hooks/useAppear";
 import SEOBlock from "../../components/SEOBlock/SeoBlock";
 import { websiteSEO } from "../../seo/seo.data";
-import useMobileScrollBack from "../../hooks/useMobileScrollBack";
 
 const Home = () => {
     const windowSize = useWindowSize();
     const contactSectionRef = useRef(null);
     const isContactVisible = useAppear(contactSectionRef, 380);
-    const mobileMenuState = useMobileScrollBack();
 
     /**
      * Set number of reviews in page depending on screen width
@@ -43,7 +41,7 @@ const Home = () => {
     }
 
     return(
-        <MainContainer position={mobileMenuState.isOpen ? "fixed" : ""} scrollPos={mobileMenuState.scrollPosition}>
+        <>
             <SEOBlock data={websiteSEO.home} />
             <SliderContainer winHeight={windowSize.innerHeight}>
                 <ImageSlider slides={slides} transitionTime={300} />
@@ -60,7 +58,7 @@ const Home = () => {
                 </FormContainer>
             </ContactSection>
             <Footer />
-        </MainContainer>
+        </>
     )
 }
 

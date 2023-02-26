@@ -1,6 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useState, useEffect, createContext } from "react";
 import GlobalStyle from "./globalStyles/globalStyle";
+import { MainContainer } from "./globalStyles/globalCompStyles";
 import ScrollTop from "./components/ScrollTop/ScrollTop";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
@@ -25,6 +26,18 @@ function App() {
 	const location = useLocation();
 
 	/**
+     * Used to scroll back original position when mobile menu is closed.
+ 	 * Created to address a problem with a visible scroll bar when mobile menu is open.
+     */
+    useEffect(() => {
+        if(!mobileMenuState.isOpen) {
+            // console.log(mobileMenuState.scrollPosition)
+            // Scroll back to original position
+            window.scrollTo(0, mobileMenuState.scrollPosition);
+        }
+    }, [mobileMenuState])
+
+	/**
 	 * Quick and dirty solution to restore scrolling when path change. 
 	 * If an anchor is set on link, don't restore scrolling to avoid some problems
 	 * when calling anchor from destination page.
@@ -46,7 +59,7 @@ function App() {
 				<MobileMenuContext.Provider value={mobileValue}>
 					<LangContext.Provider value={langValue}>
 						<ScrollTop />
-						<div className="main">
+						<MainContainer position={mobileMenuState.isOpen ? "fixed" : ""} scrollPos={mobileMenuState.scrollPosition}>
 							<GlobalStyle />
 							<Navbar />
 							<Routes>
@@ -58,7 +71,7 @@ function App() {
 								<Route path="/contact" element={<Contact />} />
 								<Route path="/inscription" element={<Enroll />} />
 							</Routes>
-						</div>
+						</MainContainer>
 					</LangContext.Provider>
 				</MobileMenuContext.Provider>
 			</HelmetProvider>

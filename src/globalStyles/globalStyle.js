@@ -17,13 +17,12 @@ const GlobalStyle = createGlobalStyle`
         min-width: fit-content;
     }
 
-    &.main {
+    ${'' /* &.main {
         padding-top: ${ELEMENT_HEIGHTS.navbarHeight}px;
         overflow-x: hidden;
         overflow-y: auto;
         z-index: 1;
-        border: 1px solid red;
-    }
+    } */}
 
     &.cursiveSpan {
         color: ${VoiceUpColors.altGrey};

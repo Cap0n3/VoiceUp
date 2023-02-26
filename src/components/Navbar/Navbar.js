@@ -56,13 +56,7 @@ const Navbar = () => {
             scrollPosition: scrollTopPos
         });
     }
-
-    const closeMobileMenu = () => {
-        console.log("TRIG")
-        setClick(false);
-        // WHAT THE HELL ? TO REMOVE ?
-    }
-
+    
     /**
      * To completely remove logo from flow. This was a dirty solution
      * to avoid dealing with 'diplay: none' issues with width still present
@@ -71,7 +65,7 @@ const Navbar = () => {
      */
     const SiteLogo = () => {
         return(
-            <LogoLink to="/" onClick={closeMobileMenu}>
+            <LogoLink to="/">
                 <NavIcon src={Logo} title="Voice Up" alt="Logo" width={ELEMENT_HEIGHTS.navLogoSize} height={ELEMENT_HEIGHTS.navLogoSize} />
             </LogoLink>
         );
