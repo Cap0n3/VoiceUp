@@ -2,11 +2,9 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import InfoSection from "../../components/InfoSection/InfoSection";
-import { MainContainer } from "../../globalStyles/globalCompStyles";
 import { lessonHeaderData, infoPhiloData, infoLearningPathData, infoTechniqueData, infoLessonsData , infoAuditionData} from "./data/program.data";
 import SEOBlock from "../../components/SEOBlock/SeoBlock";
 import { websiteSEO } from "../../seo/seo.data";
-import useMobileScrollBack from "../../hooks/useMobileScrollBack";
 
 const Program = () => {
     return(

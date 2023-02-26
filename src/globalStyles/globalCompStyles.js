@@ -22,7 +22,7 @@ export const BaseContainer = styled.section`
     min-height: 300px;
 `;
 
-// HERE (TESTING SOLUTION
+// Main container
 export const MainContainer = styled.div`
     position: ${({position}) => (position === "fixed") ? "fixed" : "static"};
     top: ${({scrollPos}) => (scrollPos ? `-${scrollPos - ELEMENT_HEIGHTS.mobileNavbarHeight}px` : "")};

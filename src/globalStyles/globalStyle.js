@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
         overflow-y: auto;
         z-index: 1;
+        border: 1px solid red;
     }
 
     &.cursiveSpan {

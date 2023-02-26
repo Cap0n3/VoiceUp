@@ -23,7 +23,6 @@ import FBIconAlt from '../../assets/icons/social/facebook_icon_alt';
 import { LangContext } from '../../App';
 import useWindowSize from '../../hooks/useWindowSize';
 import useScroll from '../../hooks/useScroll';
-
 import { MobileMenuContext } from '../../App';
 
 const Navbar = () => {
