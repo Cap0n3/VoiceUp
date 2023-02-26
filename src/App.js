@@ -20,7 +20,7 @@ function App() {
 	// Set contexts
 	const [language, setLanguage] = useState("FR");
 	const langValue = { language, setLanguage };
-	const [isMobileContext, setIsMobileContext] = useState({isOpen: false, position: null});
+	const [isMobileContext, setIsMobileContext] = useState({isOpen: false, position: 0});
 	const mobileValue = { isMobileContext, setIsMobileContext };
 	const location = useLocation();
 
@@ -36,6 +36,8 @@ function App() {
 		}
 		// Scroll top on route change
 		window.scrollTo(0, 0);
+		// Reset value of mobile context (to avoid keeping scroll pos between page change)
+		setIsMobileContext({isOpen: false, position: 0})
 	}, [location]);
 
 	return (
