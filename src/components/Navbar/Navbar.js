@@ -22,18 +22,41 @@ import InstaIcon from "../../assets/icons/social/instagram_icon";
 import FBIconAlt from '../../assets/icons/social/facebook_icon_alt';
 import { LangContext } from '../../App';
 import useWindowSize from '../../hooks/useWindowSize';
+import useScroll from '../../hooks/useScroll';
+import { MobileMenuContext } from '../../App';
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
     const [isMedium, setIsMedium] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
-
-    const handleClick = () => setClick(!click) // Toogle click
-    const closeMobileMenu = () => setClick(false);
+    const scrollTopPos = useScroll();
     // Get context for language selection
     const { language, setLanguage } = useContext(LangContext);
     const screenSize = useWindowSize();
+    const { mobileMenuState, setMobileMenuState } = useContext(MobileMenuContext);
 
+    /**
+     * Handle mobile menu behaviour when clicked. 
+     */
+    const handleClick = () => {
+        // Toogle pane & menu logo
+        setClick(!click);
+        // Check if pane is open (if it is already open, then it's closing)
+        if(mobileMenuState.isOpen) {
+            setMobileMenuState({
+                isOpen: false,
+                // Feed back last known scroll position to scroll back to it
+                scrollPosition: mobileMenuState.scrollPosition
+            });
+            return
+        }
+        // Set state and capture scoll position
+        setMobileMenuState({
+            isOpen: !mobileMenuState.isOpen, 
+            scrollPosition: scrollTopPos
+        });
+    }
+    
     /**
      * To completely remove logo from flow. This was a dirty solution
      * to avoid dealing with 'diplay: none' issues with width still present
@@ -42,7 +65,7 @@ const Navbar = () => {
      */
     const SiteLogo = () => {
         return(
-            <LogoLink to="/" onClick={closeMobileMenu}>
+            <LogoLink to="/">
                 <NavIcon src={Logo} title="Voice Up" alt="Logo" width={ELEMENT_HEIGHTS.navLogoSize} height={ELEMENT_HEIGHTS.navLogoSize} />
             </LogoLink>
         );

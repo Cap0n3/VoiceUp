@@ -22,6 +22,20 @@ export const BaseContainer = styled.section`
     min-height: 300px;
 `;
 
+// Main container
+export const MainContainer = styled.div`
+    padding-top: ${ELEMENT_HEIGHTS.navbarHeight}px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1;
+    position: ${({position}) => (position === "fixed") ? "fixed" : "static"};
+    top: ${({scrollPos}) => (scrollPos ? `-${scrollPos}px` : "")};
+
+    @media screen and (max-width: 1024px) {
+        padding-top: ${ELEMENT_HEIGHTS.mobileNavbarHeight}px;
+    }
+`;
+
 // === Section Titles === //
 export const SectionTitle = styled.h2`
     width: 100%;

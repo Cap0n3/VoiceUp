@@ -1,6 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useState, useEffect, createContext } from "react";
 import GlobalStyle from "./globalStyles/globalStyle";
+import { MainContainer } from "./globalStyles/globalCompStyles";
 import ScrollTop from "./components/ScrollTop/ScrollTop";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
@@ -14,12 +15,27 @@ import { HelmetProvider } from "react-helmet-async";
 
 // Define contexts
 export const LangContext = createContext();
+export const MobileMenuContext = createContext();
 
 function App() {
-	// Set contexts
+	// Set needed contexts
 	const [language, setLanguage] = useState("FR");
 	const langValue = { language, setLanguage };
+	const [mobileMenuState, setMobileMenuState] = useState({isOpen: false, scrollPosition: 0});
+	const mobileValue = { mobileMenuState, setMobileMenuState };
 	const location = useLocation();
+
+	/**
+     * Used to scroll back original position when mobile menu is closed.
+ 	 * Created to address a problem with a visible scroll bar when mobile menu is open.
+     */
+    useEffect(() => {
+        if(!mobileMenuState.isOpen) {
+            // console.log(mobileMenuState.scrollPosition)
+            // Scroll back to original position
+            window.scrollTo(0, mobileMenuState.scrollPosition);
+        }
+    }, [mobileMenuState])
 
 	/**
 	 * Quick and dirty solution to restore scrolling when path change. 
@@ -33,27 +49,31 @@ function App() {
 		}
 		// Scroll top on route change
 		window.scrollTo(0, 0);
+		// Reset value of mobile context (to avoid keeping scroll pos between page change)
+		setMobileMenuState({isOpen: false, scrollPosition: 0})
 	}, [location]);
 
 	return (
 		<>
 			<HelmetProvider>
-				<LangContext.Provider value={langValue}>
-					<ScrollTop />
-					<div className="main">
-						<GlobalStyle />
-						<Navbar />
-						<Routes>
-							<Route path="/" element={<Home />} />
-							<Route path="/methode" element={<Program />} />
-							<Route path="/tania" element={<About />} />
-							<Route path="/conditions" element={<Conditions />} />
-							<Route path="/tarifs" element={<Prices />} />
-							<Route path="/contact" element={<Contact />} />
-							<Route path="/inscription" element={<Enroll />} />
-						</Routes>
-					</div>
-				</LangContext.Provider>
+				<MobileMenuContext.Provider value={mobileValue}>
+					<LangContext.Provider value={langValue}>
+						<ScrollTop />
+						<MainContainer position={mobileMenuState.isOpen ? "fixed" : ""} scrollPos={mobileMenuState.scrollPosition}>
+							<GlobalStyle />
+							<Navbar />
+							<Routes>
+								<Route path="/" element={<Home />} />
+								<Route path="/methode" element={<Program />} />
+								<Route path="/tania" element={<About />} />
+								<Route path="/conditions" element={<Conditions />} />
+								<Route path="/tarifs" element={<Prices />} />
+								<Route path="/contact" element={<Contact />} />
+								<Route path="/inscription" element={<Enroll />} />
+							</Routes>
+						</MainContainer>
+					</LangContext.Provider>
+				</MobileMenuContext.Provider>
 			</HelmetProvider>
 		</>
 		

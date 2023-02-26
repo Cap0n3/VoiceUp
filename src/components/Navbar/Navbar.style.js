@@ -102,6 +102,8 @@ export const NavMenu = styled.ul`
         opacity: 1;
         transition: all 0.5s ease;
         background: ${VoiceUpColors.white};
+        z-index: 999;
+        overflow-y: auto;
     }
 `;
 

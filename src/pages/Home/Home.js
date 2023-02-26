@@ -38,7 +38,7 @@ const Home = () => {
             console.error("Number of reviews was not set for review component !")
             return 3;
         }      
-    }   
+    }
 
     return(
         <>
