@@ -10,7 +10,6 @@ export const Nav = styled.nav `
     display: flex;
     justify-content: center;
     align-items: center;
-    ${'' /* flex-grow: 1; */}
     position: fixed;
     top: 0px;
     width: 100%;
