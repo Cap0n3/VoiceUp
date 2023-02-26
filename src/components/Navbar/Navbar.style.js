@@ -37,8 +37,8 @@ export const NavbarWrapper = styled.div`
 export const LogoLink = styled(NavLink)`
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding: 60px;
+    justify-content: center;
+    /* padding-left: 5%; */
     width: 17%;
     cursor: pointer;
     text-decoration: none;
@@ -49,12 +49,13 @@ export const LogoLink = styled(NavLink)`
     @media only screen and (min-width: 1025px) and (max-width: 1248px) {
         width: 12%;
         padding: 0;
-        justify-content: flex-end;
+        /* justify-content: flex-end; */
     } 
 `;
 
 export const NavIcon = styled.img`
-    margin-right: 0.5rem;
+    /* margin-right: 0.5rem; */
+    ${(DEBUG) ? "border: 1px solid white" : ""}
 `;
 
 export const MenuContainer = styled.div`
@@ -198,7 +199,7 @@ export const SocialContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 30px;
-    width: 330px;
+    width: 20%;
     height: 100%;
     padding: 0 20px 0 20px;
     background: ${VoiceUpColors.gold};
@@ -206,7 +207,6 @@ export const SocialContainer = styled.div`
 
     /* 13" screen */
     @media only screen and (min-width: 1025px) and (max-width: 1248px) {
-        width: 250px;
         gap: 20px; 
     }
 
