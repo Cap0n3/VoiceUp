@@ -14,11 +14,14 @@ import { HelmetProvider } from "react-helmet-async";
 
 // Define contexts
 export const LangContext = createContext();
+export const MobileContext = createContext();
 
 function App() {
 	// Set contexts
 	const [language, setLanguage] = useState("FR");
 	const langValue = { language, setLanguage };
+	const [isMobileContext, setIsMobileContext] = useState({isOpen: false, position: null});
+	const mobileValue = { isMobileContext, setIsMobileContext };
 	const location = useLocation();
 
 	/**
@@ -38,22 +41,24 @@ function App() {
 	return (
 		<>
 			<HelmetProvider>
-				<LangContext.Provider value={langValue}>
-					<ScrollTop />
-					<div className="main">
-						<GlobalStyle />
-						<Navbar />
-						<Routes>
-							<Route path="/" element={<Home />} />
-							<Route path="/methode" element={<Program />} />
-							<Route path="/tania" element={<About />} />
-							<Route path="/conditions" element={<Conditions />} />
-							<Route path="/tarifs" element={<Prices />} />
-							<Route path="/contact" element={<Contact />} />
-							<Route path="/inscription" element={<Enroll />} />
-						</Routes>
-					</div>
-				</LangContext.Provider>
+				<MobileContext.Provider value={mobileValue}>
+					<LangContext.Provider value={langValue}>
+						<ScrollTop />
+						<div className="main">
+							<GlobalStyle />
+							<Navbar />
+							<Routes>
+								<Route path="/" element={<Home />} />
+								<Route path="/methode" element={<Program />} />
+								<Route path="/tania" element={<About />} />
+								<Route path="/conditions" element={<Conditions />} />
+								<Route path="/tarifs" element={<Prices />} />
+								<Route path="/contact" element={<Contact />} />
+								<Route path="/inscription" element={<Enroll />} />
+							</Routes>
+						</div>
+					</LangContext.Provider>
+				</MobileContext.Provider>
 			</HelmetProvider>
 		</>
 		

@@ -22,6 +22,12 @@ export const BaseContainer = styled.section`
     min-height: 300px;
 `;
 
+// HERE (TESTING SOLUTION
+export const MainContainer = styled.div`
+    position: ${({pos}) => (pos === "fixed") ? "fixed" : "static"};
+    top: ${({scrollPos}) => (scrollPos ? `-${scrollPos - ELEMENT_HEIGHTS.mobileNavbarHeight}px` : "")};
+`;
+
 // === Section Titles === //
 export const SectionTitle = styled.h2`
     width: 100%;

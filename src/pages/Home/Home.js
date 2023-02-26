@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext, useEffect } from "react";
 import { SectionTitle } from "../../globalStyles/globalCompStyles";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import InfoSection from "../../components/InfoSection/InfoSection";
@@ -14,10 +14,25 @@ import useAppear from "../../hooks/useAppear";
 import SEOBlock from "../../components/SEOBlock/SeoBlock";
 import { websiteSEO } from "../../seo/seo.data";
 
+
+import { MainContainer } from "../../globalStyles/globalCompStyles";
+import { MobileContext } from "../../App";
+
 const Home = () => {
     const windowSize = useWindowSize();
     const contactSectionRef = useRef(null);
     const isContactVisible = useAppear(contactSectionRef, 380);
+
+    // HERE (TESTION SOLUTION)
+    const {isMobileContext} = useContext(MobileContext);
+
+    useEffect(() => {
+        if(!isMobileContext.isOpen) {
+            console.log(isMobileContext.position)
+            window.scrollTo(0, isMobileContext.position)
+        }
+        console.log(isMobileContext)
+    }, [isMobileContext])
 
     /**
      * Set number of reviews in page depending on screen width
@@ -38,10 +53,10 @@ const Home = () => {
             console.error("Number of reviews was not set for review component !")
             return 3;
         }      
-    }   
+    }
 
     return(
-        <>
+        <MainContainer pos={isMobileContext.isOpen ? "fixed" : ""} scrollPos={isMobileContext.position}>
             <SEOBlock data={websiteSEO.home} />
             <SliderContainer winHeight={windowSize.innerHeight}>
                 <ImageSlider slides={slides} transitionTime={300} />
@@ -58,7 +73,7 @@ const Home = () => {
                 </FormContainer>
             </ContactSection>
             <Footer />
-        </>
+        </MainContainer>
     )
 }
 

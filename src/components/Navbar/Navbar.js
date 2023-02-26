@@ -24,43 +24,48 @@ import { LangContext } from '../../App';
 import useWindowSize from '../../hooks/useWindowSize';
 import useScroll from '../../hooks/useScroll';
 
+import { MobileContext } from '../../App';
+
 const Navbar = () => {
     const [click, setClick] = useState(false);
     const [isMedium, setIsMedium] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const scrollTopPos = useScroll();
     //const handleClick = () => setClick(!click); // Toogle click
-    const closeMobileMenu = () => setClick(false);
+    //const closeMobileMenu = () => setClick(false);
     // Get context for language selection
     const { language, setLanguage } = useContext(LangContext);
     const screenSize = useWindowSize();
 
+    const { isMobileContext, setIsMobileContext } = useContext(MobileContext);
     // const [capturedScroll, setCapturedScroll] = useState(null);
 
     // === HERE (TEST) === //
     const handleClick = () => {
-        // Toogle click
+        // Toogle pane & menu logo
         setClick(!click);
-        // Capture scoll position
-        // setCapturedScroll(scrollTopPos);
-    }   
+        // Check if pane is closing (if it was already open, then it's closing)
+        if(isMobileContext.isOpen) {
+            console.log("CLOSE")
+            setIsMobileContext({
+                isOpen: false,
+                // Feed last know scroll position to scroll back to it
+                position: isMobileContext.position
+            });
+            return
+        }
+        // Set state and capture scoll position
+        setIsMobileContext({
+            isOpen: !isMobileContext.isOpen, 
+            position: scrollTopPos
+        });
+    }
 
-    /**
-     * Disable scroll when mobile menu is open
-     */
-    // useEffect(() => {
-    //     if(click){
-    //         // DISABLE SCROLL
-    //         //console.log(scrollTopPos)
-    //         window.scroll(0,0);
-    //     }
-    //     else if(!click) {
-    //         if(capturedScroll) {
-    //             console.log("HERE")
-    //             window.scroll(0, capturedScroll);
-    //         }
-    //     }
-    // }, [click, scrollTopPos, capturedScroll])
+    const closeMobileMenu = () => {
+        console.log("TRIG")
+        setClick(false);
+        // WHAT THE HELL ? TO REMOVE ?
+    }
 
     /**
      * To completely remove logo from flow. This was a dirty solution
