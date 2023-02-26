@@ -30,8 +30,9 @@ export const ImgDiv = styled.div`
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-transform: ${({paralOffset}) => `translateY(${paralOffset}px)`};
     transform: translateY(${({paralOffset}) => {
-        // console.log(paralOffset);
+        console.log(paralOffset);
         return `${paralOffset}px`
     }});
     
