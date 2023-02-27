@@ -38,7 +38,6 @@ export const LogoLink = styled(NavLink)`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* padding-left: 5%; */
     width: 17%;
     cursor: pointer;
     text-decoration: none;

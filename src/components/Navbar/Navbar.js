@@ -38,7 +38,7 @@ const Navbar = () => {
     /**
      * Handle mobile menu behaviour when clicked. 
      */
-    const handleClick = () => {
+    const handleMobileClick = () => {
         // Toogle pane & menu logo
         setClick(!click);
         // Check if pane is open (if it is already open, then it's closing)
@@ -107,7 +107,7 @@ const Navbar = () => {
                 <NavbarWrapper>
                     <MenuContainer>
                         { isMobile ? "" : SiteLogo() }
-                        <NavMenu onClick={handleClick} click={click}>
+                        <NavMenu onClick={isMobile ? handleMobileClick : undefined} click={click}>
                             <NavItem><NavLinks to="/" end>Home</NavLinks></NavItem>
                             <NavItem><NavLinks to="/methode">{(language === "FR") ? "Méthode" : "Method"}</NavLinks></NavItem>
                             <NavItem><NavLinks to="/tania">{(language === "FR") ? "À propos" : "About"}</NavLinks></NavItem>
@@ -119,7 +119,7 @@ const Navbar = () => {
                                 <ENSwitch onClick={() => setLanguage("EN")} lang={language}>EN</ENSwitch>
                             </LangSwitch>
                         </NavMenu>
-                        <MobileIcon onClick={handleClick}>
+                        <MobileIcon onClick={handleMobileClick}>
                             {click ? <FaTimes /> : <FaBars />} 
                         </MobileIcon>
                     </MenuContainer>
