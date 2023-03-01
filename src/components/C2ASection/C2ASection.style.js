@@ -22,25 +22,36 @@ export const C2AContainer = styled.section`
     }
 `;
 
-export const ImgDiv = styled.div`
+// export const ImgDiv = styled.div`
+//     position: absolute;
+//     height: ${sectionHeight}px;
+//     width: ${({width}) => (width ? `${width}px` : "100%")};
+//     background-image: ${`url(${Tania2})`};
+//     background-position: center center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     -webkit-transform: ${({paralOffset}) => `translateY(${paralOffset}px)`};
+//     transform: translateY(${({paralOffset}) => `${paralOffset}px`});
+    
+//     @media only screen and (max-width: 1024px) {
+//         height: ${sectionHeight + 100}px;
+//     }
+// `;
+
+export const ImgDiv = styled.div.attrs(
+    ({width, paralOffset}) => ({
+        style: {
+            height: `${sectionHeight}px`,
+            width: width || "100%",
+            backgroundImage: `url(${Tania2})`,
+            transform: `translateY(${paralOffset}px)`,
+        }
+    })
+)`
     position: absolute;
-    height: ${sectionHeight}px;
-    width: ${({width}) => (width ? `${width}px` : "100%")};
-    background-image: ${`url(${Tania2})`};
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    -webkit-transform: ${({paralOffset}) => `translateY(${paralOffset}px)`};
-    transform: translateY(${({paralOffset}) => {
-        console.log(paralOffset);
-        return `${paralOffset}px`
-    }});
-    
-    /* z-index: -1; */
-
-    @media only screen and (max-width: 1024px) {
-        height: ${sectionHeight + 100}px;
-    }
 `;
 
 export const BoxWrapper = styled.div`
