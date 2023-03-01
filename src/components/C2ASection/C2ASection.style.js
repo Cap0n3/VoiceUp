@@ -38,6 +38,17 @@ export const C2AContainer = styled.section`
 //     }
 // `;
 
+/**
+ * Created styled-component with `attrs` to avoid error message :
+ * "Over 200 classes were generated for component styled.div"
+ * 
+ * Classic styled-Comp seems to generate to many classes due to
+ * constant re-rendering from parallax FX. To resolve isssue, we
+ * have to use `attrs` to improve performance. More on that here :
+ * https://medium.com/@magnus_junghard/efficient-styled-component-manipulations-e32ef338f93b
+ * 
+ * > Note : If `attrs` is not used, image flickers on mobile Safari (iOS + old versions)
+ */
 export const ImgDiv = styled.div.attrs(
     ({width, paralOffset}) => ({
         style: {

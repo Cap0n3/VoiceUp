@@ -15,14 +15,14 @@ const pulse = keyframes`
 `;
 
 // TODO - Not used yet
-export const BaseContainer = styled.section`
-    width: 100%;
-    height: ${({height}) => (height ? height : ELEMENT_HEIGHTS.sectionHeight)}px;
-    max-height: 1280px;
-    min-height: 300px;
-`;
+// export const BaseContainer = styled.section`
+//     width: 100%;
+//     height: ${({height}) => (height ? height : ELEMENT_HEIGHTS.sectionHeight)}px;
+//     max-height: 1280px;
+//     min-height: 300px;
+// `;
 
-// Main container
+// === Main container === //
 export const MainContainer = styled.div`
     padding-top: ${ELEMENT_HEIGHTS.navbarHeight}px;
     overflow-x: hidden;
