@@ -143,7 +143,7 @@ export const QuestionsAnswers = [
         answerEN: "No, it is not necessary to have any experience in singing or music theory before taking lessons. Singing lessons can be tailored to the needs and level of each student, whether they are a beginner or a more experienced singer."
     },
     {
-        questionFR: "Est-ce que je suis libre de choisir mon répertoire de chanson ?",
+        questionFR: "Est-ce que je suis libre de choisir mon répertoire de chansons ?",
         questionEN: "Are you free to choose your song repertoire when taking singing lessons ?",
         answerFR: "Vous êtes libre de choisir votre répertoire de chansons lorsque vous prenez des cours de chant. Je peux vous recommander certaines chansons en fonction de votre niveau de compétence et de vos objectifs, mais de manière général vous apportez les chansons que vous souhaitez apprendre et travailler. Il est important de me communiquer vos préférences et vos objectifs pour que nous puissions travailler ensemble sur un répertoire qui convient à vos besoins et à votre style vocal. Tous les styles de musique actuelle sont les bienvenus, y compris la pop, le rock, le jazz, la chanson française, la variété, la country, la world music, le métal, le blues, l’americana, le rap, la comédie musicale, etc.",
         answerEN: "Yes, you are free to choose your own song repertoire when taking singing lessons. I can recommend some songs based on your skill level and goals, but generally you bring in the songs you want to learn and work on. It's important for you to communicate your preferences and goals so that we can work together on a repertoire that suits your needs and vocal style. All genres of rhythmical music are welcome, including pop, rock, jazz, country, world music, metal, blues, americana, rap, musicals, and more."
@@ -181,7 +181,7 @@ export const QuestionsAnswers = [
     {
         questionFR: "À quoi m’engage le contrat ?",
         questionEN: "What am I committing to with the contract ?",
-        answerFR: "Vous vous engagez pour un minimum de 3 mois et par la suite vous aura un mois de préavis si vous souhaitez arrêter les cours.",
+        answerFR: "Vous vous engagez pour un minimum de 3 mois et par la suite vous aurez un mois de préavis si vous souhaitez arrêter les cours.",
         answerEN: "You commit to a minimum of 3 months, and after that, you’ll have one month's notice if you want to stop the lessons."
     },
 ]
