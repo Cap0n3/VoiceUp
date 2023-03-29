@@ -53,10 +53,10 @@ const Enroll = () => {
 
     const onSubmit = (data, e) => {
         const token = captchaRef.current.getValue();
-        
+
         if(token){
             send.sendEmail(e);
-            //send.mockSend("success", 2000, e); // For testing
+            // send.mockSend("success", 2000, e); // For testing
             // Reset captcha & form
             setCaptchaFilled(true);
             captchaRef.current.reset();
