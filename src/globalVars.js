@@ -49,10 +49,10 @@ export const FONT_WEIGHTS = {
 // === FORM REGEX === //
 
 export const FORM_REGEX = {
-    nameRgx: /^[A-Za-zàéèäöüïçÀÉÈÇ'^¨`-\s]+$/i,
+    nameRgx: /^[A-Za-zàéèêäöüïçÀÉÈÇ'^¨`-\s]+$/i,
     emailRgx: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     phoneRgx: /^(\+(41|33)|00\s?(41|33)|0\d{1,2})(\s?\(0\))?(\s)?(\d{1,2})(\s)?(\d{2,3})(\s)?(\d{2})(\s)?(\d{2})(\s)?(\d{2})?$/,
-    messageRgx: /^[a-zA-Z0-9àéèäöüïç°ÀÉÈÇ.,():;!?#$%&'*+/=^¨_`~-\s]+$/i
+    messageRgx: /^[a-zA-Z0-9àéèêäöüïç°ÀÉÈÇ.,():;!?#$%&'*+/=^¨_`~-\s]+$/i
 }
 
 // === EMAILJS IDS === //
