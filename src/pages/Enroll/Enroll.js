@@ -246,7 +246,7 @@ const Enroll = () => {
                                 <Textarea name="message" {...register("message", { 
                                     required: true, 
                                     minLength: 2, 
-                                    maxLength: 1000,
+                                    maxLength: 10000,
                                     pattern: FORM_REGEX.messageRgx
                                 })} status={errors.message ? errors.message.type : null} />
                                 {errors.message && getInputErrMsg(errors.message, language)}
