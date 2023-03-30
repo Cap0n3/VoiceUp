@@ -25,7 +25,7 @@ export const infoPhiloData = {
     titleEN : "Teaching philosophy",
     descriptionFR : [
         "Passionnée de musique depuis mon plus jeune âge, j’ai pu expérimenter et pratiquer plusieurs styles de musiques comme le classique, le jazz, la comédie musicale, la soul, la funk, la pop et le rock.", 
-        "Ouverte d’esprit, j’enseigne le chant sans aucuns jugements face aux goûts musicaux et à la manière de chanter de chacun. J’accompagne et soutiens les buts de l’élève et j’apprécie de travailler dans une ambiance de confiance et de liberté qui sont pour moi les fondements du développement artistique d’un·e chanteur·euse·x.",
+        "Ouverte d’esprit, j’enseigne le chant sans aucun jugement face aux goûts musicaux et à la manière de chanter de chacun. J’accompagne et soutiens les buts de l’élève et j’apprécie de travailler dans une ambiance de confiance et de liberté qui sont pour moi les fondements du développement artistique d’un·e chanteur·euse·x.",
         "Je valorise par-dessus tout l’enseignement d’une technique de chant saine et efficace tout en restant à l’écoute des vœux de chacun. Je saurai donc personnaliser les exercices afin que l’élève puisse trouver sa propre voix tout en progressant techniquement."
     ],
     descriptionEN : [
@@ -59,7 +59,7 @@ export const infoTechniqueData = {
     titleEN : "CVT Vocal Technique",
     descriptionFR : [
         "La Technique Vocale Complète est une méthode pionnière et novatrice, extrêmement utile à toute personne s’intéressant à la voix. Elle s’adresse autant au professionnel·le·x qu’aux débutant·e·x et s’applique à tous les styles de chant.",
-        "Cathrine Sadolin est une des chefs de file mondiaux en matière de recherche sur la voix. Ses 35 années de recherche à travers tous les styles de chant, en plus de son expérience en tant que chanteuse professionnelle, ont inspiré une nouvelle façon d’aborder la voix. Elle s’est spécialisée dans la résolution des problèmes vocaux, le réhabilitation des voix éraillées et l’enseignement de technique vocales avancées dans tous les style musicaux.",
+        "Cathrine Sadolin est une des chefs de file mondiaux en matière de recherche sur la voix. Ses 35 années de recherche à travers tous les styles de chant, en plus de son expérience en tant que chanteuse professionnelle, ont inspiré une nouvelle façon d’aborder la voix. Elle s’est spécialisée dans la résolution des problèmes vocaux, le réhabilitation des voix éraillées et l’enseignement de techniques vocales avancées dans tous les style musicaux.",
         "La CVT est une technique de chant efficace et saine pour les cordes vocales, qui une fois comprise dans son ensemble, vous permettra d’être indépendant avec votre travail vocal. Elle vous permet de maîtriser votre voix et d’en comprendre son fonctionnement."
     ],
     descriptionEN : [
