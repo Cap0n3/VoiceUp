@@ -10,8 +10,8 @@ const Maps = () => {
         googleMapsApiKey: process.env.REACT_APP_PUBLIC_GOOGLE_MAPS_API_KEY,
     });
     const location = {
-        lat: 46.17629295000025,
-        lng: 6.113382306933318
+        lat: 46.196895021090576,
+        lng: 6.1305201153444475
     };
     
     return(

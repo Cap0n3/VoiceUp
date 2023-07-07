@@ -15,14 +15,13 @@ export const howToCome = {
     subTitle1EN: "Public transportation",
     subTitle2FR: "En voiture",
     subTitle2EN: "By car",
-    parkParaFR: "La maison est à 5 minutes de la sortie « Lancy/Carouge » de l’autoroute de contournement. Facilité de parking autour de la maison.",
-    parkParaEN: "The house is 5 minutes away from the Lancy/Carouge exit of the bypass highway. Easy parking is available near the house.",
+    parkParaFR: "Vous pouvez vous parquer sur les places bleues ou blanches sur le chemin de la gravière ou au parking d'Aligro.",
+    parkParaEN: "You can park in the blue or white spaces on the chemin de la Gravière or at the Aligro's car park.",
     AddressTitleFR: "Adresse",
     AddressTitleEN: "Address",
-    Address: "6 chemin des Fauvettes, 1212 Grand-Lancy",
+    Address: "8 chemin de la Gravière, 1227 Les Acacias",
     HoursTitleFR : "Heures de cours",
     HoursTitleEN : "Lesson hours",
-    HoursFR : "Du lundi à vendredi, de 10h30 à 20h",
-    HoursEN : "Monday to friday, 10h30 to 20h"
-
+    HoursFR : "Du lundi à vendredi, de 9h00 à 19h00",
+    HoursEN : "Monday to friday, from 9A.M to 7P.M"
 }

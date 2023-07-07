@@ -51,19 +51,19 @@ const Contact = () => {
                     <DirectionWrapper>
                         <SubTitle>{(language === "FR") ? howToCome.subTitle1FR: howToCome.subTitle1EN}</SubTitle>
                         <DirectionList>
-                            <li>CEVA arrêt Lancy – Bachet Gare</li>
-                            <li>Prendre bus 42 arrêt Curé-Baud</li>
+                            <li>Bus 2, 3, 7, 10, 19, Tram 14 - Arrêt Jonction</li>
+                            <li>Traverser le pont de Saint-Georges</li>
+                            <li>Marcher 10 minutes le long du quai des Vernets</li>
+                        </DirectionList>
+                        <p>{(language === "FR") ? "ou": "or"}</p>
+                        <DirectionList>
+                            <li>Bus 11 ou D - Arrêt Queue-d'Arve</li>
                             <li>Marcher 5 minutes</li>
                         </DirectionList>
                         <p>{(language === "FR") ? "ou": "or"}</p>
                         <DirectionList>
-                            <li>Tram 12 ou 15 - Arrêt Palette</li>
-                            <li>Marcher 10 minutes</li>
-                        </DirectionList>
-                        <p>{(language === "FR") ? "ou": "or"}</p>
-                        <DirectionList>
-                            <li>Bus 22 ou 42 arrêt Curé-Baud</li>
-                            <li>Marcher 5 minutes</li>
+                            <li>Tram 15 ou 17 - Arrêt Industrielle</li>
+                            <li>Bus 11 - Arrêt Queue-d'Arve</li>
                         </DirectionList>
                     </DirectionWrapper>
                     <ParkingWrapper>
