@@ -18,7 +18,7 @@ export const WeeklyAdult = {
     bckColors: ["#896FBC", "#BDAFDA"],
     cardNameFR: "Hebdomadaire",
     cardNameEN: "Weekly",
-    priceTag: 320,
+    priceTag: 360,
     perFR: "Mois",
     perEN: "Month", 
     // Max 6 bullets
@@ -32,7 +32,7 @@ export const BiAdult = {
     bckColors: ["#1B1734", "#896FBC"],
     cardNameFR: "Bimensuel",
     cardNameEN: "Bimonthly",
-    priceTag: 170,
+    priceTag: 190,
     perFR: "Mois",
     perEN: "Month", 
     // Max 6 bullets
@@ -46,7 +46,7 @@ export const OnDemand = {
     bckColors: ["#D9A47D", "#D39264"],
     cardNameFR: "Cours à la carte",
     cardNameEN: "On demand",
-    priceTag: 90,
+    priceTag: 100,
     perFR: "Heure",
     perEN: "Hour", 
     // Max 6 bullets
