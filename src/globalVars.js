@@ -62,5 +62,4 @@ export const EMAILJS_IDS = {
     templateID_contact: "template_dilna6i",
     serviceID_enroll: "service_l7sqp28", 
     templateID_enroll: "template_sl3f9x1",
-    publicKey_emailjs: "rGeZyDR1JuIAHpM0N"
 }
