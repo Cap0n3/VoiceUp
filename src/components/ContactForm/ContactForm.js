@@ -41,7 +41,6 @@ const ContactForm = () => {
         EMAILJS_IDS.serviceID_contact,
         EMAILJS_IDS.templateID_contact,
         process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
-        process.env.REACT_APP_EMAILJS_PRIVATE_KEY,
         formRef,
         (language === "FR") ? formMessages.successFR : formMessages.successEN,
         (language === "FR") ? formMessages.errorFR : formMessages.errorEN

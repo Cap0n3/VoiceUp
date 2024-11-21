@@ -42,7 +42,6 @@ const Enroll = () => {
         EMAILJS_IDS.serviceID_enroll,
         EMAILJS_IDS.templateID_enroll,
         process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
-        process.env.REACT_APP_EMAILJS_PRIVATE_KEY,
         formRef,
         (language === "FR") ? formMessages.successFR : formMessages.successEN,
         (language === "FR") ? formMessages.errorFR : formMessages.errorEN

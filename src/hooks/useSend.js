@@ -26,7 +26,7 @@ import emailjs from '@emailjs/browser';
  * @param {int} resetTime - serverResponse state reset time (in ms) to origin values (useful to make notification box dissapear). Default=4000.
  * @returns {returnedData} 
  */
-const useSend = (serviceID, templateID, publicKey, privateKey, formRef, successMsg="Message successfully sent", errorMsg="An error occured !", resetTime=4000) => {
+const useSend = (serviceID, templateID, publicKey, formRef, successMsg="Message successfully sent", errorMsg="An error occured !", resetTime=4000) => {
     const [serverResponse, setServerResponse] = useState(null);
     const [isWaitingServerResp, setIsWaitingServerResp] = useState(false);
     const [isSendSuccess, setIsSendSuccess] = useState(null);
@@ -42,8 +42,7 @@ const useSend = (serviceID, templateID, publicKey, privateKey, formRef, successM
         setIsWaitingServerResp(true); // Waiting for response
         // Send
         emailjs.sendForm(serviceID, templateID, formRef.current, {
-            publicKey: publicKey,
-            privateKey: privateKey
+            publicKey: publicKey
         })
             .then((result) => {
                 // === SUCCESS === //
