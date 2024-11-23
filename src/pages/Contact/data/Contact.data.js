@@ -22,6 +22,6 @@ export const howToCome = {
     Address: "8 chemin de la Gravière, 1227 Les Acacias",
     HoursTitleFR : "Heures de cours",
     HoursTitleEN : "Lesson hours",
-    HoursFR : "Du lundi à vendredi, de 9h00 à 19h00",
+    HoursFR : "Du lundi au vendredi, de 9h00 à 19h00",
     HoursEN : "Monday to friday, from 9A.M to 7P.M"
 }
