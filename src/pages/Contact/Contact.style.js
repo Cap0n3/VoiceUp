@@ -21,7 +21,9 @@ export const ContactSection = styled.section`
 
 export const FormContainer = styled.div`
     width: 75%;
-    padding-right: 30%;
+    max-width: 1200px;
+    min-width: 280px;
+    /* padding-right: 30%; */
     opacity: ${({isVisible}) => (isVisible ?  1 : 0)};
     transform: ${({isVisible}) => (isVisible ?  "translateY(0)" : "translateY(120%)")};
     transition: transform .6s ease, opacity 1.5s ease;
